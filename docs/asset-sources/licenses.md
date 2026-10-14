@@ -323,6 +323,6 @@ YouTube: путать авторское право и товарный знак
 - Определения sync licence и master use licence от отраслевых организаций (ASCAP, BMI, Harry Fox Agency): ASCAP и BMI отдают 403, harryfox.com не соединился. Раздел о музыке опирается на WIPO, Circular 56A и Getty.
 - Считается ли видео со статичной картинкой "moving image" в CC 4.0: текст не уточняет.
 - Считается ли монетизируемый YouTube-канал "commercial" по NC, а также по editorial-лицензиям стоков: официальных разъяснений нет. CC прямо отказывается советовать по вопросу.
-- Запрещает ли CC лицензиару регистрировать CC-работу в Content ID: в FAQ CC ответа не нашёл.
+- Запрещает ли CC лицензиару регистрировать CC-работу в Content ID: в FAQ CC ответа нет. Запрет есть в правилах YouTube: "Content released under Creative Commons or similar free of charge/open licenses" не допускается как эталон Content ID (https://support.google.com/youtube/answer/2605065).
 - Как выполнить ShareAlike для видео в меню лицензий YouTube: CC и YouTube не объясняют.
 - Circular 56A: дату ревизии из PDF не извлёк.

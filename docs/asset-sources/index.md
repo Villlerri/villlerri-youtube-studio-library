@@ -29,6 +29,7 @@ summary: Вход в библиотеку источников: что где л
 - `youtube-rules.md`: официальные правила YouTube: reused content, generic/repetitive content, лицензия и монетизация, Content ID, споры, страйки, метка ИИ, Audio Library.
 - `licenses.md`: виды лицензий: public domain, CC0, CC BY, CC BY-SA, CC BY-NC, CC BY-ND, royalty-free, rights-managed, editorial, релизы, товарные знаки, sync и master.
 - `publication-check.md`: порядок проверки от выбора файла до ответа на претензию.
+- `verification.md`: статус проверки по каждому источнику: что прочитано на официальной странице, что по архивной копии, что не подтверждено.
 - `asset-passport.md`: шаблон паспорта конкретного ассета.
 - `asset-registry-template.csv`: пустой реестр паспортов.
 - `sources/video.md`: видеостоки.
