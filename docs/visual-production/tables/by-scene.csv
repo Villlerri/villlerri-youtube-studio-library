@@ -1,0 +1,350 @@
+scene,id,name,quality,human_difficulty,agent_difficulty,cost,price,card
+formula,glsl-shadertoy,GLSL-шейдеры и Shadertoy,5,4,2,0,glslViewer бесплатно; тарифы Shadertoy не подтверждены,tools/glsl-shadertoy.md
+formula,manimgl,ManimGL (3Blue1Brown),5,4,2,0,бесплатно,tools/manimgl.md
+formula,canvas-commons,Canvas Commons,4,3,3,0,бесплатно,tools/canvas-commons.md
+formula,manim-ce,Manim Community Edition,4,3,1,0,бесплатно,tools/manim-ce.md
+formula,mathbox,MathBox,4,4,3,0,бесплатно,tools/mathbox.md
+formula,motion-canvas,Motion Canvas,4,3,3,0,бесплатно,tools/motion-canvas.md
+formula,llm-animation-code,Генерация кода анимации языковой моделью,4,2,2,1,рендер бесплатный; платятся токены языковой модели,tools/llm-animation-code.md
+formula,manim-voiceover,manim-voiceover,3,3,2,0,плагин бесплатно; голос оплачивается у выбранного сервиса,tools/manim-voiceover.md
+formula,matplotlib,Matplotlib (анимация),3,2,1,0,бесплатно,tools/matplotlib.md
+formula,lightboard,Lightboard (стеклянная доска),3,3,5,3,около US$8 тыс. на студию по плану lightboard.info; готовые комплекты продают Learning Glass Solutions и Revolution Lightboards,tools/lightboard.md
+graph,manimgl,ManimGL (3Blue1Brown),5,4,2,0,бесплатно,tools/manimgl.md
+graph,cavalry,Cavalry,4,3,3,0,"бесплатно для частных лиц, нужен бесплатный аккаунт Canva; Enterprise по запросу",tools/cavalry.md
+graph,d3,D3.js,4,3,2,0,бесплатно,tools/d3.md
+graph,godot,Godot,4,3,2,0,бесплатно,tools/godot.md
+graph,hyperframes,HyperFrames (HeyGen),4,3,1,0,"бесплатно, без платы за рендер; облачный рендер HeyGen и приложение Studio требуют аккаунта HeyGen",tools/hyperframes.md
+graph,makie,Makie.jl,4,3,2,0,бесплатно,tools/makie.md
+graph,manim-ce,Manim Community Edition,4,3,1,0,бесплатно,tools/manim-ce.md
+graph,mathbox,MathBox,4,4,3,0,бесплатно,tools/mathbox.md
+graph,llm-animation-code,Генерация кода анимации языковой моделью,4,2,2,1,рендер бесплатный; платятся токены языковой модели,tools/llm-animation-code.md
+graph,remotion,Remotion,4,3,1,2,бесплатно для одиночек и команд до 3 человек; компании от 4 человек платят (от $25 в месяц за место),tools/remotion.md
+graph,ccapture-js,CCapture.js и захват кадров из браузера,3,2,2,0,бесплатно,tools/ccapture-js.md
+graph,friction,Friction (бывший enve),3,3,4,0,бесплатно,tools/friction.md
+graph,magpylib,Magpylib,3,2,1,0,бесплатно,tools/magpylib.md
+graph,manim-voiceover,manim-voiceover,3,3,2,0,плагин бесплатно; голос оплачивается у выбранного сервиса,tools/manim-voiceover.md
+graph,matplotlib,Matplotlib (анимация),3,2,1,0,бесплатно,tools/matplotlib.md
+graph,p5js,p5.js,3,2,2,0,бесплатно,tools/p5js.md
+graph,processing,Processing,3,2,2,0,бесплатно,tools/processing.md
+diagram,manimgl,ManimGL (3Blue1Brown),5,4,2,0,бесплатно,tools/manimgl.md
+diagram,after-effects,Adobe After Effects,5,4,3,2,"US$22.99/мес отдельно (годовой план, оплата помесячно); Creative Cloud Pro US$69.99/мес",tools/after-effects.md
+diagram,cinema-4d,Cinema 4D,5,4,3,2,"подписка Maxon, около $839 в год или $109 в месяц (по сообщению прессы), бесплатной версии нет",tools/cinema-4d.md
+diagram,blender-grease-pencil,Blender Grease Pencil,4,3,3,0,бесплатно (часть Blender),tools/blender-grease-pencil.md
+diagram,canvas-commons,Canvas Commons,4,3,3,0,бесплатно,tools/canvas-commons.md
+diagram,cavalry,Cavalry,4,3,3,0,"бесплатно для частных лиц, нужен бесплатный аккаунт Canva; Enterprise по запросу",tools/cavalry.md
+diagram,d3,D3.js,4,3,2,0,бесплатно,tools/d3.md
+diagram,gsap,GSAP,4,3,3,0,бесплатно,tools/gsap.md
+diagram,hyperframes,HyperFrames (HeyGen),4,3,1,0,"бесплатно, без платы за рендер; облачный рендер HeyGen и приложение Studio требуют аккаунта HeyGen",tools/hyperframes.md
+diagram,manim-ce,Manim Community Edition,4,3,1,0,бесплатно,tools/manim-ce.md
+diagram,motion-canvas,Motion Canvas,4,3,3,0,бесплатно,tools/motion-canvas.md
+diagram,theatre-js,Theatre.js,4,4,4,0,бесплатно,tools/theatre-js.md
+diagram,apple-motion,Apple Motion,4,3,4,1,US$49.99 разово в Mac App Store; или подписка Apple Creator Studio US$12.99/мес,tools/apple-motion.md
+diagram,llm-animation-code,Генерация кода анимации языковой моделью,4,2,2,1,рендер бесплатный; платятся токены языковой модели,tools/llm-animation-code.md
+diagram,rive,Rive,4,3,2,1,редактор бесплатно (экспорт .riv с заставкой Rive); видео и без заставки от $9 в месяц за место; рантаймы MIT,tools/rive.md
+diagram,adobe-animate,Adobe Animate,4,3,4,2,"подписка Adobe: US$22,99 в месяц (годовой план, оплата помесячно); входит в Creative Cloud Pro (US$69,99 в месяц); пробный период 7 дней",tools/adobe-animate.md
+diagram,remotion,Remotion,4,3,1,2,бесплатно для одиночек и команд до 3 человек; компании от 4 человек платят (от $25 в месяц за место),tools/remotion.md
+diagram,cables-gl,cables.gl,3,3,4,0,бесплатно,tools/cables-gl.md
+diagram,excalidraw,Excalidraw (и excalidraw-animate),3,1,3,0,бесплатно; Excalidraw+ US$6 за пользователя в месяц,tools/excalidraw.md
+diagram,excalimate,Excalimate,3,2,3,0,"бесплатно, аккаунт не нужен",tools/excalimate.md
+diagram,friction,Friction (бывший enve),3,3,4,0,бесплатно,tools/friction.md
+diagram,manim-voiceover,manim-voiceover,3,3,2,0,плагин бесплатно; голос оплачивается у выбранного сервиса,tools/manim-voiceover.md
+diagram,pixijs,PixiJS,3,3,2,0,бесплатно,tools/pixijs.md
+diagram,revideo,Revideo,3,3,2,0,бесплатно,tools/revideo.md
+diagram,rough-js,Rough.js,3,2,2,0,бесплатно,tools/rough-js.md
+diagram,synfig,Synfig Studio,3,3,3,0,бесплатно,tools/synfig.md
+diagram,tldraw,tldraw,3,3,3,0,"разработка бесплатно; production по лицензии: hobby (бесплатно по заявке), пробная 100 дней, коммерческая по запросу",tools/tldraw.md
+diagram,vivus,Vivus,3,2,2,0,бесплатно,tools/vivus.md
+diagram,jitter,Jitter,3,2,4,1,"бесплатный тариф (720p, водяной знак); платные Pro, Max, Ultra, цены на странице без JavaScript не видны",tools/jitter.md
+diagram,lottie,"Lottie (lottie-web, Bodymovin, dotLottie)",3,3,3,1,проигрыватели бесплатно; создание через After Effects или LottieFiles от $19.99 в месяц,tools/lottie.md
+diagram,recraft,Recraft (векторная генерация),3,1,2,1,"бесплатно с публичными результатами без коммерческого использования; Basic $10 в месяц и Pro $16 в месяц при годовой оплате; API от $0.007 за картинку, SVG от $0.044",tools/recraft.md
+diagram,lottie-creator,Lottie Creator (LottieFiles),3,2,3,2,"бесплатно, но только 5 экспортов и некоммерческое использование; для монетизируемого канала нужен тариф Team, $24.99 в месяц за место при оплате за год",tools/lottie-creator.md
+diagram,spline,Spline,3,2,3,2,Free; Hobby $12 в месяц (при оплате за год); Pro $25; Max $60; видео экспортируют с Pro,tools/spline.md
+diagram,lightboard,Lightboard (стеклянная доска),3,3,5,3,около US$8 тыс. на студию по плану lightboard.info; готовые комплекты продают Learning Glass Solutions и Revolution Lightboards,tools/lightboard.md
+diagram,falstad,Апплеты Falstad,2,1,4,0,бесплатно,tools/falstad.md
+diagram,glaxnimate,Glaxnimate,2,2,3,0,бесплатно,tools/glaxnimate.md
+diagram,javis-jl,Javis.jl,2,3,3,0,бесплатно,tools/javis-jl.md
+diagram,videoscribe,VideoScribe,2,1,5,1,"от US$12.50/мес в пересчёте (US$150 в год, Lite); Core US$255 в год; Max US$320 в год",tools/videoscribe.md
+diagram,doodly,Doodly,2,1,5,2,Standard US$49/мес или US$490/год; Enterprise US$79/мес или US$790/год,tools/doodly.md
+mechanism,blender,Blender,5,4,2,0,бесплатно,tools/blender.md
+mechanism,blender-geometry-nodes,Blender Geometry Nodes,5,4,3,0,бесплатно (часть Blender),tools/blender-geometry-nodes.md
+mechanism,unreal-engine,Unreal Engine,5,4,3,0,бесплатно при доходе до $1 млн в год; выше — $1850 за место в год для не-игр,tools/unreal-engine.md
+mechanism,after-effects,Adobe After Effects,5,4,3,2,"US$22.99/мес отдельно (годовой план, оплата помесячно); Creative Cloud Pro US$69.99/мес",tools/after-effects.md
+mechanism,cinema-4d,Cinema 4D,5,4,3,2,"подписка Maxon, около $839 в год или $109 в месяц (по сообщению прессы), бесплатной версии нет",tools/cinema-4d.md
+mechanism,houdini,Houdini,5,5,3,2,"Apprentice бесплатно (некоммерческий), Indie $299 в год или $449 на 2 года, Core и FX цена на странице не указана",tools/houdini.md
+mechanism,3ds-max,Autodesk 3ds Max,5,4,3,3,"подписка $255 в месяц, $2010 в год, $6025 на три года; Indie только годовая и по условиям; бесплатный пробный период 30 дней",tools/3ds-max.md
+mechanism,maya,Maya,5,5,3,3,"$2010 в год, $255 в месяц, $6025 на три года; Maya Indie цена не публикуется",tools/maya.md
+mechanism,babylonjs,Babylon.js,4,3,2,0,бесплатно,tools/babylonjs.md
+mechanism,theatre-js,Theatre.js,4,4,4,0,бесплатно,tools/theatre-js.md
+mechanism,three-js,Three.js,4,3,2,0,бесплатно,tools/three-js.md
+mechanism,unity,Unity,4,4,3,0,"Personal бесплатно (доход и финансирование до $200 тыс.), Pro $2310 в год или $210 в месяц",tools/unity.md
+mechanism,rive,Rive,4,3,2,1,редактор бесплатно (экспорт .riv с заставкой Rive); видео и без заставки от $9 в месяц за место; рантаймы MIT,tools/rive.md
+mechanism,spine,Spine,4,3,4,2,"разовая покупка по именной лицензии; Essential $69 (список $99), Professional $379 (список $449); доход свыше $500 000 в год требует Enterprise ($2499 + $379 за пользователя в год)",tools/spine.md
+mechanism,comsol,COMSOL Multiphysics,4,4,4,?,"цена не публикуется, только по запросу",tools/comsol.md
+mechanism,elmer-fem,Elmer FEM,3,4,3,0,бесплатно,tools/elmer-fem.md
+mechanism,hunyuan3d,Hunyuan3D,3,4,2,0,"бесплатно; лицензия не действует в ЕС, Великобритании и Южной Корее",tools/hunyuan3d.md
+mechanism,mcp-bridges,MCP-мосты агента к программам графики,3,2,2,0,мосты бесплатны; платите за программу и за модель агента,tools/mcp-bridges.md
+mechanism,pyvista,PyVista,3,2,1,0,бесплатно,tools/pyvista.md
+mechanism,trellis,TRELLIS (TRELLIS.2),3,4,2,0,"бесплатно, код и веса под MIT; часть зависимостей только для некоммерческого использования",tools/trellis.md
+mechanism,meshy,Meshy,3,2,2,1,"бесплатно 100 кредитов в месяц (результаты под CC BY 4.0); Pro $20 в месяц, Premium $40, Ultra $100, Studio $70",tools/meshy.md
+mechanism,spline,Spline,3,2,3,2,Free; Hobby $12 в месяц (при оплате за год); Pro $25; Max $60; видео экспортируют с Pro,tools/spline.md
+mechanism,phet,PhET Interactive Simulations,3,1,4,?,"бесплатно для некоммерческого образовательного использования; для монетизированного YouTube нужна платная коммерческая лицензия, цена не публикуется",tools/phet.md
+mechanism,box2d,Box2D,2,3,3,0,бесплатно,tools/box2d.md
+mechanism,matter-js,Matter.js,2,2,2,0,бесплатно,tools/matter-js.md
+mechanism,vpython,VPython и GlowScript (Web VPython),2,1,3,0,бесплатно,tools/vpython.md
+field,blender,Blender,5,4,2,0,бесплатно,tools/blender.md
+field,blender-geometry-nodes,Blender Geometry Nodes,5,4,3,0,бесплатно (часть Blender),tools/blender-geometry-nodes.md
+field,glsl-shadertoy,GLSL-шейдеры и Shadertoy,5,4,2,0,glslViewer бесплатно; тарифы Shadertoy не подтверждены,tools/glsl-shadertoy.md
+field,manimgl,ManimGL (3Blue1Brown),5,4,2,0,бесплатно,tools/manimgl.md
+field,after-effects,Adobe After Effects,5,4,3,2,"US$22.99/мес отдельно (годовой план, оплата помесячно); Creative Cloud Pro US$69.99/мес",tools/after-effects.md
+field,houdini,Houdini,5,5,3,2,"Apprentice бесплатно (некоммерческий), Indie $299 в год или $449 на 2 года, Core и FX цена на странице не указана",tools/houdini.md
+field,notch,Notch,5,4,5,3,Indie $279/год (хобби); VFX $139/мес или $1399/год; RFX от $216/мес,tools/notch.md
+field,touchdesigner,TouchDesigner,5,4,4,3,Non-Commercial бесплатно (до 1280x1280); Commercial от $600 разово; Pro от $2200,tools/touchdesigner.md
+field,makie,Makie.jl,4,3,2,0,бесплатно,tools/makie.md
+field,manim-ce,Manim Community Edition,4,3,1,0,бесплатно,tools/manim-ce.md
+field,mathbox,MathBox,4,4,3,0,бесплатно,tools/mathbox.md
+field,three-js,Three.js,4,3,2,0,бесплатно,tools/three-js.md
+field,llm-animation-code,Генерация кода анимации языковой моделью,4,2,2,1,рендер бесплатный; платятся токены языковой модели,tools/llm-animation-code.md
+field,vvvv,vvvv gamma,4,4,3,3,некоммерческое бесплатно; коммерческая лицензия разработчика 540–2160 EUR в год,tools/vvvv.md
+field,comsol,COMSOL Multiphysics,4,4,4,?,"цена не публикуется, только по запросу",tools/comsol.md
+field,cables-gl,cables.gl,3,3,4,0,бесплатно,tools/cables-gl.md
+field,ccapture-js,CCapture.js и захват кадров из браузера,3,2,2,0,бесплатно,tools/ccapture-js.md
+field,elmer-fem,Elmer FEM,3,4,3,0,бесплатно,tools/elmer-fem.md
+field,magpylib,Magpylib,3,2,1,0,бесплатно,tools/magpylib.md
+field,manim-voiceover,manim-voiceover,3,3,2,0,плагин бесплатно; голос оплачивается у выбранного сервиса,tools/manim-voiceover.md
+field,matplotlib,Matplotlib (анимация),3,2,1,0,бесплатно,tools/matplotlib.md
+field,mcp-bridges,MCP-мосты агента к программам графики,3,2,2,0,мосты бесплатны; платите за программу и за модель агента,tools/mcp-bridges.md
+field,p5js,p5.js,3,2,2,0,бесплатно,tools/p5js.md
+field,paraview,ParaView,3,3,2,0,бесплатно,tools/paraview.md
+field,processing,Processing,3,2,2,0,бесплатно,tools/processing.md
+field,pyvista,PyVista,3,2,1,0,бесплатно,tools/pyvista.md
+field,radia,Radia (ESRF),3,4,3,0,бесплатно,tools/radia.md
+field,taichi,Taichi Lang,3,3,2,0,бесплатно,tools/taichi.md
+field,electromag-nodes,ElectroMag Nodes,3,3,3,1,"Lite $1, Pro $15, разовая покупка; Blender бесплатный",tools/electromag-nodes.md
+field,phet,PhET Interactive Simulations,3,1,4,?,"бесплатно для некоммерческого образовательного использования; для монетизированного YouTube нужна платная коммерческая лицензия, цена не публикуется",tools/phet.md
+field,falstad,Апплеты Falstad,2,1,4,0,бесплатно,tools/falstad.md
+field,femm,FEMM (Finite Element Method Magnetics),2,2,3,0,бесплатно,tools/femm.md
+field,vpython,VPython и GlowScript (Web VPython),2,1,3,0,бесплатно,tools/vpython.md
+micro,blender,Blender,5,4,2,0,бесплатно,tools/blender.md
+micro,blender-geometry-nodes,Blender Geometry Nodes,5,4,3,0,бесплатно (часть Blender),tools/blender-geometry-nodes.md
+micro,glsl-shadertoy,GLSL-шейдеры и Shadertoy,5,4,2,0,glslViewer бесплатно; тарифы Shadertoy не подтверждены,tools/glsl-shadertoy.md
+micro,molecular-nodes,Molecular Nodes,5,3,2,0,бесплатно,tools/molecular-nodes.md
+micro,after-effects,Adobe After Effects,5,4,3,2,"US$22.99/мес отдельно (годовой план, оплата помесячно); Creative Cloud Pro US$69.99/мес",tools/after-effects.md
+micro,touchdesigner,TouchDesigner,5,4,4,3,Non-Commercial бесплатно (до 1280x1280); Commercial от $600 разово; Pro от $2200,tools/touchdesigner.md
+micro,babylonjs,Babylon.js,4,3,2,0,бесплатно,tools/babylonjs.md
+micro,flux,FLUX (Black Forest Labs),4,2,2,1,API от $0.014 до $0.07 за картинку (FLUX.2); видео FLUX 3 от $0.15 за секунду; открытые веса бесплатно при условиях лицензии,tools/flux.md
+micro,midjourney,Midjourney,4,2,5,2,"Basic $10 в месяц, Standard $30, Pro $60, Mega $120; годовая оплата дешевле на 20%; бесплатного плана нет",tools/midjourney.md
+micro,hunyuan3d,Hunyuan3D,3,4,2,0,"бесплатно; лицензия не действует в ЕС, Великобритании и Южной Корее",tools/hunyuan3d.md
+micro,paraview,ParaView,3,3,2,0,бесплатно,tools/paraview.md
+micro,pyvista,PyVista,3,2,1,0,бесплатно,tools/pyvista.md
+micro,taichi,Taichi Lang,3,3,2,0,бесплатно,tools/taichi.md
+micro,trellis,TRELLIS (TRELLIS.2),3,4,2,0,"бесплатно, код и веса под MIT; часть зависимостей только для некоммерческого использования",tools/trellis.md
+micro,meshy,Meshy,3,2,2,1,"бесплатно 100 кредитов в месяц (результаты под CC BY 4.0); Pro $20 в месяц, Premium $40, Ultra $100, Studio $70",tools/meshy.md
+micro,lottie-creator,Lottie Creator (LottieFiles),3,2,3,2,"бесплатно, но только 5 экспортов и некоммерческое использование; для монетизируемого канала нужен тариф Team, $24.99 в месяц за место при оплате за год",tools/lottie-creator.md
+micro,phet,PhET Interactive Simulations,3,1,4,?,"бесплатно для некоммерческого образовательного использования; для монетизированного YouTube нужна платная коммерческая лицензия, цена не публикуется",tools/phet.md
+scale,blender,Blender,5,4,2,0,бесплатно,tools/blender.md
+scale,glsl-shadertoy,GLSL-шейдеры и Shadertoy,5,4,2,0,glslViewer бесплатно; тарифы Shadertoy не подтверждены,tools/glsl-shadertoy.md
+scale,molecular-nodes,Molecular Nodes,5,3,2,0,бесплатно,tools/molecular-nodes.md
+scale,unreal-engine,Unreal Engine,5,4,3,0,бесплатно при доходе до $1 млн в год; выше — $1850 за место в год для не-игр,tools/unreal-engine.md
+scale,after-effects,Adobe After Effects,5,4,3,2,"US$22.99/мес отдельно (годовой план, оплата помесячно); Creative Cloud Pro US$69.99/мес",tools/after-effects.md
+scale,cinema-4d,Cinema 4D,5,4,3,2,"подписка Maxon, около $839 в год или $109 в месяц (по сообщению прессы), бесплатной версии нет",tools/cinema-4d.md
+scale,houdini,Houdini,5,5,3,2,"Apprentice бесплатно (некоммерческий), Indie $299 в год или $449 на 2 года, Core и FX цена на странице не указана",tools/houdini.md
+scale,3ds-max,Autodesk 3ds Max,5,4,3,3,"подписка $255 в месяц, $2010 в год, $6025 на три года; Indie только годовая и по условиям; бесплатный пробный период 30 дней",tools/3ds-max.md
+scale,notch,Notch,5,4,5,3,Indie $279/год (хобби); VFX $139/мес или $1399/год; RFX от $216/мес,tools/notch.md
+scale,babylonjs,Babylon.js,4,3,2,0,бесплатно,tools/babylonjs.md
+scale,comfyui,ComfyUI,4,4,2,0,бесплатно локально; Comfy Cloud от $16 в месяц при годовой оплате ($20 помесячно),tools/comfyui.md
+scale,theatre-js,Theatre.js,4,4,4,0,бесплатно,tools/theatre-js.md
+scale,three-js,Three.js,4,3,2,0,бесплатно,tools/three-js.md
+scale,unity,Unity,4,4,3,0,"Personal бесплатно (доход и финансирование до $200 тыс.), Pro $2310 в год или $210 в месяц",tools/unity.md
+scale,flux,FLUX (Black Forest Labs),4,2,2,1,API от $0.014 до $0.07 за картинку (FLUX.2); видео FLUX 3 от $0.15 за секунду; открытые веса бесплатно при условиях лицензии,tools/flux.md
+scale,midjourney,Midjourney,4,2,5,2,"Basic $10 в месяц, Standard $30, Pro $60, Mega $120; годовая оплата дешевле на 20%; бесплатного плана нет",tools/midjourney.md
+scale,vvvv,vvvv gamma,4,4,3,3,некоммерческое бесплатно; коммерческая лицензия разработчика 540–2160 EUR в год,tools/vvvv.md
+scale,hunyuanvideo,HunyuanVideo,3,4,2,0,"бесплатно; лицензия не действует в ЕС, Великобритании и Южной Корее",tools/hunyuanvideo.md
+scale,ltx-video,LTX-Video (LTX-2.5),3,4,2,0,бесплатно при годовой выручке меньше $10 млн; выше нужна платная лицензия; API от $0.09 за секунду,tools/ltx-video.md
+scale,mcp-bridges,MCP-мосты агента к программам графики,3,2,2,0,мосты бесплатны; платите за программу и за модель агента,tools/mcp-bridges.md
+scale,openai-sora,OpenAI Sora,3,1,5,0,недоступно в API с 2026-09-24 (официально); о закрытии приложения сообщают только вторичные источники,tools/openai-sora.md
+scale,wan,Wan (открытые видеомодели),3,4,2,0,бесплатно для Wan2.2 и Wan2.1 (веса и код Apache-2.0); закрытая Wan 3.0 платная через API,tools/wan.md
+scale,google-veo,Google Veo (и Flow),3,2,2,2,"Gemini API Veo 3.1 от $0.05 до $0.60 за секунду; Flow бесплатно 50 кредитов в день; планы Google AI Plus, Pro, Ultra дают 200, 1000, 10000 или 25000 кредитов Flow в месяц",tools/google-veo.md
+scale,kling,Kling,3,2,2,2,"Basic бесплатно; Standard $10 в месяц (660 кредитов), Pro $37 (3000), Premier $92 (8000), Ultra $180 (26000) по прейскуранту; API от $0.084 за секунду",tools/kling.md
+scale,luma,Luma Dream Machine,3,2,2,2,"Plus $30 в месяц (10000 кредитов), Pro $90 (40000), Ultra $300 (150000); годовая оплата дешевле на 20%; бесплатного плана на странице цен нет",tools/luma.md
+scale,runway,Runway,3,2,2,2,бесплатно 125 кредитов однократно; Standard $12 в месяц при годовой оплате ($15 помесячно); Pro $28 ($35); Max $76 ($95); API $0.01 за кредит,tools/runway.md
+simulation,blender,Blender,5,4,2,0,бесплатно,tools/blender.md
+simulation,blender-geometry-nodes,Blender Geometry Nodes,5,4,3,0,бесплатно (часть Blender),tools/blender-geometry-nodes.md
+simulation,molecular-nodes,Molecular Nodes,5,3,2,0,бесплатно,tools/molecular-nodes.md
+simulation,houdini,Houdini,5,5,3,2,"Apprentice бесплатно (некоммерческий), Indie $299 в год или $449 на 2 года, Core и FX цена на странице не указана",tools/houdini.md
+simulation,notch,Notch,5,4,5,3,Indie $279/год (хобби); VFX $139/мес или $1399/год; RFX от $216/мес,tools/notch.md
+simulation,touchdesigner,TouchDesigner,5,4,4,3,Non-Commercial бесплатно (до 1280x1280); Commercial от $600 разово; Pro от $2200,tools/touchdesigner.md
+simulation,babylonjs,Babylon.js,4,3,2,0,бесплатно,tools/babylonjs.md
+simulation,godot,Godot,4,3,2,0,бесплатно,tools/godot.md
+simulation,makie,Makie.jl,4,3,2,0,бесплатно,tools/makie.md
+simulation,three-js,Three.js,4,3,2,0,бесплатно,tools/three-js.md
+simulation,unity,Unity,4,4,3,0,"Personal бесплатно (доход и финансирование до $200 тыс.), Pro $2310 в год или $210 в месяц",tools/unity.md
+simulation,cascadeur,Cascadeur,4,3,4,1,"Free (некоммерческий), Indie $8 в месяц при оплате за год ($19 помесячно), Pro $33 в месяц за год ($49 помесячно)",tools/cascadeur.md
+simulation,vvvv,vvvv gamma,4,4,3,3,некоммерческое бесплатно; коммерческая лицензия разработчика 540–2160 EUR в год,tools/vvvv.md
+simulation,comsol,COMSOL Multiphysics,4,4,4,?,"цена не публикуется, только по запросу",tools/comsol.md
+simulation,ccapture-js,CCapture.js и захват кадров из браузера,3,2,2,0,бесплатно,tools/ccapture-js.md
+simulation,elmer-fem,Elmer FEM,3,4,3,0,бесплатно,tools/elmer-fem.md
+simulation,magpylib,Magpylib,3,2,1,0,бесплатно,tools/magpylib.md
+simulation,matplotlib,Matplotlib (анимация),3,2,1,0,бесплатно,tools/matplotlib.md
+simulation,p5js,p5.js,3,2,2,0,бесплатно,tools/p5js.md
+simulation,paraview,ParaView,3,3,2,0,бесплатно,tools/paraview.md
+simulation,processing,Processing,3,2,2,0,бесплатно,tools/processing.md
+simulation,pyvista,PyVista,3,2,1,0,бесплатно,tools/pyvista.md
+simulation,radia,Radia (ESRF),3,4,3,0,бесплатно,tools/radia.md
+simulation,taichi,Taichi Lang,3,3,2,0,бесплатно,tools/taichi.md
+simulation,electromag-nodes,ElectroMag Nodes,3,3,3,1,"Lite $1, Pro $15, разовая покупка; Blender бесплатный",tools/electromag-nodes.md
+simulation,phet,PhET Interactive Simulations,3,1,4,?,"бесплатно для некоммерческого образовательного использования; для монетизированного YouTube нужна платная коммерческая лицензия, цена не публикуется",tools/phet.md
+simulation,box2d,Box2D,2,3,3,0,бесплатно,tools/box2d.md
+simulation,falstad,Апплеты Falstad,2,1,4,0,бесплатно,tools/falstad.md
+simulation,femm,FEMM (Finite Element Method Magnetics),2,2,3,0,бесплатно,tools/femm.md
+simulation,matter-js,Matter.js,2,2,2,0,бесплатно,tools/matter-js.md
+simulation,vpython,VPython и GlowScript (Web VPython),2,1,3,0,бесплатно,tools/vpython.md
+character,blender,Blender,5,4,2,0,бесплатно,tools/blender.md
+character,unreal-engine,Unreal Engine,5,4,3,0,бесплатно при доходе до $1 млн в год; выше — $1850 за место в год для не-игр,tools/unreal-engine.md
+character,after-effects,Adobe After Effects,5,4,3,2,"US$22.99/мес отдельно (годовой план, оплата помесячно); Creative Cloud Pro US$69.99/мес",tools/after-effects.md
+character,toon-boom-harmony,Toon Boom Harmony,5,5,4,2,"только подписка; Essentials от €33 в месяц (€273 в год), Advanced от €83 (€640 в год), Premium от €151 (€1225 в год); есть пробная версия на 14 дней",tools/toon-boom-harmony.md
+character,3ds-max,Autodesk 3ds Max,5,4,3,3,"подписка $255 в месяц, $2010 в год, $6025 на три года; Indie только годовая и по условиям; бесплатный пробный период 30 дней",tools/3ds-max.md
+character,maya,Maya,5,5,3,3,"$2010 в год, $255 в месяц, $6025 на три года; Maya Indie цена не публикуется",tools/maya.md
+character,tvpaint,TVPaint Animation,5,4,5,3,"разовая покупка, версия 12: Standard €650, Professional €1600 без налога (по странице для учебных заведений); цену магазина напрямую прочитать не удалось",tools/tvpaint.md
+character,blender-grease-pencil,Blender Grease Pencil,4,3,3,0,бесплатно (часть Blender),tools/blender-grease-pencil.md
+character,cavalry,Cavalry,4,3,3,0,"бесплатно для частных лиц, нужен бесплатный аккаунт Canva; Enterprise по запросу",tools/cavalry.md
+character,comfyui,ComfyUI,4,4,2,0,бесплатно локально; Comfy Cloud от $16 в месяц при годовой оплате ($20 помесячно),tools/comfyui.md
+character,godot,Godot,4,3,2,0,бесплатно,tools/godot.md
+character,opentoonz,OpenToonz,4,4,4,0,"бесплатно, в том числе для коммерческих проектов",tools/opentoonz.md
+character,tahoma2d,Tahoma2D,4,3,4,0,бесплатно,tools/tahoma2d.md
+character,cascadeur,Cascadeur,4,3,4,1,"Free (некоммерческий), Indie $8 в месяц при оплате за год ($19 помесячно), Pro $33 в месяц за год ($49 помесячно)",tools/cascadeur.md
+character,clip-studio-paint,Clip Studio Paint,4,3,5,1,"годовой план на одно устройство PRO $26.99, EX $76.99; бессрочная версия 5.0 PRO $63, EX $277 (цены без скидки)",tools/clip-studio-paint.md
+character,flux,FLUX (Black Forest Labs),4,2,2,1,API от $0.014 до $0.07 за картинку (FLUX.2); видео FLUX 3 от $0.15 за секунду; открытые веса бесплатно при условиях лицензии,tools/flux.md
+character,rive,Rive,4,3,2,1,редактор бесплатно (экспорт .riv с заставкой Rive); видео и без заставки от $9 в месяц за место; рантаймы MIT,tools/rive.md
+character,adobe-animate,Adobe Animate,4,3,4,2,"подписка Adobe: US$22,99 в месяц (годовой план, оплата помесячно); входит в Creative Cloud Pro (US$69,99 в месяц); пробный период 7 дней",tools/adobe-animate.md
+character,midjourney,Midjourney,4,2,5,2,"Basic $10 в месяц, Standard $30, Pro $60, Mega $120; годовая оплата дешевле на 20%; бесплатного плана нет",tools/midjourney.md
+character,moho,Moho,4,3,4,2,"разовая покупка: Moho Pro 14 $399,99, Moho Debut 14 $59,99 (цены запуска версии 14; страницу магазина напрямую прочитать не удалось)",tools/moho.md
+character,spine,Spine,4,3,4,2,"разовая покупка по именной лицензии; Essential $69 (список $99), Professional $379 (список $449); доход свыше $500 000 в год требует Enterprise ($2499 + $379 за пользователя в год)",tools/spine.md
+character,hunyuan3d,Hunyuan3D,3,4,2,0,"бесплатно; лицензия не действует в ЕС, Великобритании и Южной Корее",tools/hunyuan3d.md
+character,hunyuanvideo,HunyuanVideo,3,4,2,0,"бесплатно; лицензия не действует в ЕС, Великобритании и Южной Корее",tools/hunyuanvideo.md
+character,krita,Krita (анимация),3,2,4,0,бесплатно,tools/krita.md
+character,ltx-video,LTX-Video (LTX-2.5),3,4,2,0,бесплатно при годовой выручке меньше $10 млн; выше нужна платная лицензия; API от $0.09 за секунду,tools/ltx-video.md
+character,openai-sora,OpenAI Sora,3,1,5,0,недоступно в API с 2026-09-24 (официально); о закрытии приложения сообщают только вторичные источники,tools/openai-sora.md
+character,pixijs,PixiJS,3,3,2,0,бесплатно,tools/pixijs.md
+character,synfig,Synfig Studio,3,3,3,0,бесплатно,tools/synfig.md
+character,wan,Wan (открытые видеомодели),3,4,2,0,бесплатно для Wan2.2 и Wan2.1 (веса и код Apache-2.0); закрытая Wan 3.0 платная через API,tools/wan.md
+character,lottie,"Lottie (lottie-web, Bodymovin, dotLottie)",3,3,3,1,проигрыватели бесплатно; создание через After Effects или LottieFiles от $19.99 в месяц,tools/lottie.md
+character,meshy,Meshy,3,2,2,1,"бесплатно 100 кредитов в месяц (результаты под CC BY 4.0); Pro $20 в месяц, Premium $40, Ultra $100, Studio $70",tools/meshy.md
+character,procreate-dreams,Procreate Dreams,3,2,5,1,"$12,99 единоразово в App Store, без подписки",tools/procreate-dreams.md
+character,cartoon-animator,Cartoon Animator,3,2,4,2,"бессрочная лицензия $149 (по странице загрузки; на распродаже, по данным поиска, $89); пробная версия 30 дней с водяным знаком",tools/cartoon-animator.md
+character,google-veo,Google Veo (и Flow),3,2,2,2,"Gemini API Veo 3.1 от $0.05 до $0.60 за секунду; Flow бесплатно 50 кредитов в день; планы Google AI Plus, Pro, Ultra дают 200, 1000, 10000 или 25000 кредитов Flow в месяц",tools/google-veo.md
+character,kling,Kling,3,2,2,2,"Basic бесплатно; Standard $10 в месяц (660 кредитов), Pro $37 (3000), Premier $92 (8000), Ultra $180 (26000) по прейскуранту; API от $0.084 за секунду",tools/kling.md
+character,luma,Luma Dream Machine,3,2,2,2,"Plus $30 в месяц (10000 кредитов), Pro $90 (40000), Ultra $300 (150000); годовая оплата дешевле на 20%; бесплатного плана на странице цен нет",tools/luma.md
+character,runway,Runway,3,2,2,2,бесплатно 125 кредитов однократно; Standard $12 в месяц при годовой оплате ($15 помесячно); Pro $28 ($35); Max $76 ($95); API $0.01 за кредит,tools/runway.md
+character,glaxnimate,Glaxnimate,2,2,3,0,бесплатно,tools/glaxnimate.md
+character,matter-js,Matter.js,2,2,2,0,бесплатно,tools/matter-js.md
+character,pencil2d,Pencil2D,2,1,4,0,"бесплатно, в том числе для коммерческих проектов",tools/pencil2d.md
+drawing,blender,Blender,5,4,2,0,бесплатно,tools/blender.md
+drawing,manimgl,ManimGL (3Blue1Brown),5,4,2,0,бесплатно,tools/manimgl.md
+drawing,toon-boom-harmony,Toon Boom Harmony,5,5,4,2,"только подписка; Essentials от €33 в месяц (€273 в год), Advanced от €83 (€640 в год), Premium от €151 (€1225 в год); есть пробная версия на 14 дней",tools/toon-boom-harmony.md
+drawing,tvpaint,TVPaint Animation,5,4,5,3,"разовая покупка, версия 12: Standard €650, Professional €1600 без налога (по странице для учебных заведений); цену магазина напрямую прочитать не удалось",tools/tvpaint.md
+drawing,blender-grease-pencil,Blender Grease Pencil,4,3,3,0,бесплатно (часть Blender),tools/blender-grease-pencil.md
+drawing,canvas-commons,Canvas Commons,4,3,3,0,бесплатно,tools/canvas-commons.md
+drawing,comfyui,ComfyUI,4,4,2,0,бесплатно локально; Comfy Cloud от $16 в месяц при годовой оплате ($20 помесячно),tools/comfyui.md
+drawing,gsap,GSAP,4,3,3,0,бесплатно,tools/gsap.md
+drawing,manim-ce,Manim Community Edition,4,3,1,0,бесплатно,tools/manim-ce.md
+drawing,motion-canvas,Motion Canvas,4,3,3,0,бесплатно,tools/motion-canvas.md
+drawing,opentoonz,OpenToonz,4,4,4,0,"бесплатно, в том числе для коммерческих проектов",tools/opentoonz.md
+drawing,tahoma2d,Tahoma2D,4,3,4,0,бесплатно,tools/tahoma2d.md
+drawing,clip-studio-paint,Clip Studio Paint,4,3,5,1,"годовой план на одно устройство PRO $26.99, EX $76.99; бессрочная версия 5.0 PRO $63, EX $277 (цены без скидки)",tools/clip-studio-paint.md
+drawing,flux,FLUX (Black Forest Labs),4,2,2,1,API от $0.014 до $0.07 за картинку (FLUX.2); видео FLUX 3 от $0.15 за секунду; открытые веса бесплатно при условиях лицензии,tools/flux.md
+drawing,adobe-animate,Adobe Animate,4,3,4,2,"подписка Adobe: US$22,99 в месяц (годовой план, оплата помесячно); входит в Creative Cloud Pro (US$69,99 в месяц); пробный период 7 дней",tools/adobe-animate.md
+drawing,moho,Moho,4,3,4,2,"разовая покупка: Moho Pro 14 $399,99, Moho Debut 14 $59,99 (цены запуска версии 14; страницу магазина напрямую прочитать не удалось)",tools/moho.md
+drawing,excalidraw,Excalidraw (и excalidraw-animate),3,1,3,0,бесплатно; Excalidraw+ US$6 за пользователя в месяц,tools/excalidraw.md
+drawing,excalimate,Excalimate,3,2,3,0,"бесплатно, аккаунт не нужен",tools/excalimate.md
+drawing,krita,Krita (анимация),3,2,4,0,бесплатно,tools/krita.md
+drawing,manim-voiceover,manim-voiceover,3,3,2,0,плагин бесплатно; голос оплачивается у выбранного сервиса,tools/manim-voiceover.md
+drawing,obs-studio,OBS Studio,3,2,3,0,бесплатно,tools/obs-studio.md
+drawing,p5js,p5.js,3,2,2,0,бесплатно,tools/p5js.md
+drawing,processing,Processing,3,2,2,0,бесплатно,tools/processing.md
+drawing,rough-js,Rough.js,3,2,2,0,бесплатно,tools/rough-js.md
+drawing,tldraw,tldraw,3,3,3,0,"разработка бесплатно; production по лицензии: hobby (бесплатно по заявке), пробная 100 дней, коммерческая по запросу",tools/tldraw.md
+drawing,vivus,Vivus,3,2,2,0,бесплатно,tools/vivus.md
+drawing,procreate-dreams,Procreate Dreams,3,2,5,1,"$12,99 единоразово в App Store, без подписки",tools/procreate-dreams.md
+drawing,recraft,Recraft (векторная генерация),3,1,2,1,"бесплатно с публичными результатами без коммерческого использования; Basic $10 в месяц и Pro $16 в месяц при годовой оплате; API от $0.007 за картинку, SVG от $0.044",tools/recraft.md
+drawing,lightboard,Lightboard (стеклянная доска),3,3,5,3,около US$8 тыс. на студию по плану lightboard.info; готовые комплекты продают Learning Glass Solutions и Revolution Lightboards,tools/lightboard.md
+drawing,javis-jl,Javis.jl,2,3,3,0,бесплатно,tools/javis-jl.md
+drawing,pencil2d,Pencil2D,2,1,4,0,"бесплатно, в том числе для коммерческих проектов",tools/pencil2d.md
+drawing,videoscribe,VideoScribe,2,1,5,1,"от US$12.50/мес в пересчёте (US$150 в год, Lite); Core US$255 в год; Max US$320 в год",tools/videoscribe.md
+drawing,doodly,Doodly,2,1,5,2,Standard US$49/мес или US$490/год; Enterprise US$79/мес или US$790/год,tools/doodly.md
+real-footage,after-effects,Adobe After Effects,5,4,3,2,"US$22.99/мес отдельно (годовой план, оплата помесячно); Creative Cloud Pro US$69.99/мес",tools/after-effects.md
+real-footage,davinci-resolve,DaVinci Resolve (с Fusion),5,4,3,2,бесплатная версия; Studio $295 разово (США),tools/davinci-resolve.md
+real-footage,nuke,Nuke (Foundry),5,5,3,3,"Nuke €3,139/год (около $3,839); Indie €449/год; Non-commercial бесплатно с ограничениями",tools/nuke.md
+real-footage,final-cut-pro,Final Cut Pro,4,2,4,2,Mac $299.99 разово; подписка Apple Creator Studio $12.99/мес (в неё входит версия для iPad),tools/final-cut-pro.md
+real-footage,premiere-pro,Adobe Premiere (Premiere Pro),4,3,4,2,US$22.99/мес (годовой план с помесячной оплатой),tools/premiere-pro.md
+real-footage,remotion,Remotion,4,3,1,2,бесплатно для одиночек и команд до 3 человек; компании от 4 человек платят (от $25 в месяц за место),tools/remotion.md
+real-footage,editly,Editly,3,2,1,0,бесплатно,tools/editly.md
+real-footage,ffmpeg,FFmpeg,3,3,1,0,бесплатно,tools/ffmpeg.md
+real-footage,kdenlive,Kdenlive,3,2,4,0,бесплатно,tools/kdenlive.md
+real-footage,moviepy,MoviePy,3,2,2,0,бесплатно,tools/moviepy.md
+real-footage,natron,Natron,3,4,3,0,бесплатно,tools/natron.md
+real-footage,obs-studio,OBS Studio,3,2,3,0,бесплатно,tools/obs-studio.md
+real-footage,openai-sora,OpenAI Sora,3,1,5,0,недоступно в API с 2026-09-24 (официально); о закрытии приложения сообщают только вторичные источники,tools/openai-sora.md
+real-footage,opentimelineio,OpenTimelineIO (OTIO),3,3,1,0,бесплатно,tools/opentimelineio.md
+real-footage,revideo,Revideo,3,3,2,0,бесплатно,tools/revideo.md
+real-footage,shotcut,Shotcut,3,2,4,0,бесплатно,tools/shotcut.md
+real-footage,google-veo,Google Veo (и Flow),3,2,2,2,"Gemini API Veo 3.1 от $0.05 до $0.60 за секунду; Flow бесплатно 50 кредитов в день; планы Google AI Plus, Pro, Ultra дают 200, 1000, 10000 или 25000 кредитов Flow в месяц",tools/google-veo.md
+real-footage,kling,Kling,3,2,2,2,"Basic бесплатно; Standard $10 в месяц (660 кредитов), Pro $37 (3000), Premier $92 (8000), Ultra $180 (26000) по прейскуранту; API от $0.084 за секунду",tools/kling.md
+real-footage,luma,Luma Dream Machine,3,2,2,2,"Plus $30 в месяц (10000 кредитов), Pro $90 (40000), Ultra $300 (150000); годовая оплата дешевле на 20%; бесплатного плана на странице цен нет",tools/luma.md
+real-footage,runway,Runway,3,2,2,2,бесплатно 125 кредитов однократно; Standard $12 в месяц при годовой оплате ($15 помесячно); Pro $28 ($35); Max $76 ($95); API $0.01 за кредит,tools/runway.md
+real-footage,lightboard,Lightboard (стеклянная доска),3,3,5,3,около US$8 тыс. на студию по плану lightboard.info; готовые комплекты продают Learning Glass Solutions и Revolution Lightboards,tools/lightboard.md
+real-footage,auto-editor,auto-editor,2,1,1,0,бесплатно,tools/auto-editor.md
+real-footage,descript,Descript,2,1,3,1,Free; Hobbyist $16/мес при оплате за год ($24 помесячно); Creator $24 ($35); Business $50 ($65),tools/descript.md
+typography,after-effects,Adobe After Effects,5,4,3,2,"US$22.99/мес отдельно (годовой план, оплата помесячно); Creative Cloud Pro US$69.99/мес",tools/after-effects.md
+typography,cinema-4d,Cinema 4D,5,4,3,2,"подписка Maxon, около $839 в год или $109 в месяц (по сообщению прессы), бесплатной версии нет",tools/cinema-4d.md
+typography,davinci-resolve,DaVinci Resolve (с Fusion),5,4,3,2,бесплатная версия; Studio $295 разово (США),tools/davinci-resolve.md
+typography,notch,Notch,5,4,5,3,Indie $279/год (хобби); VFX $139/мес или $1399/год; RFX от $216/мес,tools/notch.md
+typography,touchdesigner,TouchDesigner,5,4,4,3,Non-Commercial бесплатно (до 1280x1280); Commercial от $600 разово; Pro от $2200,tools/touchdesigner.md
+typography,canvas-commons,Canvas Commons,4,3,3,0,бесплатно,tools/canvas-commons.md
+typography,cavalry,Cavalry,4,3,3,0,"бесплатно для частных лиц, нужен бесплатный аккаунт Canva; Enterprise по запросу",tools/cavalry.md
+typography,gsap,GSAP,4,3,3,0,бесплатно,tools/gsap.md
+typography,hyperframes,HyperFrames (HeyGen),4,3,1,0,"бесплатно, без платы за рендер; облачный рендер HeyGen и приложение Studio требуют аккаунта HeyGen",tools/hyperframes.md
+typography,motion-canvas,Motion Canvas,4,3,3,0,бесплатно,tools/motion-canvas.md
+typography,apple-motion,Apple Motion,4,3,4,1,US$49.99 разово в Mac App Store; или подписка Apple Creator Studio US$12.99/мес,tools/apple-motion.md
+typography,llm-animation-code,Генерация кода анимации языковой моделью,4,2,2,1,рендер бесплатный; платятся токены языковой модели,tools/llm-animation-code.md
+typography,rive,Rive,4,3,2,1,редактор бесплатно (экспорт .riv с заставкой Rive); видео и без заставки от $9 в месяц за место; рантаймы MIT,tools/rive.md
+typography,adobe-animate,Adobe Animate,4,3,4,2,"подписка Adobe: US$22,99 в месяц (годовой план, оплата помесячно); входит в Creative Cloud Pro (US$69,99 в месяц); пробный период 7 дней",tools/adobe-animate.md
+typography,final-cut-pro,Final Cut Pro,4,2,4,2,Mac $299.99 разово; подписка Apple Creator Studio $12.99/мес (в неё входит версия для iPad),tools/final-cut-pro.md
+typography,premiere-pro,Adobe Premiere (Premiere Pro),4,3,4,2,US$22.99/мес (годовой план с помесячной оплатой),tools/premiere-pro.md
+typography,remotion,Remotion,4,3,1,2,бесплатно для одиночек и команд до 3 человек; компании от 4 человек платят (от $25 в месяц за место),tools/remotion.md
+typography,cables-gl,cables.gl,3,3,4,0,бесплатно,tools/cables-gl.md
+typography,editly,Editly,3,2,1,0,бесплатно,tools/editly.md
+typography,friction,Friction (бывший enve),3,3,4,0,бесплатно,tools/friction.md
+typography,kdenlive,Kdenlive,3,2,4,0,бесплатно,tools/kdenlive.md
+typography,moviepy,MoviePy,3,2,2,0,бесплатно,tools/moviepy.md
+typography,pixijs,PixiJS,3,3,2,0,бесплатно,tools/pixijs.md
+typography,revideo,Revideo,3,3,2,0,бесплатно,tools/revideo.md
+typography,shotcut,Shotcut,3,2,4,0,бесплатно,tools/shotcut.md
+typography,jitter,Jitter,3,2,4,1,"бесплатный тариф (720p, водяной знак); платные Pro, Max, Ultra, цены на странице без JavaScript не видны",tools/jitter.md
+typography,lottie,"Lottie (lottie-web, Bodymovin, dotLottie)",3,3,3,1,проигрыватели бесплатно; создание через After Effects или LottieFiles от $19.99 в месяц,tools/lottie.md
+typography,recraft,Recraft (векторная генерация),3,1,2,1,"бесплатно с публичными результатами без коммерческого использования; Basic $10 в месяц и Pro $16 в месяц при годовой оплате; API от $0.007 за картинку, SVG от $0.044",tools/recraft.md
+typography,lottie-creator,Lottie Creator (LottieFiles),3,2,3,2,"бесплатно, но только 5 экспортов и некоммерческое использование; для монетизируемого канала нужен тариф Team, $24.99 в месяц за место при оплате за год",tools/lottie-creator.md
+typography,spline,Spline,3,2,3,2,Free; Hobby $12 в месяц (при оплате за год); Pro $25; Max $60; видео экспортируют с Pro,tools/spline.md
+typography,glaxnimate,Glaxnimate,2,2,3,0,бесплатно,tools/glaxnimate.md
+map-timeline,after-effects,Adobe After Effects,5,4,3,2,"US$22.99/мес отдельно (годовой план, оплата помесячно); Creative Cloud Pro US$69.99/мес",tools/after-effects.md
+map-timeline,cavalry,Cavalry,4,3,3,0,"бесплатно для частных лиц, нужен бесплатный аккаунт Canva; Enterprise по запросу",tools/cavalry.md
+map-timeline,d3,D3.js,4,3,2,0,бесплатно,tools/d3.md
+map-timeline,hyperframes,HyperFrames (HeyGen),4,3,1,0,"бесплатно, без платы за рендер; облачный рендер HeyGen и приложение Studio требуют аккаунта HeyGen",tools/hyperframes.md
+screen,davinci-resolve,DaVinci Resolve (с Fusion),5,4,3,2,бесплатная версия; Studio $295 разово (США),tools/davinci-resolve.md
+screen,canvas-commons,Canvas Commons,4,3,3,0,бесплатно,tools/canvas-commons.md
+screen,gsap,GSAP,4,3,3,0,бесплатно,tools/gsap.md
+screen,hyperframes,HyperFrames (HeyGen),4,3,1,0,"бесплатно, без платы за рендер; облачный рендер HeyGen и приложение Studio требуют аккаунта HeyGen",tools/hyperframes.md
+screen,motion-canvas,Motion Canvas,4,3,3,0,бесплатно,tools/motion-canvas.md
+screen,apple-motion,Apple Motion,4,3,4,1,US$49.99 разово в Mac App Store; или подписка Apple Creator Studio US$12.99/мес,tools/apple-motion.md
+screen,final-cut-pro,Final Cut Pro,4,2,4,2,Mac $299.99 разово; подписка Apple Creator Studio $12.99/мес (в неё входит версия для iPad),tools/final-cut-pro.md
+screen,premiere-pro,Adobe Premiere (Premiere Pro),4,3,4,2,US$22.99/мес (годовой план с помесячной оплатой),tools/premiere-pro.md
+screen,remotion,Remotion,4,3,1,2,бесплатно для одиночек и команд до 3 человек; компании от 4 человек платят (от $25 в месяц за место),tools/remotion.md
+screen,editly,Editly,3,2,1,0,бесплатно,tools/editly.md
+screen,ffmpeg,FFmpeg,3,3,1,0,бесплатно,tools/ffmpeg.md
+screen,kdenlive,Kdenlive,3,2,4,0,бесплатно,tools/kdenlive.md
+screen,moviepy,MoviePy,3,2,2,0,бесплатно,tools/moviepy.md
+screen,obs-studio,OBS Studio,3,2,3,0,бесплатно,tools/obs-studio.md
+screen,revideo,Revideo,3,3,2,0,бесплатно,tools/revideo.md
+screen,shotcut,Shotcut,3,2,4,0,бесплатно,tools/shotcut.md
+screen,jitter,Jitter,3,2,4,1,"бесплатный тариф (720p, водяной знак); платные Pro, Max, Ultra, цены на странице без JavaScript не видны",tools/jitter.md
+screen,auto-editor,auto-editor,2,1,1,0,бесплатно,tools/auto-editor.md
+screen,descript,Descript,2,1,3,1,Free; Hobbyist $16/мес при оплате за год ($24 помесячно); Creator $24 ($35); Business $50 ($65),tools/descript.md
