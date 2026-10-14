@@ -1,0 +1,15 @@
+language,public_voices_total,measured_utc,source,limitation
+en,11431,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=en,"Public Voice Library count (total_count); quality, accent and licence of each voice not checked; use_case filter returned the same total, so counts are not split by purpose"
+es,8909,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=es,same as above
+de,7457,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=de,same as above
+pt,6736,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=pt,same as above
+fr,4397,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=fr,same as above
+it,5977,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=it,same as above
+pl,4211,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=pl,same as above
+tr,8098,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=tr,same as above
+ar,7370,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=ar,same as above
+hi,7467,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=hi,same as above
+ko,6392,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=ko,same as above
+ja,656,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=ja,same as above
+ru,5228,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1&language=ru,same as above
+all,19395,2026-10-14T22:02Z,https://api.elevenlabs.io/v1/shared-voices?page_size=1,"all languages; one voice can count under several languages, so per-language counts add up to more than this total"

@@ -1,0 +1,28 @@
+concept,budget_level,scenario,long_videos_per_month,videos_year1,views_per_video_12m,views_year1,avg_view_minutes,watch_hours_year1,subscribers_year1,ypp_8000h_1000subs_year1,rpm_usd,ad_revenue_year1_usd_payee_russia,ad_revenue_year1_usd_eligible_payee
+The Moving Atlas,L1,low,2,24,300,7200,3-5,360-576,36-144,no,2-8,0,0-0
+The Moving Atlas,L1,mid,2,24,2500,60000,3-5,3000-4800,300-1200,no,2-8,0,0-0
+The Moving Atlas,L1,high,2,24,15000,360000,3-5,18000-28800,1800-7200,likely,2-8,0,180-720
+The Moving Atlas,L2,low,3,36,300,10800,3-5,540-864,54-216,no,2-8,0,0-0
+The Moving Atlas,L2,mid,3,36,2500,90000,3-5,4500-7200,450-1800,no,2-8,0,0-0
+The Moving Atlas,L2,high,3,36,15000,540000,3-5,27000-43200,2700-10800,likely,2-8,0,270-1080
+The Moving Atlas,L3,low,4,48,300,14400,3-5,720-1152,72-288,no,2-8,0,0-0
+The Moving Atlas,L3,mid,4,48,2500,120000,3-5,6000-9600,600-2400,possible,2-8,0,0-240
+The Moving Atlas,L3,high,4,48,15000,720000,3-5,36000-57600,3600-14400,likely,2-8,0,360-1440
+Taiga Hours,L1,low,1,12,100,1200,10-40,200-800,6-18,no,0.5-3,0,0-0
+Taiga Hours,L1,mid,1,12,3000,36000,10-40,6000-24000,180-540,no,0.5-3,0,0-0
+Taiga Hours,L1,high,1,12,20000,240000,10-40,40000-160000,1200-3600,likely,0.5-3,0,30-180
+Taiga Hours,L2,low,3,36,100,3600,10-40,600-2400,18-54,no,0.5-3,0,0-0
+Taiga Hours,L2,mid,3,36,3000,108000,10-40,18000-72000,540-1620,possible,0.5-3,0,0-81
+Taiga Hours,L2,high,3,36,20000,720000,10-40,120000-480000,3600-10800,likely,0.5-3,0,90-540
+Taiga Hours,L3,low,4,48,100,4800,10-40,800-3200,24-72,no,0.5-3,0,0-0
+Taiga Hours,L3,mid,4,48,3000,144000,10-40,24000-96000,720-2160,possible,0.5-3,0,0-108
+Taiga Hours,L3,high,4,48,20000,960000,10-40,160000-640000,4800-14400,likely,0.5-3,0,120-720
+Honest Scale,L1,low,1,12,300,3600,3-5,180-300,18-72,no,1.5-6,0,0-0
+Honest Scale,L1,mid,1,12,4000,48000,3-5,2400-4000,240-960,no,1.5-6,0,0-0
+Honest Scale,L1,high,1,12,30000,360000,3-5,18000-30000,1800-7200,likely,1.5-6,0,135-540
+Honest Scale,L2,low,2,24,300,7200,3-5,360-600,36-144,no,1.5-6,0,0-0
+Honest Scale,L2,mid,2,24,4000,96000,3-5,4800-8000,480-1920,possible,1.5-6,0,0-144
+Honest Scale,L2,high,2,24,30000,720000,3-5,36000-60000,3600-14400,likely,1.5-6,0,270-1080
+Honest Scale,L3,low,3,36,300,10800,3-5,540-900,54-216,no,1.5-6,0,0-0
+Honest Scale,L3,mid,3,36,4000,144000,3-5,7200-12000,720-2880,possible,1.5-6,0,0-216
+Honest Scale,L3,high,3,36,30000,1080000,3-5,54000-90000,5400-21600,likely,1.5-6,0,405-1620
