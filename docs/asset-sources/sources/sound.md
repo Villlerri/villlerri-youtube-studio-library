@@ -141,7 +141,7 @@ summary: Источники реальных записей и SFX: лиценз
 
 Сайт: https://getsoundly.com. Тип: приложение и облачная библиотека SFX (Soundly Pro — 250 000 звуков; Free — ограниченный набор). Бюджет: freemium / подписка. Проверено: 2026-10-14.
 
-Кратко: удобный каталог для звукового дизайна объясняющих видео; библиотека Pro записана не ниже 24-bit/96 kHz. Лицензия прямо запрещает ролики, где звук — основная ценность, поэтому длинный эмбиент-ролик не подходит.
+Кратко: удобный каталог для звукового дизайна объясняющих видео; файлы библиотеки Pro не ниже 24-bit/96 kHz. Это формат, а не подтверждение полевой записи: какие библиотеки Pro записаны в поле, официально не раскрыто. Лицензия прямо запрещает ролики, где звук — основная ценность, поэтому длинный эмбиент-ролик не подходит.
 
 Подтверждено:
 - Лицензия: Soundly SFX Subscription License (обновлена 11 ноября 2024); вид: royalty-free, собственная лицензия (подписочная синхронизация). Текст: https://getsoundly.com/assets/Soundly-EULA.pdf .
@@ -170,7 +170,7 @@ summary: Источники реальных записей и SFX: лиценз
 
 Сайт: https://www.boomlibrary.com. Тип: профессиональные SFX-библиотеки; продаёт библиотеки Quiet Planet (природные атмосферы Гордона Хемптона). Бюджет: поштучно (buy out или подписка). Проверено: 2026-10-14.
 
-Кратко: качественные природные атмосферы 24-bit/48 kHz, но лицензия прямо запрещает продукты, где звук занимает половину времени и более. Пример из самой лицензии: "ambient sound videos without narration".
+Кратко: каталог природных атмосфер и SFX. Происхождение записей подтверждено страницей библиотеки только для Coniferous Forests (серия Quiet Planet, записи Gordon Hempton); для остальных библиотек не проверялось. Лицензия среди прочих ограничений запрещает продукты, где чистый звук занимает 50% времени и больше. Пример из самой лицензии: "ambient sound videos without narration".
 
 Подтверждено:
 - Лицензия: BOOM Library End-User License Agreement (Single User) и отдельная Quiet Planet Products License Agreement; вид: royalty-free, собственная лицензия. Текст: https://www.boomlibrary.com/terms-conditions-regular/ .
@@ -186,7 +186,8 @@ summary: Источники реальных записей и SFX: лиценз
 - Регистрация каналов: не нужна.
 - Число каналов и клиентов: Single User; мультипользовательская версия — отдельное соглашение (MULA). Buy out только для именованного физлица, включая одноличный бизнес; компании с несколькими сотрудниками — только подписка (Quiet Planet).
 - После окончания подписки: подписка минимум 3 года, годовой авансовый платёж; после окончания работы, использующие контент, продолжают его использовать (Sustained Use), но права на новые работы прекращаются; файлы нужно удалить.
-- Качество: Coniferous Forests — WAV 24bit/48kHz, binaural stereo + 5.0 surround, UCS Compliant, 181 файл, более 8 часов (страница библиотеки).
+- Качество: Coniferous Forests — WAV 24bit/48kHz, binaural stereo + 5.0 surround, UCS Compliant, 181 файл, более 8 часов (страница библиотеки). Формат файла происхождение записи не подтверждает.
+- Происхождение: на странице Coniferous Forests: "All of the nature sounds in the QUIET PLANET Nature SFX series were recorded by Gordon Hempton" (https://www.boomlibrary.com/sound-effects/coniferous-forests/). Для других библиотек Boom происхождение не проверялось.
 
 Спорно или не подтверждено:
 - Лицензия предлагает обходной путь: "AUDIO DEVELOPER LICENSE" и письмо safe-harbor: "BOOM Library will furnish you with a safe-harbor letter within 30 days" (на письменный запрос с описанием использования). Условия и цена такой лицензии не опубликованы.
@@ -198,7 +199,7 @@ summary: Источники реальных записей и SFX: лиценз
 
 Сайт: https://www.asoundeffect.com. Тип: маркетплейс независимых SFX-библиотек (среди них природные атмосферы, ambisonic, surround). Бюджет: поштучно. Проверено: 2026-10-14.
 
-Кратко: хороший выбор независимых полевых записей; лицензия по умолчанию та же, что у Boom: запрещает «ambient sound videos without narration». Исключения возможны только "unless explicitly stated" у вендора.
+Кратко: магазин библиотек независимых авторов, среди них полевые записи; происхождение проверять на странице каждой библиотеки. Лицензия по умолчанию та же, что у Boom: запрещает «ambient sound videos without narration». Исключения возможны только "unless explicitly stated" у вендора.
 
 Подтверждено:
 - Лицензия: End-User License Agreement (A Sound Effect); вид: royalty-free, собственная лицензия. Текст: https://www.asoundeffect.com/license-agreement/ . Оговорка: "This End-User License Agreement covers all Sound Library purchases made through A Sound Effect, unless explicitly stated".

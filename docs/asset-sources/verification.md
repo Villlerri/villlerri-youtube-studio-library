@@ -24,12 +24,13 @@ summary: По каждому источнику: как прочитаны ус�
 
 Ключевые для решений условия перепроверены вторым независимым чтением живых страниц 2026-10-14. Все совпали с текстом карточек:
 
-- YouTube, новые пороги партнёрской программы с 1 февраля 2027 и срок принятия условий до 31 января 2027: https://support.google.com/youtube/answer/12843009
+- YouTube, изменения партнёрской программы с 1 февраля 2027: входной порог для новых участников, требования активности для всех участников, порог Shorts Creator Pool, принятие условий до 31 января 2027: https://support.google.com/youtube/answer/12843009
 - YouTube, reused content «even if you have permission from the original creator», раздел «Generic or Repetitive Content», «Image slideshows, templated storylines…», «materially varied»: https://support.google.com/youtube/answer/1311392
 - YouTube, Content ID не принимает неисключительно лицензированный материал, Creative Commons, public domain, «Sound effects, soundbeds, or production loops»; стоковая музыка идёт на ручную проверку: https://support.google.com/youtube/answer/2605065
 - YouTube, проверки при загрузке и «Copyright check results aren’t final»: https://support.google.com/youtube/answer/57407
 - Epidemic Sound, запрет «music listening experience» со статичной картинкой, панорамой и петлями: https://www.epidemicsound.com/policy/creator-subscription/
 - Boom Library, порог 50% и пример «ambient sound videos without narration»: https://www.boomlibrary.com/terms-conditions-regular/
+- Boom Library, происхождение записей Coniferous Forests (серия Quiet Planet, Gordon Hempton): https://www.boomlibrary.com/sound-effects/coniferous-forests/
 - ZapSplat, запрет «as the primary value in a relaxation video»: https://www.zapsplat.com/license-type/standard-license/
 - Thomas Rex Beverly, порог 25%: https://thomasrexbeverly.com/pages/end-user-license-agreement ; базовая цена экспедиции 20 000 USD: https://thomasrexbeverly.com/products/expedition-commission
 - Freesound, снятие ошибочных претензий спором в YouTube: https://freesound.org/help/faq/
@@ -53,7 +54,7 @@ summary: По каждому источнику: как прочитаны ус�
   - Прямой текст про монетизацию YouTube и про атрибуцию: не нашёл, полный текст лицензии Individual не открылся.
   - Допустимость видео на 10–12 часов из одного клипа: нет прямого правила.
 - [Artgrid](sources/video.md#artgrid): часть официальных страниц не открылась, причина указана в карточке. Спорно или не подтверждено: 
-  - Artgrid Agreement противоречит себе: п. 3.g "The License is valid in perpetuity if the Works have been downloaded with a valid subscription", п. 4.b: при окончании подписки лицензия прекращается и использование надо прекратить. Практически опираться на Artlist License.
+  - Artgrid Agreement противоречит себе: п. 3.g "The License is valid in perpetuity if the Works have been downloaded with a valid subscription", п. 4.b: при окончании подписки лицензия прекращается и использование надо прекратить. Artlist License даёт третий вариант: опубликованное во время подписки остаётся лицензированным. Какой текст применим, не подтверждено; до покупки получить письменный ответ Artlist.
   - Какой договор действует на artgrid.io сегодня: PDF без даты, страницы Artgrid с условиями не нашёл.
   - Видео на 10–12 часов из одного зацикленного клипа: прямого правила нет; общее правило "broader Projects" делает риск реальным.
   - https://artlist.io/help-center/privacy-terms/terms-of-use отдаёт 403, Terms of Use не прочитаны.

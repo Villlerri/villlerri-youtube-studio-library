@@ -48,7 +48,7 @@ summary: Стоки видеофутажа: лицензии, цены, моне
 
 Сайт: https://artgrid.io/ (сток Artlist); видео также входит в планы Artlist: https://artlist.io/pricing. Тип: видеофутаж HD, 4K–8K, RAW/LOG; в плане Artlist также шаблоны и LUT. Бюджет: подписка. Проверено: 2026-10-14.
 
-Кратко: кинематографичный футаж, годовая подписка, лицензия "навсегда" для роликов, опубликованных во время подписки. Для YouTube-канала надо внести канал в Clearlist. Внутри лицензии есть противоречие о конце подписки (см. ниже).
+Кратко: кинематографичный футаж, годовая подписка. Для YouTube-канала надо внести канал в Clearlist. Что действует после окончания подписки, не подтверждено: Artgrid License Agreement противоречит себе, а какой из двух текстов применим к artgrid.io, не установлено (см. ниже).
 
 Подтверждено:
 - Лицензия: два текста. Artgrid License Agreement (PDF, без даты): https://cdn.artgrid.io/footage-images/LicenseAgreement.pdf. Artlist License (Pro / Business), действует с 2026-02-15, охватывает "footage" и "video templates": https://artlist.io/help-center/privacy-terms/artlist-license/. Вид: royalty-free, собственная лицензия. Какой текст применяется к покупке на artgrid.io, в официальных источниках не нашёл.
@@ -63,10 +63,10 @@ summary: Стоки видеофутажа: лицензии, цены, моне
 - Content ID и претензии: лицензия запрещает регистрировать Assets и проекты в Content ID. Претензии от "Artlist Ltd" возникают, если канал не внесён в Clearlist; после добавления канала снимаются (https://help.artlist.io/hc/en-us/articles/29648852943901-Understanding-copyright-and-Content-ID-claims).
 - Регистрация каналов: нужна. Каналы и YouTube-проекты вносят в Clearlist: "If you don't add your channel or YouTube Projects URL to the clearlist, you may receive claims". Clearlist пополняется только пока подписка активна.
 - Число каналов и клиентов: Pro: до 3 каналов на платформу, Teams: до 5, Max Business: без лимита, Social-лицензия: 1 канал на платформу. Клиентская работа покрыта планом Pro. Лимит скачивания: до 100 клипов в сутки (Artlist License), до 40 работ в сутки (Artgrid Agreement).
-- После окончания подписки: Artlist: проекты, опубликованные во время подписки, остаются лицензированными; новые проекты не покрыты, публиковать надо при активной подписке (https://help.artlist.io/hc/en-us/articles/29490991524253-Understanding-Artlist-s-license).
+- После окончания подписки: по Artlist License проекты, опубликованные во время подписки, остаются лицензированными; новые проекты не покрыты, публиковать надо при активной подписке (https://help.artlist.io/hc/en-us/articles/29490991524253-Understanding-Artlist-s-license). Artgrid License Agreement говорит иначе, см. «Спорно».
 
 Спорно или не подтверждено:
-- Artgrid Agreement противоречит себе: п. 3.g "The License is valid in perpetuity if the Works have been downloaded with a valid subscription", п. 4.b: при окончании подписки лицензия прекращается и использование надо прекратить. Практически опираться на Artlist License.
+- Artgrid Agreement противоречит себе: п. 3.g "The License is valid in perpetuity if the Works have been downloaded with a valid subscription", п. 4.b: при окончании подписки лицензия прекращается и использование надо прекратить. Artlist License даёт третий вариант: опубликованное во время подписки остаётся лицензированным. Какой текст применим, не подтверждено; до покупки получить письменный ответ Artlist.
 - Какой договор действует на artgrid.io сегодня: PDF без даты, страницы Artgrid с условиями не нашёл.
 - Видео на 10–12 часов из одного зацикленного клипа: прямого правила нет; общее правило "broader Projects" делает риск реальным.
 - https://artlist.io/help-center/privacy-terms/terms-of-use отдаёт 403, Terms of Use не прочитаны.

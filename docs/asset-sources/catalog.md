@@ -19,7 +19,8 @@ summary: Все источники библиотеки по типу матер
 
 - Коммерция: «да» означает, что условия разрешают коммерческое использование и монетизацию на YouTube. «С условиями» означает, что есть оговорки, они в карточке. Монетизацию канала это не гарантирует: YouTube отдельно проверяет оригинальный вклад (`youtube-rules.md`).
 - Атрибуция: «по файлу» означает, что требование зависит от лицензии конкретного файла.
-- Эмбиент 10 ч: можно ли опубликовать 10–12-часовое видео, где основа почти неизменённый файл источника. «Не подтверждено» означает, что прямого разрешения в условиях нет. Такой файл в длинный эмбиент без письменного разрешения не брать.
+- Эмбиент 10 ч: можно ли опубликовать 10–12-часовое видео, где основа почти неизменённый файл источника. «Разрешено»: условия источника или лицензия CC0, CC BY, PD это допускают. «По файлу»: зависит от лицензии конкретного файла (CC0 и CC BY допускают, NC и ND нет). «Не подтверждено»: прямого разрешения в условиях нет; такой файл в длинный эмбиент без основания из `publication-check.md` не брать.
+- После подписки: «не подтверждено» означает, что условия источника противоречат себе; «не указано» — что условия об этом молчат.
 - Риск Content ID: оценка по официальным данным источника. «Низкий» не означает отсутствие претензий.
 
 ## По типу материала
@@ -387,8 +388,8 @@ Freemium: бесплатная часть и платный план:
 - [99Sounds](sources/sound.md#99sounds): royalty-free (своя); цена: 0; коммерция: с условиями; атрибуция: не нужна; эмбиент 10 ч: не подтверждено; риск Content ID: неизвестно.
 - [Ambient Mixer](sources/sound.md#ambient-mixer): смешанная по файлам; цена: 0; коммерция: с условиями; атрибуция: по файлу; эмбиент 10 ч: не подтверждено; риск Content ID: неизвестно.
 - [BBC Sound Effects](sources/sound.md#bbc-sound-effects): RemArc Licence (некоммерческая); цена: 0 для некоммерческого использования; для монетизации лицензия через Pro Sound Effects; коммерция: нет; атрибуция: нужна; эмбиент 10 ч: запрещено; риск Content ID: неизвестно.
-- [British Library](sources/sound.md#british-library): CC BY; цена: 0; коммерция: с условиями; атрибуция: нужна; эмбиент 10 ч: разрешено; риск Content ID: неизвестно.
-- [Freesound](sources/sound.md#freesound): смешанная по файлам; цена: 0; коммерция: с условиями; атрибуция: по файлу; эмбиент 10 ч: не подтверждено; риск Content ID: средний.
+- [British Library (подборка Wildlife на SoundCloud)](sources/sound.md#british-library): CC BY; цена: 0; коммерция: с условиями; атрибуция: нужна; эмбиент 10 ч: разрешено; риск Content ID: неизвестно.
+- [Freesound](sources/sound.md#freesound): смешанная по файлам; цена: 0; коммерция: с условиями; атрибуция: по файлу; эмбиент 10 ч: по файлу; риск Content ID: средний.
 - [Mixkit](sources/sound.md#mixkit): royalty-free (своя); цена: 0; коммерция: с условиями; атрибуция: не подтверждено; эмбиент 10 ч: не подтверждено; риск Content ID: неизвестно.
 - [NPS Natural Sounds](sources/sound.md#nps-natural-sounds): PD; цена: 0; коммерция: да; атрибуция: рекомендуется; эмбиент 10 ч: разрешено; риск Content ID: неизвестно.
 - [Radio Aporee](sources/sound.md#radio-aporee): смешанная по файлам; цена: 0; коммерция: с условиями; атрибуция: по файлу; эмбиент 10 ч: не подтверждено; риск Content ID: неизвестно.
@@ -686,7 +687,7 @@ Freemium: бесплатная часть и платный план:
 - [Jamendo Licensing](sources/music.md#jamendo-licensing): музыка; Jamendo Licensing Standard License.
 - [Uppbeat](sources/music.md#uppbeat): музыка; royalty-free (своя).
 - [ZapSplat](sources/sound.md#zapsplat): звук / музыка; royalty-free (своя).
-- [British Library](sources/sound.md#british-library): звук; CC BY.
+- [British Library (подборка Wildlife на SoundCloud)](sources/sound.md#british-library): звук; CC BY.
 - [xeno-canto](sources/sound.md#xeno-canto): звук; смешанная по файлам.
 - [Velvetyne](sources/fonts.md#velvetyne): шрифты; libre, open-source (основа SIL OFL по тексту About).
 - [Flaticon](sources/icons.md#flaticon): иконки; royalty-free (своя).
@@ -804,7 +805,7 @@ Freemium: бесплатная часть и платный план:
 - [StockSnap](sources/photo-illustration.md#stocksnap): фото; CC0.
 - [The Met Open Access](sources/science-history.md#the-met-open-access): фото / иллюстрации / 3d / наука-история; CC0.
 - [Incompetech](sources/music.md#incompetech): музыка; CC BY.
-- [British Library](sources/sound.md#british-library): звук; CC BY.
+- [British Library (подборка Wildlife на SoundCloud)](sources/sound.md#british-library): звук; CC BY.
 - [NPS Natural Sounds](sources/sound.md#nps-natural-sounds): звук; PD.
 - [ambientCG](sources/textures.md#ambientcg): текстуры / 3d; CC0.
 - [Kenney](sources/3d.md#kenney): 3d; CC0.
@@ -892,7 +893,6 @@ Freemium: бесплатная часть и платный план:
 
 Новые видео после окончания подписки с этими файлами не делать. Подробности в карточке.
 
-- [Artgrid](sources/video.md#artgrid): видео; royalty-free (своя).
 - [Artlist](sources/sound.md#artlist): музыка / звук / видео / шаблоны; royalty-free (своя).
 - [Canva (видеобиблиотека)](sources/video.md#canva-video-library): видео / шаблоны; royalty-free (своя).
 - [Envato Elements (видео)](sources/video.md#envato-elements): видео / шаблоны; royalty-free (своя).
