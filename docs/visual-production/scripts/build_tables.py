@@ -75,7 +75,7 @@ def main():
     rows.sort(key=lambda r: (CLASSES.index(r[0]["class"][0]) if r[0].get("class") and r[0]["class"][0] in CLASSES else 99, r[1]["id"]))
     TABLES.mkdir(exist_ok=True)
     with (TABLES / "tools.csv").open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=COLUMNS, extrasaction="ignore")
+        w = csv.DictWriter(f, fieldnames=COLUMNS, extrasaction="ignore", lineterminator="\n")
         w.writeheader()
         w.writerows(r for _, r in rows)
     # Sync-only tools (voice, alignment, subtitles) serve every scene; they stay out of the scene table.
@@ -83,7 +83,7 @@ def main():
              for s in fm.get("scenes", []) if s in SCENES]
     pairs.sort(key=lambda p: (SCENES.index(p[0]), -int(p[2]["quality"] or 0), "0123?".find(p[2]["cost"] or "?"), p[2]["id"]))
     with (TABLES / "by-scene.csv").open("w", encoding="utf-8", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["scene", "id", "name", "quality", "human_difficulty", "agent_difficulty", "cost", "price", "card"])
         for s, _, r in pairs:
             w.writerow([s, r["id"], r["name"], r["quality"], r["human_difficulty"], r["agent_difficulty"], r["cost"], r["price"], r["card"]])

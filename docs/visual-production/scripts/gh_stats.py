@@ -118,7 +118,7 @@ def main():
         path.write_text(new, encoding="utf-8")
     TABLES.mkdir(exist_ok=True)
     with out.open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["id"] + FIELDS)
+        w = csv.DictWriter(f, fieldnames=["id"] + FIELDS, lineterminator="\n")
         w.writeheader()
         for key in sorted(rows):
             w.writerow(rows[key])
