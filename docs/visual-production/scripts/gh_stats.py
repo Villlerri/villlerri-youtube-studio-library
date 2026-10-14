@@ -65,8 +65,7 @@ def fetch(repo, cached=None):
             "checked": TODAY,
         }
     row["last_release"], row["last_release_date"] = first_entry(row["repo"], "releases")
-    _, last_commit = first_entry(row["repo"], "commits")
-    row["last_commit"] = last_commit or row.get("pushed", "")
+    _, row["last_commit"] = first_entry(row["repo"], "commits")
     return row
 
 
@@ -75,7 +74,7 @@ def block(row):
     release = f"{row['last_release']} ({row['last_release_date']})" if row["last_release"] else "релизов и тегов в ленте нет"
     return "\n".join([
         f"- Звёзды GitHub: {int(row['stars']):,}".replace(",", " "),
-        f"- Последний коммит в основной ветке: {row['last_commit']}",
+        f"- Последний коммит в основной ветке: {row['last_commit'] or 'лента коммитов не получена'}",
         f"- Последний релиз или тег: {release}",
         f"- Лицензия по данным GitHub: {lic}",
         f"- Репозиторий в архиве: {row['archived']}",
