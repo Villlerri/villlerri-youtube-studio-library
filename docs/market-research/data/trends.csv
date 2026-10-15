@@ -1,0 +1,59 @@
+term,niche,geo,property,window,anchor,level_vs_anchor_52w,change_52w_vs_prev_52w,change_52w_vs_3y_ago,season_peak_month,season_low_month,season_amplitude,measured,note
+how it works,eng_howitworks,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.02,1.07,1.13,мар,апр,0.12,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+math,math_vis,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.29,1.0,1.01,сен,июл,0.48,2026-10-14,
+physics,physics_anim,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.1,1.14,1.23,мар,июл,0.43,2026-10-14,
+universe,space_scale,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.44,1.1,0.97,ноя,окт,0.28,2026-10-14,
+history,history_maps,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.99,0.99,1.04,фев,июл,0.2,2026-10-14,
+geography,geo_explainers,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.04,0.99,0.95,апр,июн,0.43,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+history for sleep,sleep_docs,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.01,10.0,,сен,дек,0.94,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+rain sounds,ambient_nature,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.69,1.07,1.17,мар,июл,0.12,2026-10-14,
+ambience,ambient_places,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.55,1.3,2.18,ноя,июл,0.63,2026-10-14,
+cozy ambience,fantasy_ambience,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.03,1.21,2.37,ноя,июл,1.29,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+study music,study_music,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.09,0.98,0.77,окт,июл,0.82,2026-10-14,
+economics,finance_econ,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.03,1.07,1.11,сен,июл,0.52,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+system design,tech_systems,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.01,1.06,5.78,сен,дек,0.78,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+philosophy,psych_phil,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.06,1.3,1.42,сен,ноя,0.17,2026-10-14,
+mythology,myth_folklore,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.04,0.98,0.87,сен,июн,0.21,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+unsolved mysteries,mystery_docs,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.01,0.77,0.55,янв,ноя,0.2,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+plane crash,aviation_maritime,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.08,0.7,1.21,янв,окт,0.9,2026-10-14,
+art history,art_history,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.0,0.75,15.0,сен,июн,2.32,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+learn english,language_ci,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.01,1.04,0.9,сен,апр,0.38,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+human body,biology_body,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.01,1.0,0.93,июн,окт,0.18,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+simulation,sim_shorts,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.1,1.36,1.64,сен,авг,0.33,2026-10-14,
+comparison,data_vis,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.21,1.74,1.79,авг,дек,0.41,2026-10-14,
+urban planning,urbanism,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.0,,,окт,окт,0.0,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+learning videos for kids,kids_edu,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.0,0.4,0.35,янв,май,0.42,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+linguistics,linguistics,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.0,,,мар,окт,12.0,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+music theory,music_theory,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.01,1.0,0.98,янв,окт,0.09,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+ai tools,ai_tools,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.02,1.67,2.17,авг,ноя,1.67,2026-10-14,"low-volume term: values rounded, prefer anchor philosophy row"
+reddit stories,reddit_stories,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.13,1.31,2.64,авг,окт,0.3,2026-10-14,
+top 10,top10_compilations,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.25,1.36,0.99,май,мар,0.21,2026-10-14,
+wildlife,wildlife_stock,US,YouTube Search,2021-10..2026-10 weekly,documentary,0.06,0.99,1.28,окт,ноя,0.11,2026-10-14,
+how it works,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.31,0.99,1.01,сен,ноя,0.09,2026-10-14,
+geography,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.6,1.0,0.97,апр,июл,0.46,2026-10-14,
+history for sleep,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.16,2.77,107.6,сен,дек,0.77,2026-10-14,term has zero weeks: 141
+cozy ambience,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.47,1.26,2.56,ноя,июн,1.3,2026-10-14,
+economics,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.42,1.02,1.07,сен,июл,0.33,2026-10-14,
+system design,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.17,1.1,1.71,май,дек,0.35,2026-10-14,
+mythology,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.62,0.97,0.91,сен,окт,0.2,2026-10-14,
+unsolved mysteries,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.31,0.92,0.71,окт,дек,0.13,2026-10-14,
+art history,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.11,0.93,1.24,сен,июн,0.43,2026-10-14,
+learn english,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.29,0.95,0.89,сен,июл,0.22,2026-10-14,
+human body,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.26,1.02,0.92,сен,июл,0.24,2026-10-14,
+urban planning,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.02,0.89,0.81,июн,ноя,0.68,2026-10-14,term has zero weeks: 33
+learning videos for kids,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.11,0.82,0.6,янв,июн,0.44,2026-10-14,
+linguistics,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.06,1.53,1.64,авг,июн,0.65,2026-10-14,term has zero weeks: 116
+music theory,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.27,0.96,0.92,май,окт,0.15,2026-10-14,
+ai tools,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.41,1.53,2.11,авг,дек,1.61,2026-10-14,term has zero weeks: 64
+slavic mythology,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.0,,,апр,окт,12.0,2026-10-14,term has zero weeks: 261
+baba yaga,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.07,0.91,0.63,июн,ноя,0.16,2026-10-14,
+folklore,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.3,1.0,0.82,май,мар,0.15,2026-10-14,
+sleep documentary,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.11,1.76,3.62,авг,ноя,0.32,2026-10-14,term has zero weeks: 21
+boring history,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.16,1.55,,авг,дек,0.86,2026-10-14,term has zero weeks: 177
+nature sounds,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.51,0.91,0.72,мар,дек,0.37,2026-10-14,
+forest sounds,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.19,0.99,0.92,мар,ноя,0.2,2026-10-14,
+english story,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.46,1.5,1.36,сен,дек,0.4,2026-10-14,
+size comparison,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.5,1.0,1.07,мар,авг,0.13,2026-10-14,
+marble race,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.38,1.19,1.13,ноя,сен,0.35,2026-10-14,
+history map,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.03,1.04,1.13,май,апр,0.23,2026-10-14,
+how things work,,US,YouTube Search,2021-10..2026-10 weekly,philosophy,0.03,1.18,0.78,янв,авг,0.42,2026-10-14,
