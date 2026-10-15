@@ -2,13 +2,13 @@
 
 Код, которым собраны данные и посчитаны таблицы исследования. Приведён для проверки и повторения; в проект как программа не сохраняется. Запуск: Python 3.14, пакеты `yt-dlp==2026.08.19`, `pytrends`; каждый скрипт читает и пишет файлы рядом с собой (`raw/`, `out/`) и в `docs/market-research/data/`.
 
-Порядок: сбор (1–3), метрики (4–8), сборка данных (9), рейтинг и сценарии (10–11). Файл `niches.json` — те же запросы, что в [data/niches.csv](data/niches.csv).
+Порядок: сбор (1–3), метрики (4–8), сборка данных (9), отсев, рейтинг и сценарии (10–12). Рейтинг версии 2 заменил прежний `scores.py`. Файл `niches.json` — те же запросы, что в [data/niches.csv](data/niches.csv).
 
 Известные особенности:
 
 - Первый проход Trends запрашивал и общемировые данные; они совпали с США до сотых и не используются.
 - В `analyze.py` признак «новый канал» требует меньше 30 видео на вкладке «Видео» (иначе первая загрузка неизвестна).
-- Баллы денег, производства, затрат, риска и отличия в `scores.py` — оценка исследования, обоснование в concepts.md.
+- В `scores2.py` риск и допущения по длительности просмотра, часам и RPM — оценка исследования; обоснование в concepts.md и method.md.
 
 ## 1. Сбор выборки поиска и каналов (yt-dlp)
 
@@ -362,90 +362,196 @@ for src,dst in [('niche-metrics.csv','niche-metrics.csv'),('niche-matched.csv','
   shutil.copy(os.path.join(HERE,'out',src),os.path.join(D,dst))
 ```
 
-## 10. Баллы концепций и проверка весов
+## 10. Отсев выборок ниш (рейтинг версии 2, шаг 1)
 
-Файл `scores.py`.
+`screening.py` пишет `data/screening.csv`.
 
 ```python
-"""Concept scores: demand and entry from data (formulas in method.md), other criteria by judgement. Writes docs/market-research/data/scores.csv"""
-import csv, math, os
+"""Step 1 of ranking v2: every niche sample gets a decision. Rule: shortlist when the small-channel long median
+(age 7-30 days, channels <10k) is at least 1,000 views with n >= 10; earlier concepts stay for comparison.
+Exclusions name the reason. Writes data/screening.csv."""
+import csv, os
 ROOT=os.path.dirname(os.path.abspath(__file__)); D=os.path.join(ROOT,'..','..','docs','market-research','data')
-M={r['niche']:r for r in csv.DictReader(open(os.path.join(ROOT,'out','niche-matched.csv')))}
-T={r['term']:r for r in csv.DictReader(open(os.path.join(D,'trends.csv')))}
-def band(v):
-  return 1 if v<100 else 2 if v<300 else 3 if v<1000 else 4 if v<5000 else 5
-W={'demand':.15,'entry':.2,'money':.15,'production_fit':.2,'cost':.1,'risk':.1,'differentiation':.1}
-# judgement scores (1-5) with confidence; reasons in concepts.md
-J={
- 'field':   dict(name='Taiga Hours',niche='ambient_nature',term='rain sounds',money=(3,'low'),production_fit=(4.5,'medium'),cost=(3,'medium'),risk=(3.5,'medium'),differentiation=(4.5,'medium'),pilot_h='25-40',reg_h='8-15 plus travel',pilot_usd='500-900 plus travel',month_usd='travel',voice='none'),
- 'scale':   dict(name='Honest Scale',niche='space_scale',term='universe',money=(3,'low'),production_fit=(4.5,'medium'),cost=(2.5,'medium'),risk=(4,'medium'),differentiation=(3,'low'),pilot_h='30-45',reg_h='12-20',pilot_usd='0 plus render hardware',month_usd='0 plus render',voice='optional, own voice'),
- 'sleep':   dict(name='Lantern Library',niche='sleep_docs',term='history for sleep',money=(3,'low'),production_fit=(3,'medium'),cost=(3,'medium'),risk=(2.5,'medium'),differentiation=(3.5,'medium'),pilot_h='30-40',reg_h='15-25',pilot_usd='0-200',month_usd='0',voice='own voice, 2-3 h per video'),
- 'sim':     dict(name='Sandbox Trials',niche='sim_shorts',term='simulation',money=(2,'medium'),production_fit=(3.5,'medium'),cost=(4.5,'medium'),risk=(3,'medium'),differentiation=(2.5,'low'),pilot_h='15-25',reg_h='1-2 per Short; 6-10 per long',pilot_usd='0',month_usd='0',voice='none'),
- 'maps':    dict(name='The Moving Atlas',niche='history_maps',term='history',money=(3,'low'),production_fit=(4.5,'medium'),cost=(3.5,'medium'),risk=(3.5,'medium'),differentiation=(3.5,'medium'),pilot_h='30-40',reg_h='12-18',pilot_usd='0-200',month_usd='0',voice='own voice, 10-15 min per video'),
- 'folklore':dict(name='Thrice-Nine Tales',niche='myth_folklore',term='mythology',money=(2.5,'low'),production_fit=(4.5,'medium'),cost=(2.5,'medium'),risk=(4,'medium'),differentiation=(5,'medium'),pilot_h='40-60',reg_h='15-25',pilot_usd='0-300',month_usd='0',voice='own voice'),
- 'machines':dict(name='Opened Up',niche='eng_howitworks',term='how it works',money=(3.5,'low'),production_fit=(4,'medium'),cost=(1.5,'medium'),risk=(4.5,'medium'),differentiation=(2,'medium'),pilot_h='40-60',reg_h='30-60',pilot_usd='0-500 models',month_usd='0',voice='own voice'),
- 'english': dict(name='Story Steps English',niche='language_ci',term='english story',money=(2.5,'low'),production_fit=(2.5,'medium'),cost=(4,'medium'),risk=(3,'medium'),differentiation=(3,'low'),pilot_h='20-30',reg_h='6-10',pilot_usd='0 plus narrator',month_usd='narrator if hired',voice='native-level English required'),
+M=list(csv.DictReader(open(os.path.join(D,'niche-matched.csv'))))
+NAMES={r['niche']:r['name_ru'] for r in csv.DictReader(open(os.path.join(D,'niches.csv')))}
+DEC={
+ 'sleep_docs':('шорт-лист','Lantern Library',''),
+ 'ambient_nature':('шорт-лист','Taiga Hours','для концепции взяты только названия без слов о музыке'),
+ 'fantasy_ambience':('шорт-лист','Boreal Hearth','только названия без слов о музыке; n=5'),
+ 'sim_shorts':('шорт-лист','Sandbox Trials',''),
+ 'study_music':('оценена, отсев по риску','Study music scenes','ценность в музыке: источник музыки, Content ID, риск взаимозаменяемого контента'),
+ 'reddit_stories':('оценена, отсев по риску','Reddit stories','повторно используемый контент и права на чужие посты'),
+ 'sleep_docs_de':('вариант','Lantern Library, German variant','то же производство, немецкий голос'),
+ 'ambient_nature_de':('подкрепляет','Taiga Hours, Boreal Hearth','эмбиент без речи не зависит от языка'),
+ 'space_scale':('для сравнения','Honest Scale','прежняя концепция'),
+ 'history_maps':('для сравнения','The Moving Atlas','прежняя концепция'),
+ 'myth_folklore':('для сравнения','Thrice-Nine Tales','прежняя концепция'),
+ 'language_ci':('для сравнения','Story Steps English','прежняя концепция; голос теперь доступен'),
+ 'eng_howitworks':('для сравнения','Opened Up','прежняя концепция'),
+ 'science_ja':('исключена','','качество японского текста команда не проверит; японских голосов 656'),
+ 'kids_edu':('исключена','','ограничения контента для детей; меньше 1 000'),
+ 'ai_tools':('исключена','','в выборке нет длинных видео малых каналов'),
+ 'wildlife_stock':('исключена','','риск повторно используемого контента; n меньше 10'),
+ 'top10_compilations':('исключена','','меньше 1 000; риск повторно используемого контента'),
+ 'math_vis':('исключена','','меньше 1 000; пересекается с отложенным проектом по физике'),
+ 'physics_anim':('исключена','','меньше 1 000; пересекается с отложенным проектом по физике'),
 }
 rows=[]
-for cid,j in J.items():
-  m=M[j['niche']]; t=T[j['term']]
-  ln=int(m['long_n']); lmed=float(m['long_median'] or 0)
-  n10=int(m['long_subs_lt10k_n']); m10=float(m['long_subs_lt10k_median'] or 0)
-  b=int(m['long_subs_lt100k_ge10k_views']); bshare=b/ln if ln else 0
-  yoy=float(t['change_52w_vs_prev_52w'] or 1)
-  demand=band(lmed)+(0.5 if yoy>=1.2 else -0.5 if yoy<=0.85 else 0); demand=max(1,min(5,demand))
-  entry=band(m10)+(0.5 if bshare>=0.25 else -0.5 if bshare<0.05 else 0); entry=max(1,min(5,entry))
-  dconf='medium' if ln>=30 else 'low'; econf='medium' if n10>=20 else 'low'
-  r={'concept_id':cid,'working_name':j['name'],'niche_sample':j['niche'],
-     'in_long_7_30d_n':ln,'in_long_7_30d_median_views':int(lmed),'in_trend_term':j['term'],'in_trend_change_52w':yoy,
-     'in_subs_lt10k_n':n10,'in_subs_lt10k_median_views':int(m10),'in_lt100k_ge10k_count':b,'in_lt100k_ge10k_share':round(bshare,2),
-     'in_new_channel_n':m['long_new_channel_n'],'in_new_channel_median_views':m['long_new_channel_median'],
-     'demand':demand,'demand_conf':dconf,'entry':entry,'entry_conf':econf}
-  for k in ['money','production_fit','cost','risk','differentiation']:
-    r[k]=j[k][0]; r[k+'_conf']=j[k][1]
-  r['weighted_total']=round(sum(r[k]*w for k,w in W.items()),2)
-  r.update({'pilot_human_hours':j['pilot_h'],'regular_human_hours':j['reg_h'],'pilot_cash_usd':j['pilot_usd'],'monthly_cash_usd':j['month_usd'],'voice':j['voice']})
-  rows.append(r)
-rows.sort(key=lambda r:-r['weighted_total'])
-for i,r in enumerate(rows,1): r['rank']=i
+for r in M:
+  n=int(r['long_subs_lt10k_n'] or 0); v=r['long_subs_lt10k_median']
+  dec,concept,why=DEC.get(r['niche'],('исключена','','медиана меньше 1 000 просмотров или n меньше 10'))
+  rows.append({'niche':r['niche'],'name_ru':NAMES.get(r['niche'],''),'long_7_30d_n':r['long_n'],'long_7_30d_median':r['long_median'],
+    'subs_lt10k_n':n,'subs_lt10k_median':v,'decision':dec,'concept':concept,'reason':why})
+with open(os.path.join(D,'screening.csv'),'w',newline='') as f:
+  w=csv.DictWriter(f,fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+from collections import Counter; print(Counter(r['decision'] for r in rows))
+```
+
+## 11. Баллы концепций и проверка устойчивости (рейтинг версии 2, шаг 2)
+
+`scores2.py` пишет `data/scores.csv`. Допущения по концепциям — в словаре `C`; риск — оценка исследования, обоснование в concepts.md.
+
+```python
+"""Ranking v2 under author's conditions (ElevenLabs available, publishing outside Russia).
+Criteria: speed to the programme threshold, monthly cash, simplicity, efficiency, risk.
+Inputs: niche-matched.csv (data) plus per-concept assumptions below. Writes data/scores.csv."""
+import csv, os, math
+ROOT=os.path.dirname(os.path.abspath(__file__)); D=os.path.join(ROOT,'..','..','docs','market-research','data')
+M={r['niche']:r for r in csv.DictReader(open(os.path.join(D,'niche-matched.csv')))}
+HOURS_BUDGET=60        # human hours per month (budget level 2, 10-20 h/week)
+THRESHOLD_H=8000       # watch hours in 365 days for new channels from 2027-02-01
+EL_CREDITS_PER_MIN=1000; EL_RETAKE=1.3   # ElevenLabs: 1 credit per character, ~1000 characters per minute
+def el_cost(credits):  # cheapest public plan (base price, extra minute price) for the monthly credits
+  if credits==0: return 0
+  plans=[(6,30e3,0.20),(22,121e3,0.18),(99,600e3,0.17),(299,1.8e6,0.17)]
+  return round(min(p+max(0,credits-c)/EL_CREDITS_PER_MIN*x for p,c,x in plans))
+import re, statistics
+MUSIC=re.compile(r'music|jazz|piano|lofi|lo-fi|432|celtic|song|melod|guitar|harp|flute',re.I)
+def no_music(niche):  # long videos (>180 s), age 7-30 days, channels <10k, titles without music words; dedup by video id
+  seen=set(); xs=[]
+  for r in csv.DictReader(open(os.path.join(D,'videos-sample.csv'))):
+    if r['niche']!=niche or r['video_id'] in seen: continue
+    seen.add(r['video_id'])
+    try: a=float(r['age_days_approx']); d=float(r['duration_s']); s=float(r['subs']); v=float(r['views'])
+    except: continue
+    if 7<=a<=30 and d>180 and s<1e4 and not MUSIC.search(r['title']): xs.append(v)
+  return (statistics.median(xs) if xs else 0, len(xs))
+# niche, length min, avd (low,base,high) min, human h/video (low,base,high), max videos/month,
+# narration min/video, other cash $/month, rpm (low,high), risk 1-5, skill penalty, equipment penalty
+C={
+ 'sleep':  dict(name='Lantern Library',niche='sleep_docs',length=150,avd=(10,20,40),h=(8,10,14),cap=4,narr=150,cash=0,rpm=(1.5,5),risk=3,skill=0,equip=0),
+ 'sleep_de':dict(name='Lantern Library, German variant',niche='sleep_docs_de',length=150,avd=(10,20,40),h=(9,12,16),cap=4,narr=150,cash=0,rpm=(1.5,5),risk=2.5,skill=0,equip=0,variant=True),
+ 'hearth': dict(name='Boreal Hearth',niche='fantasy_ambience',length=180,avd=(10,25,50),h=(4,6,8),cap=6,narr=0,cash=10,rpm=(0.5,3),risk=2.5,skill=0,equip=0,nomusic=True),
+ 'field':  dict(name='Taiga Hours',niche='ambient_nature',length=240,avd=(10,25,50),h=(10,14,18),cap=4,narr=0,cash=110,rpm=(0.5,3),risk=3.5,skill=0.5,equip=0.5,nomusic=True),
+ 'sim':    dict(name='Sandbox Trials',niche='sim_shorts',length=12,avd=(3,4.8,6.6),h=(6,8,10),cap=2,narr=0,cash=0,rpm=(1,4),risk=3,skill=0,equip=0),
+ 'scale':  dict(name='Honest Scale',niche='space_scale',length=10,avd=(2.5,3.5,5),h=(12,14,20),cap=4,narr=10,cash=20,rpm=(1.5,6),risk=4,skill=0.5,equip=0.5),
+ 'maps':   dict(name='The Moving Atlas',niche='history_maps',length=12,avd=(3,4.2,6),h=(8,10,14),cap=4,narr=12,cash=0,rpm=(2,8),risk=3.5,skill=0,equip=0),
+ 'english':dict(name='Story Steps English',niche='language_ci',length=12,avd=(3,4.8,6.6),h=(4,5,8),cap=8,narr=10,cash=0,rpm=(0.3,1.5),risk=3,skill=0,equip=0),
+ 'folklore':dict(name='Thrice-Nine Tales',niche='myth_folklore',length=15,avd=(3.5,5.2,7.5),h=(12,16,25),cap=4,narr=15,cash=0,rpm=(1.5,5),risk=4,skill=0.5,equip=0),
+ 'machines':dict(name='Opened Up',niche='eng_howitworks',length=12,avd=(3,4.2,6),h=(30,35,60),cap=2,narr=12,cash=20,rpm=(2,8),risk=4.5,skill=0.5,equip=0.5),
+ 'study':  dict(name='Study music scenes',niche='study_music',length=120,avd=(10,30,60),h=(3,4,6),cap=8,narr=0,cash=22,rpm=(0.5,3),risk=1.5,skill=0,equip=0),
+ 'reddit': dict(name='Reddit stories',niche='reddit_stories',length=20,avd=(4,7,10),h=(1.5,2,3),cap=12,narr=20,cash=0,rpm=(1,4),risk=1,skill=0,equip=0),
+}
+W={'speed':.30,'cost':.20,'simplicity':.20,'efficiency':.20,'risk':.10}
+def b_speed(r):   return 5 if r>=4 else 4 if r>=1.5 else 3 if r>=0.75 else 2 if r>=0.3 else 1
+def b_cost(c):    return 5 if c<=10 else 4 if c<=50 else 3 if c<=150 else 2 if c<=300 else 1
+def b_simple(h):  return 5 if h<=4 else 4 if h<=8 else 3 if h<=12 else 2 if h<=20 else 1
+def b_eff(e):     return 5 if e>=5 else 4 if e>=1.5 else 3 if e>=0.5 else 2 if e>=0.15 else 1
+def calc(c, avd_i=1, h_i=1, v_mult=1.0, rpm_free=False):
+  m=M[c['niche']]
+  if c.get('nomusic'): V,n=no_music(c['niche'])
+  else: V,n=float(m['long_subs_lt10k_median'] or 0),int(m['long_subs_lt10k_n'])
+  V*=v_mult
+  h=c['h'][h_i]; K=max(1,min(c['cap'],math.floor(HOURS_BUDGET/h)))
+  avd=c['avd'][avd_i]; vids=12*K
+  need=THRESHOLD_H*60/(vids*avd)            # views per video needed for 8000 h in 12 months
+  ratio=V/need if need else 0
+  credits=K*c['narr']*EL_CREDITS_PER_MIN*EL_RETAKE; el=el_cost(credits); cash=el+c['cash']
+  rpm=(c['rpm'][0]+c['rpm'][1])/2
+  eff=(V/h) if rpm_free else V*rpm/1000/h   # $ (or views) per human hour, after the programme
+  simple=max(1,b_simple(h)-c['skill']-c['equip'])
+  s={'speed':b_speed(ratio),'cost':b_cost(cash),'simplicity':simple,'efficiency':(b_eff(eff) if not rpm_free else (5 if eff>=2000 else 4 if eff>=500 else 3 if eff>=150 else 2 if eff>=50 else 1)),'risk':c['risk']}
+  return dict(V=V,n=n,K=K,h=h,avd=avd,need=need,ratio=ratio,el=el,cash=cash,eff=eff,s=s)
+def total(s,w=W): return sum(s[k]*v for k,v in w.items())/sum(w.values())
+rows=[]
+for cid,c in C.items():
+  r=calc(c); gate=c['risk']<=1.5; var=c.get('variant',False)
+  rows.append(dict(concept_id=cid,working_name=c['name'],niche_sample=c['niche'],
+    v_basis=('no-music titles' if c.get('nomusic') else 'all titles'),in_subs_lt10k_n=r['n'],in_subs_lt10k_median_views=int(r['V']),conf=('medium' if r['n']>=20 else 'low'),
+    as_length_min=c['length'],as_avg_view_min=f"{c['avd'][0]:g}/{c['avd'][1]:g}/{c['avd'][2]:g}",as_human_h_per_video=f"{c['h'][0]:g}/{c['h'][1]:g}/{c['h'][2]:g}",
+    videos_per_month=r['K'],views_needed_per_video_8000h_12m=round(r['need']),ratio_observed_to_needed=round(r['ratio'],2),
+    narration_min_per_video=c['narr'],elevenlabs_usd_month=r['el'],other_cash_usd_month=c['cash'],cash_usd_month=r['cash'],
+    rpm_usd=f"{c['rpm'][0]:g}-{c['rpm'][1]:g}",usd_per_human_hour_after_programme=round(r['eff'],2),
+    speed=r['s']['speed'],cost=r['s']['cost'],simplicity=r['s']['simplicity'],efficiency=r['s']['efficiency'],risk=c['risk'],
+    weighted_total=round(total(r['s']),2),risk_gate=('excluded' if gate else 'pass'),variant_of=('sleep' if var else '')))
+rows.sort(key=lambda r:(r['risk_gate']!='pass' or bool(r['variant_of']),-r['weighted_total']))
+k=0
+for r in rows:
+  if r['risk_gate']=='pass' and not r['variant_of']: k+=1; r['rank']=k
+  else: r['rank']=''
 fields=['rank']+[k for k in rows[0] if k!='rank']
 with open(os.path.join(D,'scores.csv'),'w',newline='') as f:
   w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerows(rows)
-for r in rows: print(r['rank'],r['working_name'],r['weighted_total'],'demand',r['demand'],'entry',r['entry'],'| n10',r['in_subs_lt10k_n'],'m10',r['in_subs_lt10k_median_views'],'b',r['in_lt100k_ge10k_share'],'| new',r['in_new_channel_n'],r['in_new_channel_median_views'])
-alts={'money 30%':{**W,'money':.3,'entry':.15,'production_fit':.15,'differentiation':.05},'production 30%':{**W,'production_fit':.3,'cost':.15,'demand':.1,'entry':.15},'data only':{'demand':.4,'entry':.6},'equal':{k:1/7 for k in W}}
-for n,ww in alts.items():
-  s=sorted(((sum(r[k]*v for k,v in ww.items())/sum(ww.values()),r['working_name']) for r in rows),reverse=True)
-  print(n,'|',' > '.join(f"{x} {v:.2f}" for v,x in s))
+for r in rows: print(r['rank'],r['working_name'],r['weighted_total'],'| sp',r['speed'],'co',r['cost'],'si',r['simplicity'],'ef',r['efficiency'],'ri',r['risk'],'| V',r['in_subs_lt10k_median_views'],'n',r['in_subs_lt10k_n'],'K',r['videos_per_month'],'need',r['views_needed_per_video_8000h_12m'],'ratio',r['ratio_observed_to_needed'],'cash',r['cash_usd_month'],'el',r['elevenlabs_usd_month'],'eff',r['usd_per_human_hour_after_programme'],r['risk_gate'])
+# sensitivity
+alts={'equal four, no risk':{'speed':1,'cost':1,'simplicity':1,'efficiency':1},
+      'speed 50%':{'speed':.5,'cost':.15,'simplicity':.15,'efficiency':.1,'risk':.1},
+      'efficiency 40%':{'speed':.2,'cost':.15,'simplicity':.15,'efficiency':.4,'risk':.1},
+      'risk 25%':{'speed':.25,'cost':.15,'simplicity':.15,'efficiency':.2,'risk':.25}}
+def rank_with(fn):
+  out=[]
+  for cid,c in C.items():
+    if c['risk']<=1.5 or c.get('variant'): continue
+    out.append((fn(c),c['name']))
+  out.sort(reverse=True); return ' > '.join(f"{n} {v:.2f}" for v,n in out[:6])
+for n,ww in alts.items(): print('W',n,'|',rank_with(lambda c: total(calc(c)['s'],ww)))
+print('A low avd/high hours |',rank_with(lambda c: total(calc(c,avd_i=0,h_i=2)['s'])))
+print('A high avd/low hours |',rank_with(lambda c: total(calc(c,avd_i=2,h_i=0)['s'])))
+print('A views x0.25 |',rank_with(lambda c: total(calc(c,v_mult=0.25)['s'])))
+print('A rpm-free efficiency |',rank_with(lambda c: total(calc(c,rpm_free=True)['s'])))
 ```
 
-## 11. Сценарии первого года
+## 12. Сценарии первого года
 
-Файл `economics.py`.
+`economics.py` пишет `data/economics.csv`.
 
 ```python
-"""Year-one scenarios per concept and budget level. Writes docs/market-research/data/economics.csv. All inputs are research assumptions."""
+"""Year-one scenarios for the four leading concepts of ranking v2, per budget level.
+All inputs are research assumptions, not forecasts. Writes docs/market-research/data/economics.csv."""
 import csv, os
 OUT=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','..','docs','market-research','data','economics.csv')
+H=8000; SUBS=1000; AFTER=0.25; SUB_RATE=(0.005,0.015)
+# per level: (long videos per month, human hours per month, cash $ per month)
 C={
- 'maps': dict(name='The Moving Atlas',len_min=12,avd=(0.25,0.40),views={'low':300,'mid':2500,'high':15000},rpm=(2.0,8.0),per_month={'L1':2,'L2':3,'L3':4},sub_rate=(0.005,0.02)),
- 'field':dict(name='Taiga Hours',len_min=240,avd=(10/240,40/240),views={'low':100,'mid':3000,'high':20000},rpm=(0.5,3.0),per_month={'L1':1,'L2':3,'L3':4},sub_rate=(0.005,0.015)),
- 'scale':dict(name='Honest Scale',len_min=10,avd=(0.30,0.50),views={'low':300,'mid':4000,'high':30000},rpm=(1.5,6.0),per_month={'L1':1,'L2':2,'L3':3},sub_rate=(0.005,0.02)),
+ 'hearth': dict(name='Boreal Hearth',avd=(10,50),views={'low':100,'mid':2400,'high':20000},rpm=(0.5,3),one_off=(0,150),
+   lv={'L1':(4,24,10),'L2':(6,36,10),'L3':(6,36,20)}),
+ 'sleep':  dict(name='Lantern Library',avd=(10,40),views={'low':100,'mid':3000,'high':20000},rpm=(1.5,5),one_off=(0,0),
+   lv={'L1':(1,10,35),'L2':(3,30,99),'L3':(4,40,130)}),
+ 'sim':    dict(name='Sandbox Trials',avd=(3,6.6),views={'low':300,'mid':3800,'high':20000},rpm=(1,4),one_off=(0,0),
+   lv={'L1':(1,20,0),'L2':(2,46,0),'L3':(3,69,0)}),
+ 'field':  dict(name='Taiga Hours',avd=(10,50),views={'low':100,'mid':3000,'high':20000},rpm=(0.5,3),one_off=(500,900),
+   lv={'L1':(1,14,50),'L2':(3,42,110),'L3':(4,56,150)}),
 }
-H=8000   # watch-hour threshold for new channels from 2027-02-01
-AFTER=0.25  # share of year-one views that come after joining the programme
 rows=[]
 for cid,c in C.items():
-  for lvl,pm in c['per_month'].items():
+  for lvl,(pm,hours,cash) in c['lv'].items():
     for sc,v in c['views'].items():
       vids=pm*12; views=vids*v
-      hl,hh=views*c['len_min']*c['avd'][0]/60, views*c['len_min']*c['avd'][1]/60
-      sl,sh=views*c['sub_rate'][0], views*c['sub_rate'][1]
-      st='likely' if (hl>=H and sl>=1000) else ('possible' if (hh>=H and sh>=1000) else 'no')
-      lo=views*AFTER/1000*c['rpm'][0] if st=='likely' else 0
-      hi=views*AFTER/1000*c['rpm'][1] if st!='no' else 0
-      rows.append({'concept':c['name'],'budget_level':lvl,'scenario':sc,'long_videos_per_month':pm,'videos_year1':vids,'views_per_video_12m':v,'views_year1':views,
-        'avg_view_minutes':f"{c['len_min']*c['avd'][0]:.0f}-{c['len_min']*c['avd'][1]:.0f}",'watch_hours_year1':f"{hl:.0f}-{hh:.0f}",'subscribers_year1':f"{sl:.0f}-{sh:.0f}",
-        'ypp_8000h_1000subs_year1':st,'rpm_usd':f"{c['rpm'][0]:g}-{c['rpm'][1]:g}",'ad_revenue_year1_usd_payee_russia':0,'ad_revenue_year1_usd_eligible_payee':f"{lo:.0f}-{hi:.0f}"})
+      hl,hh=views*c['avd'][0]/60, views*c['avd'][1]/60
+      sl,sh=views*SUB_RATE[0], views*SUB_RATE[1]
+      st='likely' if (hl>=H and sl>=SUBS) else ('possible' if (hh>=H and sh>=SUBS) else 'no')
+      rlo=views*AFTER/1000*c['rpm'][0] if st=='likely' else 0
+      rhi=views*AFTER/1000*c['rpm'][1] if st!='no' else 0
+      clo=cash*12+c['one_off'][0]; chi=cash*12+c['one_off'][1]
+      rows.append({'concept':c['name'],'budget_level':lvl,'scenario':sc,'long_videos_per_month':pm,'human_hours_per_month':hours,
+        'cash_usd_per_month':cash,'one_off_usd':f"{c['one_off'][0]}-{c['one_off'][1]}",'views_per_video_12m':v,'views_year1':views,
+        'avg_view_minutes':f"{c['avd'][0]:g}-{c['avd'][1]:g}",'watch_hours_year1':f"{hl:.0f}-{hh:.0f}",'subscribers_year1':f"{sl:.0f}-{sh:.0f}",
+        'threshold_8000h_1000subs_year1':st,'rpm_usd':f"{c['rpm'][0]:g}-{c['rpm'][1]:g}",
+        'ad_revenue_year1_usd_payee_in_programme_country':f"{rlo:.0f}-{rhi:.0f}",'ad_revenue_year1_usd_payee_russia':0,
+        'direct_costs_year1_usd':f"{clo:.0f}-{chi:.0f}",
+        'result_year1_usd_payee_in_programme_country_before_tax':f"{rlo-chi:.0f} to {rhi-clo:.0f}"})
 with open(OUT,'w',newline='') as f:
   w=csv.DictWriter(f,fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+for r in rows:
+  if r['scenario']!='low': print(r['concept'][:15].ljust(15),r['budget_level'],r['scenario'],r['long_videos_per_month'],r['watch_hours_year1'],r['subscribers_year1'],r['threshold_8000h_1000subs_year1'],r['ad_revenue_year1_usd_payee_in_programme_country'],r['direct_costs_year1_usd'],r['result_year1_usd_payee_in_programme_country_before_tax'])
 ```

@@ -1,9 +1,13 @@
-rank,concept_id,working_name,niche_sample,in_long_7_30d_n,in_long_7_30d_median_views,in_trend_term,in_trend_change_52w,in_subs_lt10k_n,in_subs_lt10k_median_views,in_lt100k_ge10k_count,in_lt100k_ge10k_share,in_new_channel_n,in_new_channel_median_views,demand,demand_conf,entry,entry_conf,money,money_conf,production_fit,production_fit_conf,cost,cost_conf,risk,risk_conf,differentiation,differentiation_conf,weighted_total,pilot_human_hours,regular_human_hours,pilot_cash_usd,monthly_cash_usd,voice
-1,field,Taiga Hours,ambient_nature,31,11641,rain sounds,1.07,16,7196,15,0.48,1,2282,5,medium,5,low,3,low,4.5,medium,3,medium,3.5,medium,4.5,medium,4.2,25-40,8-15 plus travel,500-900 plus travel,travel,none
-2,scale,Honest Scale,space_scale,53,23848,universe,1.1,18,650,23,0.43,13,1820,5,medium,3.5,low,3,low,4.5,medium,2.5,medium,4,medium,3,low,3.75,30-45,12-20,0 plus render hardware,0 plus render,"optional, own voice"
-3,sleep,Lantern Library,sleep_docs,54,9680,history for sleep,2.77,16,7204,22,0.41,6,14732,5,medium,5,low,3,low,3,medium,3,medium,2.5,medium,3.5,medium,3.7,30-40,15-25,0-200,0,"own voice, 2-3 h per video"
-4,sim,Sandbox Trials,sim_shorts,49,5330,simulation,1.36,36,3816,18,0.37,26,16016,5,medium,4.5,medium,2,medium,3.5,medium,4.5,medium,3,medium,2.5,low,3.65,15-25,1-2 per Short; 6-10 per long,0,0,none
-5,maps,The Moving Atlas,history_maps,39,603,history,0.99,19,341,10,0.26,26,274,3,medium,3.5,low,3,low,4.5,medium,3.5,medium,3.5,medium,3.5,medium,3.55,30-40,12-18,0-200,0,"own voice, 10-15 min per video"
-6,folklore,Thrice-Nine Tales,myth_folklore,58,813,mythology,0.97,39,444,13,0.22,33,320,3,medium,3,medium,2.5,low,4.5,medium,2.5,medium,4,medium,5,medium,3.48,40-60,15-25,0-300,0,own voice
-7,machines,Opened Up,eng_howitworks,33,273,how it works,0.99,28,301,2,0.06,26,257,2,medium,3,medium,3.5,low,4,medium,1.5,medium,4.5,medium,2,medium,3.03,40-60,30-60,0-500 models,0,own voice
-8,english,Story Steps English,language_ci,59,4982,english story,1.5,31,2,8,0.14,3,743,4.5,medium,1,medium,2.5,low,2.5,medium,4,medium,3,medium,3,low,2.75,20-30,6-10,0 plus narrator,narrator if hired,native-level English required
+rank,concept_id,working_name,niche_sample,v_basis,in_subs_lt10k_n,in_subs_lt10k_median_views,conf,as_length_min,as_avg_view_min,as_human_h_per_video,videos_per_month,views_needed_per_video_8000h_12m,ratio_observed_to_needed,narration_min_per_video,elevenlabs_usd_month,other_cash_usd_month,cash_usd_month,rpm_usd,usd_per_human_hour_after_programme,speed,cost,simplicity,efficiency,risk,weighted_total,risk_gate,variant_of
+1,hearth,Boreal Hearth,fantasy_ambience,no-music titles,5,2423,low,180,10/25/50,4/6/8,6,267,9.09,0,0,10,10,0.5-3,0.71,5,5,4,3,2.5,4.15,pass,
+2,sleep,Lantern Library,sleep_docs,all titles,16,7204,low,150,10/20/40,8/10/14,4,500,14.41,150,130,0,130,1.5-5,2.34,5,3,3,4,3,3.8,pass,
+3,sim,Sandbox Trials,sim_shorts,all titles,36,3816,medium,12,3/4.8/6.6,6/8/10,2,4167,0.92,0,0,0,0,1-4,1.19,3,5,4,3,3,3.6,pass,
+4,field,Taiga Hours,ambient_nature,no-music titles,14,7196,low,240,10/25/50,10/14/18,4,400,17.99,0,0,110,110,0.5-3,0.9,5,3,1,3,3.5,3.25,pass,
+5,maps,The Moving Atlas,history_maps,all titles,19,341,low,12,3/4.2/6,8/10/14,4,2381,0.14,12,12,0,12,2-8,0.17,1,4,3,2,3.5,2.45,pass,
+6,english,Story Steps English,language_ci,all titles,31,2,medium,12,3/4.8/6.6,4/5/8,8,1042,0.0,10,21,0,21,0.3-1.5,0.0,1,4,4,1,3,2.4,pass,
+7,scale,Honest Scale,space_scale,all titles,18,650,low,10,2.5/3.5/5,12/14/20,4,2857,0.23,10,10,20,30,1.5-6,0.17,1,4,1,2,4,2.1,pass,
+8,folklore,Thrice-Nine Tales,myth_folklore,all titles,39,444,medium,15,3.5/5.2/7.5,12/16/25,3,2564,0.17,15,12,0,12,1.5-5,0.09,1,4,1.5,1,4,2.0,pass,
+9,machines,Opened Up,eng_howitworks,all titles,28,301,medium,12,3/4.2/6,30/35/60,1,9524,0.03,12,6,20,26,2-8,0.04,1,4,1,1,4.5,1.95,pass,
+,study,Study music scenes,study_music,all titles,22,24841,medium,120,10/30/60,3/4/6,8,167,149.05,0,0,22,22,0.5-3,10.87,5,4,5,5,1.5,4.45,excluded,
+,reddit,Reddit stories,reddit_stories,all titles,18,5944,low,20,4/7/10,1.5/2/3,12,476,12.48,20,56,0,56,1-4,7.43,5,3,5,5,1,4.2,excluded,
+,sleep_de,"Lantern Library, German variant",sleep_docs_de,all titles,41,9217,medium,150,10/20/40,9/12/16,4,500,18.43,150,130,0,130,1.5-5,2.5,5,3,3,4,2.5,3.75,pass,sleep
