@@ -1,0 +1,42 @@
+block,item,low,base,high,unit,basis,source
+hours_per_video,research and real trial of the task,3,6,12,hours,assumption: run the task for real; save inputs and outputs; note failures,study assumption
+hours_per_video,script,2,3,5,hours,assumption: 10-12 minute tutorial,study assumption
+hours_per_video,screen recording with retakes,1,2,4,hours,assumption: OBS Studio,study assumption
+hours_per_video,voice: ElevenLabs generation and listening for errors,0.5,1,1.5,hours,assumption: about 12 minutes of speech,study assumption
+hours_per_video,editing: zooms; callouts; captions; chapters,3,5,10,hours,assumption: DaVinci Resolve or Kdenlive (free),study assumption
+hours_per_video,title; thumbnail; description; files and links,1,1.5,2,hours,assumption,study assumption
+hours_per_video,independent check: second person repeats every step,1,1.5,3,hours,assumption: required before publishing,study assumption
+hours_per_video,total per video,11.5,20,37.5,hours,sum of the rows above,study assumption
+updates,share of tool-specific lessons needing a fix within 12 months,0.3,0.5,0.7,share,proxy only: in fast segments 53-69% of top search results are younger than 180 days (segment-metrics.csv),hypothesis
+updates,share of concept (evergreen) lessons needing a fix within 12 months,0.05,0.15,0.25,share,proxy only: prompting and office segments: 13-19% of top results older than 2 years,hypothesis
+updates,errata: pinned comment; description; card,0.5,0.5,1,hours per lesson,assumption,study assumption
+updates,partial re-record of outdated steps,4,6,8,hours per lesson,assumption,study assumption
+updates,full remake,7,12,22,hours per lesson,assumption: 60% of original time,study assumption
+voice,characters per video,10000,15600,23400,ElevenLabs credits,1000 characters per minute of speech; 10-18 minutes; plus 30% retakes; 1 character = 1 credit on V2 Multilingual,https://elevenlabs.io/pricing
+voice,ElevenLabs Starter,6,6,6,USD per month,30000 credits; commercial license; too small for 3 videos,https://elevenlabs.io/pricing
+voice,ElevenLabs Creator,22,22,22,USD per month,121000 credits; covers 5-12 videos a month (7 at base length),https://elevenlabs.io/pricing
+voice,ElevenLabs Pro,99,99,99,USD per month,600000 credits; for 8+ videos a month,https://elevenlabs.io/pricing
+tools,OBS Studio screen recording,0,0,0,USD,free; GPL v2+,https://obsproject.com/
+tools,DaVinci Resolve or Kdenlive editing,0,0,0,USD,free versions (studio library check 2026-10-14),docs/visual-production/tools/
+tools,Descript (optional),0,16,24,USD per month,free plan 60 media minutes; Hobbyist $16 or $24 (annual vs monthly inferred),https://www.descript.com/pricing
+tools,ChatGPT Go / Plus,0,8,20,USD per month,free tier exists; Go $8 (Jan 2026 price; current not verified); Plus $20,https://openai.com/index/introducing-chatgpt-go/
+tools,Claude Pro,0,20,20,USD per month,free plan exists; Pro $17 annual or $20 monthly,https://claude.com/pricing
+tools,Google AI Plus / Pro,0,4.99,19.99,USD per month,free Gemini tier; US prices,https://gemini.google/us/subscriptions/
+tools,Midjourney,10,10,30,USD per month,no free trial on web; Basic $10; Standard $30,https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans
+tools,n8n,0,0,20,EUR per month,self-hosted Community Edition free under Sustainable Use License; Cloud Starter 20 EUR billed annually,https://n8n.io/pricing/
+tools,Make,0,9,9,USD per month,free plan 1000 credits; Core $9,https://www.make.com/en/pricing
+monthly_cash,test of 3 videos (one month),22,32,62,USD,ElevenLabs Creator; plus 0-2 paid assistants for comparisons,sum of rows above
+monthly_cash,steady 4 videos a month: lean,22,22,42,USD per month,voice plus free tiers or one subscription,sum of rows above
+monthly_cash,steady 4 videos a month: typical,42,62,86,USD per month,voice plus 1-3 subscriptions,sum of rows above
+monthly_cash,steady 4 videos a month: creative video tools,62,120,200,USD per month,voice plus image or video generators plus Descript; video generator prices not verified,assumption
+threshold,watch hours needed by a new channel from 2027-02-01,8000,8000,8000,hours in 365 days,plus 1000 subscribers; or 20M Shorts views in 90 days,https://support.google.com/youtube/answer/12843009?hl=en
+threshold,average view duration of a 12-minute tutorial,3,4,5,minutes,assumption: retention of other channels is not public,hypothesis
+threshold,views needed in 365 days,96000,120000,160000,views,8000 x 60 / average view duration,calculation
+threshold,views needed per video at 4 videos a month (48 a year),2000,2500,3300,views per video in its first year,views needed / 48; ignores older videos,calculation
+ads,RPM range used for illustration,0.7,2.3,5,USD per 1000 views,no official niche RPM; AIR Media-Tech self-report: tech $0.70-3.71; education $2.31-19.50 (prior study),docs/market-research/monetization.md
+ads,ad revenue at 120000 views a year after joining,84,276,600,USD per year,views x RPM / 1000; only if payee lives in a YPP country; not a forecast,calculation
+affiliate,ElevenLabs,22,22,22,percent of referred purchases for 12 months,paid via PartnerStack; ElevenLabs restricts access from Russia,https://elevenlabs.io/affiliates-terms
+affiliate,Make,35,35,35,percent for 12 months,paid only via Wise; minimum $100 and 3 paying users,https://help.make.com/affiliate-program
+affiliate,n8n,30,30,30,percent of Cloud payments for 12 months,PayPal only; minimum EUR 100; paid ads banned,https://n8n.io/affiliates/
+affiliate,Descript,25,25,25,USD per new subscriber,PayPal; moving to PartnerStack,https://www.descript.com/affiliate
+affiliate,illustration: 10000 views x 1% click x 5% buy x $20 x 30% x 12 months,36,36,36,USD per year,every rate here is an assumption; shows the order of magnitude only,calculation
