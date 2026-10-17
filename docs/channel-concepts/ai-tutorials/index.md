@@ -15,6 +15,7 @@
    - 3 Riso Print, двухцветная печать: [HTML](mockups/look-3-riso-print.html).
    - 4 Soft 3D, объёмные предметы на градиенте: [HTML](mockups/look-4-soft-3d.html).
    - 5 Noir, расследование в луче света: [HTML](mockups/look-5-noir.html).
+   - Выбран 2 Swiss Bold. Доработка по 4 примерам автора: фактура, рваная бумага, контурный шрифт, сбой. [HTML](mockups/look-2-swiss-rough.html).
 5. Первый круг, отклонён как детский и однообразный: [1](mockups/style-1-kitchen-table.html), [2](mockups/style-2-phone-inside.html), [3](mockups/style-3-pop-shapes.html), [4](mockups/style-4-sticker-notebook.html).
 6. Прежние макеты трёх подач, на примере со столицами: [1](mockups/1-countable-ai.html), [2](mockups/2-guess-machine.html), [3](mockups/3-ai-since-1948.html).
 7. [plan.md](plan.md) — названия с проверкой совпадений, 10 тем с источниками, тест из трёх видео, критерии, срок наблюдения, минимум данных, бюджет.
@@ -22,7 +23,7 @@
 9. Пилот: сценарий EN и перевод RU, раскадровка, пример с проверкой — в [docs/pilots/ai-tutorials/](../../pilots/ai-tutorials/index.md).
 10. [evidence-check.md](evidence-check.md), [evidence-code.md](evidence-code.md), [explainer-method.md](explainer-method.md), [data/](data/) — проверка исследования 59 и выборка роликов-объяснений, на которой построены ориентиры теста.
 
-Видеопробы трёх подач, по 45 секунд, — в альбоме «Видеопробы» на доске задачи. В репозиторий видео не сохраняется.
+Видеопробы трёх подач, по 45 секунд, — в альбоме «Видеопробы» на доске задачи. Видеопроба доработки Swiss Bold, 18 секунд, — в альбоме «Swiss Bold — доработка». В репозиторий видео не сохраняется.
 
 ## Концепции в одной строке
 
@@ -33,7 +34,7 @@
 
 ## Выбор для автора
 
-1. Стиль оформления: 1–5 второго круга или смесь.
+1. Стиль оформления: принять доработку Swiss Bold или дать правки.
 2. Концепция: А или одна из Б–Г.
 3. Название: рекомендую Countable AI. Адреса @CountableAI и @Countable_AI свободны на 2026-10-17.
 4. Голос ElevenLabs — после вашего подключения.
