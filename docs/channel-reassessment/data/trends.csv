@@ -1,0 +1,31 @@
+batch,term,measured_utc,geo,property,timeframe,anchor,mean_last52_vs_anchor,ratio_last52_prev52,ratio_last52_3y_ago,peak_month,low_month,seasonality_range
+documentary|trivia quiz|general knowledge quiz|flag quiz|guess the country,documentary,2026-10-17T11:01:52+00:00,US,youtube,2021-10-17..2026-10-11,documentary,1.0,1.1,1.02,9,11,0.13
+documentary|trivia quiz|general knowledge quiz|flag quiz|guess the country,trivia quiz,2026-10-17T11:01:52+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.001,,,12,11,6.13
+documentary|trivia quiz|general knowledge quiz|flag quiz|guess the country,general knowledge quiz,2026-10-17T11:01:52+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.001,,,12,10,7.88
+documentary|trivia quiz|general knowledge quiz|flag quiz|guess the country,flag quiz,2026-10-17T11:01:52+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.0,,,10,10,
+documentary|trivia quiz|general knowledge quiz|flag quiz|guess the country,guess the country,2026-10-17T11:01:52+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.013,1.16,1.89,6,9,0.99
+documentary|learn russian|learn english through story|russian fairy tales|slavic mythology,documentary,2026-10-17T11:03:21+00:00,US,youtube,2021-10-17..2026-10-11,documentary,1.0,1.1,1.02,9,11,0.13
+documentary|learn russian|learn english through story|russian fairy tales|slavic mythology,learn russian,2026-10-17T11:03:21+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.0,,,10,10,
+documentary|learn russian|learn english through story|russian fairy tales|slavic mythology,learn english through story,2026-10-17T11:03:21+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.0,,,9,10,12.0
+documentary|learn russian|learn english through story|russian fairy tales|slavic mythology,russian fairy tales,2026-10-17T11:03:21+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.0,,,10,10,
+documentary|learn russian|learn english through story|russian fairy tales|slavic mythology,slavic mythology,2026-10-17T11:03:21+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.0,,,10,10,
+documentary|size comparison|brain games|spot the difference|riddles,documentary,2026-10-17T11:03:35+00:00,US,youtube,2021-10-17..2026-10-11,documentary,1.0,1.1,1.02,9,11,0.13
+documentary|size comparison|brain games|spot the difference|riddles,size comparison,2026-10-17T11:03:35+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.028,1.04,1.03,11,10,0.09
+documentary|size comparison|brain games|spot the difference|riddles,brain games,2026-10-17T11:03:35+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.003,1.67,,11,5,2.14
+documentary|size comparison|brain games|spot the difference|riddles,spot the difference,2026-10-17T11:03:35+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.0,0.33,0.03,12,9,1.0
+documentary|size comparison|brain games|spot the difference|riddles,riddles,2026-10-17T11:03:35+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.026,0.78,0.66,12,9,0.75
+documentary|chess openings|dostoevsky|logic puzzles|pub quiz,documentary,2026-10-17T11:03:48+00:00,US,youtube,2021-10-17..2026-10-11,documentary,1.0,1.1,1.02,9,11,0.13
+documentary|chess openings|dostoevsky|logic puzzles|pub quiz,chess openings,2026-10-17T11:03:48+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.007,1.69,1.69,1,7,1.45
+documentary|chess openings|dostoevsky|logic puzzles|pub quiz,dostoevsky,2026-10-17T11:03:48+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.0,,,10,10,
+documentary|chess openings|dostoevsky|logic puzzles|pub quiz,logic puzzles,2026-10-17T11:03:48+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.0,,,10,10,
+documentary|chess openings|dostoevsky|logic puzzles|pub quiz,pub quiz,2026-10-17T11:03:48+00:00,US,youtube,2021-10-17..2026-10-11,documentary,0.0,,,10,10,
+trivia quiz|general knowledge quiz|pub quiz|flag quiz|guess the country,trivia quiz,2026-10-17T11:22:48+00:00,US,youtube,2021-10-17..2026-10-11,trivia quiz,1.0,1.15,1.17,12,10,0.35
+trivia quiz|general knowledge quiz|pub quiz|flag quiz|guess the country,general knowledge quiz,2026-10-17T11:22:48+00:00,US,youtube,2021-10-17..2026-10-11,trivia quiz,1.294,2.02,2.83,6,1,0.33
+trivia quiz|general knowledge quiz|pub quiz|flag quiz|guess the country,pub quiz,2026-10-17T11:22:48+00:00,US,youtube,2021-10-17..2026-10-11,trivia quiz,0.092,0.44,0.93,3,1,2.03
+trivia quiz|general knowledge quiz|pub quiz|flag quiz|guess the country,flag quiz,2026-10-17T11:22:48+00:00,US,youtube,2021-10-17..2026-10-11,trivia quiz,0.447,1.15,1.35,6,9,0.41
+trivia quiz|general knowledge quiz|pub quiz|flag quiz|guess the country,guess the country,2026-10-17T11:22:48+00:00,US,youtube,2021-10-17..2026-10-11,trivia quiz,2.667,1.45,1.61,6,9,0.44
+learn english through story|english story|graded reader|learn russian|size comparison,learn english through story,2026-10-17T11:22:57+00:00,US,youtube,2021-10-17..2026-10-11,learn english through story,1.0,1.66,1.59,9,4,1.09
+learn english through story|english story|graded reader|learn russian|size comparison,english story,2026-10-17T11:22:57+00:00,US,youtube,2021-10-17..2026-10-11,learn english through story,16.562,1.47,1.31,9,12,0.36
+learn english through story|english story|graded reader|learn russian|size comparison,graded reader,2026-10-17T11:22:57+00:00,US,youtube,2021-10-17..2026-10-11,learn english through story,0.082,6.0,,9,11,5.31
+learn english through story|english story|graded reader|learn russian|size comparison,learn russian,2026-10-17T11:22:57+00:00,US,youtube,2021-10-17..2026-10-11,learn english through story,1.397,1.02,1.0,8,4,0.2
+learn english through story|english story|graded reader|learn russian|size comparison,size comparison,2026-10-17T11:22:57+00:00,US,youtube,2021-10-17..2026-10-11,learn english through story,18.589,1.01,0.99,3,8,0.12
