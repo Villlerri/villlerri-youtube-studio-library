@@ -8,14 +8,17 @@
 
 1. [concept.md](concept.md) — концепция А: аудитория, задачи зрителя, обещание, отличие, риски, затраты. Альтернативы Б–Г.
 2. [variants.md](variants.md) — три подачи на теме пилота, лицензии, рекомендация.
-3. Макеты оформления, по одному на подачу: аватар, баннер, вид канала, обложки, кадры, кадр Shorts.
-   - 1 «Countable AI», карандаш на бумаге: [HTML](mockups/1-countable-ai.html).
-   - 2 «The Guess Machine», машинный зал: [HTML](mockups/2-guess-machine.html).
-   - 3 «AI Since 1948», архив: [HTML](mockups/3-ai-since-1948.html).
-4. [plan.md](plan.md) — названия с проверкой совпадений, 10 тем с источниками, тест из трёх видео, критерии, срок наблюдения, минимум данных, бюджет.
-5. [production.md](production.md) — процесс одного видео, доля автоматизации, часы, инструменты и лицензии, деньги, обновление.
-6. Пилот: сценарий EN и перевод RU, раскадровка, пример с проверкой — в [docs/pilots/ai-tutorials/](../../pilots/ai-tutorials/index.md).
-7. [evidence-check.md](evidence-check.md), [evidence-code.md](evidence-code.md), [explainer-method.md](explainer-method.md), [data/](data/) — проверка исследования 59 и выборка роликов-объяснений, на которой построены ориентиры теста.
+3. [styles.md](styles.md) — стили обучающих каналов: что доказано исследованиями, что привычка, что берём.
+4. Четыре стиля на бытовом примере «Mom is at the store»: аватар, баннер, вид канала, обложки, кадры, кадр Shorts, палитра, шрифты.
+   - 1 Kitchen Table, стикеры на кухонном столе: [HTML](mockups/style-1-kitchen-table.html).
+   - 2 Phone Inside, экран телефона: [HTML](mockups/style-2-phone-inside.html).
+   - 3 Pop Shapes, плоские фигуры и кубик-герой: [HTML](mockups/style-3-pop-shapes.html).
+   - 4 Sticker Notebook, блокнот с маркером: [HTML](mockups/style-4-sticker-notebook.html).
+5. Прежние макеты трёх подач, на примере со столицами: [1](mockups/1-countable-ai.html), [2](mockups/2-guess-machine.html), [3](mockups/3-ai-since-1948.html).
+6. [plan.md](plan.md) — названия с проверкой совпадений, 10 тем с источниками, тест из трёх видео, критерии, срок наблюдения, минимум данных, бюджет.
+7. [production.md](production.md) — процесс одного видео, доля автоматизации, часы, инструменты и лицензии, деньги, обновление.
+8. Пилот: сценарий EN и перевод RU, раскадровка, пример с проверкой — в [docs/pilots/ai-tutorials/](../../pilots/ai-tutorials/index.md).
+9. [evidence-check.md](evidence-check.md), [evidence-code.md](evidence-code.md), [explainer-method.md](explainer-method.md), [data/](data/) — проверка исследования 59 и выборка роликов-объяснений, на которой построены ориентиры теста.
 
 Видеопробы трёх подач, по 45 секунд, — в альбоме «Видеопробы» на доске задачи. В репозиторий видео не сохраняется.
 
@@ -28,7 +31,7 @@
 
 ## Выбор для автора
 
-1. Подача: 1, 2 или 3. Рекомендую 1 с карточкой источника из 3.
+1. Стиль оформления: 1–4.
 2. Концепция: А или одна из Б–Г.
 3. Название: рекомендую Countable AI. Адреса @CountableAI и @Countable_AI свободны на 2026-10-17.
 4. Голос ElevenLabs — после вашего подключения.
