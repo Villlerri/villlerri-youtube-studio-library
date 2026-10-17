@@ -1,0 +1,10 @@
+start,sentence,chance,true
+Paris,Paris is the capital of France.,1/3,yes
+Paris,Paris is the capital of Italy.,1/3,no
+Paris,Paris is the capital of Peru.,1/3,no
+Rome,Rome is the capital of France.,1/3,no
+Rome,Rome is the capital of Italy.,1/3,yes
+Rome,Rome is the capital of Peru.,1/3,no
+Lima,Lima is the capital of France.,1/3,no
+Lima,Lima is the capital of Italy.,1/3,no
+Lima,Lima is the capital of Peru.,1/3,yes

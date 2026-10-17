@@ -1,0 +1,3 @@
+Paris is the capital of France.
+Rome is the capital of Italy.
+Lima is the capital of Peru.

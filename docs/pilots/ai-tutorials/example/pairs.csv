@@ -1,0 +1,10 @@
+word,next_word,count,chance
+Paris,is,1,1/1
+is,the,3,3/3
+the,capital,3,3/3
+capital,of,3,3/3
+of,France,1,1/3
+of,Italy,1,1/3
+of,Peru,1,1/3
+Rome,is,1,1/1
+Lima,is,1,1/1
