@@ -1,0 +1,6 @@
+id,direction,length_min,avd_min_low_base_high,human_h_per_video_low_base_high,videos_per_month_base,human_h_per_month_base,views_needed_per_video_8000h_12m_base,views_needed_low_avd,views_needed_high_avd,observed_new_median,observed_new_n,observed_small_old_median,observed_small_old_n,ratio_new_to_needed,ratio_small_old_to_needed,voice_chars_per_month,voice_usd_month,other_usd_month,cash_usd_month,rpm_usd_assumption
+quiz,quiz_pub_general,22,5/8/12,3/4/6,6,24,833,1333,556,6249,4,5174,19,7.5,6.21,0,0,0,0,1-4
+quiz_voiced,quiz_pub_general,22,5/8/12,3/4/6,6,24,833,1333,556,6249,4,5174,19,7.5,6.21,70200,22,0,22,1-4
+english,english_stories_all,30,6/10/15,3/4/6,6,24,667,1111,444,725,33,775,14,1.09,1.16,234000,42,0,42,0.3-1.5
+scale2d,scale_all,8,2.5/3.5/5,4/6/8,4,24,2857,4000,2000,3522,18,1738,19,1.23,0.61,41600,22,0,22,1.5-6
+geo,quiz_geo,10,3/4/6,2/2.5/4,8,20.0,1250,1667,833,926,22,483,11,0.74,0.39,0,0,0,0,1-4

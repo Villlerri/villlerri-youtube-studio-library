@@ -1,0 +1,12 @@
+direction,segments,long_7_30d_n,long_7_30d_median,new_n,new_median,new_ge1k,new_lt100,small_old_n,small_old_median,small_old_ge1k,small_old_lt100,mid_n,mid_median,mid_ge1k,mid_lt100,big_n,big_median,big_ge1k,big_lt100,unknown_n,unknown_median,unknown_ge1k,unknown_lt100,new_channels,new_channels_typical_n,new_channels_typical_median,new_channels_typical_ge1k,new_channels_typical_lt100,small_old_channels,small_old_channels_typical_n,small_old_channels_typical_median,small_old_channels_typical_ge1k,small_old_channels_typical_lt100
+quiz_pub_general,quiz_general;quiz_pub,59,14542,4,6249,3,0,19,5174,14,0,19,17835,19,0,15,20457,15,0,2,21091,2,0,6,3,3300,2,0,17,15,1500,11,0
+english_stories_all,english_stories;english_graded;english_level,120,17045,33,725,16,3,14,775,6,1,19,11498,17,0,37,30060,37,0,17,75532,17,0,60,38,1056,19,5,20,18,638,6,1
+scale_all,scale2d;scale_planets,51,3769,18,3522,13,1,19,1738,13,1,7,383487,7,0,6,95426,6,0,1,11562,1,0,29,17,380,7,7,60,50,629,18,11
+quiz_geo,quiz_geo,43,1379,22,926,11,2,11,483,2,1,3,31833,3,0,7,137149,7,0,0,,0,0,34,21,490,7,3,25,21,386,3,0
+quiz_topic_seniors,quiz_topic;quiz_seniors,68,718,27,65,0,14,13,436,3,5,22,5558,22,0,5,20458,5,0,1,17063,1,0,33,15,113,1,7,30,26,687,10,3
+brain_seniors,brain_seniors,37,5368,13,12,1,9,6,433,2,2,18,17509,18,0,0,,0,0,0,,0,0,14,5,14,0,5,26,23,182,5,10
+folklore_slavic,folklore_slavic,48,195,15,111,2,7,24,129,4,9,4,23096,3,0,4,89970,4,0,1,2113,1,0,28,14,82,1,8,51,42,248,11,12
+learn_russian,learn_russian,51,377,19,23,1,12,20,342,6,4,5,4142,4,0,7,3419,7,0,0,,0,0,15,8,92,1,4,17,16,444,3,4
+russian_lit,russian_lit,64,62,35,49,2,21,27,139,1,13,1,16089,1,0,1,29487,1,0,0,,0,0,40,19,105,4,8,50,39,128,5,16
+chess,chess,52,242,34,173,4,12,9,450,4,1,7,6424,7,0,1,73875,1,0,1,188,0,0,21,11,122,1,5,17,13,659,5,6
+puzzles,puzzles,45,20,26,17,1,22,15,11,1,10,4,10104,4,0,0,,0,0,0,,0,0,29,15,93,4,8,24,18,200,4,3
