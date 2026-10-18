@@ -1,6 +1,6 @@
 # Пилот: Why AI Makes Things Up — We Counted It by Hand
 
-Пилот канала Countable AI в стиле Swiss Bold с доработкой по примерам автора. Пример — семейный чат: «Mom is at the store.» Концепция — в [docs/channel-concepts/ai-tutorials/](../../channel-concepts/ai-tutorials/index.md). Подготовлено 2026-10-17. Голоса нет: ElevenLabs не подключён. Видео пилота не собиралось.
+Пилот канала Countable AI в стиле Swiss Bold с доработкой по примерам автора. Пример — семейный чат: «Mom is at the store.» Концепция — в [docs/channel-concepts/ai-tutorials/](../../channel-concepts/ai-tutorials/index.md). Подготовлено 2026-10-17. Голоса нет: ElevenLabs не подключён. Видео пилота и два Shorts собраны без голоса 2026-10-18 и лежат в альбоме задачи 60.
 
 ## Файлы
 
@@ -10,6 +10,8 @@
 - [example/](example/check.md) — игрушка из трёх сообщений, таблица пар, экзамен, баллы.
   - [check.md](example/check.md) — ручной счёт, вывод скрипта, код, источники.
   - [instructions.md](example/instructions.md) — как повторить с листом, карандашом и кубиком.
+- [upload/](upload/index.md) — пакет выкладки: название, описание с главами, теги, обложка, аватар, баннер, субтитры EN, порядок ручной выкладки.
+  - [shorts.md](upload/shorts.md) — поля и текст двух Shorts.
 
 ## Результат проверки
 
@@ -21,4 +23,5 @@
 ## Что ждёт автора
 
 - Проверка сценария по переводу.
-- Голос ElevenLabs после подключения.
+- Голос ElevenLabs после подключения. Затем пересборка видео, субтитров и глав по времени слов.
+- Выкладка вручную по [пакету](upload/index.md).
