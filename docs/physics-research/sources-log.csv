@@ -1,0 +1,15 @@
+source,url,type,used_for,checked,limits
+YouTube search results (no login),https://www.youtube.com/results?search_query=<query>&sp=<filter>&hl=en&gl=US,public pages via yt-dlp 2026.08.19,search sample of 53 queries x 2 filters,2026-10-16,relevance order lifts successful videos; approximate dates; first 40 results only
+YouTube channel pages (videos and shorts tabs),https://www.youtube.com/@<handle>/videos,public pages via yt-dlp 2026.08.19,channel registry: subscribers; up to 300 videos; up to 60 Shorts,2026-10-16,view counts rounded in lists; subscribers rounded; dates approximate
+YouTube video pages,https://www.youtube.com/watch?v=<id>,public pages via yt-dlp 2026.08.19,exact views of 242 recent videos in two snapshots,2026-10-16,two points only; hours apart
+YouTube autocomplete,https://suggestqueries-clients6.youtube.com/complete/search?client=youtube&ds=yt&hl=en&gl=us&q=<stem>,open endpoint,which physics queries exist (1782 requests),2026-10-16,shows existence not volume
+Google Trends (YouTube Search),https://trends.google.com/trends/explore?gprop=youtube&geo=US,pytrends 4.9,relative search interest of 54 terms; country shares for physics,2026-10-16,relative index; terms below threshold show zeros; ambiguous words mixed with music and games
+Tubefilter: YouTube says 70% of watch time is driven by recommendations,https://www.tubefilter.com/2018/01/11/youtube-most-watch-time-driven-by-recommendations/,news report of YouTube statement at CES 2018,share of recommendations in watch time,2026-10-16,2018 figure; no newer official share found
+PPC Land: YouTube changes how Shorts views are counted from March 31,https://ppc.land/youtube-changes-how-shorts-views-are-counted-from-march-31/,news report,Shorts view counting since 2025-03-31,2026-10-16,secondary source
+Hostinger: Cloud GPU pricing compared 2026,https://www.hostinger.com/tutorials/?p=158956,third-party price comparison,RTX 4090 rental price per hour,2026-10-16,third-party; verify on provider page before budgeting
+computeprices.com: RunPod RTX 4090,https://computeprices.com/providers/runpod/gpus/rtx4090,third-party price tracker,RTX 4090 rental price per hour,2026-10-16,third-party; updated August 2026
+Social Blade,https://socialblade.com/,third-party statistics,attempted channel history,2026-10-16,HTTP 403; not used
+Internet Archive Wayback Machine,https://web.archive.org/,archive,attempted channel history,2026-10-16,HTTP 429; not used
+Studio library: visual production,../visual-production/index.md,internal library (task 41; 144 files; 7c44b70),tools; combos; craft rules; costs,2026-10-14,desk research without own probes
+Studio library: asset sources,../asset-sources/index.md,internal library (task 42; 20 files; e163e55),licences; YouTube rules; music prices,2026-10-14,not legal advice
+Studio research: foreign YouTube markets,../market-research/index.md,internal research (task 45; 37 files; 91c6d60),physics niche baseline; CPM by country; ElevenLabs tariffs; monetization rules,2026-10-14,its own limits apply
