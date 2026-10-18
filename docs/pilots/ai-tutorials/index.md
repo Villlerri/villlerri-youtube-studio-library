@@ -1,6 +1,6 @@
 # Пилот: Why AI Makes Things Up — We Counted It by Hand
 
-Пилот канала Countable AI в стиле Swiss Bold с доработкой по примерам автора. Пример — семейный чат: «Mom is at the store.» Концепция — в [docs/channel-concepts/ai-tutorials/](../../channel-concepts/ai-tutorials/index.md). Подготовлено 2026-10-17. Голоса нет: ElevenLabs не подключён. Видео пилота и два Shorts собраны без голоса 2026-10-18 и лежат в альбоме задачи 60.
+Пилот канала Countable AI в стиле Swiss Bold с доработкой по примерам автора. Пример — семейный чат: «Mom is at the store.» Концепция — в [docs/channel-concepts/ai-tutorials/](../../channel-concepts/ai-tutorials/index.md). Подготовлено 2026-10-17. Голоса нет: ElevenLabs не подключён. Видео пилота и два Shorts собраны без голоса 2026-10-18 и лежат в альбоме «Пилот без голоса» задачи 60.
 
 ## Файлы
 
