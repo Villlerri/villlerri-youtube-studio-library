@@ -1,0 +1,3 @@
+rule,honest_score,guesser_average,guesser_beats_honest_share,guess_combinations
+"binary: right +1, wrong 0, IDK 0",3,4,19/27,27
+"penalty: right +1, wrong -1, IDK 0",3,2,7/27,27

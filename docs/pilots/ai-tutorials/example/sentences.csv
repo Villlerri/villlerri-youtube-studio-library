@@ -1,0 +1,10 @@
+start,sentence,chance,true
+Mom,Mom is at the store.,1/3,yes
+Mom,Mom is at the gym.,1/3,no
+Mom,Mom is at the park.,1/3,no
+Dad,Dad is at the store.,1/3,no
+Dad,Dad is at the gym.,1/3,yes
+Dad,Dad is at the park.,1/3,no
+Sam,Sam is at the store.,1/3,no
+Sam,Sam is at the gym.,1/3,no
+Sam,Sam is at the park.,1/3,yes

@@ -1,0 +1,19 @@
+query,listing,n,views_median,views_p25,views_p75,age_days_median,share_age_lt180d,share_age_gt730d,share_subs_lt100k,share_subs_lt10k,n_lt10k_ge10k_views,n_lt100k_ge100k_views,distinct_channels,top3_channels_share_of_videos,duration_median_min,n_bot_blocked
+how ai works,relevance,30,301566.0,53667.2,2047886.2,464.0,0.172,0.207,0.31,0.138,2,3,25,0.267,12.78,0
+how ai works,this_month,30,111580.0,861.0,1598531.2,10.0,1.0,0.0,0.5,0.467,3,2,27,0.2,25.83,0
+how neural networks work,relevance,30,430623.5,147638.5,1662858.8,1363.0,0.034,0.897,0.172,0.0,0,3,28,0.167,13.38,0
+how neural networks work,this_month,30,39.5,15.5,227.8,14.5,1.0,0.0,0.931,0.931,1,0,27,0.2,5.28,0
+neural network explained,relevance,30,427412.5,46249.2,1755287.2,1343.5,0.067,0.833,0.167,0.033,1,2,23,0.3,11.69,0
+neural network explained,this_month,30,40.0,16.5,109.2,12.5,1.0,0.0,0.966,0.966,1,0,30,0.1,5.93,0
+how chatgpt works,relevance,30,99961.0,14044.5,194943.5,380.0,0.433,0.333,0.2,0.033,0,1,27,0.2,12.47,0
+how chatgpt works,this_month,30,163.0,28.5,3491.2,11.0,1.0,0.0,0.793,0.724,0,0,28,0.167,10.68,0
+how large language models work,relevance,30,402349.5,71876.2,1362573.0,696.0,0.103,0.448,0.276,0.0,0,1,26,0.233,11.57,0
+how large language models work,this_month,30,75.0,15.5,620.2,16.0,1.0,0.0,0.885,0.808,0,0,30,0.1,8.62,0
+how ai image generators work,relevance,30,91037.0,15923.5,304893.5,597.5,0.214,0.393,0.444,0.222,2,3,27,0.2,14.25,0
+how ai image generators work,this_month,30,15.0,7.8,123.8,11.5,1.0,0.0,0.893,0.786,0,0,28,0.167,7.3,0
+why does ai hallucinate,relevance,30,12958.0,2436.2,71512.2,227.0,0.414,0.138,0.593,0.296,3,1,30,0.1,6.31,0
+why does ai hallucinate,this_month,30,8.0,3.2,51.0,13.0,1.0,0.0,0.885,0.846,0,0,30,0.1,5.38,0
+machine learning explained simply,relevance,30,461042.0,120741.2,1655876.5,812.0,0.1,0.567,0.233,0.133,0,3,23,0.267,9.09,0
+machine learning explained simply,this_month,30,94.5,23.2,203.0,11.5,1.0,0.0,1.0,0.966,0,0,29,0.133,5.6,0
+ALL,relevance,209,143657.0,18368.0,580998.0,594.0,0.217,0.438,0.325,0.12,8,16,155,0.11,10.67,0
+ALL,this_month,225,68.0,12.0,702.0,12.0,1.0,0.0,0.854,0.807,4,2,205,0.044,7.97,0
