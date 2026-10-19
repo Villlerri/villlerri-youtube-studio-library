@@ -1,0 +1,13 @@
+@font-face{font-family:Anton;src:url(fonts/anton-Anton-Regular.ttf)}
+@font-face{font-family:Caveat;src:url("fonts/caveat-Caveat[wght].ttf");font-weight:400 700}
+@font-face{font-family:Bodoni;src:url("fonts/bodonimoda-BodoniModa[opsz,wght].ttf");font-weight:400 900}
+@font-face{font-family:Bodoni;src:url("fonts/bodonimoda-BodoniModa-Italic[opsz,wght].ttf");font-weight:400 900;font-style:italic}
+@font-face{font-family:SpaceMono;src:url(fonts/spacemono-SpaceMono-Regular.ttf)}
+@font-face{font-family:SpaceMono;src:url(fonts/spacemono-SpaceMono-Bold.ttf);font-weight:700}
+@font-face{font-family:BigShoulders;src:url("fonts/bigshouldersdisplay-BigShouldersDisplay[wght].ttf");font-weight:100 900}
+@font-face{font-family:Archivo;src:url("fonts/archivo-Archivo[wdth,wght].ttf");font-weight:100 900;font-stretch:62% 125%}
+@font-face{font-family:Plex;src:url(fonts/ibmplexmono-IBMPlexMono-Regular.ttf)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+.f{position:absolute;inset:0;display:none}
+.abs{position:absolute}

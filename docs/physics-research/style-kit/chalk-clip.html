@@ -1,0 +1,300 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Chalk Noir clip</title>
+<link rel="stylesheet" href="common.css">
+<style>
+body{background:#0a0a0b}
+.board{position:absolute;inset:0;background:
+ radial-gradient(ellipse 900px 500px at 30% 40%,rgba(255,255,255,.035),transparent 70%),
+ radial-gradient(ellipse 700px 400px at 75% 70%,rgba(255,255,255,.03),transparent 70%),#0a0a0b}
+.dust{position:absolute;inset:0;opacity:.5;mix-blend-mode:screen}
+.tex{position:absolute;inset:0;font-family:Caveat;color:#fff;filter:url(#chalk)}
+.tex span{position:absolute;white-space:nowrap}
+.sc{position:absolute;inset:0;display:none;transform-origin:50% 50%}
+.ck{font-family:Caveat;color:#f4f1ea;filter:url(#chalkT);position:absolute;white-space:nowrap;line-height:.9}
+svg.draw{position:absolute;left:0;top:0;filter:url(#chalk);overflow:visible}
+svg.draw *{transform-box:fill-box;transform-origin:center}
+.cw{position:absolute;transform-origin:50% 50%}
+.cw>img{position:absolute;left:0;top:0;width:100%;filter:drop-shadow(1px 2px 1px rgba(0,0,0,.55)) drop-shadow(4px 14px 22px rgba(0,0,0,.65))}
+.tape{position:absolute;width:150px;height:44px;background:rgba(235,230,215,.55);box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.lab{font-family:SpaceMono;font-size:20px;color:rgba(255,255,255,.55);letter-spacing:.2em;position:absolute}
+.rub{position:absolute;top:-100px;width:260px;height:1280px;pointer-events:none;display:none;
+ background:radial-gradient(ellipse 50% 50% at 50% 50%,rgba(255,255,255,.07),transparent 70%)}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute">
+ <filter id="chalk" x="-5%" y="-5%" width="110%" height="110%">
+  <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="4" result="n"/>
+  <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -2.4 1.75" result="holes"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="9" result="w"/>
+  <feDisplacementMap in="SourceGraphic" in2="w" scale="3.5" result="d"/>
+  <feComposite in="d" in2="holes" operator="in"/>
+ </filter>
+ <filter id="chalkT" x="-12%" y="-35%" width="130%" height="170%">
+  <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="4" result="n"/>
+  <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -2.4 1.75" result="holes"/>
+  <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="9" result="w"/>
+  <feDisplacementMap in="SourceGraphic" in2="w" scale="3.5" result="d"/>
+  <feComposite in="d" in2="holes" operator="in"/>
+ </filter>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" seed="2"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0"/></filter>
+</svg>
+<div class="board"></div>
+<svg class="dust" width="1920" height="1080"><rect width="1920" height="1080" filter="url(#grain)"/>
+ <g opacity=".022" stroke="#fff" stroke-linecap="round" fill="none"><path d="M120 300 C 600 230 900 330 1500 250" stroke-width="90"/><path d="M300 820 C 800 760 1200 860 1800 780" stroke-width="120"/></g></svg>
+<div class="tex" id="tex"></div>
+
+<!-- 1: hook -->
+<div class="sc" id="s1">
+ <div class="lab" id="a_lab" style="left:120px;top:60px">PHYSICS, PLAINLY · 01</div>
+ <div class="ck" id="a_why" style="left:120px;top:150px;font-size:150px;font-weight:600">Why is the sky</div>
+ <div class="ck" id="a_blue" style="left:120px;top:300px;font-size:250px;font-weight:700;color:#9fd0ff">blue?</div>
+ <div class="ck" id="a_ocean" style="left:130px;top:620px;font-size:92px;opacity:.9">because of the ocean</div>
+ <svg class="draw" width="1920" height="1080"><g fill="none" stroke="#f4f1ea" stroke-width="7" stroke-linecap="round">
+  <path id="a_x1" d="M118 680 C 300 668 520 690 760 672 S 880 668 900 670"/>
+  <path id="a_x2" d="M126 700 C 330 706 560 684 740 700"/>
+  <path id="a_ar" d="M960 690 C 1010 640 1050 600 1080 560" stroke-width="5"/><path id="a_ah" d="M1058 566 l26 -10 l-4 28" stroke-width="5"/></g></svg>
+ <div class="ck" id="a_nope" style="left:150px;top:770px;font-size:170px;font-weight:700;color:#ffb36b;transform:rotate(-3deg)">Nope.</div>
+ <div class="ck" id="a_sit" style="left:620px;top:840px;font-size:62px;opacity:.75;transform:rotate(-2deg)">sit down. one minute.</div>
+ <div class="cw" id="c_grumpy" style="left:1160px;top:170px;width:640px;height:752px">
+  <img src="assets/p/cat_grumpy_rough.png" style="transform:rotate(4deg)">
+  <div class="tape" id="a_tape" style="left:220px;top:52px;transform:rotate(-6deg)"></div>
+  <svg class="draw" width="1920" height="1080" style="left:-1160px;top:-170px"><g fill="none" stroke="#f4f1ea" stroke-width="7" stroke-linecap="round">
+   <circle id="a_g1" cx="1468" cy="455" r="58"/><circle id="a_g2" cx="1618" cy="460" r="58"/><path id="a_g3" d="M1526 452 q 22 -18 34 2"/><path id="a_g4" d="M1410 440 l -60 -22"/><path id="a_g5" d="M1676 446 l 52 -26"/></g></svg>
+ </div>
+ <div class="ck" id="a_heard" style="left:1200px;top:950px;font-size:56px;transform:rotate(-3deg);opacity:.85">← heard “the ocean” again</div>
+</div>
+
+<!-- 2: scattering -->
+<div class="sc" id="s2">
+ <svg class="draw" width="1920" height="1080" id="scg"></svg>
+ <div class="ck" id="b_head" style="left:110px;top:80px;font-size:96px;font-weight:600">white light = every colour at once</div>
+ <div class="ck" id="b_red" style="left:760px;top:735px;font-size:44px;color:#ff8f7a">red walks on by</div>
+ <div class="ck" id="b_bb" style="left:1080px;top:560px;font-size:84px;font-weight:600;color:#9fd0ff">blue bounces</div>
+ <div class="ck" id="b_59" style="left:1080px;top:650px;font-size:230px;font-weight:700;color:#9fd0ff">5.9×</div>
+ <div class="ck" id="b_more" style="left:1090px;top:880px;font-size:66px;opacity:.85">more than red</div>
+ <div class="cw" id="c_white" style="left:1530px;top:120px;width:330px;height:269px">
+  <img src="assets/p/cat_white_rough.png" style="transform:rotate(-5deg)">
+ </div>
+ <div class="ck" id="b_calc" style="left:1560px;top:400px;font-size:52px;transform:rotate(-5deg)">calculating<span id="b_dots">…</span></div>
+ <div class="ck" id="b_ok" style="left:1590px;top:400px;font-size:52px;transform:rotate(-5deg)">…fine. 5.9.</div>
+ <div class="lab" id="b_lab" style="left:110px;top:1010px">ARROW LENGTH = HOW OFTEN EACH COLOUR BOUNCES (COMPUTED)</div>
+</div>
+
+<!-- 3: sunset -->
+<div class="sc" id="s3">
+ <svg class="draw" width="1920" height="1080" id="ssg"></svg>
+ <svg class="draw" width="1920" height="1080" id="ssatm"></svg>
+ <div class="ck" id="c_same" style="left:110px;top:90px;font-size:120px;font-weight:600">sunset: same sun,</div>
+ <div class="ck" id="c_38" style="left:110px;top:210px;font-size:190px;font-weight:700;color:#ffb36b">38× more air</div>
+ <div class="ck" id="c_noon" style="left:924px;top:440px;font-size:52px">noon: 1×</div>
+ <div class="ck" id="c_sun38" style="left:110px;top:600px;font-size:52px;color:#ffb36b">sunset: 38×</div>
+ <div class="ck" id="c_thick" style="left:680px;top:820px;font-size:36px;opacity:.7">air drawn thick — not to scale</div>
+ <div class="ck" id="c_what" style="left:1240px;top:300px;font-size:60px">what reaches you:</div>
+ <div class="ck" id="c_bl" style="left:1240px;top:370px;font-size:96px;color:#9fd0ff">blue 100%</div>
+ <div class="ck" id="c_rd" style="left:1240px;top:470px;font-size:96px;color:#ff8f7a">red 100%</div>
+ <div class="cw" id="c_iss" style="left:1250px;top:800px;width:500px;height:216px">
+  <img src="assets/p/iss_sunset_rough.png" style="transform:rotate(3deg)">
+  <div class="tape" id="c_tape" style="left:170px;top:-28px;transform:rotate(4deg)"></div>
+ </div>
+ <div class="cw" id="c_kit" style="left:80px;top:715px;width:250px;height:297px">
+  <img src="assets/p/cat_blueeyes_rough.png" style="transform:rotate(-6deg)">
+ </div>
+ <div class="ck" id="c_so" style="left:350px;top:930px;font-size:52px;transform:rotate(-3deg);opacity:.85">so that's where the blue went</div>
+ <div class="lab" id="c_lab" style="left:1080px;top:1040px;font-size:15px">PHOTO: NASA, ISS EXPEDITION 23 (PUBLIC DOMAIN)</div>
+</div>
+
+<!-- 4: wrap-up -->
+<div class="sc" id="s4">
+ <div class="ck" id="d_1" style="left:110px;top:170px;font-size:110px;font-weight:600">blue bounces way more than red,</div>
+ <div class="ck" id="d_2" style="left:110px;top:330px;font-size:84px;color:#9fd0ff">so it comes at you from all over the sky.</div>
+ <div class="ck" id="d_3" style="left:110px;top:470px;font-size:84px;color:#ffb36b">at sunset, the long road uses it up.</div>
+ <svg class="draw" width="1920" height="1080"><g fill="none" stroke="#f4f1ea" stroke-width="6" stroke-linecap="round"><path id="d_ul" d="M110 600 C 400 590 700 606 1000 594"/></g></svg>
+ <div class="cw" id="c_end" style="left:1350px;top:430px;width:420px;height:493px">
+  <img src="assets/p/cat_grumpy_rough.png" style="transform:rotate(-3deg)">
+  <div class="tape" id="d_tape" style="left:130px;top:-18px;transform:rotate(7deg)"></div>
+ </div>
+ <div class="ck" id="d_fine" style="left:760px;top:840px;font-size:64px;transform:rotate(-3deg)">…fine. not the ocean. →</div>
+ <div class="lab" id="d_lab" style="left:110px;top:1010px">PHYSICS, PLAINLY · 01</div>
+</div>
+<div class="rub" id="rub"></div>
+
+<script>
+const FPS = 30, NF = 1800;
+let s = 8; const r = () => (s = (s * 16807) % 2147483647) / 2147483647;
+const T = ['I ∝ 1/λ⁴', '(700/450)⁴ ≈ 5.9', 'λ = 450 nm', '1 + cos²θ', 'm ≈ 38', 'e^(−τm)', 'τ(λ) ≈ 0.0088 λ^−4.05', 'n − 1 ≈ 2.9·10⁻⁴',
+  'N₂, O₂ ~ 0.3 nm', 'c = λν', 'θ = 90°', 'sin²θ', 'I₀', 'Rayleigh 1871', 'z = 90°', 'Δ', 'λ₁ < λ₂', '∫ ρ dl', 'k = 2π/λ', 'E = hν'];
+const tex = document.getElementById('tex');
+for (let i = 0; i < 70; i++) {
+  const e = document.createElement('span'); e.textContent = T[Math.floor(r() * T.length)];
+  e.style.left = (r() * 1900 - 60) + 'px'; e.style.top = (r() * 1060 - 20) + 'px';
+  e.style.fontSize = (26 + r() * 30) + 'px'; e.style.opacity = (0.06 + r() * 0.07).toFixed(3);
+  e.style.transform = `rotate(${(r() - .5) * 8}deg)`;
+}
+// faint formulas: each scene has its own, whole, inside the frame, off captions, cut-outs and each other
+const buildTex = () => {
+  let q = 77; const r2 = () => (q = (q * 16807) % 2147483647) / 2147483647;
+  for (const sc of document.querySelectorAll('.sc')) {
+    const layer = document.createElement('div'); layer.className = 'tex'; sc.prepend(layer); sc.style.display = 'block';
+    const box = [...sc.querySelectorAll('.ck, .lab, .cw, svg text, svg circle')].map(n => { const b = n.getBoundingClientRect(); return [b.left - 24, b.top - 16, b.right + 24, b.bottom + 16]; });
+    for (let k = 0, shown = 0; shown < 45 && k < 600; k++) {
+      const e = document.createElement('span'); e.textContent = T[Math.floor(r2() * T.length)];
+      e.style.fontSize = (26 + r2() * 30) + 'px'; e.style.opacity = (0.06 + r2() * 0.07).toFixed(3); e.style.transform = `rotate(${(r2() - .5) * 8}deg)`;
+      layer.appendChild(e); const w = e.offsetWidth + 24, h = e.offsetHeight + 16, x = 40 + r2() * (1840 - w), y = 30 + r2() * (1010 - h);
+      if (box.some(b => x < b[2] && b[0] < x + w && y < b[3] && b[1] < y + h)) { e.remove(); continue; }
+      box.push([x, y, x + w, y + h]); e.style.left = x + 'px'; e.style.top = y + 'px'; shown++;
+    }
+    sc.style.display = '';
+  }
+};
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const el = (p, t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
+const cl = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const out3 = u => 1 - Math.pow(1 - cl(u), 3);
+const outBack = (u, k = 1.7) => { u = cl(u) - 1; return 1 + (k + 1) * u * u * u + k * u * u; };
+const pct = t => (t < 0.1 ? t.toFixed(2) : t < 10 ? t.toFixed(1) : t.toFixed(0)) + '%';
+const B = [['violet', 400, '#c9a8ff'], ['blue', 450, '#9fd0ff'], ['green', 530, '#a8f0c0'], ['yellow', 580, '#ffe48a'], ['orange', 610, '#ffb36b'], ['red', 700, '#ff8f7a']];
+const tau = l => 0.0088 * Math.pow(l / 1000, -4.05);   // Rayleigh optical depth at zenith
+const MASS = 37.9;                                      // air mass at the horizon (Kasten–Young)
+
+// timeline: [t0, dur, kind, id, extra]; events also feed the sound script
+const TL = [], EV = [];
+const at = (t, d, kind, id, x = {}) => TL.push({ t, d, kind, id, ...x });
+
+// ---- scene 2 drawing (computed scattering, as in the still)
+{
+  const g = $('scg'), S = { fill: 'none', 'stroke-linecap': 'round' };
+  el(g, 'circle', { ...S, id: 'b_sun', cx: 230, cy: 700, r: 90, stroke: '#f4f1ea', 'stroke-width': 7 });
+  for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6; el(g, 'line', { ...S, id: 'b_ray' + i, x1: 230 + Math.cos(a) * 112, y1: 700 + Math.sin(a) * 112, x2: 230 + Math.cos(a) * 140, y2: 700 + Math.sin(a) * 140, stroke: '#f4f1ea', 'stroke-width': 6 }); }
+  el(g, 'path', { ...S, id: 'b_beam', d: 'M330 700 L 560 700', stroke: '#f4f1ea', 'stroke-width': 9 });
+  const cx = 640, cy = 700;
+  for (let i = 0; i < 40; i++) { const a = r() * 6.283, d = Math.sqrt(r()) * 70; el(g, 'circle', { id: 'b_m' + i, cx: cx + Math.cos(a) * d, cy: cy + Math.sin(a) * d, r: 4 + r() * 3, fill: '#f4f1ea' }); }
+  B.forEach(([n, l, c], i) => {
+    const str = Math.pow(700 / l, 4), L = 30 + str * 34, a = -2.25 + i * 0.36;
+    const x2 = cx + Math.cos(a) * (90 + L), y2 = cy + Math.sin(a) * (90 + L), ah = a + Math.PI;
+    el(g, 'line', { ...S, id: 'b_a' + i, x1: cx + Math.cos(a) * 90, y1: cy + Math.sin(a) * 90, x2, y2, stroke: c, 'stroke-width': 9 });
+    el(g, 'path', { ...S, id: 'b_h' + i, d: `M${x2 + Math.cos(ah + .45) * 26} ${y2 + Math.sin(ah + .45) * 26} L${x2} ${y2} L${x2 + Math.cos(ah - .45) * 26} ${y2 + Math.sin(ah - .45) * 26}`, stroke: c, 'stroke-width': 8 });
+    const t = el(g, 'text', { id: 'b_t' + i, x: x2 + Math.cos(a) * 40 - 30, y: y2 + Math.sin(a) * 40 + 12, fill: c, 'font-family': 'Caveat', 'font-size': 46 }); t.textContent = str.toFixed(1) + '×';
+  });
+  el(g, 'line', { ...S, id: 'b_rl', x1: 730, y1: 700, x2: 1000, y2: 700, stroke: '#ff8f7a', 'stroke-width': 7, 'stroke-dasharray': '30 18' });
+}
+// ---- scene 3 drawing
+const R = 1500, ecx = 900, ecy = 730 + R, ex = ecx, ey = ecy - R;
+{
+  const g = $('ssg'), S = { fill: 'none', 'stroke-linecap': 'round' };
+  const arc = (rr, xa, xb) => { const ya = ecy - Math.sqrt(rr * rr - (xa - ecx) ** 2), yb = ecy - Math.sqrt(rr * rr - (xb - ecx) ** 2); return `M${xa} ${ya} A ${rr} ${rr} 0 0 1 ${xb} ${yb}`; };
+  el(g, 'path', { ...S, id: 'c_earth', d: arc(R, -20, 1940), stroke: '#f4f1ea', 'stroke-width': 8 });
+  el($('ssatm'), 'path', { ...S, d: arc(R + 150, -20, 1940), stroke: '#9fd0ff', 'stroke-width': 4, 'stroke-dasharray': '18 16', opacity: .8 });
+  el(g, 'circle', { id: 'c_you', cx: ex, cy: ey - 14, r: 12, fill: '#f4f1ea' });
+  el(g, 'path', { ...S, id: 'c_noonray', d: `M${ex} ${ey - 320} L${ex} ${ey - 40}`, stroke: '#f4f1ea', 'stroke-width': 8 });
+  const x0 = 70, y0 = ey - 22, grad = el(el(g, 'defs', {}), 'linearGradient', { id: 'sg', x1: 0, x2: 1 });
+  for (let k = 0; k <= 10; k++) {
+    const m = 38 * k / 10, tr = l => Math.exp(-m * 0.0088 * Math.pow(l / 1000, -4.05));
+    const rr = Math.round(255 * Math.pow(tr(650), .45)), gg = Math.round(255 * Math.pow(tr(550), .45)), bb = Math.round(255 * Math.pow(tr(450), .45));
+    const mx = Math.max(rr, gg, bb, 1); el(grad, 'stop', { offset: k / 10, 'stop-color': `rgb(${rr * 255 / mx | 0},${gg * 255 / mx | 0},${bb * 255 / mx | 0})` });
+  }
+  el(g, 'path', { ...S, id: 'c_ray', d: `M${x0} ${y0} L${ex - 30} ${ey - 16}`, stroke: 'url(#sg)', 'stroke-width': 10 });
+}
+
+// ---- scenes: [id, start, erase start]; cut-outs leave just before the eraser
+const SC = [['s1', 0, 10.6], ['s2', 11.2, 29.6], ['s3', 30.2, 49.4], ['s4', 50.0, 99]];
+const ERASE = 0.9;
+// cut-outs: entry from (dx, dy, drot), wiggles, exit time
+const CUT = {
+  c_grumpy: { t: 0.8, from: [700, -60, 25], wig: [5.5, 8.3], out: 10.1 },
+  c_white: { t: 15.6, from: [500, -200, -30], wig: [23.4], out: 29.1 },
+  c_iss: { t: 41.0, from: [800, 120, 20], wig: [], out: 48.9 },
+  c_kit: { t: 42.6, from: [0, 420, 0], back: 1.2, wig: [45.6], out: 48.9 },
+  c_end: { t: 55.2, from: [700, 80, 25], wig: [57.6], out: 99 },
+};
+for (const k in CUT) { EV.push({ t: CUT[k].t, k: 'drop' }); CUT[k].wig.forEach(w => EV.push({ t: w, k: 'wig' })); if (CUT[k].out < 60) EV.push({ t: CUT[k].out, k: 'lift' }); }
+
+// scene 1
+at(0.2, 0.6, 'fade', 'a_lab');
+at(0.3, 1.4, 'write', 'a_why'); at(1.8, 0.9, 'write', 'a_blue');
+at(1.6, 0.25, 'tape', 'a_tape');
+['a_g1', 'a_g2', 'a_g3', 'a_g4', 'a_g5'].forEach((id, i) => at(2.4 + i * 0.22, 0.3, 'draw', id));
+at(3.3, 1.3, 'write', 'a_ocean'); at(4.8, 0.4, 'draw', 'a_x1'); at(5.15, 0.35, 'draw', 'a_x2');
+at(5.5, 0.5, 'pop', 'a_nope');
+at(6.3, 0.45, 'draw', 'a_ar'); at(6.75, 0.15, 'draw', 'a_ah');
+at(7.0, 1.3, 'write', 'a_heard'); at(8.5, 1.1, 'write', 'a_sit');
+// scene 2
+at(11.4, 2.0, 'write', 'b_head');
+at(13.5, 0.8, 'draw', 'b_sun'); for (let i = 0; i < 12; i++) at(14.2 + i * 0.05, 0.15, 'draw', 'b_ray' + i, { quiet: 1 });
+at(14.9, 0.6, 'draw', 'b_beam');
+for (let i = 0; i < 40; i++) at(15.3 + i * 0.018, 0.2, 'pop', 'b_m' + i, { quiet: 1 });
+at(16.4, 0.9, 'write', 'b_calc');
+B.forEach((_, i) => { at(17.2 + i * 0.5, 0.35, 'draw', 'b_a' + i, { note: i }); at(17.55 + i * 0.5, 0.1, 'draw', 'b_h' + i, { quiet: 1 }); at(17.6 + i * 0.5, 0.3, 'pop', 'b_t' + i, { quiet: 1 }); });
+at(20.4, 1.0, 'grow', 'b_rl'); at(21.3, 0.9, 'write', 'b_red');
+at(22.2, 1.0, 'write', 'b_bb'); at(23.3, 0.9, 'write', 'b_59');
+at(23.6, 0.3, 'hide', 'b_calc'); at(23.7, 0.8, 'write', 'b_ok');
+at(24.8, 1.0, 'write', 'b_more'); at(26.0, 0.8, 'fade', 'b_lab');
+// scene 3
+at(30.4, 1.4, 'write', 'c_same');
+at(32.1, 1.4, 'draw', 'c_earth'); at(33.5, 1.0, 'wipe', 'ssatm'); at(34.7, 0.35, 'pop', 'c_you');
+at(35.1, 0.6, 'draw', 'c_noonray'); at(35.6, 0.6, 'write', 'c_noon');
+at(36.4, 0.9, 'write', 'c_what'); at(37.2, 0.4, 'fade', 'c_bl', { quiet: 1 }); at(37.2, 0.4, 'fade', 'c_rd', { quiet: 1 });
+at(37.6, 2.8, 'draw', 'c_ray'); at(37.6, 2.8, 'count', 'c_bl', { l: 450, name: 'blue' }); at(37.6, 2.8, 'count', 'c_rd', { l: 700, name: 'red' });
+at(38.0, 0.8, 'write', 'c_sun38');
+at(40.2, 1.4, 'write', 'c_38');
+at(41.7, 0.25, 'tape', 'c_tape');
+at(43.6, 1.5, 'write', 'c_so'); at(45.3, 0.8, 'fade', 'c_thick'); at(45.3, 0.8, 'fade', 'c_lab');
+// scene 4
+at(50.2, 1.8, 'write', 'd_1'); at(52.2, 2.0, 'write', 'd_2'); at(54.3, 1.7, 'write', 'd_3');
+at(55.9, 0.25, 'tape', 'd_tape'); at(56.2, 0.7, 'draw', 'd_ul');
+at(57.0, 1.2, 'write', 'd_fine'); at(58.2, 0.6, 'fade', 'd_lab');
+for (const e of TL) if (!e.quiet && e.kind !== 'count' && e.kind !== 'hide') EV.push({ t: e.t, d: e.d, k: e.kind, note: e.note });
+SC.forEach(([, , te]) => te < 60 && EV.push({ t: te, d: ERASE, k: 'erase' }));
+EV.push({ t: 37.6, d: 2.8, k: 'count' });
+EV.sort((a, b) => a.t - b.t);
+
+const len = {};
+for (const e of TL) { const n = $(e.id); if (e.kind === 'draw') len[e.id] = n.getTotalLength(); if (e.kind === 'grow') e.p = ['x1', 'y1', 'x2', 'y2'].map(k => +n.getAttribute(k)); }
+function applyEntry(e, t) {
+  const n = $(e.id), u = cl((t - e.t) / e.d), on = t >= e.t;
+  switch (e.kind) {
+    case 'write': n.style.visibility = on ? 'visible' : 'hidden'; n.style.clipPath = u >= 1 ? 'none' : `inset(-40% ${(100 - 125 * u).toFixed(2)}% -40% -15%)`; break;
+    case 'wipe': n.style.clipPath = u >= 1 ? 'none' : `inset(-5% ${(100 - 110 * u).toFixed(2)}% -5% -5%)`; break;
+    case 'draw': { const L = len[e.id]; n.style.visibility = on ? 'visible' : 'hidden'; n.style.strokeDasharray = `${L} ${L}`; n.style.strokeDashoffset = L * (1 - u); break; }
+    case 'grow': { const [x1, y1, x2, y2] = e.p; n.style.visibility = on ? 'visible' : 'hidden'; n.setAttribute('x2', x1 + (x2 - x1) * u); n.setAttribute('y2', y1 + (y2 - y1) * u); break; }
+    case 'fade': n.style.opacity = u * (n.dataset.op || 1); break;
+    case 'hide': n.style.opacity = on ? 1 - u : 1; break;
+    case 'pop': { n.style.visibility = on ? 'visible' : 'hidden'; const b = n.dataset.tf || ''; n.style.transform = `${b} scale(${(0.4 + 0.6 * outBack(u, 2.2)).toFixed(4)})`; n.style.opacity = cl(u * 3); break; }
+    case 'tape': n.style.visibility = on ? 'visible' : 'hidden'; n.style.transform = `${n.dataset.tf} scale(${(1.25 - 0.25 * out3(u)).toFixed(3)}, 1) scaleX(${out3(u).toFixed(3)})`; n.style.transformOrigin = '0 50%'; break;
+    case 'count': if (on) n.textContent = `${e.name} ${pct(100 * Math.exp(-MASS * u * tau(e.l)))}`; break;
+  }
+}
+for (const e of TL) { const n = $(e.id); if (n.dataset.tf === undefined) n.dataset.tf = n.style.transform || ''; if (e.kind === 'fade') n.dataset.op = n.style.opacity || 1; }
+function cutTransform(id, c, t) {
+  const n = $(id);
+  if (t < c.t) { n.style.visibility = 'hidden'; return; }
+  n.style.visibility = 'visible';
+  const u = (t - c.t) / 0.75, k = 1 - (c.back ? outBack(u, c.back) : outBack(u, 1.1));
+  let dx = c.from[0] * k, dy = c.from[1] * k, dr = c.from[2] * k, sc = 1 + 0.004 * Math.sin(2 * Math.PI * (t - c.t) / 3.1);
+  for (const w of c.wig) { const v = t - w; if (v > 0 && v < 1.4) { dr += 3.2 * Math.sin(2 * Math.PI * 3.2 * v) * Math.exp(-3.2 * v); sc += 0.035 * Math.sin(Math.PI * cl(v / 0.25)) * (v < 0.25 ? 1 : 0); } }
+  const v = t - c.out; if (v > 0) { const e = Math.pow(cl(v / 0.5), 2); dx += 900 * e; dy -= 260 * e; dr += 18 * e; }
+  n.style.transform = `translate(${dx.toFixed(2)}px,${dy.toFixed(2)}px) rotate(${dr.toFixed(3)}deg) scale(${sc.toFixed(4)})`;
+}
+function render(t) {
+  for (const [id, t0, te] of SC) {
+    const n = $(id), vis = t >= t0 && t < te + ERASE + 0.6;
+    n.style.display = vis ? 'block' : 'none'; if (!vis) continue;
+    n.style.transform = `scale(${(1 + 0.02 * cl((t - t0) / 18)).toFixed(4)})`;
+    n.firstElementChild.style.opacity = t0 === 0 ? 1 : cl((t - t0) / 1.2);
+    const u = cl((t - te) / ERASE), p = -15 + 130 * u;  // eraser: leaves a faint ghost, then it fades
+    const ghost = 0.06 * (1 - cl((t - te - ERASE) / 0.6));
+    n.style.maskImage = n.style.webkitMaskImage = t < te ? 'none' : `linear-gradient(100deg, rgba(0,0,0,${ghost.toFixed(3)}) ${p.toFixed(1)}%, #000 ${(p + 12).toFixed(1)}%)`;
+  }
+  const rub = $('rub'), er = SC.find(([, , te]) => t >= te && t < te + ERASE);
+  rub.style.display = er ? 'block' : 'none';
+  if (er) rub.style.left = (-300 + 2500 * ((t - er[2]) / ERASE)) + 'px';
+  for (const e of TL) applyEntry(e, t);
+  for (const k in CUT) cutTransform(k, CUT[k], t);
+  const d = $('b_dots'); d.textContent = ['', '.', '..', '...'][Math.floor(t * 3) % 4];
+}
+window.renderFrame = i => render(i / FPS);
+window.info = () => ({ frames: NF, fps: FPS, events: EV });
+const F = new URLSearchParams(location.search).get('t');
+(async () => {
+  await document.fonts.ready; buildTex(); await Promise.all([...document.images].map(i => i.decode().catch(() => {})));
+  render(F === null ? 0 : +F); window.ready = true;
+})();
+</script></body></html>
