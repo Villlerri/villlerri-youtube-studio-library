@@ -1,0 +1,107 @@
+cluster,query,filter,measured,n_results,share_short_le180s,long_7_30d_n,long_7_30d_median_views,long_7_30d_subs_lt10k_n,long_7_30d_subs_lt10k_median,long_7_30d_new_channel_n,long_7_30d_new_channel_median,long_7_30d_lt100k_ge10k_views,top20_median_views,top20_median_age_years,top20_median_views_per_year,top20_share_subs_ge1m,top20_share_subs_lt100k,top20_share_older_3y,top20_share_younger_1y,top1_title,top1_channel,top1_views,top1_url
+electric,how electricity works,any,2026-10-16,40,0.07,,,,,,,,1946143.0,4.0,653547,0.4,0.3,0.6,0.25,How ELECTRICITY works - working principle,The Engineering Mindset,7934052,https://www.youtube.com/watch?v=mc979OhitAg
+electric,what is voltage,any,2026-10-16,40,0.17,,,,,,,,268904.0,6.5,61962,0.35,0.35,0.9,0.05,Voltage Explained - What is Voltage? Basic electricity  potential difference,The Engineering Mindset,2960410,https://www.youtube.com/watch?v=w82aSjLuD_8
+energy,entropy explained,any,2026-10-16,40,0.03,,,,,,,,763489.5,5.5,127481,0.5,0.05,0.9,0.05,What is entropy? - Jeff Phillips,TED-Ed,5043046,https://www.youtube.com/watch?v=YM-uykVfq_E
+energy,nuclear fusion explained,any,2026-10-16,40,0.15,,,,,,,,322149.5,3.5,88908,0.55,0.15,0.7,0.1,Fusion Power Explained – Future or Failure,Kurzgesagt – In a Nutshell,15198779,https://www.youtube.com/watch?v=mZsaaturR6E
+energy,thermodynamics explained,any,2026-10-16,40,0.03,,,,,,,,405481.0,7.5,111174,0.6,0.2,0.7,0.15,All of Thermodynamics Explained in 11 Minutes,Easy Explained 2.0,131577,https://www.youtube.com/watch?v=0a8gjbn33rM
+energy,what is energy physics,any,2026-10-16,40,0.03,,,,,,,,840094.0,6.0,137824,0.5,0.25,0.85,0.05,What is energy?,Fermilab,610138,https://www.youtube.com/watch?v=u36H4Uo3rPM
+everyday,everyday physics explained,any,2026-10-16,40,0.0,,,,,,,,51959.0,0.4,49911,0.2,0.5,0.15,0.65,Level 1 to 100 Physics Concepts to Fall Asleep to,SleepWise,1283440,https://www.youtube.com/watch?v=ZffEvgEE-hc
+everyday,how does a microwave work,any,2026-10-16,40,0.15,,,,,,,,370765.0,5.5,42030,0.35,0.35,0.7,0.1,An easy to understand explanation of how microwaves work,Business Insider,369830,https://www.youtube.com/watch?v=xDM_Gkpplck
+everyday,physics of everyday life,any,2026-10-16,40,0.33,,,,,,,,180010.0,3.0,27564,0.25,0.45,0.55,0.15,The fascinating physics of everyday life | Helen Czerski,TED,321023,https://www.youtube.com/watch?v=_ryJK294Psw
+everyday,why do things fall,any,2026-10-16,40,0.38,,,,,,,,651790.5,5.5,79441,0.55,0.3,0.7,0.15,Why Do Things REALLY Fall? (with General Relativity),The Science Asylum,171416,https://www.youtube.com/watch?v=5HKH1ZjGutA
+everyday,why does ice float,any,2026-10-16,40,0.23,,,,,,,,793.0,0.1,3402,0.25,0.65,0.25,0.65,Why does ice float in water? - George Zaidan and Charles Morton,TED-Ed,2037831,https://www.youtube.com/watch?v=UukRgqzk-KE
+everyday,why is the sky blue,any,2026-10-16,40,0.45,,,,,,,,205538.5,6.0,23990,0.5,0.25,0.85,0.05,Why Is the Sky Blue?,NASA Space Place,931166,https://www.youtube.com/watch?v=ehUIlhKhzDA
+fluids,fluid dynamics explained,any,2026-10-16,40,0.0,,,,,,,,907465.0,6.0,127751,0.55,0.25,0.65,0.2,Fluids in Motion: Crash Course Physics #15,CrashCourse,1400664,https://www.youtube.com/watch?v=fJefjG3xhW0
+fluids,why do boats float,any,2026-10-16,40,0.42,,,,,,,,219902.0,5.0,42788,0.25,0.55,0.75,0.05,How Do Ships Float? | Things Explained: Buoyancy,GPB Education,197180,https://www.youtube.com/watch?v=06TFRgPlmxU
+general,physics animation,any,2026-10-16,40,0.12,,,,,,,,708340.0,1.5,1450306,0.2,0.4,0.2,0.35,Animation vs. Physics,Alan Becker,49457180,https://www.youtube.com/watch?v=ErMSHiQRnc8
+general,physics experiment,any,2026-10-16,40,0.12,,,,,,,,13455734.5,4.0,5833382,0.65,0.05,0.55,0.1,33 AMAZING SCIENCE EXPERIMENTS! Compilation | Best of the Year,Fun Science,33792248,https://www.youtube.com/watch?v=pVDqiYIxvdA
+general,physics explained,any,2026-10-16,40,0.0,,,,,,,,789455.0,1.0,1191328,0.1,0.05,0.05,0.45,ALL OF PHYSICS explained in 14 Minutes,Wacky Science,11518441,https://www.youtube.com/watch?v=ZAqIoDhornk
+general,physics explained simply,any,2026-10-16,40,0.07,,,,,,,,1201251.5,2.0,899257,0.3,0.1,0.45,0.1,ALL OF PHYSICS explained in 14 Minutes,Wacky Science,11518441,https://www.youtube.com/watch?v=ZAqIoDhornk
+general,physics for beginners,any,2026-10-16,40,0.07,,,,,,,,829301.0,2.5,378047,0.3,0.2,0.5,0.1,ALL OF PHYSICS explained in 14 Minutes,Wacky Science,11518441,https://www.youtube.com/watch?v=ZAqIoDhornk
+general,physics simulation,any,2026-10-16,40,0.25,,,,,,,,898352.5,0.5,1990486,0.0,0.8,0.05,0.75,SimPHY Demo | A glimpse of what SimPHY is capable of. | Best Simulation Software,SimPhy,39425,https://www.youtube.com/watch?v=uU8_7J4IW4c
+general,science explained animation,any,2026-10-16,40,0.07,,,,,,,,89897.0,2.5,46353,0.25,0.55,0.5,0.4,Bacteria: Definition & Types | Primary School Science Animation,The Pique Lab,78469,https://www.youtube.com/watch?v=X6m2nbjp-oo
+gravity,gravity explained,any,2026-10-16,40,0.05,,,,,,,,964343.0,2.5,663795,0.45,0.25,0.5,0.4,What Everyone Gets Wrong About Gravity,Veritasium,15529160,https://www.youtube.com/watch?v=XRr1kaXKBsU
+gravity,how gravity works,any,2026-10-16,40,0.12,,,,,,,,964343.0,4.0,425921,0.5,0.15,0.6,0.25,What Everyone Gets Wrong About Gravity,Veritasium,15529160,https://www.youtube.com/watch?v=XRr1kaXKBsU
+light,how do lasers work,any,2026-10-16,40,0.25,,,,,,,,184950.5,6.5,42888,0.5,0.35,0.8,0.05,How lasers work (in theory),minutephysics,3147983,https://www.youtube.com/watch?v=y3SBSbsdiYg
+light,how light works,any,2026-10-16,40,0.05,,,,,,,,679194.0,3.5,175239,0.6,0.25,0.65,0.2,Understanding Light and Why it exists.,But Why?,803399,https://www.youtube.com/watch?v=NFm2MgVqJfM
+light,rainbow physics explained,any,2026-10-16,40,0.28,,,,,,,,430848.5,8.5,51891,0.65,0.15,0.9,0.0,What is a rainbow?,Physics Explained,95249,https://www.youtube.com/watch?v=M90XEREe66s
+light,why do we see colors,any,2026-10-16,40,0.3,,,,,,,,281406.0,8.0,26987,0.55,0.35,0.9,0.1,How Do We Actually See Color?,Be Smart,850022,https://www.youtube.com/watch?v=WN1yCigL3Hk
+magnet,electromagnetism explained,any,2026-10-16,40,0.0,,,,,,,,371575.5,4.0,167360,0.55,0.3,0.65,0.1,Electromagnetism Explained in Simple Words,Science ABC,405119,https://www.youtube.com/watch?v=nllCgjlWAF4
+magnet,how magnets work,any,2026-10-16,40,0.1,,,,,,,,1052289.5,3.5,385381,0.55,0.15,0.6,0.2,What Even Are Magnets???,This.,1072248,https://www.youtube.com/watch?v=9Bob9hCfxUY
+matter,states of matter explained,any,2026-10-16,40,0.07,,,,,,,,1440390.5,7.0,228960,0.6,0.1,0.9,0.0,GCSE Chemistry - States of Matter & Changing State,Cognito,980996,https://www.youtube.com/watch?v=hkBrw2fG75U
+matter,superconductor explained,any,2026-10-16,40,0.05,,,,,,,,225535.0,4.5,62308,0.4,0.3,0.85,0.05,Superconductivity Explained in Simple Words,Science ABC,55300,https://www.youtube.com/watch?v=681nX33wfLI
+mechanics,angular momentum explained,any,2026-10-16,40,0.12,,,,,,,,186353.0,8.5,26721,0.65,0.05,0.8,0.1,Angular Momentum Explained in Simple Words,Science ABC,161684,https://www.youtube.com/watch?v=ho3VQy4wO4E
+mechanics,friction explained,any,2026-10-16,40,0.25,,,,,,,,220782.5,6.0,50252,0.45,0.2,0.95,0.0,Understanding Friction,The Efficient Engineer,371768,https://www.youtube.com/watch?v=mx7NYrUXDB0
+mechanics,how do airplanes fly,any,2026-10-16,40,0.1,,,,,,,,1882695.5,4.5,479862,0.65,0.2,0.75,0.05,How do airplanes actually fly? - Raymond Adkins,TED-Ed,2523646,https://www.youtube.com/watch?v=p4VHMsIuPmk
+mechanics,newton laws of motion explained,any,2026-10-16,40,0.2,,,,,,,,414548.0,5.0,103143,0.55,0.2,0.8,0.0,"Newton's 3 Laws, with a bicycle - Joshua Manley",TED-Ed,2954211,https://www.youtube.com/watch?v=JGO_zDWmkvk
+paradox,physics paradox,any,2026-10-16,40,0.05,,,,,,,,1102410.0,1.0,937643,0.55,0.1,0.35,0.3,3 Physics Paradoxes That Feel Like a Glitch in Reality,Up and Atom,453910,https://www.youtube.com/watch?v=OBIpIiZHf5w
+paradox,physics puzzle,any,2026-10-16,40,0.47,,,,,,,,3370.0,3.0,816,0.3,0.45,0.6,0.3,TOP 5 PHYSICS PUZZLE GAMES,Eva Comp,2136,https://www.youtube.com/watch?v=dmOrV7RzotI
+particle,particle physics explained,any,2026-10-16,40,0.03,,,,,,,,597021.0,2.0,291657,0.5,0.25,0.45,0.15,The Map of Particle Physics | The Standard Model Explained,Domain of Science,1831243,https://www.youtube.com/watch?v=mYcLuWHzfmE
+particle,what is an atom made of,any,2026-10-16,40,0.2,,,,,,,,1342991.0,7.0,204609,0.35,0.2,0.85,0.05,What Are Atoms Made Of?,Stated Clearly,744310,https://www.youtube.com/watch?v=ooWfzpUIoNM
+quantum,double slit experiment,any,2026-10-16,40,0.1,,,,,,,,808200.0,4.5,149706,0.4,0.35,0.65,0.2,The Weird Experiment that Changes When Observed,Newsthink,2022260,https://www.youtube.com/watch?v=5kfGRO6msQw
+quantum,quantum entanglement explained,any,2026-10-16,40,0.05,,,,,,,,342957.0,3.0,206140,0.45,0.2,0.55,0.4,Quantum Entanglement: Explained in REALLY SIMPLE Words,Science ABC,1156329,https://www.youtube.com/watch?v=fkAAbXPEAtU
+quantum,quantum physics explained simply,any,2026-10-16,40,0.03,,,,,,,,1378561.5,2.5,572056,0.45,0.15,0.5,0.15,Quantum Mechanics Explained in Ridiculously Simple Words,Science ABC,1119063,https://www.youtube.com/watch?v=p9pPjASnnxw
+relativity,special relativity explained,any,2026-10-16,40,0.03,,,,,,,,735334.0,6.5,194058,0.45,0.1,0.75,0.05,Time Dilation - Einstein's Theory Of Relativity Explained!,Science ABC,9615844,https://www.youtube.com/watch?v=yuD34tEpRFw
+relativity,speed of light explained,any,2026-10-16,40,0.07,,,,,,,,1171973.0,3.0,619629,0.35,0.2,0.6,0.25,"The Speed of Light, Explained Slowly",The Sleepy Scientist ,52361,https://www.youtube.com/watch?v=kwl-bTQ9eiU
+relativity,time dilation explained,any,2026-10-16,40,0.05,,,,,,,,497928.0,1.0,245676,0.1,0.25,0.4,0.4,Time Dilation - Einstein's Theory Of Relativity Explained!,Science ABC,9615844,https://www.youtube.com/watch?v=yuD34tEpRFw
+shorts,physics facts,any,2026-10-16,40,0.0,,,,,,,,1104305.5,1.0,914844,0.3,0.1,0.2,0.2,ALL OF PHYSICS explained in 14 Minutes,Wacky Science,11518495,https://www.youtube.com/watch?v=ZAqIoDhornk
+shorts,physics shorts,any,2026-10-16,40,0.0,,,,,,,,367654.0,3.5,53353,0.2,0.05,0.55,0.2,ALL OF PHYSICS explained in 14 Minutes,Wacky Science,11518441,https://www.youtube.com/watch?v=ZAqIoDhornk
+sound,how sound works,any,2026-10-16,40,0.17,,,,,,,,435711.0,7.5,69635,0.45,0.35,0.95,0.0,How Sound Works - The Physics of Sound Waves,Mr. McMath,210510,https://www.youtube.com/watch?v=QBYz82nS_xk
+sound,resonance explained,any,2026-10-16,40,0.07,,,,,,,,230161.5,5.0,50245,0.3,0.4,0.85,0.0,Resonance and Natural Frequency Explained,ZPhysics,165215,https://www.youtube.com/watch?v=talN8nFXzEo
+sound,sound waves explained,any,2026-10-16,40,0.15,,,,,,,,368848.0,7.0,83219,0.45,0.35,0.8,0.05,Sound waves explained! (for beginners) - Ep. 01,AwesomeAcoustics in English,26755,https://www.youtube.com/watch?v=4_PIxS4A0cU
+space,black hole explained,any,2026-10-16,40,0.0,,,,,,,,2663979.0,2.0,1672043,0.6,0.2,0.4,0.15,Black Holes Explained – From Birth to Death,Kurzgesagt – In a Nutshell,29505578,https://www.youtube.com/watch?v=e-P5IFTqB98
+space,how big is the universe,any,2026-10-16,40,0.03,,,,,,,,2897383.0,2.0,2230451,0.45,0.35,0.45,0.25,How Big is The Universe?,Science Time,15265153,https://www.youtube.com/watch?v=pSHVbLPWA28
+space,what happens inside the sun,any,2026-10-16,40,0.23,,,,,,,,556676.5,2.0,115456,0.5,0.35,0.4,0.3,Uncovering the Secrets of the Sun (Full Episode) | National Geographic,National Geographic,873359,https://www.youtube.com/watch?v=SLmWY_ycFUA
+electric,how electricity works,month,2026-10-16,40,0.03,27,184,20,219.5,17,104,0,,,,,,,,,,,
+electric,what is voltage,month,2026-10-16,40,0.15,27,424,25,406,9,122,4,,,,,,,,,,,
+energy,entropy explained,month,2026-10-16,40,0.07,26,40.5,21,18,11,18,2,,,,,,,,,,,
+energy,nuclear fusion explained,month,2026-10-16,40,0.17,25,56,19,29,13,28,1,,,,,,,,,,,
+energy,thermodynamics explained,month,2026-10-16,40,0.25,19,29,13,24,8,31.0,0,,,,,,,,,,,
+energy,what is energy physics,month,2026-10-16,40,0.03,29,12958,11,1563,4,569.0,10,,,,,,,,,,,
+everyday,everyday physics explained,month,2026-10-16,40,0.15,19,45,18,50.0,10,40.0,0,,,,,,,,,,,
+everyday,how does a microwave work,month,2026-10-16,40,0.12,22,12.5,14,23.5,15,23,0,,,,,,,,,,,
+everyday,physics of everyday life,month,2026-10-16,40,0.42,17,15,15,18,7,12,0,,,,,,,,,,,
+everyday,why do things fall,month,2026-10-16,40,0.4,19,28,16,19.0,12,19.0,0,,,,,,,,,,,
+everyday,why does ice float,month,2026-10-16,40,0.33,16,46.5,12,85.0,9,87,0,,,,,,,,,,,
+everyday,why is the sky blue,month,2026-10-16,40,0.5,15,25,10,29.0,11,24,0,,,,,,,,,,,
+fluids,fluid dynamics explained,month,2026-10-16,40,0.12,28,102.0,25,99,5,37,0,,,,,,,,,,,
+fluids,why do boats float,month,2026-10-16,40,0.42,16,56.0,13,157,7,55,0,,,,,,,,,,,
+general,physics animation,month,2026-10-16,40,0.47,12,1413.0,5,415,5,34,1,,,,,,,,,,,
+general,physics experiment,month,2026-10-16,40,0.17,20,31800.0,8,2339.5,3,3153,6,,,,,,,,,,,
+general,physics explained,month,2026-10-16,40,0.03,29,115907,7,1957,0,,8,,,,,,,,,,,
+general,physics explained simply,month,2026-10-16,40,0.1,28,400.0,21,181,11,103,2,,,,,,,,,,,
+general,physics for beginners,month,2026-10-16,40,0.28,21,98,16,15.5,5,81,0,,,,,,,,,,,
+general,physics simulation,month,2026-10-16,40,0.23,26,42755.0,16,6744.0,17,18427,12,,,,,,,,,,,
+general,science explained animation,month,2026-10-16,40,0.42,19,53,17,53,14,34.0,0,,,,,,,,,,,
+gravity,gravity explained,month,2026-10-16,40,0.3,18,174.0,13,15,8,108.0,2,,,,,,,,,,,
+gravity,how gravity works,month,2026-10-16,40,0.28,20,31.5,16,31.5,11,151,1,,,,,,,,,,,
+light,how do lasers work,month,2026-10-16,40,0.12,23,453,10,154.5,2,695.5,1,,,,,,,,,,,
+light,how light works,month,2026-10-16,40,0.42,9,29,6,22.5,5,22,1,,,,,,,,,,,
+light,rainbow physics explained,month,2026-10-16,40,0.23,17,25,15,24,10,19.5,1,,,,,,,,,,,
+light,why do we see colors,month,2026-10-16,40,0.07,21,29,16,37.0,15,25,1,,,,,,,,,,,
+magnet,electromagnetism explained,month,2026-10-16,40,0.25,25,112,22,64.0,4,270.0,1,,,,,,,,,,,
+magnet,how magnets work,month,2026-10-16,40,0.2,28,72.5,26,57.0,10,72.5,2,,,,,,,,,,,
+matter,states of matter explained,month,2026-10-16,40,0.2,24,26.0,22,36.5,12,39.0,0,,,,,,,,,,,
+matter,superconductor explained,month,2026-10-16,40,0.07,25,122,18,114.5,4,40.5,3,,,,,,,,,,,
+mechanics,angular momentum explained,month,2026-10-16,40,0.03,28,68.0,24,68.0,14,35.5,0,,,,,,,,,,,
+mechanics,friction explained,month,2026-10-16,40,0.25,23,38,23,38,8,38.5,0,,,,,,,,,,,
+mechanics,how do airplanes fly,month,2026-10-16,40,0.4,16,37.5,11,46,11,46,1,,,,,,,,,,,
+mechanics,newton laws of motion explained,month,2026-10-16,40,0.28,24,26.0,20,24.0,10,25.5,0,,,,,,,,,,,
+paradox,physics paradox,month,2026-10-16,40,0.03,25,443,16,207.5,7,42,4,,,,,,,,,,,
+paradox,physics puzzle,month,2026-10-16,40,0.55,13,30,10,27.5,3,22,0,,,,,,,,,,,
+particle,particle physics explained,month,2026-10-16,40,0.0,23,1754,10,1125.0,4,519.0,6,,,,,,,,,,,
+particle,what is an atom made of,month,2026-10-16,40,0.25,19,72,17,89,10,80.5,1,,,,,,,,,,,
+quantum,double slit experiment,month,2026-10-16,40,0.23,21,65,17,37,8,29.0,0,,,,,,,,,,,
+quantum,quantum entanglement explained,month,2026-10-16,40,0.05,29,79,23,65,11,53,1,,,,,,,,,,,
+quantum,quantum physics explained simply,month,2026-10-16,40,0.12,22,144.5,16,82.0,8,78.0,1,,,,,,,,,,,
+relativity,special relativity explained,month,2026-10-16,40,0.12,25,93,20,73.5,13,27,3,,,,,,,,,,,
+relativity,speed of light explained,month,2026-10-16,40,0.05,23,515,19,489,10,227.0,2,,,,,,,,,,,
+relativity,time dilation explained,month,2026-10-16,40,0.15,25,84,20,69.5,15,33,1,,,,,,,,,,,
+shorts,physics facts,month,2026-10-16,40,0.1,21,135,14,35.5,9,39,2,,,,,,,,,,,
+shorts,physics shorts,month,2026-10-16,40,0.62,9,124,6,28.0,2,62.0,0,,,,,,,,,,,
+sound,how sound works,month,2026-10-16,40,0.35,16,443.0,11,104,2,23.5,0,,,,,,,,,,,
+sound,resonance explained,month,2026-10-16,40,0.1,31,24834,13,69,5,69,10,,,,,,,,,,,
+sound,sound waves explained,month,2026-10-16,40,0.15,31,54,30,52.0,11,46,0,,,,,,,,,,,
+space,black hole explained,month,2026-10-16,40,0.05,24,149.5,17,69,21,69,3,,,,,,,,,,,
+space,how big is the universe,month,2026-10-16,40,0.07,22,271.0,18,195.5,15,109,1,,,,,,,,,,,
+space,what happens inside the sun,month,2026-10-16,40,0.12,23,44,19,30,17,30,0,,,,,,,,,,,

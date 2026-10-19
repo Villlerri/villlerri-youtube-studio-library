@@ -1,0 +1,23 @@
+cluster,n_videos,n_channels,median_ratio,p75_ratio,share_ratio_ge2,n_big_channels_videos,median_ratio_big,n_physics_core,median_ratio_physics_core,median_ratio_ci90_low,median_ratio_ci90_high,median_views_per_day,top_example,top_example_url
+light,274,56,1.0,1.93,0.234,174,0.94,259,1.01,0.89,1.11,566.8,I finally understood why speed of light is a constant! (My mind is blown),https://www.youtube.com/watch?v=Zkv8sW6y3sY
+sound,83,33,0.84,1.62,0.193,73,0.82,76,0.84,0.67,0.96,702.1,"Reacting to Quantum Mystic ""Higher Frequency"" Self-Help Rubbish",https://www.youtube.com/watch?v=BD1KHgpHEbA
+magnet,84,32,1.36,2.23,0.31,31,1.37,81,1.37,1.1,1.49,168.7,Magnetic flux explained in 3 minutes,https://www.youtube.com/watch?v=6T7aG3Gd_38
+electric,312,56,1.08,2.02,0.256,189,0.98,266,1.08,0.98,1.28,464.4,Crushing Huge Lithium Ion Batteries with Hydraulic Press,https://www.youtube.com/watch?v=t1j9TUV5coc
+heat_energy,307,69,0.98,1.87,0.231,235,0.93,273,1.04,0.87,1.09,564.0,"How a Steam Locomotive Works (Union Pacific ""Big Boy"")",https://www.youtube.com/watch?v=Hszu80NJ438
+nuclear_particle,318,60,1.05,1.71,0.211,215,1.05,300,1.06,0.98,1.11,651.1,The True Scale Of Modern Nuclear Weapons,https://www.youtube.com/watch?v=ujfC0NgdU48
+quantum,165,39,1.19,2.39,0.273,98,1.21,158,1.17,1.07,1.34,460.6,I did the double slit experiment at home,https://www.youtube.com/watch?v=v_uBaBuarEM
+relativity_time,139,38,1.25,2.05,0.266,74,1.29,135,1.23,1.09,1.47,544.5,I finally understood why speed of light is a constant! (My mind is blown),https://www.youtube.com/watch?v=Zkv8sW6y3sY
+space,1878,70,0.95,1.61,0.188,1233,0.95,1801,0.96,0.93,0.99,441.9,How Big is The Universe?,https://www.youtube.com/watch?v=pSHVbLPWA28
+gravity,122,36,0.93,1.74,0.246,69,0.93,118,0.93,0.84,1.08,449.0,Gravity's Mind-bending Trick: How It Bends Light To Create Giant Cosmic Illusions,https://www.youtube.com/watch?v=CyxsuKYotwY
+mechanics,302,61,1.05,1.93,0.232,166,1.06,282,1.06,0.93,1.17,449.5,I finally understood why speed of light is a constant! (My mind is blown),https://www.youtube.com/watch?v=Zkv8sW6y3sY
+fluids_flight,369,72,0.98,1.88,0.236,272,0.93,323,0.98,0.87,1.13,609.0,Submarine Implosion |  High pressure chamber test!,https://www.youtube.com/watch?v=8tW4zfTeJqM
+matter,191,53,1.02,2.04,0.257,164,1.02,177,1.03,0.91,1.3,566.6,Are solid objects really “solid”?,https://www.youtube.com/watch?v=DqhXsEgLMJ0
+paradox_puzzle,884,68,1.05,2.0,0.252,713,1.07,800,1.04,1.0,1.11,913.0,Do We Enter A Parallel Universe When We Die? | Unveiled (+Mystery Ep.),https://www.youtube.com/watch?v=DeFErI1EVus
+everyday,136,43,1.0,1.88,0.228,121,0.98,110,1.04,0.88,1.17,705.9,How Does This App Blow Out Candles?,https://www.youtube.com/watch?v=tX6XSs2T5Go
+experiment,504,58,0.92,1.99,0.25,426,0.92,474,0.92,0.85,1.0,397.7,I did the double slit experiment at home,https://www.youtube.com/watch?v=v_uBaBuarEM
+engineering,377,68,1.13,2.04,0.263,347,1.14,194,1.08,1.02,1.26,1368.5,The interesting engineering behind the SHAPE of Train wheels!,https://www.youtube.com/watch?v=XzgryPhtc1Y
+math,413,52,0.99,1.65,0.194,333,0.99,152,0.98,0.94,1.08,421.4,All 7 Dimensions Explained in Detail (From 0D to Infinity),https://www.youtube.com/watch?v=-gPFxMHWV8w
+history_people,524,60,1.07,1.96,0.248,425,1.03,490,1.07,0.99,1.15,546.0,Professor Jiang is an Idiot (Predictive History Reaction),https://www.youtube.com/watch?v=1gMYDnLyOSc
+news,474,50,1.04,1.67,0.207,374,1.02,443,1.05,0.99,1.09,494.5,Best Hydraulic Press Moments of 2024,https://www.youtube.com/watch?v=scTX98braAg
+scale,196,45,1.1,2.05,0.26,165,1.07,154,1.14,0.98,1.21,898.2,How Big is The Universe?,https://www.youtube.com/watch?v=pSHVbLPWA28
+(none),2798,86,0.98,1.83,0.225,2308,0.97,2460,0.97,0.95,1.02,719.1,Reacting to Dr. Mike and the Anti-Vaxxers,https://www.youtube.com/watch?v=Qq8ZVjylrD4
