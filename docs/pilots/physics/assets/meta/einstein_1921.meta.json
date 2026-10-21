@@ -1,0 +1,105 @@
+{
+ "pageid": 33786836,
+ "ns": 6,
+ "title": "File:Albert Einstein 1921 by F Schmutzer.jpg",
+ "imagerepository": "local",
+ "imageinfo": [
+  {
+   "timestamp": "2014-07-06T12:12:42Z",
+   "user": "Yann",
+   "size": 2441086,
+   "width": 2523,
+   "height": 3313,
+   "thumburl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Albert_Einstein_1921_by_F_Schmutzer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "thumbwidth": 2400,
+   "thumbheight": 3151,
+   "thumbattribs": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Albert_Einstein_1921_by_F_Schmutzer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "decoding": "async",
+    "loading": "lazy",
+    "width": 2400,
+    "height": 3151
+   },
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Albert_Einstein_1921_by_F_Schmutzer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "descriptionurl": "https://commons.wikimedia.org/wiki/File:Albert_Einstein_1921_by_F_Schmutzer.jpg",
+   "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=33786836",
+   "extmetadata": {
+    "DateTime": {
+     "value": "2014-07-06 12:12:42",
+     "source": "mediawiki-metadata",
+     "hidden": ""
+    },
+    "ObjectName": {
+     "value": "Albert Einstein 1921 by F Schmutzer",
+     "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+     "value": 1.2,
+     "source": "extension",
+     "hidden": ""
+    },
+    "Categories": {
+     "value": "Retouched pictures|Artworks without Wikidata item|Images with extracted images|CC-PD-Mark|Author died more than 95 years ago public domain images|Albert Einstein by Schmutzer (1921)",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "Assessments": {
+     "value": "valued",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "Artist": {
+     "value": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Ferdinand_Schmutzer\" class=\"extiw\" title=\"w:en:Ferdinand Schmutzer\"><span title=\"Austrian photographer and artist (1870-1928)\">Ferdinand Schmutzer</span></a></bdi>",
+     "source": "commons-desc-page"
+    },
+    "ImageDescription": {
+     "value": "Albert Einstein during a lecture in Vienna in 1921.",
+     "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+     "value": "1921<div style=\"display: none;\">date QS:P571,+1921-00-00T00:00:00Z/9</div>",
+     "source": "commons-desc-page"
+    },
+    "Credit": {
+     "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20071026151415/http://www.anzenbergergallery.com/en/article/134.html\">https://web.archive.org/web/20071026151415/http://www.anzenbergergallery.com/en/article/134.html</a>",
+     "source": "commons-desc-page"
+    },
+    "Permission": {
+     "value": "Regarding the origin and copyright status of this image it is a study by the portraitist <a href=\"https://en.wikipedia.org/wiki/Ferdinand_Schmutzer\" class=\"extiw\" title=\"w:Ferdinand Schmutzer\">F. Schmutzer</a>, a member of the <a href=\"https://en.wikipedia.org/wiki/Vienna_Secession\" class=\"extiw\" title=\"wikipedia:Vienna Secession\">Wikipedia:Vienna Secession</a> and its president from 1914 to 1917. Schmutzer did not intend his studies to be published, <a rel=\"nofollow\" class=\"external text\" href=\"http://www.donau-uni.ac.at/imperia/md/content/studium/kultur/zbw/eshph/photoresearcher/photoresearcher_no8.pdf\">they were for his own private use</a>. His studies were discovered in 2001 and sold to the Austrian National Library. It follows that this image could not have been published before 2001 and thus not within 70 years of its creation (1921). The image was the subject of a nomination for deletion and <a href=\"//commons.wikimedia.org/wiki/Commons:Deletion_requests/File:Einstein_1921_by_F_Schmutzer.jpg\" title=\"Commons:Deletion requests/File:Einstein 1921 by F Schmutzer.jpg\">the result was a <b>keep</b></a>.",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "LicenseShortName": {
+     "value": "Public domain",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "UsageTerms": {
+     "value": "Public domain",
+     "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+     "value": "false",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Copyrighted": {
+     "value": "False",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Restrictions": {
+     "value": "",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "License": {
+     "value": "pd",
+     "source": "commons-templates",
+     "hidden": ""
+    }
+   },
+   "mime": "image/jpeg"
+  }
+ ]
+}

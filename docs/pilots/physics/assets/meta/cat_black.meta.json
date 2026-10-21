@@ -1,0 +1,104 @@
+{
+ "pageid": 70641733,
+ "ns": 6,
+ "title": "File:Black Cat (22553764744).jpg",
+ "imagerepository": "local",
+ "imageinfo": [
+  {
+   "timestamp": "2018-07-07T12:32:51Z",
+   "user": "Matiras",
+   "size": 1075586,
+   "width": 3872,
+   "height": 2592,
+   "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_Cat_%2822553764744%29.jpg/3840px-Black_Cat_%2822553764744%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "thumbwidth": 2400,
+   "thumbheight": 1607,
+   "thumbattribs": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_Cat_%2822553764744%29.jpg/3840px-Black_Cat_%2822553764744%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "decoding": "async",
+    "loading": "lazy",
+    "width": 2400,
+    "height": 1607
+   },
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Black_Cat_%2822553764744%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "descriptionurl": "https://commons.wikimedia.org/wiki/File:Black_Cat_(22553764744).jpg",
+   "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=70641733",
+   "extmetadata": {
+    "DateTime": {
+     "value": "2018-07-07 12:32:51",
+     "source": "mediawiki-metadata",
+     "hidden": ""
+    },
+    "ObjectName": {
+     "value": "Black Cat (22553764744)",
+     "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+     "value": 1.2,
+     "source": "extension",
+     "hidden": ""
+    },
+    "Categories": {
+     "value": "CC-Zero|Cats on black background|Flickr images reviewed by FlickreviewR 2|Solid black domestic short-haired cat portraits|Hazel-eyed solid black cats|Studio portrait photographs of domestic short-haired cats",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "Assessments": {
+     "value": "",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "ImageDescription": {
+     "value": "Black cat (2014)",
+     "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+     "value": "2014-11-01 13:58",
+     "source": "commons-desc-page"
+    },
+    "Credit": {
+     "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/image-catalog/22553764744/\">Black Cat</a>",
+     "source": "commons-desc-page"
+    },
+    "Artist": {
+     "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/132795455@N08\">Image Catalog</a>",
+     "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+     "value": "CC0",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "UsageTerms": {
+     "value": "Creative Commons Zero, Public Domain Dedication",
+     "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+     "value": "false",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "LicenseUrl": {
+     "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "source": "commons-desc-page"
+    },
+    "Copyrighted": {
+     "value": "True",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Restrictions": {
+     "value": "",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "License": {
+     "value": "cc0",
+     "source": "commons-templates",
+     "hidden": ""
+    }
+   },
+   "mime": "image/jpeg"
+  }
+ ]
+}

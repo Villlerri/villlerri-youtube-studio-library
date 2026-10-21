@@ -1,0 +1,104 @@
+{
+ "pageid": 187478058,
+ "ns": 6,
+ "title": "File:Nea Paphos, Cyprus, cat lying on side on parking lot.jpg",
+ "imagerepository": "local",
+ "imageinfo": [
+  {
+   "timestamp": "2026-03-30T11:52:00Z",
+   "user": "Gerda Arendt",
+   "size": 2431580,
+   "width": 2668,
+   "height": 2006,
+   "thumburl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Nea_Paphos%2C_Cyprus%2C_cat_lying_on_side_on_parking_lot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "thumbwidth": 2400,
+   "thumbheight": 1804,
+   "thumbattribs": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/4/40/Nea_Paphos%2C_Cyprus%2C_cat_lying_on_side_on_parking_lot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "decoding": "async",
+    "loading": "lazy",
+    "width": 2400,
+    "height": 1804
+   },
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Nea_Paphos%2C_Cyprus%2C_cat_lying_on_side_on_parking_lot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "descriptionurl": "https://commons.wikimedia.org/wiki/File:Nea_Paphos,_Cyprus,_cat_lying_on_side_on_parking_lot.jpg",
+   "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=187478058",
+   "extmetadata": {
+    "DateTime": {
+     "value": "2026-03-30 11:52:00",
+     "source": "mediawiki-metadata",
+     "hidden": ""
+    },
+    "ObjectName": {
+     "value": "Nea Paphos, Cyprus, cat lying on side on parking lot",
+     "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+     "value": 1.2,
+     "source": "extension",
+     "hidden": ""
+    },
+    "Categories": {
+     "value": "CC-Zero|Paphos|Self-published work|Images with extracted images|Lying cats (sideways)|Cats of Paphos",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "Assessments": {
+     "value": "",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "ImageDescription": {
+     "value": "Nea Paphos, Cyprus, cat lying on side on parking lot",
+     "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+     "value": "2026-03-10 14:55:29",
+     "source": "commons-desc-page"
+    },
+    "Credit": {
+     "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+     "source": "commons-desc-page"
+    },
+    "Artist": {
+     "value": "<a href=\"//commons.wikimedia.org/wiki/User:Gerda_Arendt\" title=\"User:Gerda Arendt\">Gerda Arendt</a>",
+     "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+     "value": "CC0",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "UsageTerms": {
+     "value": "Creative Commons Zero, Public Domain Dedication",
+     "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+     "value": "false",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "LicenseUrl": {
+     "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "source": "commons-desc-page"
+    },
+    "Copyrighted": {
+     "value": "True",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Restrictions": {
+     "value": "",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "License": {
+     "value": "cc0",
+     "source": "commons-templates",
+     "hidden": ""
+    }
+   },
+   "mime": "image/jpeg"
+  }
+ ]
+}

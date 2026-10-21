@@ -1,0 +1,96 @@
+{
+ "pageid": 208007,
+ "ns": 6,
+ "title": "File:Lightning NOAA.jpg",
+ "imagerepository": "local",
+ "imageinfo": [
+  {
+   "timestamp": "2008-01-12T11:45:57Z",
+   "user": "Movieevery",
+   "size": 1102335,
+   "width": 1808,
+   "height": 1216,
+   "thumburl": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Lightning_NOAA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "thumbwidth": 2400,
+   "thumbheight": 1614,
+   "thumbattribs": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Lightning_NOAA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "decoding": "async",
+    "loading": "lazy",
+    "width": 2400,
+    "height": 1614
+   },
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Lightning_NOAA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lightning_NOAA.jpg",
+   "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=208007",
+   "extmetadata": {
+    "DateTime": {
+     "value": "2008-01-12 11:45:57",
+     "source": "mediawiki-metadata",
+     "hidden": ""
+    },
+    "ObjectName": {
+     "value": "Lightning NOAA",
+     "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+     "value": 1.2,
+     "source": "extension",
+     "hidden": ""
+    },
+    "Categories": {
+     "value": "PD US NOAA|Cloud-to-ground lightning in the United States|Lightning strikes at night|Cloud-to-cloud lightning in the United States",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "Assessments": {
+     "value": "",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "ImageDescription": {
+     "value": "Multiple cloud-to-ground and cloud-to-cloud lightning strokes during night-time. Observed during night-time thunderstorm.",
+     "source": "commons-desc-page"
+    },
+    "Credit": {
+     "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://photolib.noaa.gov/Collections/National-Severe-Storms-Laboratory/Lightning/emodule/465/eitem/410\">NOAA Photo Library description page</a> (<a rel=\"nofollow\" class=\"external text\" href=\"https://photolib.noaa.gov/DesktopModules/EasyDNNgallery/MediaDownload.aspx?portalid=0&amp;mediaid=xatVRLIs%2fNE%3d&amp;moduleid=4sB9jddDhLE%3d\">full résolution</a>), NOAA Central Library; OAR/ERL/National Severe Storms Laboratory (NSSL), Image ID: nssl0010",
+     "source": "commons-desc-page"
+    },
+    "Artist": {
+     "value": "C. Clark",
+     "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+     "value": "Public domain",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "UsageTerms": {
+     "value": "Public domain",
+     "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+     "value": "false",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Copyrighted": {
+     "value": "False",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Restrictions": {
+     "value": "",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "License": {
+     "value": "pd",
+     "source": "commons-templates",
+     "hidden": ""
+    }
+   },
+   "mime": "image/jpeg"
+  }
+ ]
+}

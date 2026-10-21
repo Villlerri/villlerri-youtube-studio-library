@@ -1,0 +1,117 @@
+{
+ "pageid": 180333543,
+ "ns": 6,
+ "title": "File:Coffee steaming in a mug.jpg",
+ "imagerepository": "local",
+ "imageinfo": [
+  {
+   "timestamp": "2025-12-20T00:01:52Z",
+   "user": "PedanticNarrativeController",
+   "size": 2110130,
+   "width": 3940,
+   "height": 2686,
+   "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Coffee_steaming_in_a_mug.jpg/3840px-Coffee_steaming_in_a_mug.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "thumbwidth": 2400,
+   "thumbheight": 1636,
+   "thumbattribs": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Coffee_steaming_in_a_mug.jpg/3840px-Coffee_steaming_in_a_mug.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "decoding": "async",
+    "loading": "lazy",
+    "width": 2400,
+    "height": 1636
+   },
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Coffee_steaming_in_a_mug.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "descriptionurl": "https://commons.wikimedia.org/wiki/File:Coffee_steaming_in_a_mug.jpg",
+   "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=180333543",
+   "extmetadata": {
+    "DateTime": {
+     "value": "2025-12-20 00:01:52",
+     "source": "mediawiki-metadata",
+     "hidden": ""
+    },
+    "ObjectName": {
+     "value": "Coffee steaming in a mug",
+     "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+     "value": 1.2,
+     "source": "extension",
+     "hidden": ""
+    },
+    "Categories": {
+     "value": "Mugs|Personal life|CC-Zero|Self-published work|Files with coordinates missing SDC location of creation|Steaming cups of coffee|Steaming mugs",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "Assessments": {
+     "value": "",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "GPSLatitude": {
+     "value": "44.697000",
+     "source": "commons-desc-page"
+    },
+    "GPSLongitude": {
+     "value": "-93.263000",
+     "source": "commons-desc-page"
+    },
+    "GPSMapDatum": {
+     "value": "WGS-84",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "ImageDescription": {
+     "value": "A hot mug of coffee sits on a table in a residence.",
+     "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+     "value": "2022-04-21 07:00",
+     "source": "commons-desc-page"
+    },
+    "Credit": {
+     "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+     "source": "commons-desc-page"
+    },
+    "Artist": {
+     "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:PedanticNarrativeController&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:PedanticNarrativeController (page does not exist)\">PedanticNarrativeController</a>",
+     "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+     "value": "CC0",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "UsageTerms": {
+     "value": "Creative Commons Zero, Public Domain Dedication",
+     "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+     "value": "false",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "LicenseUrl": {
+     "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "source": "commons-desc-page"
+    },
+    "Copyrighted": {
+     "value": "True",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Restrictions": {
+     "value": "",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "License": {
+     "value": "cc0",
+     "source": "commons-templates",
+     "hidden": ""
+    }
+   },
+   "mime": "image/jpeg"
+  }
+ ]
+}

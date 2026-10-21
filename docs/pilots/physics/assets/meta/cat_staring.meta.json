@@ -1,0 +1,104 @@
+{
+ "pageid": 168740920,
+ "ns": 6,
+ "title": "File:Cat is staring at you.jpg",
+ "imagerepository": "local",
+ "imageinfo": [
+  {
+   "timestamp": "2025-06-28T14:25:09Z",
+   "user": "Zhmila",
+   "size": 3118763,
+   "width": 2322,
+   "height": 3096,
+   "thumburl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Cat_is_staring_at_you.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "thumbwidth": 2400,
+   "thumbheight": 3200,
+   "thumbattribs": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Cat_is_staring_at_you.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "decoding": "async",
+    "loading": "lazy",
+    "width": 2400,
+    "height": 3200
+   },
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Cat_is_staring_at_you.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cat_is_staring_at_you.jpg",
+   "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=168740920",
+   "extmetadata": {
+    "DateTime": {
+     "value": "2025-06-28 14:25:09",
+     "source": "mediawiki-metadata",
+     "hidden": ""
+    },
+    "ObjectName": {
+     "value": "Cat is staring at you",
+     "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+     "value": 1.2,
+     "source": "extension",
+     "hidden": ""
+    },
+    "Categories": {
+     "value": "CC-Zero|Self-published work|Harlequin patterned black tortoiseshell and white cats",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "Assessments": {
+     "value": "",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "ImageDescription": {
+     "value": "cat is staring at you",
+     "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+     "value": "2025-06-28",
+     "source": "commons-desc-page"
+    },
+    "Credit": {
+     "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+     "source": "commons-desc-page"
+    },
+    "Artist": {
+     "value": "<a href=\"//commons.wikimedia.org/wiki/User:Zhmila\" title=\"User:Zhmila\">Zhmila</a>",
+     "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+     "value": "CC0",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "UsageTerms": {
+     "value": "Creative Commons Zero, Public Domain Dedication",
+     "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+     "value": "false",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "LicenseUrl": {
+     "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "source": "commons-desc-page"
+    },
+    "Copyrighted": {
+     "value": "True",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Restrictions": {
+     "value": "",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "License": {
+     "value": "cc0",
+     "source": "commons-templates",
+     "hidden": ""
+    }
+   },
+   "mime": "image/jpeg"
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "pageid": 7216783,
+ "ns": 6,
+ "title": "File:Cat yawning.jpg",
+ "imagerepository": "local",
+ "imageinfo": [
+  {
+   "timestamp": "2009-07-05T17:02:43Z",
+   "user": "TimVickers",
+   "size": 4708208,
+   "width": 3410,
+   "height": 2502,
+   "thumburl": "https://upload.wikimedia.org/wikipedia/commons/3/39/Cat_yawning.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "thumbwidth": 2400,
+   "thumbheight": 1761,
+   "thumbattribs": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/3/39/Cat_yawning.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "decoding": "async",
+    "loading": "lazy",
+    "width": 2400,
+    "height": 1761
+   },
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Cat_yawning.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "descriptionurl": "https://commons.wikimedia.org/wiki/File:Cat_yawning.jpg",
+   "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7216783",
+   "extmetadata": {
+    "DateTime": {
+     "value": "2009-07-05 17:02:43",
+     "source": "mediawiki-metadata",
+     "hidden": ""
+    },
+    "ObjectName": {
+     "value": "Cat yawning",
+     "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+     "value": 1.2,
+     "source": "extension",
+     "hidden": ""
+    },
+    "Categories": {
+     "value": "Self-published work|Yawning cats|PD-self",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "Assessments": {
+     "value": "",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "ImageDescription": {
+     "value": "Cat yawning",
+     "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+     "value": "2009-07-05",
+     "source": "commons-desc-page"
+    },
+    "Credit": {
+     "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+     "source": "commons-desc-page"
+    },
+    "Artist": {
+     "value": "<a href=\"//commons.wikimedia.org/wiki/User:TimVickers\" title=\"User:TimVickers\">TimVickers</a>",
+     "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+     "value": "Public domain",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "UsageTerms": {
+     "value": "Public domain",
+     "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+     "value": "false",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Copyrighted": {
+     "value": "False",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Restrictions": {
+     "value": "",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "License": {
+     "value": "pd",
+     "source": "commons-templates",
+     "hidden": ""
+    }
+   },
+   "mime": "image/jpeg"
+  }
+ ]
+}

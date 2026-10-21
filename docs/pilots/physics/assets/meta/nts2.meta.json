@@ -1,0 +1,100 @@
+{
+ "pageid": 145640033,
+ "ns": 6,
+ "title": "File:Navigation Technology Satellite – II.jpg",
+ "imagerepository": "local",
+ "imageinfo": [
+  {
+   "timestamp": "2024-02-21T17:29:54Z",
+   "user": "Artem.G",
+   "size": 1320357,
+   "width": 1620,
+   "height": 2649,
+   "thumburl": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Navigation_Technology_Satellite_%E2%80%93_II.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "thumbwidth": 2400,
+   "thumbheight": 3924,
+   "thumbattribs": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Navigation_Technology_Satellite_%E2%80%93_II.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "decoding": "async",
+    "loading": "lazy",
+    "width": 2400,
+    "height": 3924
+   },
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Navigation_Technology_Satellite_%E2%80%93_II.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "descriptionurl": "https://commons.wikimedia.org/wiki/File:Navigation_Technology_Satellite_%E2%80%93_II.jpg",
+   "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=145640033",
+   "extmetadata": {
+    "DateTime": {
+     "value": "2024-02-21 17:29:54",
+     "source": "mediawiki-metadata",
+     "hidden": ""
+    },
+    "ObjectName": {
+     "value": "Navigation Technology Satellite – II",
+     "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+     "value": 1.2,
+     "source": "extension",
+     "hidden": ""
+    },
+    "Categories": {
+     "value": "PD US Government|Global Positioning System|CC-PD-Mark|Timation|Navigation Technology Satellite",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "Assessments": {
+     "value": "",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "ImageDescription": {
+     "value": "Navigation Technology Satellite – II (Timation IV): NTS-II, the first satellite completely designed and built by NRL under GPS Joint Program funding. It was the first of a four-satellite constellation configured to demonstrate instantaneous navigation positioning. NTS-II was the first operational NAVSTAR GPS Satellite. Launch Date: June 23, 1977. (U.S. Navy photo; 78375; c. 1977)\n<p>The effect of relativity on the onboard cesium atomic clocks was measured and\n</p>\ncorrected so that a GPS receiver on Earth could observe that the rate of GPS time is the same as UTC (Universal Time Coordinated). The clock frequency stability specification of 2 parts per 1013 was met. NTS-II was the first operational NAVSTAR GPS Satellite. Launch Date:June 23, 1977. (78375)",
+     "source": "commons-desc-page"
+    },
+    "DateTimeOriginal": {
+     "value": "c. 1977",
+     "source": "commons-desc-page"
+    },
+    "Credit": {
+     "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.nrl.navy.mil/Media/News/Article/2563219/first-gps-navstar-satellite-goes-on-display/\">https://www.nrl.navy.mil/Media/News/Article/2563219/first-gps-navstar-satellite-goes-on-display/</a>",
+     "source": "commons-desc-page"
+    },
+    "Artist": {
+     "value": "U.S. Navy",
+     "source": "commons-desc-page"
+    },
+    "LicenseShortName": {
+     "value": "Public domain",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "UsageTerms": {
+     "value": "Public domain",
+     "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+     "value": "false",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Copyrighted": {
+     "value": "False",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Restrictions": {
+     "value": "",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "License": {
+     "value": "pd",
+     "source": "commons-templates",
+     "hidden": ""
+    }
+   },
+   "mime": "image/jpeg"
+  }
+ ]
+}
