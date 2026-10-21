@@ -15,7 +15,7 @@
 - «Nope.»: оранжевое «Nope.» с отскоком.
 - «Listening to clocks»: от телефона расходятся волны. В небе рисуются четверо часов, стрелки идут и тикают.
 - «Would be wrong»: стрелки часов расползаются, красное «all wrong!».
-- «Einstein»: вырезка — Эйнштейн у доски, 1921 год, на скотче.
+- «Einstein»: меловая рамка, в ней «Einstein» и голубым «relativity, 1905 & 1915». Фото нет: права на образ не покрыты.
 - «Died before the first satellite»: линия времени: 1955 — Einstein dies, 1957 — first satellite.
 
 ## 2. Гроза · 0:30–0:49
@@ -28,7 +28,7 @@
 
 ## 3. Спутник кричит время · 0:49–1:13
 
-- Вырезка: спутник GPS (рисунок NASA). Рядом «same trick, with light».
+- Вырезка: спутник GPS (рисунок ВВС США, зеркально). Рядом «same trick, with light».
 - Из спутника мелом облачко: бегущие часы «12:00:00.000000000» и «…and I'm right here».
 - Внизу дуга Земли, на ней голубая точка «you».
 - По пунктиру от спутника к тебе бежит сигнал, счётчик времени в пути доходит до 0.067 s. Рядом «< 0.1 s».
@@ -60,7 +60,7 @@
 - «the simplest clock:»: два зеркала, между ними прыгает вспышка. «tick», «tock», каждый удар тикает.
 - «on a satellite →»: вторые часы проезжают доску. Свет идёт наискосок, мел оставляет зигзаг.
 - Счётчики за одно и то же время: «standing: 4 ticks», «moving: 3 ticks».
-- Чёрный кот следит за светом: «← would chase it».
+- Кот из крючка следит за светом: «← would chase it».
 - Строки под слова: «light's speed: the same for everyone», «same speed, longer path», «so every tick takes longer», «the moving clock runs slow», «not broken. that's just time.»
 - Итог в красной рамке: «−7 µs a day».
 - Наклон и скорость в кадре увеличены. Подпись: «tilt exaggerated: real tilt 0.00074°».
@@ -93,7 +93,7 @@
 
 ## 12. Как это чинят · 4:39–5:23
 
-- «so what did they do?». Вырезка Эйнштейна, «no arguing →». Оранжевое «they cheated.»
+- «so what did they do?». Меловая рамка «Einstein», под именем голубым «speed + gravity». Слева «no arguing →». Оранжевое «they cheated.»
 - «set slow on purpose:». Две строки цифр одна под другой: «should be: 10.23000000000 MHz», «set to: 10.22999999543 MHz». Цифры второй строки набегают под голос, под отличием красная черта.
 - «0.45 in a billion slower». Мелко: смещение −4,4647 × 10⁻¹⁰ по спецификации сигнала IS-GPS-200.
 - «on the ground: wrong», «in orbit: just right».

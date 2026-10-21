@@ -96,7 +96,7 @@ So next time the blue dot finds you, two of Einstein's ideas just did the math f
 - Крючок: кот в меловых очках, «← trusts the phone».
 - Гроза: кричащий кот, «← counted to three. hid.»
 - Три шара: кот косится на дешёвые часы телефона.
-- Световые часы: чёрный кот следит за светом, «← would chase it».
+- Световые часы: кот из крючка, уже без очков, следит за светом, «← would chase it».
 - Голова и ноги: кот лежит плашмя, «ages evenly →».
 - Финал: тот же кот, «← aging very evenly».
 

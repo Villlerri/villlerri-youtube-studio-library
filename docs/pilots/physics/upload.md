@@ -6,21 +6,22 @@
 
 ## Заголовки
 
-1. Your Phone Needs Einstein to Find You — рекомендую, в паре с обложкой B.
-2. Why GPS Satellite Clocks Are Set Slow on Purpose
+1. Why GPS Satellite Clocks Are Set Slow on Purpose — рекомендую, в паре с обложкой B.
+2. Your Phone Is Listening to Clocks in Space
 3. GPS Clocks Gain 38 Microseconds a Day. Here's Why.
-4. Einstein Is Inside Your Phone's Map
-5. The 38-Microsecond Problem Behind Every Blue Dot
+4. The 38-Microsecond Problem Behind Every Blue Dot
+5. Time Runs Faster in Space. Your Phone Knows.
 
 Заголовок и обложка не повторяют друг друга: заголовок даёт обещание, обложка — число.
 
+Имени Эйнштейна в заголовках, на обложках и в тегах нет. Имя и образ Эйнштейна лицензирует Еврейский университет в Иерусалиме. По правилу автора от 21.10 такой риск не берём. В речи имя стоит как факт: чья это теория.
+
 ## Обложки
 
-Три варианта 1280×720 в альбоме «Обложки: часы GPS». Все кадры прошли проверку обрезки.
+Два варианта 1280×720 в альбоме «Обложки: часы GPS». Оба прошли проверку обрезки.
 
-- A: «your phone needs Einstein», телефон с голубой точкой, спутник GPS, кот в меловых очках.
 - B: «+38 µs a day», «clocks in space run fast», спутник GPS, кричащий кот. Рекомендую.
-- C: Эйнштейн у доски, «he fixed your map». Только если фото Эйнштейна одобрено.
+- A: «your phone listens to clocks in space», телефон с голубой точкой, спутник GPS, кот в меловых очках.
 
 ## Описание
 
@@ -55,23 +56,22 @@ Sources
 - GPS.gov, Space Segment: https://www.gps.gov/space-segment
 
 Images
-- Albert Einstein, 1921: Ferdinand Schmutzer (public domain)
 - Lightning: C. Clark, NOAA (public domain)
-- GPS satellite illustrations: NASA; U.S. Air Force (public domain)
+- GPS satellite illustration: U.S. Air Force (public domain)
 - NTS-2 satellite: U.S. Navy (public domain)
 - NIST-F1 atomic clock: NIST (public domain)
 - Coffee: PedanticNarrativeController (CC0)
-- Cats: Zhmila, TimVickers, Asabae2752, Gerda Arendt, Image Catalog (CC0 / public domain)
+- Cats: Zhmila, TimVickers, Asabae2752, Gerda Arendt (CC0 / public domain)
 Music and sound effects: original, generated with code.
 Narration: AI voice (ElevenLabs).
 ```
 
-Строку про Эйнштейна убрать, если фото не берём. Строку про голос оставить: она честная при любом решении о метке.
+Строку про голос оставить: она честная при любом решении о метке.
 
 ## Теги
 
 ```
-GPS, relativity, Einstein, time dilation, atomic clock, special relativity, general relativity, gravity, satellites, physics explained, light clock, NTS-2
+GPS, relativity, time dilation, atomic clock, special relativity, general relativity, gravity, satellites, physics explained, light clock, NTS-2
 ```
 
 ## Настройки загрузки
