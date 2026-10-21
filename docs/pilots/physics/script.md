@@ -67,9 +67,9 @@ Put both together. Speed: minus seven. Height: plus forty-five. Every day, a sat
 
 **9. Как это чинят.**
 
-So what did the engineers do? They didn't argue with Einstein. They cheated. Engineers set each satellite clock to run a little slow. Its heartbeat should be ten point two three million ticks a second. On the satellite, it's set to ten point two two nine nine nine nine nine nine five four three. Slower by less than half a part in a billion. On the ground, that clock would be wrong. In orbit, once Einstein is done with it, it ticks at just the right rate. And the team on the ground still checks every clock and sends small corrections up every day.
+So what did the engineers do? They didn't argue with Einstein. They cheated. They set each satellite clock to run a little slow. Its heartbeat should be ten point two three million ticks a second. On the satellite, it's set to ten point two two nine nine nine nine nine nine five four three. Slower by less than half a part in a billion. On the ground, that clock would be wrong. In orbit, once Einstein is done with it, it ticks at just the right rate. And the team on the ground still checks every clock and sends small corrections up every day.
 
-Что сделали инженеры? Они не спорили с Эйнштейном. Они схитрили. Инженеры ставят часы каждого спутника чуть медленнее. Их пульс должен быть 10,23 миллиона тиков в секунду. На спутнике он выставлен 10,22999999543 миллиона. Медленнее меньше чем на половину миллиардной доли. На земле такие часы врали бы. На орбите, когда Эйнштейн с ними закончит, они идут с нужной скоростью. А команда на земле всё равно сверяет каждые часы и каждый день шлёт наверх мелкие поправки.
+Что сделали инженеры? Они не спорили с Эйнштейном. Они схитрили. Они ставят часы каждого спутника чуть медленнее. Их пульс должен быть 10,23 миллиона тиков в секунду. На спутнике он выставлен 10,22999999543 миллиона. Медленнее меньше чем на половину миллиардной доли. На земле такие часы врали бы. На орбите, когда Эйнштейн с ними закончит, они идут с нужной скоростью. А команда на земле всё равно сверяет каждые часы и каждый день шлёт наверх мелкие поправки.
 
 **10. Проверка 1977 года.**
 

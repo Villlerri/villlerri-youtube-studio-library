@@ -4,7 +4,7 @@
 
 ## Как озвучивать
 
-- Один запрос на строку: 108 строк, 4697 знаков. Номер строки — имя файла и ключ для картинки, например `s05b.3`.
+- Один запрос на строку: 108 строк, 4692 знаков. Номер строки — имя файла и ключ для картинки, например `s05b.3`.
 - Запрос `with-timestamps`: в ответе время каждого символа. По нему встанут кадры и субтитры ([план подгонки](timing-plan.md)).
 - Модель: Multilingual v2. Метки времени для неё описаны в справочнике. Для v3 и v4 это не подтверждено.
 - Голос выбирает автор после пробы 2–3 голосов на строках `s01.1`–`s01.6`. Тон живой, весёлый, на «ты».
@@ -137,7 +137,7 @@
 - `s09.1` So what did the engineers do?
 - `s09.2` They didn't argue with Einstein.
 - `s09.3` They cheated.
-- `s09.4` Engineers set each satellite clock to run a little slow.
+- `s09.4` They set each satellite clock to run a little slow.
 - `s09.5` Its heartbeat should be ten point two three million ticks a second.
 - `s09.6` On the satellite, it's set to ten point two two nine nine nine nine nine nine five four three.
 - `s09.7` Slower by less than half a part in a billion.
@@ -173,3 +173,30 @@
 - `s12.5` Now go check on the cat.
 - `s12.6` It's been lying flat this whole time.
 - `s12.7` Aging very evenly.
+
+## Short 1: Moving Clocks Run Slow
+
+- `h1.1` Moving clocks run slow.
+- `h1.2` And you can prove it with two mirrors.
+- `h1b.1` Light bounces between them: up, down, tick.
+- `h1b.2` Now move the clock.
+- `h1b.3` From where you stand, the light has to go sideways too.
+- пауза 0.8 с — не озвучивать, держим мы
+- `h1b.4` Longer path.
+- `h1b.5` But light's speed never changes.
+- `h1b.6` So every tick takes longer.
+- `h1c.1` GPS satellites move fast enough to lose seven millionths of a second a day.
+- `h1c.2` Gravity adds back forty-five.
+- `h1c.3` So engineers set their clocks slow on purpose.
+- `h1c.4` Otherwise your map would drift seven miles a day.
+
+## Short 2: Your Head Is Older Than Your Feet
+
+- `h2.1` Your head is older than your feet.
+- `h2.2` Seriously.
+- `h2.3` Gravity slows time down, and your feet are closer to the Earth.
+- `h2b.1` In 2010, scientists in Colorado raised a super-precise clock by about a foot.
+- `h2b.2` It ran faster.
+- `h2c.1` We did the math: stand for eighty years, and your head is almost half a millionth of a second older.
+- `h2c.2` This cat lies flat all day.
+- `h2c.3` Aging very evenly.
