@@ -8,9 +8,10 @@
 2. Зависимости: bun, playwright-core 1.56.1 и chrome-headless-shell в `prod/js/`; Python с numpy, scipy, pillow, opencv-python-headless; ffmpeg. Пути к chromium и ffmpeg в `capture3.mjs` и `check3.mjs` поправить под место.
 3. Текст: `python gps/narr.py script.md gps/narration.txt`, затем `python tools/timing.py gps/narration.txt gps/timing`. С голосом: добавить `--voice <папка с метками ElevenLabs>`.
 4. Страница: `python gps/build.py`. Проверка: `bun tools/check3.mjs gps/gps.html` должна напечатать CLEAN.
-5. Кадры: `bun tools/capture3.mjs gps/gps.html gps/segs <кадров>`; сегменты склеить `ffmpeg -f concat -c copy`.
+5. Кадры: `bun tools/capture3.mjs gps/gps.html gps/segs <кадров>`.
 6. Звук: `bun tools/info.mjs gps/gps.html gps/events.json`, `python gps/music_plan.py gps/events.json gps/plan.json`, `python tools/sound2.py gps/events.json gps/plan.json gps/snd [gps/timing/narration.json]`. Последний аргумент приглушает музыку под голос.
-7. Shorts: `python gps/build_short.py short1`, дальше те же шаги с `--w 1080 --h 1920`.
+7. Ролик: `python tools/mux.py gps/segs gps/snd/mix.wav out/gps --srt gps/timing/en.srt --frames <кадров>`.
+8. Shorts: `python gps/build_short.py short1`, дальше те же шаги с `--w 1080 --h 1920`.
 
 ## lib/chalk.js
 
@@ -427,6 +428,59 @@ for (const [k, [a, b, c]] of keys) console.log(k, a.toFixed(2), '-', b.toFixed(2
 console.log(keys.length ? `FOUND ${keys.length}` : 'CLEAN');
 await browser.close();
 process.exit(keys.length ? 1 : 0);
+```
+
+## tools/mux.py
+
+Склейка сегментов со звуком: чистая копия и копия с текстом диктора, громкость −16,5 LUFS.
+
+```python
+"""Join capture3 segments with the sound mix: clean copy, and a review copy with an English caption band.
+Loudness is brought to TARGET LUFS, a limiter keeps peaks under -1.5 dBFS.
+usage: python tools/mux.py segsdir mix.wav out_stem [--srt en.srt] [--frames N]"""
+import glob, json, os, re, subprocess, sys
+FF = '/home/boardagent/.explainer/bin/ffmpeg'; FP = FF[:-6] + 'ffprobe'
+TARGET = -16.5
+args = sys.argv[1:]
+opt = lambda k, d=None: args[args.index(k) + 1] if k in args else d
+SEGS, MIX, STEM = args[0], args[1], args[2]
+SRT, FRAMES = opt('--srt'), opt('--frames')
+FONTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'kit', 'fonts')
+
+segs = sorted(glob.glob(os.path.join(SEGS, 'seg*.mp4')))
+lst = STEM + '.concat.txt'
+open(lst, 'w').write(''.join(f"file '{os.path.abspath(s)}'\n" for s in segs))
+silent = STEM + '.video.mp4'
+subprocess.run([FF, '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', silent], check=True)
+if FRAMES:
+    n = int(subprocess.run([FP, '-v', 'error', '-count_packets', '-select_streams', 'v:0', '-show_entries', 'stream=nb_read_packets',
+                            '-of', 'csv=p=0', silent], capture_output=True, text=True).stdout.strip())
+    if n != int(FRAMES): sys.exit(f'frames: {n}, expected {FRAMES}')
+
+def loud(path):
+    e = subprocess.run([FF, '-hide_banner', '-nostats', '-i', path, '-map', 'a:0?', '-af', 'ebur128=peak=true', '-f', 'null', '-'],
+                       capture_output=True, text=True).stderr.split('Summary:')[-1]
+    return float(re.search(r'I:\s+(-?[\d.]+) LUFS', e).group(1)), float(re.search(r'Peak:\s+(-?[\d.]+) dBFS', e).group(1))
+
+lufs, _ = loud(MIX)
+af = f'volume={TARGET - lufs:.2f}dB,alimiter=limit=0.84:level=false'
+clean = STEM + '_clean.mp4'
+subprocess.run([FF, '-v', 'error', '-y', '-i', silent, '-i', MIX, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-af', af,
+                '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', clean], check=True)
+res = {'clean': clean, 'mix_lufs': lufs, 'out_lufs_peak': loud(clean)}
+if SRT:
+    w, h = map(int, subprocess.run([FP, '-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0', silent],
+                                   capture_output=True, text=True).stdout.strip().split(','))
+    band = 160 if w > h else 0
+    style = ('FontName=Space Mono,FontSize=10,PrimaryColour=&H00E6E6E6,Alignment=2,MarginV=14,BorderStyle=1,Outline=0,Shadow=0' if band else
+             'FontName=Space Mono,FontSize=9,PrimaryColour=&H00E6E6E6,BackColour=&H80000000,Alignment=2,MarginV=40,BorderStyle=3,Outline=4,Shadow=0')
+    vf = (f'pad={w}:{h + band}:0:0:color=0x0a0a0b,' if band else '') + f"subtitles={SRT}:fontsdir={FONTS}:force_style='{style}'"
+    review = STEM + '_review.mp4'
+    subprocess.run([FF, '-v', 'error', '-y', '-i', clean, '-vf', vf, '-c:v', 'libx264', '-preset', 'medium', '-crf', '21', '-pix_fmt', 'yuv420p',
+                    '-c:a', 'copy', '-movflags', '+faststart', review], check=True)
+    res['review'] = review
+os.remove(silent); os.remove(lst)
+print(json.dumps(res))
 ```
 
 ## tools/stills.mjs
@@ -2132,8 +2186,9 @@ at(PASS0, PASS1 - PASS0, 'draw', 'g_trail', { quiet: 1 });
 Chalk.event(PASS1, 'whoosh', { d: 0.6, f0: 400, f1: 2400, g: 0.12, pan: 0.6 });
 for (let k = 1; 2 * k * legM <= PASS1 - PASS0 + 1e-6; k++) Chalk.event(PASS0 + 2 * k * legM, 'tick', { n: 1, g: 0.09, f: 1900, pan: 0.4 });
 // tick counters over the same window
-at(PASS0, PASS1 - PASS0, 'fn', 'g_cs', { f: (n, u, t, on) => { n.style.visibility = on ? 'visible' : 'hidden'; n.textContent = `standing: ${Math.floor((Math.min(t, PASS1) - PASS0) / (2 * legS) + 1e-6)} ticks`; } });
-at(PASS0, PASS1 - PASS0, 'fn', 'g_cm', { f: (n, u, t, on) => { n.style.visibility = on ? 'visible' : 'hidden'; n.textContent = `moving: ${Math.floor((Math.min(t, PASS1) - PASS0) / (2 * legM) + 1e-6)} ticks`; } });
+const ticks = k => k + (k === 1 ? ' tick' : ' ticks');
+at(PASS0, PASS1 - PASS0, 'fn', 'g_cs', { f: (n, u, t, on) => { n.style.visibility = on ? 'visible' : 'hidden'; n.textContent = `standing: ${ticks(Math.floor((Math.min(t, PASS1) - PASS0) / (2 * legS) + 1e-6))}`; } });
+at(PASS0, PASS1 - PASS0, 'fn', 'g_cm', { f: (n, u, t, on) => { n.style.visibility = on ? 'visible' : 'hidden'; n.textContent = `moving: ${ticks(Math.floor((Math.min(t, PASS1) - PASS0) / (2 * legM) + 1e-6))}`; } });
 at(W('s05b.8', 'speed') - 0.2, 1.6, 'write', 'g_same');
 at(T('s05b.9'), 1.4, 'write', 'g_path'); at(T('s05b.10'), 1.4, 'write', 'g_long');
 at(T('s05b.11'), 1.5, 'write', 'g_slow'); at(T('s05b.12'), 1.6, 'write', 'g_nb');
@@ -2585,10 +2640,10 @@ at(W('h1.2', 'prove') + 0.5, 0.25, 'tape', 'p_tape');
 at(0.2, 0.6, 'fade', 'p_lab'); at(T('h1.1'), 0.9, 'write', 'p_mov'); at(W('h1.1', 'slow') - 0.1, 0.6, 'write', 'p_slow');
 at(W('h1.2', 'two') - 0.2, 1.0, 'write', 'p_proof');
 
-// ---------- h1b light clock (same model as the long video, 4 legs)
+// ---------- h1b light clock (same model as the long video, 5 legs: standing 3 ticks, moving 2)
 const LC = { C: 800 / 3, gap: 200, v: 0.6 };
 const legS = LC.gap / LC.C, legM = legS / Math.sqrt(1 - LC.v * LC.v), dxLeg = LC.v * LC.C * legM;
-const STAND0 = W('h1b.1', 'bounces'), PASS0 = W('h1b.3', 'where'), NLEG = 4, PASS1 = PASS0 + NLEG * legM;
+const STAND0 = W('h1b.1', 'bounces'), PASS0 = W('h1b.3', 'where'), NLEG = 5, PASS1 = PASS0 + NLEG * legM;
 const bounce = (t, leg) => { const k = Math.floor(t / leg), f = t / leg - k; return k % 2 === 0 ? f : 1 - f; };
 { let d = 'M205 954'; for (let k = 1; k <= NLEG; k++) d += ` L ${205 + dxLeg * k} ${k % 2 ? 766 : 954}`; $('q_trail').setAttribute('d', d); }
 at(T('h1b.1') - 0.3, 1.2, 'write', 'q_head');
@@ -2604,8 +2659,9 @@ at(T('h1b.2') + 0.3, 0.1, 'fn', 'q_ndot', { f: (n, u, t, on) => { if (on) n.setA
 at(PASS0, PASS1 - PASS0, 'draw', 'q_trail', { quiet: 1 });
 Chalk.event(PASS1, 'whoosh', { d: 0.6, f0: 400, f1: 2400, g: 0.12, pan: 0.6 });
 for (let k = 1; 2 * k * legM <= PASS1 - PASS0 + 1e-6; k++) Chalk.event(PASS0 + 2 * k * legM, 'tick', { n: 1, g: 0.09, f: 1900, pan: 0.4 });
-at(PASS0, PASS1 - PASS0, 'fn', 'q_cs', { f: (n, u, t, on) => { n.style.visibility = on ? 'visible' : 'hidden'; n.textContent = `standing: ${Math.floor((Math.min(t, PASS1) - PASS0) / (2 * legS) + 1e-6)} ticks`; } });
-at(PASS0, PASS1 - PASS0, 'fn', 'q_cm', { f: (n, u, t, on) => { n.style.visibility = on ? 'visible' : 'hidden'; n.textContent = `moving: ${Math.floor((Math.min(t, PASS1) - PASS0) / (2 * legM) + 1e-6)} ticks`; } });
+const ticks = k => k + (k === 1 ? ' tick' : ' ticks');
+at(PASS0, PASS1 - PASS0, 'fn', 'q_cs', { f: (n, u, t, on) => { n.style.visibility = on ? 'visible' : 'hidden'; n.textContent = `standing: ${ticks(Math.floor((Math.min(t, PASS1) - PASS0) / (2 * legS) + 1e-6))}`; } });
+at(PASS0, PASS1 - PASS0, 'fn', 'q_cm', { f: (n, u, t, on) => { n.style.visibility = on ? 'visible' : 'hidden'; n.textContent = `moving: ${ticks(Math.floor((Math.min(t, PASS1) - PASS0) / (2 * legM) + 1e-6))}`; } });
 at(T('h1b.4'), 0.8, 'write', 'q_long'); at(T('h1b.5'), 1.2, 'write', 'q_same'); at(T('h1b.6'), 1.3, 'write', 'q_slow');
 at(PASS1, 0.8, 'fade', 'q_tilt');
 
