@@ -1120,7 +1120,7 @@ JOBS = {
     'gps_navstar_rough': ('gps_navstar2f', (0.04, 0.0, 1.0, 0.86), 34, 1500, 18, 34, 2),
     'nts2_rough': ('nts2', (0.04, 0.04, 0.96, 0.80), 35, 1400, 18, 35, 1),
     'nist_f1_rough': ('nist_f1', (0.0, 0.0, 1.0, 1.0), 36, 900, 12, 36, 1),
-    'coffee_rough': ('coffee_mug', (0.12, 0.05, 0.92, 0.95), 37, 1300, 18, 37, 1),
+    'coffee_rough': ('coffee_mug', (0.20, 0.03, 0.785, 0.97), 37, 1300, 18, 37, 1),  # keeps out the framed pictures and the book cover
 }
 if __name__ == '__main__':
     only = sys.argv[1:]
@@ -1190,7 +1190,7 @@ for i, pair in enumerate(sys.argv[1:]):
 ```python
 """Licence registry for the GPS video: registry.csv (project template columns), passports.md, metadata copies.
 Every row is read from the Commons API metadata saved at download time (assets/src/<key>.meta.json).
-usage: python tools/registry.py <docs assets dir> <page.html>   (only cut-outs the page uses are listed)"""
+usage: python tools/registry.py <docs assets dir> <page.html>[,<page2.html>...]   (only cut-outs the pages use are listed)"""
 import csv, json, os, re, shutil, sys
 
 OUT, PAGE = sys.argv[1], sys.argv[2]
@@ -1215,7 +1215,8 @@ A = {
     'nts2_rough': ('nts2', 'фото: спутник NTS-2 в цеху', 'Photo: U.S. Navy (public domain)', 'нельзя намекать на одобрение ВМС США', 'нет'),
     'nist_f1_rough': ('nist_f1', 'фото: атомные часы NIST-F1', 'Photo: NIST (public domain)', 'нельзя намекать на одобрение NIST', 'нет'),
     'earth_rough': ('earth_as17', 'фото: Земля с Аполлона-17', 'Photo: NASA, Apollo 17 (public domain)', 'нельзя эмблемы NASA и намёк на одобрение NASA', 'нет'),
-    'coffee_rough': ('coffee_mug', 'фото: кружка кофе с паром', 'Photo: PedanticNarrativeController (CC0)', 'нет', 'нет'),
+    'coffee_rough': ('coffee_mug', 'фото: кружка кофе с паром', 'Photo: PedanticNarrativeController (CC0)', 'нет',
+                     'в исходнике две картины в рамках и обложка книги; вырезка их не берёт'),
     'cat_stare_rough': ('cat_staring', 'фото: кот смотрит в камеру', 'Photo: Zhmila (CC0)', 'нет', 'нет'),
     'cat_scream_rough': ('cat_yawn_tux', 'фото: зевающий чёрно-белый кот', 'Photo: TimVickers (public domain)', 'нет', 'нет'),
     'cat_sideeye_rough': ('cat_lying2', 'фото: кот лёжа косится', 'Photo: Asabae2752 (CC0)', 'нет', 'нет'),
@@ -1224,29 +1225,38 @@ A = {
     'cat_black_rough': ('cat_black', 'фото: чёрный кот', 'Photo: Image Catalog (CC0)', 'нет', 'нет'),
     'cat_yawn_rough': ('cat_yawn_ginger', 'фото: зевающий рыжий кот', 'Photo: David Montolio (CC0)', 'нет', 'нет'),
 }
-PLAN = sys.argv[3].split(',') if len(sys.argv) > 3 else []   # cut-outs the storyboard plans but the page does not use yet
-used = sorted(set(re.findall(r'assets/p/(\w+)\.png', open(PAGE).read())) | set(PLAN), key=list(A).index)
+PAGES = PAGE.split(',')   # the video, Shorts and thumbnails: page.html[,page2.html...]
+# asset ids stay fixed once given; an asset taken out keeps its id and the reason
+IDS = ['einstein_rough', 'lightning_rough', 'gps_iif_rough', 'gps_navstar_rough', 'nts2_rough', 'nist_f1_rough', 'coffee_rough',
+       'cat_stare_rough', 'cat_scream_rough', 'cat_sideeye_rough', 'cat_flat_rough', 'cat_black_rough']
+REMOVED = {
+    'einstein_rough': 'убрано 21.10 по решению автора: права на образ лицензия не покрывает, риск для монетизации. Вместо фото — имя мелом',
+    'gps_iif_rough': 'убрано 21.10: на Commons указан NASA, но источник — сторонний сайт egraphicbd.com, автор не подтверждён. Заменено вырезкой PH-2026-0004',
+    'cat_black_rough': 'убрано 21.10: выложено на Flickr аккаунтом Image Catalog, кто снял — не указано. Заменено вырезкой PH-2026-0008',
+}
+used = sorted(set(m for pg in PAGES for m in re.findall(r'assets/p/(\w+)\.png', open(pg).read())), key=IDS.index)
+assert not set(used) & set(REMOVED), set(used) & set(REMOVED)
 strip = lambda h: re.sub(r'\s+', ' ', re.sub('<[^>]+>', '', h or '')).strip()
 os.makedirs(os.path.join(OUT, 'meta'), exist_ok=True); os.makedirs(os.path.join(OUT, 'p'), exist_ok=True)
 head = next(csv.reader(open(TEMPLATE, encoding='utf-8-sig')))
 rows, md = [], ['# Реестр картинок: часы GPS и Эйнштейн', '',
-                'Все картинки ролика — общественное достояние или CC0, с Wikimedia Commons. Лицензия взята со страницы каждого файла через API Commons в день скачивания. Ответ API сохранён в `meta/` как подтверждение. Вырезки сделаны кодом и лежат в `p/`. Сводная таблица в тех же колонках, что шаблон проекта: `registry.csv`.', '']
-for i, cut in enumerate(used, 1):
+                'Все картинки ролика — общественное достояние или CC0, с Wikimedia Commons. Лицензия взята со страницы каждого файла через API Commons в день скачивания. Ответ API сохранён в `meta/` как подтверждение: это JSON, `.txt` в имени нужен только для сохранения в проект. Вырезки сделаны кодом и лежат в `p/`. Сводная таблица в тех же колонках, что шаблон проекта: `registry.csv`.', '']
+for cut in used:
     key, what, credit, limits, people = A[cut]
     meta = json.load(open(os.path.join(SRC, 'src', key + '.meta.json'))); ii = meta['imageinfo'][0]; em = ii['extmetadata']
     lic = strip(em['LicenseShortName']['value']); cats = em.get('Categories', {}).get('value', '').split('|')
     basis = next((PD_BASIS[c] for c in cats if c in PD_BASIS), None)
     lic_url = strip(em.get('LicenseUrl', {}).get('value')) or (basis[1] if basis else '')
     kind = 'CC0' if lic == 'CC0' else 'PD'
-    shutil.copy(os.path.join(SRC, 'src', key + '.meta.json'), os.path.join(OUT, 'meta', key + '.meta.json'))
+    shutil.copy(os.path.join(SRC, 'src', key + '.meta.json'), os.path.join(OUT, 'meta', key + '.meta.json.txt'))
     shutil.copy(os.path.join(SRC, 'p', cut + '.png'), os.path.join(OUT, 'p', cut + '.png'))
-    aid = f'PH-2026-{i:04d}'
+    aid = f'PH-2026-{IDS.index(cut) + 1:04d}'
     r = dict.fromkeys(head, '')
     r.update({'id_ассета': aid, 'что_это': what, 'тип_материала': 'фото' if what.startswith('фото') else 'иллюстрация', 'источник': 'Wikimedia Commons',
               'исходная_ссылка': ii['descriptionurl'], 'id_файла': meta['title'], 'автор': strip(em.get('Artist', {}).get('value'))[:120],
               'дата_скачивания': '2026-10-19' if key.startswith('cat_') else '2026-10-21', 'аккаунт_и_план': 'без аккаунта, API Commons',
               'лицензия': lic + (f' ({basis[0]})' if basis else ''), 'ссылка_на_лицензию': lic_url, 'вид_лицензии': kind,
-              'подтверждение_путь': f'docs/pilots/physics/assets/meta/{key}.meta.json', 'сертификат_или_код': 'не нужен',
+              'подтверждение_путь': f'docs/pilots/physics/assets/meta/{key}.meta.json.txt', 'сертификат_или_код': 'не нужен',
               'атрибуция_нужна': 'нет, даём по нашей политике', 'текст_атрибуции': credit, 'место_атрибуции_по_лицензии': 'не требуется',
               'где_атрибуция': 'подпись в кадре и описание видео', 'пометка_об_изменениях': 'не требуется', 'ограничения': limits,
               'лица_бренды_произведения': people, 'основание_эмбиент': 'неприменимо', 'создано_ии': 'нет', 'оплата': 'бесплатно',
@@ -1255,9 +1265,10 @@ for i, cut in enumerate(used, 1):
               'примечания': ''})
     rows.append(r)
     md += [f'## {aid}: {what}', '', f'- Файл: [{meta["title"]}]({ii["descriptionurl"]})', f'- Автор: {r["автор"]}',
-           f'- Лицензия: {r["лицензия"]}' + (f', {lic_url}' if lic_url else ''), f'- Подтверждение: `meta/{key}.meta.json`, скачано {r["дата_скачивания"]}',
+           f'- Лицензия: {r["лицензия"]}' + (f', {lic_url}' if lic_url else ''), f'- Подтверждение: `meta/{key}.meta.json.txt`, скачано {r["дата_скачивания"]}',
            f'- Подпись в кадре: {credit}', f'- Ограничения: {limits}', f'- Люди, бренды, чужие произведения: {people}', f'- Наши изменения: {CHANGES}',
            f'- Вырезка: `p/{cut}.png`', '']
+md += ['## Убрано из ролика', ''] + [f'- PH-2026-{IDS.index(c) + 1:04d}, {A[c][1]}: {why}.' for c, why in REMOVED.items()] + ['']
 md += ['## Шрифты', '', '- Caveat и Space Mono: SIL Open Font License 1.1, Google Fonts. Тексты лицензий — в наборе стиля задачи 58, `docs/physics-research/style-kit/fonts/`. Лицензия разрешает использование в видео.', '',
        '## Музыка и звуки', '', '- Свой код, без чужих сэмплов: [музыка](../music.md).', '']
 with open(os.path.join(OUT, 'registry.csv'), 'w', encoding='utf-8-sig', newline='') as f:
@@ -1779,10 +1790,11 @@ print(out, 'boards from', parts)
    <circle id="a_g1" cx="118" cy="178" r="30"/><circle id="a_g2" cx="194" cy="178" r="30"/><path id="a_g3" d="M148 176 q 8 -8 16 0"/></g></svg>
  </div>
  <div class="ck" id="a_trust" style="left:920px;top:930px;font-size:46px;transform:rotate(-2deg)">← trusts the phone</div>
- <div class="cw" id="c_ein" style="left:1390px;top:292px;width:420px;height:438px">
-  <img src="../assets/p/einstein_rough.png" style="transform:rotate(3deg)">
-  <div class="tape" id="a_tape" style="left:140px;top:-22px;transform:rotate(-5deg)"></div>
- </div>
+ <svg class="draw" width="1920" height="1080"><g fill="none" stroke="#f4f1ea" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <path id="a_card" d="M1404 352 C 1520 346 1680 350 1792 348 C 1796 450 1794 560 1798 664 C 1680 668 1520 662 1400 668 C 1402 560 1398 450 1404 352 Z"/>
+ </g></svg>
+ <div class="ck" id="a_ein" style="left:1452px;top:400px;font-size:96px;transform:rotate(-2deg)">Einstein</div>
+ <div class="ck" id="a_rel" style="left:1456px;top:566px;font-size:34px;color:#9fd0ff">relativity, 1905 &amp; 1915</div>
  <svg class="draw" width="1920" height="1080"><g fill="none" stroke="#f4f1ea" stroke-width="6" stroke-linecap="round">
   <path id="a_tl" d="M1300 860 C 1450 856 1650 864 1820 858"/>
   <path id="a_t1" d="M1420 842 V 878"/><path id="a_t2" d="M1660 842 V 878"/>
@@ -1791,7 +1803,6 @@ print(out, 'boards from', parts)
  <div class="ck" id="a_died" style="left:1330px;top:890px;font-size:40px;opacity:.85">Einstein dies</div>
  <div class="ck" id="a_1957" style="left:1622px;top:788px;font-size:44px;color:#9fd0ff">1957</div>
  <div class="ck" id="a_sat" style="left:1586px;top:890px;font-size:40px;opacity:.85">first satellite</div>
- <div class="lab" id="a_cred" style="left:1330px;top:1032px;font-size:14px">PHOTO: F. SCHMUTZER, 1921 · PUBLIC DOMAIN</div>
 </div>
 
 <!-- s02 the thunderstorm trick -->
@@ -1833,7 +1844,7 @@ print(out, 'boards from', parts)
   });
 }
 cut('c_cat1', { t: W('s01.5', 'smart'), from: [0, 420, 0], back: 1.2, wig: [T('s01.6')], out: hold('s01') - 0.6, to: [0, 700, 0] });
-cut('c_ein', { t: W('s01.9', 'Einstein'), from: [700, -80, 20], wig: [W('s01.10', 'honest')], out: hold('s01') - 0.6, to: [900, -200, 18] });
+at(W('s01.9', 'Einstein') - 0.3, 0.6, 'draw', 'a_card'); at(W('s01.9', 'Einstein'), 0.9, 'write', 'a_ein'); at(E('s01.9'), 1.0, 'write', 'a_rel');
 at(0.2, 0.6, 'fade', 'a_lab');
 at(T('s01.1') - 0.3, 1.5, 'draw', 'a_phone'); at(T('s01.1', .8), 0.25, 'draw', 'a_slot', { quiet: 1 }); at(E('s01.1') - 0.2, 0.9, 'wipe', 'a_map');
 at(W('s01.2', 'blue'), 0.35, 'pop', 'a_dot');
@@ -1851,12 +1862,10 @@ for (let i = 0; i < 4; i++) {
 Chalk.event(T('s01.8') + 1.0, 'tick', { n: 6, every: 0.5, g: 0.1, f: 2800 });
 at(W('s01.9', 'wrong'), 0.8, 'write', 'a_wrong');
 at(W('s01.5', 'smart') + 1.6, 1.0, 'write', 'a_trust');
-at(W('s01.9', 'Einstein') + 0.55, 0.25, 'tape', 'a_tape');
 ['a_g1', 'a_g2', 'a_g3'].forEach((id, i) => at(W('s01.5', 'smart') + 0.9 + i * 0.2, 0.25, 'draw', id, { quiet: i > 0 }));
 at(W('s01.10', 'died') - 0.3, 0.8, 'draw', 'a_tl'); at(W('s01.10', 'died'), 0.15, 'draw', 'a_t1', { quiet: 1 });
 at(W('s01.10', 'died') + 0.1, 0.5, 'write', 'a_1955'); at(W('s01.10', 'died') + 0.4, 0.7, 'write', 'a_died');
 at(W('s01.10', 'satellite') - 0.2, 0.15, 'draw', 'a_t2', { quiet: 1 }); at(W('s01.10', 'satellite') - 0.1, 0.5, 'write', 'a_1957'); at(W('s01.10', 'satellite') + 0.3, 0.8, 'write', 'a_sat');
-at(W('s01.9', 'Einstein') + 1.0, 0.8, 'fade', 'a_cred');
 // clock hands: steady until "wrong", then they slip apart
 const WRONG = W('s01.9', 'wrong');
 const hands = [0, 1, 2, 3].flatMap(i => [[`a_k${i}h`, 6, i], [`a_k${i}s`, 72, i]]);
@@ -1910,11 +1919,11 @@ HOOKS.push((t, active) => {
  <div class="ck" id="c_how" style="left:1300px;top:700px;font-size:56px">how late?</div>
  <div class="ck" id="c_eq" style="left:1000px;top:430px;font-size:88px;font-weight:600;color:#ffb36b">delay = distance</div>
  <div class="lab" id="c_lab" style="left:1004px;top:556px;font-size:17px">0.067 S × 299 792 KM/S = 20 200 KM (SATELLITE OVERHEAD, COMPUTED)</div>
- <div class="cw" id="c_sat1" style="left:150px;top:110px;width:420px;height:333px">
-  <img src="../assets/p/gps_iif_rough.png" style="transform:rotate(-4deg)">
+ <div class="cw" id="c_sat1" style="left:150px;top:110px;width:420px;height:293px">
+  <img src="../assets/p/gps_navstar_rough.png" style="transform:rotate(-4deg) scaleX(-1)">
   <div class="tape" id="c_tape" style="left:150px;top:-22px;transform:rotate(3deg)"></div>
  </div>
- <div class="lab" id="c_cred" style="left:150px;top:1032px;font-size:14px">ILLUSTRATION: NASA · PUBLIC DOMAIN</div>
+ <div class="lab" id="c_cred" style="left:150px;top:1032px;font-size:14px">ILLUSTRATION: U.S. AIR FORCE · PUBLIC DOMAIN</div>
 </div>
 
 <!-- s03b three balls cross in two spots -->
@@ -2085,10 +2094,10 @@ at(T('s04.9') - 0.1, 0.3, 'draw', 'e_x'); at(T('s04.9'), 0.4, 'pop', 'e_wrong');
  <div class="ck" id="g_nb" style="left:700px;top:860px;font-size:52px;opacity:.9">not broken. that's just time.</div>
  <div class="ck" id="g_7" style="left:1262px;top:914px;font-size:88px;font-weight:700;color:#ff8f7a">−7 µs a day</div>
  <svg class="draw" width="1920" height="1080"><g fill="none" stroke-linecap="round"><path id="g_box" d="M1228 898 C 1440 892 1660 896 1846 900 L 1850 1014 C 1640 1020 1420 1016 1224 1012 Z" stroke="#ff8f7a" stroke-width="5"/></g></svg>
- <div class="cw" id="c_cat3" style="left:100px;top:640px;width:230px;height:297px">
-  <img src="../assets/p/cat_black_rough.png" style="transform:rotate(-3deg)">
+ <div class="cw" id="c_cat3" style="left:90px;top:650px;width:250px;height:236px">
+  <img src="../assets/p/cat_stare_rough.png" style="transform:rotate(-3deg)">
  </div>
- <div class="ck" id="g_chase" style="left:350px;top:860px;font-size:48px">← would chase it</div>
+ <div class="ck" id="g_chase" style="left:362px;top:840px;font-size:48px">← would chase it</div>
  <div class="lab" id="g_tilt" style="left:120px;top:1024px;font-size:15px">TILT EXAGGERATED: REAL TILT 0.00074°</div>
 </div>
 
@@ -2309,11 +2318,12 @@ HOOKS.push((t, active) => { if (active.has('s06') || active.has('s06b')) GRAV.fo
  <div class="ck" id="l_gr" style="left:120px;top:780px;font-size:60px;color:#ff8f7a">on the ground: wrong</div>
  <div class="ck" id="l_or" style="left:740px;top:780px;font-size:60px;color:#9fd0ff">in orbit: just right</div>
  <div class="ck" id="l_cor" style="left:860px;top:930px;font-size:48px">small corrections, every day</div>
- <div class="cw" id="c_ein2" style="left:1420px;top:110px;width:320px;height:333px">
-  <img src="../assets/p/einstein_rough.png" style="transform:rotate(-4deg)">
-  <div class="tape" id="l_tape" style="left:90px;top:-22px;transform:rotate(5deg)"></div>
- </div>
- <div class="ck" id="l_arg" style="left:1180px;top:470px;font-size:48px">no arguing →</div>
+ <svg class="draw" width="1920" height="1080"><g fill="none" stroke="#f4f1ea" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <path id="l_card" d="M1440 170 C 1540 166 1660 170 1756 168 C 1758 250 1756 330 1760 410 C 1660 414 1540 408 1436 412 C 1438 330 1436 250 1440 170 Z"/>
+ </g></svg>
+ <div class="ck" id="l_ein" style="left:1478px;top:220px;font-size:76px;transform:rotate(2deg)">Einstein</div>
+ <div class="ck" id="l_rul" style="left:1486px;top:330px;font-size:36px;color:#9fd0ff">speed + gravity</div>
+ <div class="ck" id="l_arg" style="left:1170px;top:262px;font-size:48px">no arguing →</div>
 </div>
 ```
 
@@ -2336,8 +2346,8 @@ at(W('s08.8', 'single') - 0.1, 0.6, 'draw', 'k_c3', { note: 4 }); at(W('s08.8', 
 at(W('s08.7', 'system'), 1.6, 'write', 'k_mis');
 
 // ---------- s09 the deliberate offset
-cut('c_ein2', { t: W('s09.2', 'Einstein') - 0.1, from: [500, -200, 20], wig: [T('s09.3')], out: hold('s09') - 0.6, to: [800, -300, 18] });
-at(W('s09.2', 'Einstein') + 0.4, 0.25, 'tape', 'l_tape'); at(W('s09.2', 'argue'), 0.8, 'write', 'l_arg');
+at(W('s09.2', 'Einstein') - 0.3, 0.6, 'draw', 'l_card'); at(W('s09.2', 'Einstein'), 0.8, 'write', 'l_ein'); at(E('s09.2'), 0.9, 'write', 'l_rul');
+at(W('s09.2', 'argue'), 0.8, 'write', 'l_arg');
 at(T('s09.1'), 1.4, 'write', 'l_what'); at(T('s09.3'), 0.5, 'pop', 'l_cheat');
 at(W('s09.4', 'set') - 0.2, 1.6, 'write', 'l_slow');
 at(W('s09.5', 'should') - 0.1, 0.6, 'write', 'l_sh'); at(W('s09.5', 'ten'), 1.4, 'write', 'l_n1');
@@ -2462,9 +2472,9 @@ at(W('s11.4', 'clocks') - 0.3, 1.4, 'write', 'n_slow'); at(W('s11.4', 'purpose')
  <div class="ck" id="o_gr" style="left:620px;top:330px;font-size:88px;color:#ffb36b">gravity slows time.</div>
  <div class="ck" id="o_cof" style="left:620px;top:480px;font-size:60px">your phone needs both</div>
  <div class="ck" id="o_cof2" style="left:620px;top:556px;font-size:60px">to find your coffee →</div>
- <div class="cw" id="c_cof" style="left:1290px;top:400px;width:440px;height:336px">
+ <div class="cw" id="c_cof" style="left:1300px;top:380px;width:372px;height:400px">
   <img src="../assets/p/coffee_rough.png" style="transform:rotate(3deg)">
-  <div class="tape" id="o_tape" style="left:140px;top:-22px;transform:rotate(-4deg)"></div>
+  <div class="tape" id="o_tape" style="left:110px;top:-22px;transform:rotate(-4deg)"></div>
  </div>
  <div class="cw" id="c_cat5" style="left:620px;top:700px;width:560px;height:259px">
   <img src="../assets/p/cat_flat_rough.png" style="transform:rotate(2deg)">
@@ -2583,9 +2593,9 @@ Short 1: разметка.
  <div class="ck" id="p_mov" style="left:80px;top:290px;font-size:130px;font-weight:600">moving clocks</div>
  <div class="ck" id="p_slow" style="left:80px;top:440px;font-size:150px;font-weight:700;color:#ffb36b">run slow.</div>
  <div class="ck" id="p_proof" style="left:80px;top:680px;font-size:80px;color:#9fd0ff">proof: two mirrors</div>
- <div class="cw" id="c_pcat" style="left:540px;top:860px;width:380px;height:491px">
-  <img src="../../assets/p/cat_black_rough.png" style="transform:rotate(-3deg)">
-  <div class="tape" id="p_tape" style="left:115px;top:-22px;transform:rotate(4deg)"></div>
+ <div class="cw" id="c_pcat" style="left:520px;top:880px;width:420px;height:397px">
+  <img src="../../assets/p/cat_stare_rough.png" style="transform:rotate(-3deg)">
+  <div class="tape" id="p_tape" style="left:140px;top:-22px;transform:rotate(4deg)"></div>
  </div>
 </div>
 
@@ -2614,11 +2624,11 @@ Short 1: разметка.
 
 <!-- h1c GPS -->
 <div class="sc" id="h1c">
- <div class="cw" id="c_psat" style="left:140px;top:150px;width:800px;height:634px">
-  <img src="../../assets/p/gps_iif_rough.png" style="transform:rotate(-3deg)">
+ <div class="cw" id="c_psat" style="left:140px;top:150px;width:800px;height:557px">
+  <img src="../../assets/p/gps_navstar_rough.png" style="transform:rotate(-3deg) scaleX(-1)">
   <div class="tape" id="r_tape" style="left:320px;top:-22px;transform:rotate(3deg)"></div>
  </div>
- <div class="lab" id="r_cred" style="left:140px;top:820px;font-size:14px">ILLUSTRATION: NASA · PUBLIC DOMAIN</div>
+ <div class="lab" id="r_cred" style="left:140px;top:744px;font-size:14px">ILLUSTRATION: U.S. AIR FORCE · PUBLIC DOMAIN</div>
  <div class="ck" id="r_sp" style="left:80px;top:880px;font-size:76px;color:#ff8f7a">speed: −7 µs a day</div>
  <div class="ck" id="r_gr" style="left:80px;top:976px;font-size:76px;color:#ffb36b">gravity: +45 µs a day</div>
  <svg class="draw" width="1080" height="1920"><g fill="none" stroke="#f4f1ea" stroke-linecap="round"><path id="r_ul" d="M80 1084 C 300 1080 560 1088 860 1082" stroke-width="6"/></g></svg>
@@ -2803,7 +2813,7 @@ at(W('h2c.3', 'Aging'), 1.1, 'write', 'u_even'); at(E('h2c.3') + 0.2, 0.8, 'fade
 <script>Chalk.chrome({ w: 1280, h: 720 })</script>
 
 
-<!-- A: your phone needs Einstein -->
+<!-- A: your phone listens to clocks in space -->
 <div class="sc" id="tA">
  <svg class="draw" width="1280" height="720"><g fill="none" stroke="#f4f1ea" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
   <path d="M112 90 H 290 Q 330 90 330 130 V 610 Q 330 650 290 650 H 112 Q 72 650 72 610 V 130 Q 72 90 112 90 Z"/></g>
@@ -2811,9 +2821,10 @@ at(W('h2c.3', 'Aging'), 1.1, 'write', 'u_even'); at(E('h2c.3') + 0.2, 0.8, 'fade
   <g fill="none" stroke="#9fd0ff"><circle cx="201" cy="370" r="34" stroke-width="5"/><circle cx="201" cy="370" r="58" stroke-width="3" stroke-dasharray="10 8"/></g>
   <circle cx="201" cy="370" r="20" fill="#9fd0ff"/></svg>
  <div class="ck" id="A1" style="left:390px;top:60px;font-size:104px;font-weight:600">your phone</div>
- <div class="ck" id="A2" style="left:390px;top:170px;font-size:104px;font-weight:600">needs</div>
- <div class="ck" id="A3" style="left:390px;top:280px;font-size:170px;font-weight:700;color:#ffb36b">Einstein</div>
- <div class="cw" id="tAs" style="left:930px;top:430px;width:300px;height:238px"><img src="../../assets/p/gps_iif_rough.png" style="transform:rotate(5deg)"><div class="tape" style="left:80px;top:-20px;transform:rotate(-4deg);width:120px;height:36px"></div></div>
+ <div class="ck" id="A2" style="left:390px;top:170px;font-size:104px;font-weight:600">listens to</div>
+ <div class="ck" id="A3" style="left:390px;top:280px;font-size:170px;font-weight:700;color:#ffb36b">clocks</div>
+ <div class="ck" id="A4" style="left:880px;top:340px;font-size:72px;color:#9fd0ff">in space</div>
+ <div class="cw" id="tAs" style="left:930px;top:450px;width:300px;height:209px"><img src="../../assets/p/gps_navstar_rough.png" style="transform:rotate(5deg) scaleX(-1)"><div class="tape" style="left:80px;top:-20px;transform:rotate(-4deg);width:120px;height:36px"></div></div>
  <div class="cw" id="tAc" style="left:560px;top:470px;width:250px;height:236px"><img src="../../assets/p/cat_stare_rough.png" style="transform:rotate(-4deg)">
   <svg class="draw" width="250" height="236" style="left:0;top:0"><g fill="none" stroke="#f4f1ea" stroke-width="4" stroke-linecap="round"><circle cx="98" cy="148" r="25"/><circle cx="162" cy="148" r="25"/><path d="M123 146 q 7 -7 14 0"/></g></svg></div>
 </div>
@@ -2827,17 +2838,9 @@ at(W('h2c.3', 'Aging'), 1.1, 'write', 'u_even'); at(E('h2c.3') + 0.2, 0.8, 'fade
  <div class="cw" id="tBc" style="left:930px;top:400px;width:290px;height:252px"><img src="../../assets/p/cat_scream_rough.png" style="transform:rotate(-5deg)"></div>
 </div>
 
-<!-- C: Einstein fixed your map (only if the photo is approved) -->
-<div class="sc" id="tC">
- <div class="cw" id="tCe" style="left:60px;top:80px;width:500px;height:521px"><img src="../../assets/p/einstein_rough.png" style="transform:rotate(-3deg)"><div class="tape" style="left:180px;top:-22px;transform:rotate(4deg)"></div></div>
- <div class="ck" id="C1" style="left:640px;top:90px;font-size:110px;font-weight:600">he fixed</div>
- <div class="ck" id="C2" style="left:640px;top:210px;font-size:130px;font-weight:700;color:#ffb36b">your map</div>
- <div class="ck" id="C3" style="left:650px;top:390px;font-size:56px;color:#9fd0ff">…before GPS existed</div>
- <svg class="draw" width="1280" height="720"><g fill="none"><circle cx="1110" cy="560" r="46" stroke="#9fd0ff" stroke-width="4" stroke-dasharray="10 8"/><circle cx="1110" cy="560" r="20" fill="#9fd0ff"/></g></svg>
-</div>
 <script>
 const { $ } = Chalk;
-Chalk.scene('tA', 0, 10, { push: 0 }); Chalk.scene('tB', 20, 30, { push: 0 }); Chalk.scene('tC', 40, 1e9, { push: 0 });
+Chalk.scene('tA', 0, 10, { push: 0 }); Chalk.scene('tB', 20, 1e9, { push: 0 });
 Chalk.start({ frames: 60 * 30, fps: 30, formulas: ['Δt = γΔτ', 'GM/r', 'c = 299 792 458 m/s', '10.23 MHz', 'r ≈ 26 562 km', '½ v²/c²', 'd = c·Δt', 'gh/c²', 'Δf/f = −4.4647·10⁻¹⁰'], formulasPerScene: 18 });
 </script></body></html>
 ```
