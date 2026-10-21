@@ -78,7 +78,7 @@ GPS, relativity, Einstein, time dilation, atomic clock, special relativity, gene
 
 - Категория: Education. Язык видео и названия: English.
 - Для детей: нет.
-- Субтитры: загрузить `subtitles/en.srt` (English) и `subtitles/ru.srt` (Russian). Перед загрузкой пересчитать время по голосу.
+- Субтитры: `subtitles/en.srt.txt` (English) и `subtitles/ru.srt.txt` (Russian). Это файлы SRT: перед загрузкой убрать `.txt` из имени. Сначала пересчитать время по голосу.
 - Метка изменённого или синтетического контента: решение автора. Голос синтетический, лица и события не подделаны. Правило и открытый вопрос: [правила YouTube](../../asset-sources/youtube-rules.md).
 - Лицензия: стандартная YouTube.
 - Конечная заставка: подписка и следующий ролик, когда он будет.
@@ -95,6 +95,7 @@ Try it: go outside, open a GPS status app on an Android phone and count the sate
 - Short 1, около 41 с. Заголовок: `Moving Clocks Run Slow. Here's the Proof.` Описание: `Two mirrors, one flash of light, and why GPS satellites set their clocks slow on purpose. Full video on the channel.`
 - Short 2, около 33 с. Заголовок: `Your Head Is Older Than Your Feet` Описание: `Gravity slows time. A clock raised one foot runs faster: NIST measured it in 2010. Full video on the channel.`
 - Тексты для голоса Shorts — в конце [текста для ElevenLabs](elevenlabs-text.md). Это новые строки: 448 и 343 знака.
+- Субтитры Shorts, только English: `subtitles/short1-en.srt.txt` и `subtitles/short2-en.srt.txt`.
 - После загрузки ролика добавить в оба Shorts ссылку «Related video» на него.
 
 ## Перед публикацией

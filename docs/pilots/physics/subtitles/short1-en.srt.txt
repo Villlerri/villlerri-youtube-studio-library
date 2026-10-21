@@ -1,0 +1,53 @@
+1
+00:00:01,000 --> 00:00:02,538
+Moving clocks run slow.
+
+2
+00:00:02,708 --> 00:00:05,785
+And you can prove it with two mirrors.
+
+3
+00:00:07,905 --> 00:00:11,037
+Light bounces between
+them: up, down, tick.
+
+4
+00:00:11,208 --> 00:00:12,746
+Now move the clock.
+
+5
+00:00:12,916 --> 00:00:17,267
+From where you stand, the
+light has to go sideways too.
+
+6
+00:00:18,237 --> 00:00:19,006
+Longer path.
+
+7
+00:00:19,176 --> 00:00:21,099
+But light's speed never changes.
+
+8
+00:00:21,269 --> 00:00:23,192
+So every tick takes longer.
+
+9
+00:00:25,312 --> 00:00:30,697
+GPS satellites move fast enough to lose
+seven millionths of a second a day.
+
+10
+00:00:30,867 --> 00:00:32,535
+Gravity adds back forty-five.
+
+11
+00:00:32,575 --> 00:00:35,652
+So engineers set their
+clocks slow on purpose.
+
+12
+00:00:35,822 --> 00:00:39,284
+Otherwise your map would
+drift seven miles a day.
+
