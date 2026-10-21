@@ -1,13 +1,13 @@
 # Реестр картинок: часы GPS и Эйнштейн
 
-Все картинки ролика — общественное достояние или CC0, с Wikimedia Commons. Лицензия взята со страницы каждого файла через API Commons в день скачивания. Ответ API сохранён в `meta/` как подтверждение. Вырезки сделаны кодом и лежат в `p/`. Сводная таблица в тех же колонках, что шаблон проекта: `registry.csv`.
+Все картинки ролика — общественное достояние или CC0, с Wikimedia Commons. Лицензия взята со страницы каждого файла через API Commons в день скачивания. Ответ API сохранён в `meta/` как подтверждение: это JSON, `.txt` в имени нужен только для сохранения в проект. Вырезки сделаны кодом и лежат в `p/`. Сводная таблица в тех же колонках, что шаблон проекта: `registry.csv`.
 
 ## PH-2026-0002: фото: молния ночью
 
 - Файл: [File:Lightning NOAA.jpg](https://commons.wikimedia.org/wiki/File:Lightning_NOAA.jpg)
 - Автор: C. Clark
 - Лицензия: Public domain (PD-USGov-NOAA), https://commons.wikimedia.org/wiki/Template:PD-USGov-NOAA
-- Подтверждение: `meta/lightning_noaa.meta.json`, скачано 2026-10-21
+- Подтверждение: `meta/lightning_noaa.meta.json.txt`, скачано 2026-10-21
 - Подпись в кадре: Photo: C. Clark, NOAA (public domain)
 - Ограничения: нельзя намекать на одобрение NOAA
 - Люди, бренды, чужие произведения: нет
@@ -19,7 +19,7 @@
 - Файл: [File:Navstar-2F.jpg](https://commons.wikimedia.org/wiki/File:Navstar-2F.jpg)
 - Автор: USAF
 - Лицензия: Public domain (PD-USGov-Military-Air Force), https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Air_Force
-- Подтверждение: `meta/gps_navstar2f.meta.json`, скачано 2026-10-21
+- Подтверждение: `meta/gps_navstar2f.meta.json.txt`, скачано 2026-10-21
 - Подпись в кадре: Illustration: U.S. Air Force (public domain)
 - Ограничения: нельзя намекать на одобрение ВВС США
 - Люди, бренды, чужие произведения: нет
@@ -31,7 +31,7 @@
 - Файл: [File:Navigation Technology Satellite – II.jpg](https://commons.wikimedia.org/wiki/File:Navigation_Technology_Satellite_%E2%80%93_II.jpg)
 - Автор: U.S. Navy
 - Лицензия: Public domain (PD-USGov), https://commons.wikimedia.org/wiki/Template:PD-USGov
-- Подтверждение: `meta/nts2.meta.json`, скачано 2026-10-21
+- Подтверждение: `meta/nts2.meta.json.txt`, скачано 2026-10-21
 - Подпись в кадре: Photo: U.S. Navy (public domain)
 - Ограничения: нельзя намекать на одобрение ВМС США
 - Люди, бренды, чужие произведения: нет
@@ -43,7 +43,7 @@
 - Файл: [File:Nist-f1.jpg](https://commons.wikimedia.org/wiki/File:Nist-f1.jpg)
 - Автор: National Institute of Standards and Technology - Physics Laboratory: Time and Frequency Division
 - Лицензия: Public domain (PD-USGov-NIST), https://commons.wikimedia.org/wiki/Template:PD-USGov-NIST
-- Подтверждение: `meta/nist_f1.meta.json`, скачано 2026-10-21
+- Подтверждение: `meta/nist_f1.meta.json.txt`, скачано 2026-10-21
 - Подпись в кадре: Photo: NIST (public domain)
 - Ограничения: нельзя намекать на одобрение NIST
 - Люди, бренды, чужие произведения: нет
@@ -55,7 +55,7 @@
 - Файл: [File:Coffee steaming in a mug.jpg](https://commons.wikimedia.org/wiki/File:Coffee_steaming_in_a_mug.jpg)
 - Автор: PedanticNarrativeController
 - Лицензия: CC0, http://creativecommons.org/publicdomain/zero/1.0/deed.en
-- Подтверждение: `meta/coffee_mug.meta.json`, скачано 2026-10-21
+- Подтверждение: `meta/coffee_mug.meta.json.txt`, скачано 2026-10-21
 - Подпись в кадре: Photo: PedanticNarrativeController (CC0)
 - Ограничения: нет
 - Люди, бренды, чужие произведения: в исходнике две картины в рамках и обложка книги; вырезка их не берёт
@@ -67,7 +67,7 @@
 - Файл: [File:Cat is staring at you.jpg](https://commons.wikimedia.org/wiki/File:Cat_is_staring_at_you.jpg)
 - Автор: Zhmila
 - Лицензия: CC0, http://creativecommons.org/publicdomain/zero/1.0/deed.en
-- Подтверждение: `meta/cat_staring.meta.json`, скачано 2026-10-19
+- Подтверждение: `meta/cat_staring.meta.json.txt`, скачано 2026-10-19
 - Подпись в кадре: Photo: Zhmila (CC0)
 - Ограничения: нет
 - Люди, бренды, чужие произведения: нет
@@ -79,7 +79,7 @@
 - Файл: [File:Cat yawning.jpg](https://commons.wikimedia.org/wiki/File:Cat_yawning.jpg)
 - Автор: TimVickers
 - Лицензия: Public domain (PD-self: автор передал в общественное достояние), https://commons.wikimedia.org/wiki/Template:PD-self
-- Подтверждение: `meta/cat_yawn_tux.meta.json`, скачано 2026-10-19
+- Подтверждение: `meta/cat_yawn_tux.meta.json.txt`, скачано 2026-10-19
 - Подпись в кадре: Photo: TimVickers (public domain)
 - Ограничения: нет
 - Люди, бренды, чужие произведения: нет
@@ -91,7 +91,7 @@
 - Файл: [File:A photograph of a cat lying down 0002.jpg](https://commons.wikimedia.org/wiki/File:A_photograph_of_a_cat_lying_down_0002.jpg)
 - Автор: Asabae2752
 - Лицензия: CC0, http://creativecommons.org/publicdomain/zero/1.0/deed.en
-- Подтверждение: `meta/cat_lying2.meta.json`, скачано 2026-10-19
+- Подтверждение: `meta/cat_lying2.meta.json.txt`, скачано 2026-10-19
 - Подпись в кадре: Photo: Asabae2752 (CC0)
 - Ограничения: нет
 - Люди, бренды, чужие произведения: нет
@@ -103,7 +103,7 @@
 - Файл: [File:Nea Paphos, Cyprus, cat lying on side on parking lot.jpg](https://commons.wikimedia.org/wiki/File:Nea_Paphos,_Cyprus,_cat_lying_on_side_on_parking_lot.jpg)
 - Автор: Gerda Arendt
 - Лицензия: CC0, http://creativecommons.org/publicdomain/zero/1.0/deed.en
-- Подтверждение: `meta/cat_side_lying.meta.json`, скачано 2026-10-19
+- Подтверждение: `meta/cat_side_lying.meta.json.txt`, скачано 2026-10-19
 - Подпись в кадре: Photo: Gerda Arendt (CC0)
 - Ограничения: нет
 - Люди, бренды, чужие произведения: нет
