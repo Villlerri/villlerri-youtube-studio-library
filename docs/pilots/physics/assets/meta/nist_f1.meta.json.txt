@@ -1,0 +1,101 @@
+{
+ "pageid": 5543438,
+ "ns": 6,
+ "title": "File:Nist-f1.jpg",
+ "imagerepository": "local",
+ "imageinfo": [
+  {
+   "timestamp": "2008-12-21T16:14:38Z",
+   "user": "Coenen",
+   "size": 53856,
+   "width": 382,
+   "height": 550,
+   "thumburl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nist-f1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "thumbwidth": 2400,
+   "thumbheight": 3455,
+   "thumbattribs": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nist-f1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "decoding": "async",
+    "loading": "lazy",
+    "width": 2400,
+    "height": 3455
+   },
+   "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nist-f1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "descriptionurl": "https://commons.wikimedia.org/wiki/File:Nist-f1.jpg",
+   "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=5543438",
+   "extmetadata": {
+    "DateTime": {
+     "value": "2008-12-21 16:14:38",
+     "source": "mediawiki-metadata",
+     "hidden": ""
+    },
+    "ObjectName": {
+     "value": "Nist-f1",
+     "source": "mediawiki-metadata"
+    },
+    "CommonsMetadataExtension": {
+     "value": 1.2,
+     "source": "extension",
+     "hidden": ""
+    },
+    "Categories": {
+     "value": "National Institute of Standards and Technology|NIST-F1 atomic clock|PD US NIST",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "Assessments": {
+     "value": "",
+     "source": "commons-categories",
+     "hidden": ""
+    },
+    "ImageDescription": {
+     "value": "Atomic Clock NIST-F1 (1999)",
+     "source": "commons-desc-page"
+    },
+    "Credit": {
+     "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://tf.nist.gov/general/museum/nist-f1.jpg\">http://tf.nist.gov/general/museum/nist-f1.jpg</a>",
+     "source": "commons-desc-page"
+    },
+    "Artist": {
+     "value": "National Institute of Standards and Technology - Physics Laboratory: Time and Frequency Division",
+     "source": "commons-desc-page"
+    },
+    "Permission": {
+     "value": "<i>This image is in the <b><a href=\"https://en.wikipedia.org/wiki/public_domain\" class=\"extiw\" title=\"w:public domain\">public domain</a></b> in the United States because it is a <a href=\"https://en.wikipedia.org/wiki/Copyright_status_of_work_by_the_U.S._government\" class=\"extiw\" title=\"en:Copyright status of work by the U.S. government\">work of the United States Federal Government</a>, specifically an employee of the <a rel=\"nofollow\" class=\"external text\" href=\"http://www.nist.gov\">National Institute of Standards and Technology</a>, under the terms of </i>Title 17, Chapter 1, Section 105 of the <a href=\"https://en.wikipedia.org/wiki/United_States_Code\" class=\"extiw\" title=\"w:United States Code\">US Code</a><i>.</i>\n<hr>\n<figure class=\"mw-halign-left\" typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Dialog-warning.svg/40px-Dialog-warning.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"25\" height=\"25\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Dialog-warning.svg/60px-Dialog-warning.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"48\" data-file-height=\"48\"></span><figcaption></figcaption></figure> <small>Warning: this does <b>not</b> include Standard Reference Data, as per <a rel=\"nofollow\" class=\"external text\" href=\"https://www.nist.gov/system/files/documents/srd/SRDAct-2.pdf\">Standard Reference Data Act (P.L. 90-396; 15 U.S.C. 290-290f)</a> which may be copyrighted by the NIST.</small>",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "LicenseShortName": {
+     "value": "Public domain",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "UsageTerms": {
+     "value": "Public domain",
+     "source": "commons-desc-page"
+    },
+    "AttributionRequired": {
+     "value": "false",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Copyrighted": {
+     "value": "False",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "Restrictions": {
+     "value": "",
+     "source": "commons-desc-page",
+     "hidden": ""
+    },
+    "License": {
+     "value": "pd",
+     "source": "commons-templates",
+     "hidden": ""
+    }
+   },
+   "mime": "image/jpeg"
+  }
+ ]
+}
