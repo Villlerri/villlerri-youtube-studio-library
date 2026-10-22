@@ -11,6 +11,7 @@
 - [method.md](method.md): выборка, определения, пределы данных, время сборки.
 - [method-code.md](method-code.md): код замера и расчётов.
 - [trial/music.md](trial/music.md): проба музыки, 10 минут, сочинённых кодом на сэмплах CC0; измерения и права. Код — [trial/code.md](trial/code.md).
+- [pilot/passport.md](pilot/passport.md): пилотный ролик на 10 часов — название, описание, настройки загрузки, измерения, права. Код — [pilot/code.md](pilot/code.md).
 
 ## Решения Villlerri
 
