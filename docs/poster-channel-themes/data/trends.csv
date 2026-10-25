@@ -1,0 +1,21 @@
+batch,term,measured_utc,geo,property,timeframe,share_nonzero_weeks_last104,mean_last52,mean_prev52,mean_3y_ago,ratio_last52_prev52,ratio_last52_3y_ago,usable
+documentary|brand history|marketing psychology|history of inventions|food history,documentary,2026-10-25T10:18:53+00:00,US,youtube,2021-10-24..2026-10-25,1.0,74.7,68.9,73.2,1.08,1.02,yes
+documentary|brand history|marketing psychology|history of inventions|food history,brand history,2026-10-25T10:18:53+00:00,US,youtube,2021-10-24..2026-10-25,0.0,0.0,0.0,0.0,,,no: sparse
+documentary|brand history|marketing psychology|history of inventions|food history,marketing psychology,2026-10-25T10:18:53+00:00,US,youtube,2021-10-24..2026-10-25,0.0,0.0,0.0,0.0,,,no: sparse
+documentary|brand history|marketing psychology|history of inventions|food history,history of inventions,2026-10-25T10:18:53+00:00,US,youtube,2021-10-24..2026-10-25,0.0,0.0,0.0,0.0,,,no: sparse
+documentary|brand history|marketing psychology|history of inventions|food history,food history,2026-10-25T10:18:53+00:00,US,youtube,2021-10-24..2026-10-25,0.68,0.6,0.8,0.5,0.77,1.15,no: sparse
+documentary|etymology|graphic design history|cognitive biases|retro tech,documentary,2026-10-25T10:19:02+00:00,US,youtube,2021-10-24..2026-10-25,1.0,74.6,68.9,73.2,1.08,1.02,yes
+documentary|etymology|graphic design history|cognitive biases|retro tech,etymology,2026-10-25T10:19:02+00:00,US,youtube,2021-10-24..2026-10-25,0.0,0.0,0.0,0.0,,,no: sparse
+documentary|etymology|graphic design history|cognitive biases|retro tech,graphic design history,2026-10-25T10:19:02+00:00,US,youtube,2021-10-24..2026-10-25,0.0,0.0,0.0,0.0,,,no: sparse
+documentary|etymology|graphic design history|cognitive biases|retro tech,cognitive biases,2026-10-25T10:19:02+00:00,US,youtube,2021-10-24..2026-10-25,0.0,0.0,0.0,0.0,,,no: sparse
+documentary|etymology|graphic design history|cognitive biases|retro tech,retro tech,2026-10-25T10:19:02+00:00,US,youtube,2021-10-24..2026-10-25,0.0,0.0,0.0,0.0,,,no: sparse
+brand history|marketing psychology|history of inventions|food history|etymology,brand history,2026-10-25T10:19:10+00:00,US,youtube,2021-10-24..2026-10-25,0.35,3.1,1.1,0.8,2.86,3.64,no: sparse
+brand history|marketing psychology|history of inventions|food history|etymology,marketing psychology,2026-10-25T10:19:10+00:00,US,youtube,2021-10-24..2026-10-25,0.23,4.2,0.4,0.6,10.43,6.64,no: sparse
+brand history|marketing psychology|history of inventions|food history|etymology,history of inventions,2026-10-25T10:19:10+00:00,US,youtube,2021-10-24..2026-10-25,0.04,0.0,0.2,0.1,0.22,0.4,no: sparse
+brand history|marketing psychology|history of inventions|food history|etymology,food history,2026-10-25T10:19:10+00:00,US,youtube,2021-10-24..2026-10-25,1.0,69.8,71.6,68.3,0.98,1.02,yes
+brand history|marketing psychology|history of inventions|food history|etymology,etymology,2026-10-25T10:19:10+00:00,US,youtube,2021-10-24..2026-10-25,1.0,18.2,10.0,11.0,1.82,1.65,yes
+graphic design history|cognitive biases|retro tech|vintage ads|logo history,graphic design history,2026-10-25T10:19:19+00:00,US,youtube,2021-10-24..2026-10-25,0.0,0.0,0.0,0.0,,,no: sparse
+graphic design history|cognitive biases|retro tech|vintage ads|logo history,cognitive biases,2026-10-25T10:19:19+00:00,US,youtube,2021-10-24..2026-10-25,0.1,0.3,0.0,0.1,,4.0,no: sparse
+graphic design history|cognitive biases|retro tech|vintage ads|logo history,retro tech,2026-10-25T10:19:19+00:00,US,youtube,2021-10-24..2026-10-25,0.91,2.6,2.4,2.2,1.1,1.19,yes
+graphic design history|cognitive biases|retro tech|vintage ads|logo history,vintage ads,2026-10-25T10:19:19+00:00,US,youtube,2021-10-24..2026-10-25,0.46,1.4,0.7,0.2,2.14,6.82,no: sparse
+graphic design history|cognitive biases|retro tech|vintage ads|logo history,logo history,2026-10-25T10:19:19+00:00,US,youtube,2021-10-24..2026-10-25,1.0,85.2,76.2,60.2,1.12,1.42,yes
