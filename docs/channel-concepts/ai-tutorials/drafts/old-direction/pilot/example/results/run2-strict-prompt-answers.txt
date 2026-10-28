@@ -1,0 +1,27 @@
+### Batch 1: 8.6 s, prompt 894 tokens at 379.9 tokens/s, answer 182 tokens at 28.9 tokens/s
+07,Green Basket Market,2026-10-03,12.45,12.45,12.45
+02,The Copper Spoon,2026-10-04,37.00,37.00,37.00
+03,QuickFill Fuel,2026-10-05,38.79,38.79,38.79
+04,Maple Street Pharmacy,2026-10-05,15.35,15.35,15.35
+05,Bolt & Beam Hardware,2026-10-06,33.33,33.33,33.33
+
+### Batch 2: 8.2 s, prompt 819 tokens at 319.7 tokens/s, answer 184 tokens at 32.4 tokens/s
+06,Orders North Pine Outfitters,2026-10-07,69.01,69.01,69.01
+07,DRIFTWOOD COFFEE,2026-10-08,4.85,4.85,4.85
+08,HARBOR HOME GOODS,2026-10-08,23.31,-23.31,-23.31
+09,SUNNYSIDE BOOKS,2026-10-09,27.15,27.15,27.15
+10,LAKEVIEW INN,2026-10-11,0.00,0.00,0.00
+
+### Batch 3: 9.3 s, prompt 686 tokens at 373.4 tokens/s, answer 179 tokens at 23.8 tokens/s
+receipt,11,CITY CENTER PARKING - GARAGE B,2026-10-12,18.00,18.00
+receipt,12,FRESH ROW FARMERS MARKET,2026-10-12,12.50,12.50
+receipt,13,RIDE RECEIPT - CITYHOP,2026-10-13,26.15,26.15
+receipt,14,PAGE & PINE BOOKSELLERS,2026-10-13,30.67,30.67
+receipt,15,SPARKLE AUTO WASH,2026-10-14,17.00,17.00
+
+### Batch 4: 22.9 s, prompt 617 tokens at 181.4 tokens/s, answer 179 tokens at 9.1 tokens/s
+07,RIVERBEND ANIMAL CLINIC,2026-10-15,90.00,Previous balance 45.00
+07,BRIGHTLINE ELECTRONICS,2026-10-15,64.78,Total before tax 59.98
+07,MAIN ST DRY CLEANERS,2026-10-16,23.50,Amount due at pickup 0.00
+07,OAK HOLLOW HARDWARE,2026-10-16,41.27,VISA 40.00
+07,GOLDEN WOK,2026-10-17,30.78,Credit card 30.78

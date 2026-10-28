@@ -1,0 +1,16 @@
+You will get up to 5 receipts. For each receipt, write exactly one line with 5 columns, separated by commas:
+receipt,vendor,date,total,total_line
+
+Rules:
+- receipt: the two-digit number after "Receipt", for example 07.
+- vendor: the business name, with no commas.
+- date: the day the purchase was paid, written YYYY-MM-DD, for example 2026-01-31. Ignore return-by, next-visit and arrival dates.
+- total: the full amount of this purchase, with tax and tip, after discounts. Only digits and a dot, like 10.50. A refund is negative, like -4.20. Do not use change, savings, balance due, previous balance, or one part of a split payment.
+- total_line: copy, word for word, the line of the receipt where you found the total.
+
+Example of one correct line:
+00,Example Store,2026-01-31,10.50,TOTAL 10.50
+
+Write only the lines. No header, no other text.
+
+Receipts:

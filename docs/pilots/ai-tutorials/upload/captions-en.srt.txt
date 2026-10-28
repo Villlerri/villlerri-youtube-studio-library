@@ -1,0 +1,665 @@
+1
+00:00:00,200 --> 00:00:05,514
+AI tools sometimes say things that are
+false — calmly, in perfect sentences.
+
+2
+00:00:07,367 --> 00:00:09,841
+Many people call this "hallucination".
+
+3
+00:00:09,991 --> 00:00:11,543
+It sounds mysterious.
+
+4
+00:00:11,693 --> 00:00:12,593
+It isn't.
+
+5
+00:00:14,033 --> 00:00:18,575
+Today we build a tiny machine that
+makes the same kind of mistake.
+
+6
+00:00:18,725 --> 00:00:20,987
+It fits on one sheet of paper.
+
+7
+00:00:21,137 --> 00:00:26,475
+We'll count every step with a pencil,
+and you can check every number yourself.
+
+8
+00:00:26,625 --> 00:00:28,993
+The files are in the description.
+
+9
+00:00:30,233 --> 00:00:33,939
+One promise before we
+start: our machine is a toy.
+
+10
+00:00:34,089 --> 00:00:39,701
+Real AI is far bigger, and I'll show you
+exactly where the toy stops matching it.
+
+11
+00:00:40,967 --> 00:00:43,009
+Picture a family group chat.
+
+12
+00:00:43,159 --> 00:00:45,255
+Three messages came in today.
+
+13
+00:00:45,705 --> 00:00:47,315
+Mom is at the store.
+
+14
+00:00:47,765 --> 00:00:49,267
+Dad is at the gym.
+
+15
+00:00:49,717 --> 00:00:51,273
+Sam is at the park.
+
+16
+00:00:52,533 --> 00:00:55,335
+That's everything our toy will ever read.
+
+17
+00:00:55,485 --> 00:00:56,711
+Three sentences.
+
+18
+00:00:56,861 --> 00:00:58,361
+All three are true.
+
+19
+00:01:00,000 --> 00:01:04,704
+The toy works a bit like the word
+suggestions on your phone keyboard.
+
+20
+00:01:04,854 --> 00:01:06,192
+It has one rule.
+
+21
+00:01:06,342 --> 00:01:10,216
+It looks at the last word
+it wrote, and nothing else.
+
+22
+00:01:10,366 --> 00:01:15,506
+Then it picks a word that came right
+after that word somewhere in the chat.
+
+23
+00:01:16,767 --> 00:01:19,121
+To do that, it needs a table.
+
+24
+00:01:19,271 --> 00:01:24,159
+For every word, we write down which
+words came next, and how often.
+
+25
+00:01:24,309 --> 00:01:26,461
+Let's make that table by hand.
+
+26
+00:01:27,700 --> 00:01:29,200
+After "Mom" comes "is".
+
+27
+00:01:29,350 --> 00:01:30,250
+Once.
+
+28
+00:01:30,076 --> 00:01:31,446
+After "Dad": "is".
+
+29
+00:01:31,596 --> 00:01:32,966
+After "Sam": "is".
+
+30
+00:01:33,116 --> 00:01:36,448
+So after a name, the
+next word is always "is".
+
+31
+00:01:37,700 --> 00:01:41,026
+After "is" comes "at" —
+three times out of three.
+
+32
+00:01:41,176 --> 00:01:43,996
+After "at": "the", three out of three.
+
+33
+00:01:45,233 --> 00:01:47,003
+Now the interesting one.
+
+34
+00:01:47,153 --> 00:01:51,481
+After "the", the chat has "store"
+once, "gym" once, "park" once.
+
+35
+00:01:51,631 --> 00:01:54,415
+Three different words, one tally each.
+
+36
+00:01:55,667 --> 00:01:57,329
+That's the whole table.
+
+37
+00:01:57,479 --> 00:01:58,435
+Eight rows.
+
+38
+00:01:58,585 --> 00:02:02,855
+You can check it against the
+three messages in under a minute.
+
+39
+00:02:04,600 --> 00:02:08,852
+Now let's ask the toy to finish
+a sentence: "Mom is at the…"
+
+40
+00:02:09,002 --> 00:02:12,166
+The toy looks only at
+the last word: "the".
+
+41
+00:02:12,316 --> 00:02:13,762
+It doesn't see "Mom".
+
+42
+00:02:15,000 --> 00:02:19,926
+In its table, "the" was followed
+by store, gym and park, once each.
+
+43
+00:02:20,076 --> 00:02:23,294
+So each has the same chance: one in three.
+
+44
+00:02:23,444 --> 00:02:24,782
+Let's roll a die.
+
+45
+00:02:24,932 --> 00:02:26,574
+One or two: store.
+
+46
+00:02:26,724 --> 00:02:28,420
+Three or four: gym.
+
+47
+00:02:28,570 --> 00:02:30,212
+Five or six: park.
+
+48
+00:02:30,662 --> 00:02:32,054
+We rolled a four.
+
+49
+00:02:34,300 --> 00:02:37,030
+The toy writes: "Mom is at the gym."
+
+50
+00:02:37,480 --> 00:02:38,490
+That's false.
+
+51
+00:02:38,640 --> 00:02:40,250
+Mom is at the store.
+
+52
+00:02:41,500 --> 00:02:43,434
+But look at what happened.
+
+53
+00:02:43,584 --> 00:02:47,510
+Every pair of words in that
+sentence — "Mom is", "is at",
+
+54
+00:02:47,550 --> 00:02:51,022
+"at the", "the gym" —
+appeared in a true message.
+
+55
+00:02:51,172 --> 00:02:53,704
+The toy never saw a false sentence.
+
+56
+00:02:53,854 --> 00:02:56,858
+It built one anyway, out of true pieces.
+
+57
+00:02:58,100 --> 00:02:59,002
+How often?
+
+58
+00:02:59,152 --> 00:03:02,914
+Starting from "Mom", the toy
+can write three sentences.
+
+59
+00:03:03,064 --> 00:03:05,254
+One is true, two are false.
+
+60
+00:03:05,404 --> 00:03:07,594
+Same for Dad, same for Sam.
+
+61
+00:03:07,744 --> 00:03:11,216
+Nine possible sentences,
+three true, six false.
+
+62
+00:03:11,366 --> 00:03:14,606
+The chance of a false
+answer is two in three.
+
+63
+00:03:14,756 --> 00:03:16,742
+That's the whole calculation.
+
+64
+00:03:16,892 --> 00:03:19,226
+Pencil, eight rows, one die.
+
+65
+00:03:20,467 --> 00:03:21,859
+This idea is old.
+
+66
+00:03:22,009 --> 00:03:27,339
+In 1948, Claude Shannon published "A
+Mathematical Theory of Communication".
+
+67
+00:03:29,000 --> 00:03:31,930
+In section three, he
+built English one word
+
+68
+00:03:31,970 --> 00:03:35,296
+at a time from word
+pairs — with no computer.
+
+69
+00:03:35,446 --> 00:03:40,770
+He opened a book, found a word, and
+wrote down the word that followed it.
+
+70
+00:03:40,920 --> 00:03:46,096
+Then he looked for that new word
+somewhere else in the book, and repeated.
+
+71
+00:03:47,333 --> 00:03:52,851
+Here is part of what he got, exactly as
+printed: "THE HEAD AND IN FRONTAL ATTACK
+
+72
+00:03:52,891 --> 00:03:58,353
+ON AN ENGLISH WRITER THAT THE CHARACTER OF
+THIS POINT IS THEREFORE ANOTHER METHOD…"
+
+73
+00:04:00,400 --> 00:04:02,986
+Every pair of words is real English.
+
+74
+00:04:03,136 --> 00:04:05,286
+The whole thing means nothing.
+
+75
+00:04:05,436 --> 00:04:08,728
+Our toy is a small version
+of Shannon's machine.
+
+76
+00:04:09,967 --> 00:04:13,513
+So is a chatbot just
+Shannon's table, only bigger?
+
+77
+00:04:13,663 --> 00:04:14,563
+No.
+
+78
+00:04:14,281 --> 00:04:16,323
+Here the toy stops matching.
+
+79
+00:04:16,773 --> 00:04:19,831
+First, real models don't look at one word.
+
+80
+00:04:19,981 --> 00:04:22,077
+They read the whole question.
+
+81
+00:04:22,227 --> 00:04:24,945
+If our toy read all of "Mom is at the",
+
+82
+00:04:24,985 --> 00:04:29,341
+it would have seen that exact
+phrase once — followed by "store".
+
+83
+00:04:29,491 --> 00:04:31,423
+This error would disappear.
+
+84
+00:04:32,667 --> 00:04:36,213
+Second, real models don't
+store a table of counts.
+
+85
+00:04:36,363 --> 00:04:39,417
+They are neural networks
+trained on huge amounts
+
+86
+00:04:39,457 --> 00:04:42,479
+of text to predict the next piece of text.
+
+87
+00:04:42,629 --> 00:04:46,735
+That's how models like GPT are
+described in their own papers.
+
+88
+00:04:46,885 --> 00:04:50,069
+What they learn is far
+richer than our table.
+
+89
+00:04:50,519 --> 00:04:53,161
+So why do they still make things up?
+
+90
+00:04:55,000 --> 00:04:59,174
+In 2025, researchers at OpenAI
+and Georgia Tech published
+
+91
+00:04:59,214 --> 00:05:02,394
+a paper called "Why Language
+Models Hallucinate".
+
+92
+00:05:02,544 --> 00:05:04,152
+It gives two reasons.
+
+93
+00:05:04,302 --> 00:05:06,618
+Both can be shown with our toy.
+
+94
+00:05:07,867 --> 00:05:09,779
+Reason one: rare facts.
+
+95
+00:05:09,929 --> 00:05:15,815
+If a fact appears only once in the training
+text, a model has very little to go on.
+
+96
+00:05:15,965 --> 00:05:17,913
+The paper gives an example:
+
+97
+00:05:17,953 --> 00:05:22,997
+"if 20% of birthday facts appear
+exactly once in the pretraining data,
+
+98
+00:05:23,037 --> 00:05:28,769
+then one expects base models to hallucinate
+on at least 20% of birthday facts."
+
+99
+00:05:30,833 --> 00:05:33,255
+Our toy shows the extreme version.
+
+100
+00:05:33,405 --> 00:05:35,231
+Ask it where Grandma is.
+
+101
+00:05:35,381 --> 00:05:37,695
+Grandma never wrote in the chat.
+
+102
+00:05:37,845 --> 00:05:39,671
+A table can stay silent.
+
+103
+00:05:39,821 --> 00:05:44,417
+But a model built to always produce
+the next word will produce one.
+
+104
+00:05:45,667 --> 00:05:48,557
+Reason two: the way models are graded.
+
+105
+00:05:48,707 --> 00:05:50,697
+Let's give our toy an exam.
+
+106
+00:05:50,847 --> 00:05:53,541
+This time it reads the whole question.
+
+107
+00:05:53,691 --> 00:05:56,637
+Six questions, three answer options each.
+
+108
+00:05:56,787 --> 00:06:01,507
+Three questions are about Mom,
+Dad and Sam — the toy knows those.
+
+109
+00:06:01,657 --> 00:06:06,269
+Three are about Grandma, Leo and
+Nina — it has never seen them.
+
+110
+00:06:07,533 --> 00:06:10,283
+Two versions of the toy take the exam.
+
+111
+00:06:10,433 --> 00:06:15,503
+The honest one answers what it knows,
+and says "I don't know" to the rest.
+
+112
+00:06:15,653 --> 00:06:20,829
+The guesser answers what it knows, and
+picks a random option for the rest.
+
+113
+00:06:22,067 --> 00:06:26,989
+Most tests give one point for a right
+answer and zero for anything else.
+
+114
+00:06:27,139 --> 00:06:30,433
+"I don't know" scores the
+same as a wrong answer.
+
+115
+00:06:30,883 --> 00:06:32,925
+The honest toy scores three.
+
+116
+00:06:33,075 --> 00:06:38,465
+The guesser also gets three, plus a
+one-in-three chance on each unknown question.
+
+117
+00:06:38,615 --> 00:06:40,549
+On average it scores four.
+
+118
+00:06:40,699 --> 00:06:46,327
+It beats the honest toy in 19 of the
+27 possible ways its guesses can fall.
+
+119
+00:06:48,167 --> 00:06:50,573
+So on this test, guessing wins.
+
+120
+00:06:50,723 --> 00:06:56,073
+The paper says it plainly: "language models
+are optimized to be good test-takers,
+
+121
+00:06:56,113 --> 00:06:59,671
+and guessing when uncertain
+improves test performance."
+
+122
+00:07:01,733 --> 00:07:03,287
+Now change the rule.
+
+123
+00:07:03,437 --> 00:07:05,349
+Right answer: plus one.
+
+124
+00:07:05,499 --> 00:07:07,465
+Wrong answer: minus one.
+
+125
+00:07:07,615 --> 00:07:09,257
+"I don't know": zero.
+
+126
+00:07:09,407 --> 00:07:11,829
+The honest toy still scores three.
+
+127
+00:07:11,979 --> 00:07:14,075
+The guesser now averages two.
+
+128
+00:07:14,225 --> 00:07:15,831
+Guessing stops paying.
+
+129
+00:07:17,067 --> 00:07:21,511
+That's the paper's proposal: tests
+should state how confident a model
+
+130
+00:07:21,551 --> 00:07:26,183
+must be before it answers, and
+take points away for wrong answers.
+
+131
+00:07:28,033 --> 00:07:30,781
+Let's be clear about what we simplified.
+
+132
+00:07:31,231 --> 00:07:34,143
+A word-pair table is not a neural network.
+
+133
+00:07:34,293 --> 00:07:37,041
+Real models don't keep counts like ours.
+
+134
+00:07:37,491 --> 00:07:41,091
+Real models read the whole
+question, not one word.
+
+135
+00:07:41,541 --> 00:07:46,335
+Real models work with pieces of
+words called tokens, not whole words.
+
+136
+00:07:46,785 --> 00:07:48,613
+Our exam is a toy exam.
+
+137
+00:07:48,763 --> 00:07:53,013
+Real benchmarks are bigger, and
+many are not multiple choice.
+
+138
+00:07:53,463 --> 00:07:56,537
+Not every false answer
+has these two causes.
+
+139
+00:07:56,687 --> 00:08:00,069
+The paper covers these
+two; other causes exist.
+
+140
+00:08:01,333 --> 00:08:05,707
+What carries over: a model trained
+to always continue the text,
+
+141
+00:08:05,747 --> 00:08:10,699
+and rewarded for guessing, will sometimes
+produce fluent false statements.
+
+142
+00:08:10,849 --> 00:08:14,397
+And the rarer a fact is,
+the likelier the guess.
+
+143
+00:08:16,233 --> 00:08:21,119
+When an AI answer contains a rare,
+specific fact — a date, a name,
+
+144
+00:08:21,159 --> 00:08:25,863
+a number, a quote, a reference
+— that's where a guess can hide.
+
+145
+00:08:26,013 --> 00:08:29,143
+Check it against a
+source before you use it.
+
+146
+00:08:30,400 --> 00:08:32,170
+Fluent doesn't mean true.
+
+147
+00:08:32,320 --> 00:08:38,204
+Our toy wrote a perfect sentence about Mom,
+and it was wrong two times out of three.
+
+148
+00:08:40,067 --> 00:08:43,199
+The sheet, the table,
+the exam and a script
+
+149
+00:08:43,239 --> 00:08:46,149
+that checks every number are linked below.
+
+150
+00:08:46,299 --> 00:08:47,689
+Count it yourself.

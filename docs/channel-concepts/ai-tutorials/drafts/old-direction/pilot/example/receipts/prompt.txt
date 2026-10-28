@@ -1,0 +1,13 @@
+You will get up to 5 receipts. For each receipt, write one line of CSV with these columns:
+receipt,vendor,date,total,total_line
+
+Rules:
+- receipt: the two-digit number after "Receipt".
+- vendor: the business name.
+- date: the day the purchase was paid, written YYYY-MM-DD. Ignore return-by, next-visit and arrival dates.
+- total: the full amount of this purchase, with tax and tip, after discounts. A refund is negative. Do not use change, savings, balance due, previous balance, or one part of a split payment.
+- total_line: copy, word for word, the line of the receipt where you found the total.
+
+Write only the CSV lines. No header, no other text.
+
+Receipts:

@@ -1,0 +1,21 @@
+receipt,answer_line,format_ok,total_col_ok,total_any_ok,date_any_ok,vendor_ok,right_total,right_date,trap
+01,"12.45,GREEN BASKET MARKET,2026-10-03,12.45,12.45,12.45",0,1,1,1,1,12.45,2026-10-03,none (warm-up)
+02,"44.00,THE COPPER SPOON,2026-10-04,44.00,44.00,44.00",0,1,1,1,1,44.00,2026-10-04,handwritten tip; printed Amount 37.00 is not the total
+03,"38.79,QUICKFILL FUEL #208,2026-10-05,38.79,38.79,38.79",0,1,1,1,1,38.79,2026-10-05,two-digit year 10/05/26
+04,"15.35,MAPLE STREET PHARMACY,2026-10-05,15.35,15.35,15.35",0,1,1,1,1,15.35,2026-10-05,return-by date and You saved line
+05,"33.33,BOLT & BEAM HARDWARE,2026-10-06,33.33,33.33,33.33",0,1,1,1,1,33.33,2026-10-06,coupon and Total savings line
+06,"receipt,06,orders@northpineoutfitters.example,October 7, 2026,69.01,69.01",0,0,1,1,1,69.01,2026-10-07,email receipt; vendor only in the sender address
+07,"receipt,07,DRIFTWOOD COFFEE,10/08/2026,4.85,4.85",0,0,1,1,1,4.85,2026-10-08,cash tendered 10.00 and change 5.15
+08,"receipt,08,HARBOR HOME GOODS,10/08/2026,3:30 PM,-23.31,-23.31",0,0,1,1,1,-23.31,2026-10-08,refund must be negative
+09,"receipt,09,SUNNYSIDE BOOKS,10/09/2026,27.15,27.15",0,0,1,1,1,27.15,2026-10-09,gift card part; Balance due 0.00
+10,"receipt,10,LAKEVIEW INN,10/11/2026,300.96,300.96",0,0,1,1,1,300.96,2026-10-11,arrival date; Balance 0.00
+11,"11,CITY CENTER PARKING - GARAGE B,2026-10-12,18.00,18.00,10/12/2026",0,1,1,1,1,18.00,2026-10-12,entry and exit times
+12,"12,FRESH ROW FARMERS MARKET,2026-10-12,12.50,12.50,10/12/2026",0,1,1,1,1,12.50,2026-10-12,scan noise: letter O instead of zero
+13,"13,RIDE RECEIPT - CITYHOP,2026-10-13,26.15,26.15,10/13/2026",0,1,1,1,1,26.15,2026-10-13,date written as a weekday and month name
+14,"14,PAGE & PINE BOOKSELLERS,2026-10-13,30.67,30.67,10/13/2026",0,1,1,1,1,30.67,2026-10-13,member discount and points
+15,"15,SPARKLE AUTO WASH,2026-10-14,17.00,17.00,10/14/2026",0,1,1,1,1,17.00,2026-10-14,next-visit date
+16,"16,RIVERBEND ANIMAL CLINIC,10/15/2026,90.00,90.00,Total for this visit",0,1,1,1,1,90.00,2026-10-15,previous balance; payment 135.00 covers two visits
+17,"17,BRIGHTLINE ELECTRONICS,10/15/2026,64.78,64.78,Total",0,1,1,1,1,64.78,2026-10-15,Total before tax line
+18,"18,MAIN ST DRY CLEANERS,10/10/2026,23.50,23.50,PAID AT DROP-OFF",0,1,1,1,1,23.50,2026-10-10,paid at drop-off; pickup date is later
+19,"19,OAK HOLLOW HARDWARE,10/16/2026,41.27,41.27,VISA",0,1,1,1,1,41.27,2026-10-16,split payment Visa 40.00 and cash 1.27
+20,"20,GOLDEN WOK,10/17/2026,30.78,30.78,Credit card",0,1,1,1,1,30.78,2026-10-17,none (control)

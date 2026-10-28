@@ -1,0 +1,257 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Countable AI probe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Atkinson+Hyperlegible:wght@400;700&display=block" rel="stylesheet">
+<style>
+:root{--paper:#FBF8F0;--grid:#DCE6EF;--ink:#2A2E33;--lead:#4A4F55;--red:#C23B2A;--note:#FFE98A}
+*{box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--paper);color:var(--ink)}
+#paper{position:absolute;inset:0;background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1.5px,transparent 1.5px),linear-gradient(90deg,var(--grid) 1.5px,transparent 1.5px);
+  background-size:48px 48px;background-position:-1px -1px}
+#margin{position:absolute;left:104px;top:0;width:2px;height:1080px;background:#E7A9A0}
+.hw{position:absolute;font:400 64px/1 'Patrick Hand';white-space:pre;color:var(--ink)}
+.small{font-size:40px;color:var(--lead)}
+.wr{clip-path:inset(-20px 100% -20px -20px)}
+svg{position:absolute;left:0;top:0;overflow:visible}
+.pen{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.redpen{fill:none;stroke:var(--red);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+#note{position:absolute;left:1110px;top:118px;width:740px;height:660px;background:var(--note);
+  box-shadow:0 18px 40px rgba(60,50,20,.18);transform-origin:50% 0}
+#note .hw{color:#3A3320}
+#endc{position:absolute;inset:0;background:var(--paper)}
+#sub{position:absolute;left:0;width:1920px;bottom:44px;text-align:center}
+#subIn{display:inline-block;padding:12px 34px 14px;border-radius:10px;background:rgba(32,34,38,.92);
+  font:700 46px/60px 'Atkinson Hyperlegible';color:#FFFFFF;max-width:1500px}
+</style></head>
+<body>
+<div id="paper"></div><div id="margin"></div>
+<div id="scene">
+  <div class="hw small" id="lblTrain" style="left:150px;top:92px">training text</div>
+  <div id="sents"></div>
+  <div class="hw small" id="lblTab" style="left:1240px;top:92px">after “of”</div>
+  <div id="tab"></div>
+  <div class="hw small" id="lblGen" style="left:150px;top:470px">let it finish the sentence</div>
+  <div class="hw" id="prompt" style="left:150px;top:540px;font-size:76px">Paris is the capital of</div>
+  <div class="hw" id="answer" style="font-size:76px">Italy</div>
+  <div class="hw" id="falseLbl" style="color:var(--red);font-size:52px">false</div>
+  <div class="hw small" id="lastLbl">it looks only at this word</div>
+  <div class="hw small" id="legend" style="left:1170px;top:840px">1–2 France · 3–4 Italy · 5–6 Peru</div>
+  <div class="hw" id="odds" style="left:150px;top:760px;font-size:56px;color:var(--red)">false in 2 of 3 rolls</div>
+  <svg id="s" width="1920" height="1080">
+    <g id="checks"></g><g id="ofmarks"></g><g id="arrows"></g><g id="tallies"></g>
+    <path id="blank" class="pen"/>
+    <path id="lastUL" class="redpen"/>
+    <g id="die"><rect id="dieBox" x="-95" y="-95" width="190" height="190" rx="28" fill="#FFFFFF" stroke="#2A2E33" stroke-width="5"/><g id="pips"></g></g>
+    <path id="ring" class="redpen"/>
+  </svg>
+</div>
+<div id="note">
+  <div class="hw" style="left:48px;top:40px;font-size:58px">What this toy leaves out</div>
+  <svg width="740" height="660"><path id="noteUL" class="pen" style="stroke:#3A3320"/></svg>
+  <div class="hw" id="n1" style="left:48px;top:150px;font-size:48px">• it is a count table,
+   not a neural network</div>
+  <div class="hw" id="n2" style="left:48px;top:290px;font-size:48px">• real models read the
+   whole question</div>
+  <div class="hw" id="n3" style="left:48px;top:430px;font-size:48px">• but facts seen once in training
+   are often guessed wrong</div>
+  <div class="hw small" id="n4" style="left:48px;top:574px;font-size:34px;color:#6A5F3A">Kalai et al., 2025, arXiv:2509.04664</div>
+</div>
+<div id="endc">
+  <div class="hw" id="endT" style="top:380px;font-size:150px">Countable AI</div>
+  <svg width="1920" height="1080"><path id="endUL" class="redpen" style="stroke-width:6"/></svg>
+  <div class="hw" id="endS" style="top:600px;font-size:56px;color:var(--lead)">how AI works, checked with a pencil</div>
+</div>
+<div id="sub"><div id="subIn"></div></div>
+
+<script>
+const W = 1920, H = 1080;
+window.FPS = 30;
+window.TOTAL_FRAMES = 1350; // 45.0 s
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const eio = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const eout = x => 1 - Math.pow(1 - x, 3);
+const P = (t, a, b, e = eio) => e(clamp((t - a) / (b - a)));
+const lerp = (a, b, p) => a + (b - a) * p;
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const svgEl = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+
+// The toy: three true sentences. After "of" each country appears once.
+const SENTS = [['Paris', 'is', 'the', 'capital', 'of', 'France.'], ['Rome', 'is', 'the', 'capital', 'of', 'Italy.'], ['Lima', 'is', 'the', 'capital', 'of', 'Peru.']];
+const SY = [160, 250, 340], SX = 150;
+const TAB = [['France', 1], ['Italy', 1], ['Peru', 1]], TY = [168, 258, 348], TX = 1240;
+let sentEls = [], wordEls = [], tabEls = [];
+
+// pencil stroke reveal: path drawn from 0 to p
+function draw(el, p) {
+  const L = el.getTotalLength ? el.getTotalLength() : 0;
+  el.setAttribute('stroke-dasharray', L + ' ' + (L + 1));
+  el.setAttribute('stroke-dashoffset', L * (1 - p));
+  el.style.opacity = p > 0 ? 1 : 0;
+}
+// handwriting reveal left to right
+function write(el, p) { el.style.clipPath = `inset(-20px ${100 - 100 * p}% -20px -20px)`; }
+// slight hand wobble so strokes don't look ruled
+const wob = (i, a = 3) => Math.sin(i * 12.9898) * a;
+
+function build() {
+  SENTS.forEach((ws, i) => {
+    const d = document.createElement('div'); d.className = 'hw'; d.style.left = SX + 'px'; d.style.top = SY[i] + 'px';
+    const spans = ws.map((w, j) => { const s = document.createElement('span'); s.textContent = w; d.appendChild(s); if (j < ws.length - 1) d.appendChild(document.createTextNode(' ')); return s; });
+    $('sents').appendChild(d); sentEls.push(d); wordEls.push(spans);
+  });
+  // check marks after each sentence
+  sentEls.forEach((d, i) => {
+    const r = d.getBoundingClientRect(), x = r.right + 26, y = SY[i] + 34;
+    svgEl('path', { class: 'pen', d: `M${x},${y} l14,16 l30,-38`, style: 'stroke:#2F7D4A;stroke-width:6' }, $('checks'));
+  });
+  // underline every "of" and its next word, arrow to the table row
+  wordEls.forEach((spans, i) => {
+    const o = spans[4].getBoundingClientRect(), n = spans[5].getBoundingClientRect();
+    svgEl('path', { class: 'redpen', d: `M${o.left - 6},${o.bottom + 4 + wob(i)} Q${(o.left + o.right) / 2},${o.bottom + 10} ${o.right + 6},${o.bottom + 3}` }, $('ofmarks'));
+    const x0 = n.right + 70, y0 = (n.top + n.bottom) / 2 + 4, x1 = TX - 24, y1 = TY[i] + 32;
+    svgEl('path', { class: 'pen', d: `M${x0},${y0} C${x0 + 120},${y0 - 30} ${x1 - 140},${y1 + 20} ${x1},${y1} M${x1 - 18},${y1 - 12} L${x1},${y1} L${x1 - 16},${y1 + 15}`, style: 'stroke:#4A4F55;stroke-width:3' }, $('arrows'));
+  });
+  TAB.forEach(([w], i) => {
+    const d = document.createElement('div'); d.className = 'hw'; d.textContent = w; d.style.left = TX + 'px'; d.style.top = TY[i] + 'px';
+    $('tab').appendChild(d); tabEls.push(d);
+    const x = TX + 250, y = TY[i] + 6;
+    svgEl('path', { class: 'pen', d: `M${x},${y} L${x + 3},${y + 56}`, style: 'stroke-width:6' }, $('tallies'));
+    const c = document.createElement('div'); c.className = 'hw'; c.textContent = '= 1'; c.style.left = (TX + 300) + 'px'; c.style.top = TY[i] + 'px'; c.style.color = 'var(--lead)';
+    $('tab').appendChild(c); tabEls.push(c);
+  });
+  // blank after the prompt
+  const pr = $('prompt').getBoundingClientRect();
+  const bx = pr.right + 26;
+  $('blank').setAttribute('d', `M${bx},${pr.bottom + 2} L${bx + 230},${pr.bottom}`);
+  $('answer').style.left = (bx + 14) + 'px'; $('answer').style.top = $('prompt').style.top;
+  $('ring').setAttribute('d', ellipse(bx + 120, pr.top + 40, 128, 62));
+  $('falseLbl').style.left = (bx + 60) + 'px'; $('falseLbl').style.top = (pr.bottom + 36) + 'px';
+  // "of" in the prompt
+  const ofX = pr.right - measure('of', '400 76px "Patrick Hand"');
+  $('lastUL').setAttribute('d', `M${ofX - 4},${pr.bottom + 6} Q${ofX + 30},${pr.bottom + 14} ${pr.right + 4},${pr.bottom + 5}`);
+  $('lastLbl').style.left = (ofX - 130) + 'px'; $('lastLbl').style.top = (pr.bottom + 26) + 'px';
+  $('noteUL').setAttribute('d', 'M48,112 Q300,120 620,108');
+  const tw = measure('Countable AI', '400 150px "Patrick Hand"');
+  $('endT').style.left = Math.round((W - tw) / 2) + 'px';
+  $('endUL').setAttribute('d', `M${(W - tw) / 2},552 Q${W / 2},566 ${(W + tw) / 2},548`);
+  const sw = measure('how AI works, checked with a pencil', '400 56px "Patrick Hand"');
+  $('endS').style.left = Math.round((W - sw) / 2) + 'px';
+}
+function ellipse(cx, cy, rx, ry) { // hand-drawn loop, slightly open
+  let d = ''; for (let k = 0; k <= 40; k++) { const a = -2.2 + k / 40 * (Math.PI * 2 + .35); const r = 1 + .04 * Math.sin(k * .7); d += (k ? ' L' : 'M') + (cx + Math.cos(a) * rx * r).toFixed(1) + ',' + (cy + Math.sin(a) * ry * r).toFixed(1); } return d;
+}
+function measure(s, font) { const c = document.createElement('canvas').getContext('2d'); c.font = font; return c.measureText(s).width; }
+
+const PIPS = { 1: [[0, 0]], 2: [[-1, -1], [1, 1]], 3: [[-1, -1], [0, 0], [1, 1]], 4: [[-1, -1], [1, -1], [-1, 1], [1, 1]], 5: [[-1, -1], [1, -1], [0, 0], [-1, 1], [1, 1]], 6: [[-1, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [1, 1]] };
+let pipFace = 0;
+function setFace(n) {
+  if (n === pipFace) return; pipFace = n;
+  const g = $('pips'); g.innerHTML = '';
+  PIPS[n].forEach(([x, y]) => svgEl('circle', { cx: x * 50, cy: y * 50, r: 16, fill: '#2A2E33' }, g));
+}
+
+const ready = (async () => {
+  for (const s of ['400 64px "Patrick Hand"', '700 46px "Atkinson Hyperlegible"']) { const r = await document.fonts.load(s, 'Ab0'); if (!r.length) throw new Error('font not loaded: ' + s); }
+  await document.fonts.ready;
+  build();
+})();
+
+const CUES = [
+  [0.3, 4.0, 'We teach a tiny “AI” three true sentences.'],
+  [4.1, 7.9, 'Then we watch it make something up.'],
+  [8.0, 11.9, 'It learns by counting<br>which word comes next.'],
+  [12.0, 15.9, 'After “of”: France 1, Italy 1, Peru 1.'],
+  [16.0, 19.9, 'Now let it finish:<br>“Paris is the capital of…”'],
+  [20.0, 22.9, 'It looks only at the last word, “of”.'],
+  [23.0, 25.9, 'Each country: 1 chance in 3.'],
+  [26.0, 29.9, 'It wrote “Italy”.<br>False in 2 of 3 rolls.'],
+  [30.0, 33.4, 'This toy is a count table,<br>not a neural network.'],
+  [33.5, 36.9, 'Real models read the whole question.'],
+  [37.0, 41.3, 'But facts seen only once in training<br>are often guessed wrong.']];
+let lastCue = -1;
+function drawSub(t) {
+  const i = CUES.findIndex(c => t >= c[0] && t < c[1]), s = $('sub');
+  if (i < 0) { s.style.display = 'none'; return; }
+  s.style.display = '';
+  if (i !== lastCue) { $('subIn').innerHTML = CUES[i][2]; lastCue = i; }
+  s.style.opacity = Math.min(clamp((t - CUES[i][0]) / .18), clamp((CUES[i][1] - t) / .18));
+}
+
+function drawScene(t) {
+  // camera: a slow drift so nothing sits frozen
+  const sc = $('scene');
+  sc.style.transform = `translate(${lerp(0, -10, clamp(t / 41))}px, ${lerp(0, -6, clamp(t / 41))}px)`;
+  // training sentences, written one by one, then checked
+  $('lblTrain').style.opacity = P(t, .2, .8);
+  sentEls.forEach((d, i) => { write(d, P(t, .6 + i * 1.9, 2.3 + i * 1.9, x => x)); });
+  [...$('checks').children].forEach((c, i) => draw(c, P(t, 2.4 + i * 1.9, 2.8 + i * 1.9)));
+  // counting
+  [...$('ofmarks').children].forEach((c, i) => draw(c, P(t, 8.4 + i * 1.6, 8.9 + i * 1.6)));
+  [...$('arrows').children].forEach((c, i) => draw(c, P(t, 8.9 + i * 1.6, 9.8 + i * 1.6)));
+  $('lblTab').style.opacity = P(t, 8.2, 8.8);
+  TAB.forEach((_, i) => {
+    write(tabEls[2 * i], P(t, 9.4 + i * 1.6, 10.0 + i * 1.6, x => x));
+    draw($('tallies').children[i], P(t, 12.2 + i * .5, 12.5 + i * .5));
+    write(tabEls[2 * i + 1], P(t, 13.4 + i * .4, 13.8 + i * .4, x => x));
+  });
+  // generation
+  $('lblGen').style.opacity = P(t, 16.0, 16.6);
+  write($('prompt'), P(t, 16.3, 18.6, x => x));
+  draw($('blank'), P(t, 18.7, 19.2));
+  draw($('lastUL'), P(t, 20.2, 20.8));
+  $('lastLbl').style.opacity = P(t, 20.6, 21.2) * (1 - P(t, 23.2, 23.6));
+  // the die: sides 1-2 France, 3-4 Italy, 5-6 Peru; rolls, lands on 4
+  const dieIn = P(t, 22.8, 23.4, eout);
+  const roll = P(t, 23.4, 26.4, eout);
+  const g = $('die');
+  const dx = 1380, dy = 640 - 40 * (1 - dieIn);
+  const spin = (1 - roll) * 760;
+  g.setAttribute('transform', `translate(${dx},${dy + Math.abs(Math.sin(roll * 9)) * -40 * (1 - roll)}) rotate(${spin + 6})`);
+  g.style.opacity = dieIn;
+  const SEQ = [2, 5, 1, 6, 3, 5, 2, 6, 1, 4];
+  setFace(t < 23.4 ? 2 : SEQ[Math.min(SEQ.length - 1, Math.floor(roll * SEQ.length * 1.0001))]);
+  $('legend').style.opacity = P(t, 23.0, 23.6);
+  write($('answer'), P(t, 26.6, 27.4, x => x));
+  draw($('ring'), P(t, 27.8, 28.5));
+  $('falseLbl').style.opacity = P(t, 28.3, 28.8);
+  write($('odds'), P(t, 28.4, 29.6, x => x));
+  // right side clears for the note
+  const clear = 1 - P(t, 29.6, 30.2);
+  $('lblTab').style.opacity = P(t, 8.2, 8.8) * clear;
+  $('tab').style.opacity = clear; $('tallies').style.opacity = clear; $('arrows').style.opacity = clear;
+  $('legend').style.opacity = P(t, 23.0, 23.6) * clear;
+  g.style.opacity = dieIn * clear;
+}
+function drawNote(t) {
+  const n = $('note');
+  const a = P(t, 29.9, 30.6, eout);
+  n.style.display = a > 0 ? '' : 'none';
+  n.style.transform = `translateY(${lerp(-60, 0, a)}px) rotate(${lerp(-6, -2, a)}deg)`;
+  n.style.opacity = a;
+  draw($('noteUL'), P(t, 30.4, 30.9));
+  write($('n1'), P(t, 30.6, 32.0, x => x));
+  write($('n2'), P(t, 33.6, 35.0, x => x));
+  write($('n3'), P(t, 37.1, 39.0, x => x));
+  $('n4').style.opacity = P(t, 38.6, 39.2);
+}
+function drawEnd(t) {
+  const e = $('endc'), a = P(t, 41.4, 42.2);
+  e.style.display = a > 0 ? '' : 'none';
+  e.style.clipPath = `inset(0 ${100 - 100 * a}% 0 0)`;
+  write($('endT'), P(t, 42.0, 43.2, x => x));
+  draw($('endUL'), P(t, 43.2, 43.7));
+  $('endS').style.opacity = P(t, 43.6, 44.2);
+}
+
+window.renderFrame = async (frame) => {
+  await ready;
+  const t = frame / window.FPS;
+  drawScene(t); drawNote(t); drawEnd(t); drawSub(t);
+};
+</script>
+</body></html>
