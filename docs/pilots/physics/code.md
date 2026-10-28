@@ -2801,7 +2801,7 @@ at(W('h2c.3', 'Aging'), 1.1, 'write', 'u_even'); at(E('h2c.3') + 0.2, 0.8, 'fade
 
 ## gps/thumbs/thumbs.html
 
-Обложки A, B, C.
+Обложки A и B.
 
 ```html
 <!doctype html><html><head><meta charset="utf-8"><title>GPS thumbnails</title>
