@@ -1,0 +1,31 @@
+1
+00:00:00,200 --> 00:00:01,753
+Watch the hexagon.
+
+2
+00:00:02,200 --> 00:00:05,292
+HEX is in front. It hardly turns.
+
+3
+00:00:06,000 --> 00:00:09,249
+From gate to finish, HEX makes eight full turns.
+
+4
+00:00:09,249 --> 00:00:12,169
+ECHO, a ball, makes about fifty-four.
+
+5
+00:00:13,699 --> 00:00:14,869
+HEX wins.
+
+6
+00:00:15,900 --> 00:00:20,049
+Of our thousand test runs, HEX won about one in ten.
+
+7
+00:00:20,049 --> 00:00:25,146
+And it finished in the last two places in almost a quarter.
+
+8
+00:00:26,000 --> 00:00:28,323
+Full race on the channel.

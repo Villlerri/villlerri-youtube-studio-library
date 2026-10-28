@@ -1,0 +1,82 @@
+{
+  "id": "switchback-sprint",
+  "title": "Event 1 \u00b7 Switchback Sprint",
+  "rules": "12 shapes start from one hopper in a seeded random pile. The gate drops at 2.0 s. First centre across the finish line wins. Shapes still on the course after 150 s are ranked by height: lower is further.",
+  "world": {
+    "gravity": -9.8,
+    "hz": 60,
+    "substeps": 4,
+    "duration": 150
+  },
+  "track": {
+    "width": 14,
+    "gap": 2.6,
+    "angle": 21,
+    "levelDrop": 2.2,
+    "friction": 0.3,
+    "restitution": 0.1,
+    "wallRestitution": 0.25
+  },
+  "hopper": {
+    "gateX": 4.6,
+    "gateHeight": 3.6,
+    "gateOpen": 2.0,
+    "columns": [
+      0.75,
+      1.8,
+      2.85,
+      3.9
+    ],
+    "rows": [
+      0.85,
+      1.95,
+      3.05
+    ],
+    "jitter": 0.05
+  },
+  "levels": [
+    {
+      "feature": "hopper"
+    },
+    {
+      "feature": "chute",
+      "angle": 28
+    },
+    {
+      "feature": "steps",
+      "count": 4
+    },
+    {
+      "feature": "plain"
+    },
+    {
+      "feature": "chute",
+      "angle": 30
+    },
+    {
+      "feature": "steps",
+      "count": 5
+    },
+    {
+      "feature": "plain"
+    },
+    {
+      "feature": "chute",
+      "angle": 26
+    },
+    {
+      "feature": "steps",
+      "count": 4
+    },
+    {
+      "feature": "plain"
+    },
+    {
+      "feature": "chute",
+      "angle": 28
+    },
+    {
+      "feature": "finish"
+    }
+  ]
+}

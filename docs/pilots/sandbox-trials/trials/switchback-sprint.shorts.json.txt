@@ -1,0 +1,98 @@
+{
+  "event": "EVENT 1 · SWITCHBACK SPRINT",
+  "shorts": [
+    {
+      "id": "podium",
+      "title": "0.132 Seconds for the Podium #shorts",
+      "ru": "0,132 секунды за пьедестал",
+      "segments": [
+        {
+          "id": "hook", "race": [22.0, 24.6], "focus": ["ANVIL", "GLIDE"],
+          "hook": { "kicker": "EVENT 1 · SWITCHBACK SPRINT", "title": "ONE PODIUM SPOT.\nTWO SHAPES." },
+          "voice": [{ "at": 22.2, "text": "One podium spot. Two shapes.", "ru": "Одно место на пьедестале. Две фигуры." }]
+        },
+        {
+          "id": "chase", "race": [24.6, 37.9], "focus": ["ANVIL", "GLIDE"],
+          "voice": [
+            { "at": 24.9, "text": "ANVIL came out of the pile eighth. Now it is third.", "ru": "ANVIL вышел из кучи восьмым. Теперь он третий." },
+            { "at": 29.8, "text": "GLIDE, the favourite, is right behind. It never gets past.", "ru": "GLIDE, фаворит, сразу за ним. Обойти не может." }
+          ]
+        },
+        {
+          "id": "photo", "still": { "at": 37.571, "focus": ["ANVIL", "GLIDE"], "kicker": "PHOTO FINISH · THIRD PLACE", "title": "ANVIL\nBY 0.132 s" }, "min": 3,
+          "voice": [{ "text": "ANVIL, by a hundred and thirty-two thousandths.", "ru": "ANVIL, на сто тридцать две тысячных." }]
+        },
+        {
+          "id": "odds", "card": { "kicker": "1,000 TEST RUNS BEFORE THE OFFICIAL ONE", "title": "GLIDE WON 290", "lines": ["ANVIL won 30.", "Tonight: GLIDE 4th."] }, "min": 4,
+          "voice": [{ "text": "Of our thousand test runs, GLIDE won twenty-nine percent. ANVIL, three.", "ru": "Из нашей тысячи тестовых прогонов GLIDE выиграл двадцать девять процентов. ANVIL — три." }]
+        },
+        {
+          "id": "end", "card": { "kicker": "RULES FIRST · SEED LOCKED · NO RETAKES", "title": "SANDBOX TRIALS", "lines": ["Full race on the channel."] }, "min": 2.5,
+          "voice": [{ "text": "Full race on the channel.", "ru": "Весь заезд — на канале." }]
+        }
+      ]
+    },
+    {
+      "id": "hex",
+      "title": "The Hexagon That Barely Turned Won the Race #shorts",
+      "ru": "Шестиугольник, который почти не вращался, выиграл заезд",
+      "segments": [
+        {
+          "id": "hook", "race": [9.6, 11.6], "focus": ["HEX"],
+          "hook": { "kicker": "EVENT 1 · SWITCHBACK SPRINT", "title": "WATCH HOW\nLITTLE IT TURNS." },
+          "voice": [{ "at": 9.8, "text": "Watch the hexagon.", "ru": "Следите за шестиугольником." }]
+        },
+        {
+          "id": "lead", "race": [11.6, 22.9], "focus": ["HEX"],
+          "voice": [
+            { "at": 11.8, "text": "HEX is in front. It hardly turns.", "ru": "HEX впереди. Он почти не вращается." },
+            { "at": 15.6, "text": "From gate to finish, HEX makes eight full turns. ECHO, a ball, makes about fifty-four.", "ru": "От ворот до финиша HEX делает восемь полных оборотов. ECHO, шар, — около пятидесяти четырёх." }
+          ]
+        },
+        {
+          "id": "finish", "race": [32.6, 34.8], "focus": ["HEX"],
+          "voice": [{ "at": 33.0, "text": "HEX wins.", "ru": "HEX побеждает." }]
+        },
+        {
+          "id": "odds", "card": { "kicker": "1,000 TEST RUNS BEFORE THE OFFICIAL ONE", "title": "BOOM OR BUST", "lines": ["HEX won 97.", "Last two places: 232."] }, "min": 4,
+          "voice": [{ "text": "Of our thousand test runs, HEX won about one in ten. And it finished in the last two places in almost a quarter.", "ru": "Из нашей тысячи тестовых прогонов HEX выиграл примерно один из десяти. И почти в четверти финишировал на двух последних местах." }]
+        },
+        {
+          "id": "end", "card": { "kicker": "RULES FIRST · SEED LOCKED · NO RETAKES", "title": "SANDBOX TRIALS", "lines": ["Full race on the channel."] }, "min": 2.5,
+          "voice": [{ "text": "Full race on the channel.", "ru": "Весь заезд — на канале." }]
+        }
+      ]
+    },
+    {
+      "id": "favourite",
+      "title": "The Favourite Won 290 of 1,000 Test Runs. Tonight? #shorts",
+      "ru": "Фаворит выиграл 290 из 1 000 тестовых прогонов. А сегодня?",
+      "segments": [
+        {
+          "id": "hook", "race": [2.0, 5.8], "focus": ["GLIDE"],
+          "hook": { "kicker": "1,000 TEST RUNS", "title": "THE FAVOURITE\nWON 290", "coverAt": 4.6 },
+          "voice": [{ "at": 2.2, "text": "GLIDE won twenty-nine percent of our thousand test runs.", "ru": "GLIDE выиграл двадцать девять процентов нашей тысячи тестовых прогонов." }]
+        },
+        {
+          "id": "race", "race": [28.0, 37.9], "focus": ["GLIDE"],
+          "voice": [
+            { "at": 28.3, "text": "Tonight, the ice ball runs fourth.", "ru": "Сегодня ледяной шар идёт четвёртым." },
+            { "at": 32.0, "text": "And it cannot get past ANVIL.", "ru": "И обойти ANVIL он не может." }
+          ]
+        },
+        {
+          "id": "photo", "still": { "at": 37.703, "focus": ["GLIDE"], "kicker": "FINISH", "title": "GLIDE: 4TH\n+0.132 s" }, "min": 3,
+          "voice": [{ "text": "Fourth, by a hundred and thirty-two thousandths.", "ru": "Четвёртый, на сто тридцать две тысячных позади." }]
+        },
+        {
+          "id": "podium", "card": { "kicker": "TONIGHT'S PODIUM", "title": "MOST IS NOT ALWAYS", "lines": ["1. HEX", "2. COMET", "3. ANVIL"] }, "min": 4,
+          "voice": [{ "text": "The podium: HEX, COMET, ANVIL. Most is not always.", "ru": "Пьедестал: HEX, COMET, ANVIL. Чаще — не значит всегда." }]
+        },
+        {
+          "id": "end", "card": { "kicker": "RULES FIRST · SEED LOCKED · NO RETAKES", "title": "SANDBOX TRIALS", "lines": ["Full race on the channel."] }, "min": 2.5,
+          "voice": [{ "text": "Full race on the channel.", "ru": "Весь заезд — на канале." }]
+        }
+      ]
+    }
+  ]
+}

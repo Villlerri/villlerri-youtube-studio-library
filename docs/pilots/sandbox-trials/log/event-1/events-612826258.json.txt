@@ -1,0 +1,241 @@
+{
+ "seed": 612826258,
+ "hash": "5aaf2fa57acde9da",
+ "winner": {
+  "name": "HEX",
+  "raceTime": 32.131
+ },
+ "marginToSecond": 1.906,
+ "photoFinish": false,
+ "leaderChanges": 2,
+ "leaders": [
+  {
+   "t": 0,
+   "name": "WOBBLE"
+  },
+  {
+   "t": 1.3,
+   "name": "COMET"
+  },
+  {
+   "t": 8.63,
+   "name": "HEX"
+  }
+ ],
+ "marks": [
+  {
+   "share": 0.25,
+   "t": 8.03,
+   "order": [
+    "COMET",
+    "HEX",
+    "WOBBLE",
+    "ANVIL",
+    "PIP",
+    "GLIDE",
+    "TWIN",
+    "GRIT",
+    "BOUNCE",
+    "ECHO",
+    "SPIN",
+    "BRICK"
+   ]
+  },
+  {
+   "share": 0.5,
+   "t": 16.07,
+   "order": [
+    "HEX",
+    "COMET",
+    "ANVIL",
+    "PIP",
+    "GLIDE",
+    "TWIN",
+    "WOBBLE",
+    "ECHO",
+    "GRIT",
+    "SPIN",
+    "BRICK",
+    "BOUNCE"
+   ]
+  },
+  {
+   "share": 0.75,
+   "t": 24.1,
+   "order": [
+    "HEX",
+    "COMET",
+    "ANVIL",
+    "GLIDE",
+    "PIP",
+    "TWIN",
+    "WOBBLE",
+    "ECHO",
+    "SPIN",
+    "GRIT",
+    "BRICK",
+    "BOUNCE"
+   ]
+  }
+ ],
+ "earlyOrder": [
+  "WOBBLE",
+  "PIP",
+  "COMET",
+  "GRIT",
+  "HEX",
+  "GLIDE",
+  "TWIN",
+  "ANVIL",
+  "SPIN",
+  "BRICK",
+  "ECHO",
+  "BOUNCE"
+ ],
+ "finalOrder": [
+  "HEX",
+  "COMET",
+  "ANVIL",
+  "GLIDE",
+  "TWIN",
+  "PIP",
+  "WOBBLE",
+  "ECHO",
+  "GRIT",
+  "SPIN",
+  "BRICK",
+  "BOUNCE"
+ ],
+ "gaps": [
+  {
+   "name": "COMET",
+   "behind": "HEX",
+   "gap": 1.906
+  },
+  {
+   "name": "ANVIL",
+   "behind": "COMET",
+   "gap": 1.534
+  },
+  {
+   "name": "GLIDE",
+   "behind": "ANVIL",
+   "gap": 0.132
+  },
+  {
+   "name": "TWIN",
+   "behind": "GLIDE",
+   "gap": 1.462
+  },
+  {
+   "name": "PIP",
+   "behind": "TWIN",
+   "gap": 0.452
+  },
+  {
+   "name": "WOBBLE",
+   "behind": "PIP",
+   "gap": 0.405
+  },
+  {
+   "name": "ECHO",
+   "behind": "WOBBLE",
+   "gap": 0.684
+  },
+  {
+   "name": "GRIT",
+   "behind": "ECHO",
+   "gap": 0.386
+  },
+  {
+   "name": "SPIN",
+   "behind": "GRIT",
+   "gap": 0.431
+  },
+  {
+   "name": "BRICK",
+   "behind": "SPIN",
+   "gap": 0.466
+  },
+  {
+   "name": "BOUNCE",
+   "behind": "BRICK",
+   "gap": 3.017
+  }
+ ],
+ "biggestGain": {
+  "name": "ANVIL",
+  "from": 8,
+  "to": 3,
+  "gained": 5
+ },
+ "biggestLoss": {
+  "name": "WOBBLE",
+  "from": 1,
+  "to": 7,
+  "gained": -6
+ },
+ "unfinished": [],
+ "turns": [
+  {
+   "name": "ANVIL",
+   "turns": 47.6,
+   "metres": 177
+  },
+  {
+   "name": "PIP",
+   "turns": 85.9,
+   "metres": 182
+  },
+  {
+   "name": "BOUNCE",
+   "turns": 47.4,
+   "metres": 235
+  },
+  {
+   "name": "GLIDE",
+   "turns": 18.1,
+   "metres": 178
+  },
+  {
+   "name": "GRIT",
+   "turns": 56.5,
+   "metres": 179
+  },
+  {
+   "name": "WOBBLE",
+   "turns": 11.6,
+   "metres": 180
+  },
+  {
+   "name": "HEX",
+   "turns": 8,
+   "metres": 178
+  },
+  {
+   "name": "BRICK",
+   "turns": 10.8,
+   "metres": 181
+  },
+  {
+   "name": "TWIN",
+   "turns": 7.8,
+   "metres": 178
+  },
+  {
+   "name": "COMET",
+   "turns": 6.3,
+   "metres": 176
+  },
+  {
+   "name": "SPIN",
+   "turns": 48.3,
+   "metres": 183
+  },
+  {
+   "name": "ECHO",
+   "turns": 53.7,
+   "metres": 179
+  }
+ ]
+}
