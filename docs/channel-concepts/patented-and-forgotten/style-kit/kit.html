@@ -1,0 +1,135 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:ital,wght@1,700&display=block" rel="stylesheet">
+<style>
+:root{--paper:#ece2c6;--ink:#1e2418;--green:#3f5a2c;--orange:#d9662a;--yellow:#e8b13a;--red:#b8321f;--acc:var(--orange)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);overflow:hidden;font-family:'IBM Plex Mono',monospace}
+.s{display:none;position:relative;width:1920px;height:1080px;overflow:hidden}
+.s.on{display:block}
+.a{position:absolute}
+.grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.6;width:100%;height:100%}
+.ink{mix-blend-mode:multiply}
+.H{font-family:Anton;text-transform:uppercase;line-height:.86}
+.I{font-family:'Playfair Display';font-style:italic}
+.M{font-size:20px;letter-spacing:4px;text-transform:uppercase}
+.foot{left:0;right:0;bottom:0;height:52px;background:var(--ink);color:var(--paper);font-size:18px;letter-spacing:6px;display:flex;align-items:center;padding-left:92px;gap:60px}
+.rule{border-top:5px solid var(--ink)}
+.stripes{display:flex}.stripes i{flex:1}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .45  0 0 0 0 .4  0 0 0 0 .28  0 0 0 .55 0"/></filter><filter id="b"><feTurbulence type="fractalNoise" baseFrequency=".012" numOctaves="2"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .42  0 0 0 0 .3  0 0 0 .35 0"/></filter></svg>
+
+<!-- 1 cover: episode opening spread -->
+<section class="s" id="cover">
+ <div class="a stripes" style="left:1180px;top:0;bottom:0;width:420px"><i style="background:var(--yellow)"></i><i style="background:var(--orange)"></i><i style="background:var(--red)"></i><i style="background:var(--green)"></i></div>
+ <div class="a" style="left:1020px;top:110px;width:740px;height:860px;background:var(--paper)"></div>
+ <img class="a ink" src="assets/fig2_ink.png" style="left:1150px;top:125px;height:830px">
+ <div class="a H" style="left:1640px;top:130px;font-size:34px;line-height:1.1;letter-spacing:2px">PATENT<br>US 3,668,658<br>FIG. 2</div>
+ <h1 class="a H" style="left:84px;top:36px;font-size:330px;letter-spacing:-6px;color:var(--green)">Floppy</h1>
+ <div class="a M" style="left:92px;top:340px;font-size:26px;letter-spacing:8px">Forgotten tech · File 01</div>
+ <p class="a I" style="left:90px;top:420px;font-size:76px;line-height:1.02;width:860px">The plastic sleeve that made <em style="color:var(--orange)">data portable</em></p>
+ <div class="a rule" style="left:92px;top:760px;width:820px;display:grid;grid-template-columns:1fr 1fr 1fr;font-size:20px;letter-spacing:2px">
+  <div style="padding-top:16px;border-right:1px solid;margin-right:14px">FILED<b class="H" style="display:block;font-size:40px;font-weight:400;margin-top:6px">22 DEC 1969</b></div>
+  <div style="padding-top:16px;border-right:1px solid;margin-right:14px">GRANTED<b class="H" style="display:block;font-size:40px;font-weight:400;margin-top:6px">6 JUN 1972</b></div>
+  <div style="padding-top:16px">INVENTORS<b class="H" style="display:block;font-size:40px;font-weight:400;margin-top:6px">2</b></div>
+ </div>
+ <div class="a foot"><span>PATENTED &amp; FORGOTTEN</span><span>RETRO TECH IN PRINT</span></div>
+</section>
+
+<!-- 2 drawing study: figure with numbered callouts from the patent text -->
+<section class="s" id="drawing">
+ <div class="a" style="left:0;top:0;bottom:0;width:820px;background:#e4d8b8"></div>
+ <img class="a ink" src="assets/fig2_ink.png" style="left:150px;top:40px;height:1000px">
+ <svg class="a" width="1920" height="1080" style="left:0;top:0" fill="none" stroke="#b8321f" stroke-width="3"><circle cx="497" cy="150" r="9" fill="#b8321f"/><path d="M497 150 L885 70"/><circle cx="560" cy="205" r="9" fill="#b8321f"/><path d="M560 205 L885 150"/><circle cx="210" cy="200" r="9" fill="#b8321f"/><path d="M210 200 L885 230"/><circle cx="470" cy="385" r="9" fill="#b8321f"/><path d="M470 385 L885 310"/><circle cx="200" cy="590" r="9" fill="#b8321f"/><path d="M200 590 L885 460"/></svg>
+ <div class="a" style="left:900px;top:44px;width:900px;font-size:24px;line-height:1.35">
+  <div style="height:80px"><b class="H" style="font-size:44px;color:var(--red);font-weight:400">27</b> &nbsp;Oval window for the read head</div>
+  <div style="height:80px"><b class="H" style="font-size:44px;color:var(--red);font-weight:400">24</b> &nbsp;Dusting fabric 3M 550, "pink wipe"</div>
+  <div style="height:80px"><b class="H" style="font-size:44px;color:var(--red);font-weight:400">20</b> &nbsp;Vinyl top sheet, matte outside</div>
+  <div style="height:150px"><b class="H" style="font-size:44px;color:var(--red);font-weight:400">10</b> &nbsp;Flexible disk, magnetic oxide on both faces</div>
+  <div style="height:200px"><b class="H" style="font-size:44px;color:var(--red);font-weight:400">50</b> &nbsp;Spacing layer between the sheets</div>
+ </div>
+ <div class="a I" style="left:900px;top:660px;width:880px;font-size:58px;line-height:1.08">The cover cleans the disk <span style="color:var(--red)">every time it spins.</span></div>
+ <div class="a M" style="left:900px;top:960px;font-size:18px">US 3,668,658 · Sheet 2 of 2 · Fig. 2, exploded view</div>
+</section>
+
+<!-- 3 quote page: line from the source, big italic -->
+<section class="s" id="quote" style="background:var(--green);color:var(--paper)">
+ <div class="a H" style="left:90px;top:60px;font-size:620px;height:300px;overflow:hidden;color:var(--orange);line-height:1">“</div>
+ <p class="a I" style="left:200px;top:300px;width:1500px;font-size:118px;line-height:1.04">A cover which is rugged, inexpensive and <span style="color:var(--yellow)">mailable.</span></p>
+ <div class="a M" style="left:206px;top:780px;border-top:3px solid var(--paper);padding-top:18px;width:900px">Patent US 3,668,658 · Flores &amp; Thompson · 1972</div>
+</section>
+
+<!-- 4 number card: one figure fills the page -->
+<section class="s" id="number">
+ <div class="a H" style="left:60px;top:30px;font-size:760px;letter-spacing:-20px;color:var(--red)">80<span style="font-size:330px;letter-spacing:0;color:var(--ink)">KB</span></div>
+ <div class="a rule" style="left:96px;top:820px;width:1720px;padding-top:20px;display:flex;justify-content:space-between;font-size:26px;letter-spacing:3px">
+  <span>READ-ONLY</span><span>8-INCH DISK</span><span>SHIPPED 1971</span><span>IBM 23FD DRIVE</span>
+ </div>
+ <p class="a I" style="left:96px;top:900px;font-size:52px">Less than one photo from your phone.</p>
+</section>
+
+<!-- 5 timeline strip -->
+<section class="s" id="timeline">
+ <h2 class="a H" style="left:92px;top:60px;font-size:150px">Floppy, 1967–2011</h2>
+ <div class="a" style="left:92px;top:520px;width:1736px;height:14px;background:var(--ink)"></div>
+ <div class="a" style="left:92px;top:300px;width:1736px;display:grid;grid-template-columns:repeat(6,1fr)">
+  <div><b class="H" style="font-size:96px;font-weight:400">1967</b></div><div><b class="H" style="font-size:96px;font-weight:400">1971</b></div><div><b class="H" style="font-size:96px;font-weight:400;color:var(--red)">1972</b></div><div><b class="H" style="font-size:96px;font-weight:400">1976</b></div><div><b class="H" style="font-size:96px;font-weight:400">1982</b></div><div><b class="H" style="font-size:96px;font-weight:400">2011</b></div>
+ </div>
+ <div class="a" style="left:92px;top:500px;width:1736px;display:grid;grid-template-columns:repeat(6,1fr)">
+  <i style="width:54px;height:54px;border-radius:50%;background:var(--ink)"></i><i style="width:54px;height:54px;border-radius:50%;background:var(--ink)"></i><i style="width:54px;height:54px;border-radius:50%;background:var(--red)"></i><i style="width:54px;height:54px;border-radius:50%;background:var(--ink)"></i><i style="width:54px;height:54px;border-radius:50%;background:var(--ink)"></i><i style="width:54px;height:54px;border-radius:50%;background:var(--ink)"></i>
+ </div>
+ <div class="a" style="left:92px;top:600px;width:1736px;display:grid;grid-template-columns:repeat(6,1fr);gap:24px;font-size:22px;line-height:1.4">
+  <p>Work starts at IBM in San Jose</p><p>8-inch disk ships, 80 KB, read-only</p><p>Patent for the cover granted</p><p>5¼-inch disk arrives</p><p>3½-inch disk arrives</p><p>Last new floppies from Sony</p>
+ </div>
+ <div class="a foot" style="background:var(--orange);color:var(--ink)"><span>PATENTED &amp; FORGOTTEN</span><span>FILE 01 · FLOPPY</span></div>
+</section>
+
+<!-- 6 photo inset: licensed photo as halftone, credit on the page -->
+<section class="s" id="photo" style="background:var(--yellow)">
+ <div class="a" style="left:1000px;top:0;width:920px;height:1080px;background:var(--paper)"></div>
+ <img class="a ink" src="assets/photo_dots.png" style="left:1110px;top:50px;height:980px">
+ <h2 class="a H" style="left:92px;top:80px;font-size:200px;width:860px">Eight inches</h2>
+ <p class="a I" style="left:96px;top:520px;width:800px;font-size:60px;line-height:1.08">The hub hole and the head slot: the parts the cover leaves open.</p>
+ <div class="a M" style="left:96px;top:950px;font-size:16px;letter-spacing:3px">Photo: Pamporoff, Wikimedia Commons, public domain. Cropped, halftone.</div>
+</section>
+
+<!-- 7 chapter divider -->
+<section class="s" id="chapter" style="background:var(--ink);color:var(--paper)">
+ <div class="a H" style="left:60px;top:20px;font-size:980px;color:var(--orange);letter-spacing:-30px;line-height:.92">2</div>
+ <div class="a M" style="left:760px;top:330px;font-size:28px;letter-spacing:10px">Part two</div>
+ <h2 class="a H" style="left:752px;top:390px;font-size:240px">The patent</h2>
+ <p class="a I" style="left:760px;top:640px;font-size:56px;width:1000px">Why a dust cloth mattered more than the disk.</p>
+</section>
+
+<!-- 8 thumbnail 1280x720 -->
+<section class="s" id="thumb" style="width:1280px;height:720px;background:var(--orange)">
+ <div class="a" style="left:640px;top:0;width:640px;height:720px;background:var(--paper)"></div>
+ <img class="a ink" src="assets/fig2_ink.png" style="left:740px;top:10px;height:700px">
+ <h1 class="a H" style="left:44px;top:40px;font-size:250px;letter-spacing:-4px;color:var(--ink)">80 KB</h1>
+ <div class="a H" style="left:48px;top:300px;font-size:120px;color:var(--paper);line-height:.9">in the<br>mail</div>
+ <div class="a M" style="left:50px;top:640px;font-size:20px;letter-spacing:5px">Patented &amp; Forgotten</div>
+</section>
+
+<!-- 9 avatar 800x800 -->
+<section class="s" id="avatar" style="width:800px;height:800px;background:var(--paper)">
+ <div class="a" style="left:60px;top:60px;width:680px;height:680px;border-radius:50%;background:var(--red)"></div>
+ <div class="a H" style="left:0;right:0;top:170px;text-align:center;font-size:420px;letter-spacing:-10px;color:var(--paper)">PF</div>
+ <div class="a M" style="left:0;right:0;top:600px;text-align:center;font-size:30px;letter-spacing:10px;color:var(--paper)">EST. 2026</div>
+</section>
+
+<!-- 10 banner 2560x1440, text inside 1546x423 safe area -->
+<section class="s" id="banner" style="width:2560px;height:1440px;background:var(--paper)">
+ <div class="a stripes" style="left:0;right:0;top:508px;height:423px"><i style="background:var(--yellow)"></i><i style="background:var(--orange)"></i><i style="background:var(--red)"></i><i style="background:var(--green)"></i></div>
+ <div class="a" style="left:507px;top:508px;width:1546px;height:423px;background:var(--paper)"></div>
+ <div class="a H" style="left:560px;top:540px;font-size:168px;letter-spacing:-2px;color:var(--ink)">Patented &amp; Forgotten</div>
+ <div class="a M" style="left:566px;top:860px;font-size:30px;letter-spacing:9px">Forgotten tech, one drawing at a time</div>
+</section>
+
+<script>
+const id = location.hash.slice(1) || 'cover';
+const s = document.getElementById(id); s.classList.add('on');
+const g = document.createElementNS('http://www.w3.org/2000/svg','svg'); g.setAttribute('class','grain');
+g.innerHTML = '<rect width="100%" height="100%" filter="url(#n)"/><rect width="100%" height="100%" filter="url(#b)"/>';
+s.appendChild(g);
+</script>
+</body></html>
