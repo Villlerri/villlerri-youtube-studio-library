@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const exe = '/home/boardagent/.cache/ms-playwright/chromium-1248/chrome-linux64/chrome';
+const sizes = { thumb: [1280, 720], avatar: [800, 800], banner: [2560, 1440] };
+const b = await chromium.launch({ executablePath: exe, headless: true });
+for (const id of process.argv.slice(2)) {
+  const [w, h] = sizes[id] || [1920, 1080];
+  const p = await b.newPage({ viewport: { width: w, height: h } });
+  await p.goto('file://' + process.cwd() + '/kit.html#' + id, { waitUntil: 'load' });
+  await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(400);
+  await p.screenshot({ path: `out/${id}.png` }); await p.close();
+}
+await b.close();

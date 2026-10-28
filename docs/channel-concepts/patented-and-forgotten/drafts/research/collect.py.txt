@@ -1,0 +1,64 @@
+"""Collect public YouTube search samples (two passes) and channel listings + about pages.
+Run: tmp/venv/bin/python -I tmp/scripts/collect.py [batch]  (writes tmp/research/raw/)"""
+import json, time, urllib.parse, urllib.request, concurrent.futures as cf, os, datetime, re, sys
+import yt_dlp
+HERE=os.path.dirname(os.path.abspath(__file__)); RAW=os.path.join(HERE,'..','research','raw')
+PASSES={'month':'EgQIBBAB','all':'EgIQAQ%3D%3D'}  # month: upload date this month + type video; all: type video only
+def now(): return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
+def ydl(n): return yt_dlp.YoutubeDL({'quiet':True,'no_warnings':True,'extract_flat':'in_playlist','playlistend':n,'skip_download':True,
+  'extractor_args':{'youtubetab':{'approximate_date':['']}},'socket_timeout':30})
+def search(q,lang,gl,sp,n=40):
+  url=f"https://www.youtube.com/results?search_query={urllib.parse.quote_plus(q)}&sp={sp}&hl={lang}&gl={gl}"
+  err=''
+  for a in range(3):
+    try:
+      with ydl(n) as y: info=y.extract_info(url,download=False)
+      return [{k:e.get(k) for k in ('id','title','channel','channel_id','view_count','duration','timestamp')} for e in info.get('entries') or [] if e.get('id') and len(e['id'])==11]
+    except Exception as ex: err=str(ex); time.sleep(5)
+  return {'error':err}
+UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
+def about(cid):
+  req=urllib.request.Request(f'https://www.youtube.com/channel/{cid}/about?hl=en',headers={'User-Agent':UA,'Accept-Language':'en-US,en','Cookie':'CONSENT=YES+1; SOCS=CAI'})
+  for a in range(3):
+    try:
+      h=urllib.request.urlopen(req,timeout=30).read().decode('utf-8','replace')
+      m=re.search(r'"aboutChannelViewModel":\{(.{0,6000})',h)
+      if not m: return {'error':'no aboutChannelViewModel'}
+      s=m.group(1); g=lambda p:(re.search(p,s) or [None,None])[1]
+      return {'joined':g(r'"joinedDateText":\{"content":"Joined ([^"]+)"'),'total_views':g(r'"viewCountText":"([^"]+)"'),
+              'video_count':g(r'"videoCountText":"([^"]+)"'),'subs_text':g(r'"subscriberCountText":"([^"]+)"'),'country':g(r'"country":"([^"]+)"'),
+              'handle':g(r'"canonicalChannelUrl":"http://www.youtube.com/([^"]+)"')}
+    except Exception as ex: err=str(ex); time.sleep(5)
+  return {'error':err}
+def channel(cid,n=30):
+  err=''
+  for a in range(3):
+    try:
+      with ydl(n) as y: info=y.extract_info(f"https://www.youtube.com/channel/{cid}/videos",download=False)
+      ents=[{k:e.get(k) for k in ('id','title','view_count','duration','timestamp')} for e in info.get('entries') or []]
+      r={'channel':info.get('channel'),'subs':info.get('channel_follower_count'),'videos':ents}; break
+    except Exception as ex: err=str(ex); time.sleep(5)
+  else: r={'error':err}
+  r['about']=about(cid); r['measured']=now(); return r
+def main():
+  segs=json.load(open(os.path.join(HERE,'segments.json')))
+  sp_=os.path.join(RAW,'search.json'); S=json.load(open(sp_)) if os.path.exists(sp_) else {}
+  jobs=[(s['id'],q,s['lang'],s['gl'],p) for s in segs for q in s['q'] for p in PASSES if f"{s['id']}|{q}|{p}" not in S or 'error' in S[f"{s['id']}|{q}|{p}"]['results']]
+  with cf.ThreadPoolExecutor(4) as ex:
+    futs={ex.submit(search,q,l,g,PASSES[p]):(sid,q,l,g,p) for sid,q,l,g,p in jobs}
+    for f in cf.as_completed(futs):
+      sid,q,l,g,p=futs[f]; r=f.result()
+      S[f"{sid}|{q}|{p}"]={'segment':sid,'query':q,'lang':l,'gl':g,'pass':p,'measured':now(),'results':r}
+      print('search',sid,q,p,len(r) if isinstance(r,list) else r,flush=True)
+  json.dump(S,open(sp_,'w'),ensure_ascii=False)
+  keys=set(e['channel_id'] for v in S.values() if isinstance(v['results'],list) for e in v['results'] if e.get('channel_id'))
+  cp=os.path.join(RAW,'channels.json'); C=json.load(open(cp)) if os.path.exists(cp) else {}
+  todo=[k for k in keys if k not in C or 'error' in C[k] or 'error' in C[k].get('about',{})]
+  todo=todo[:int(sys.argv[1])] if len(sys.argv)>1 else todo
+  print('channels to fetch',len(todo),flush=True)
+  with cf.ThreadPoolExecutor(3) as ex:
+    for i,(k,r) in enumerate(zip(todo, ex.map(channel,todo))):
+      C[k]=r
+      if i%50==0: json.dump(C,open(cp,'w'),ensure_ascii=False); print('channels',i,flush=True)
+  json.dump(C,open(cp,'w'),ensure_ascii=False); print('done',len(C),flush=True)
+main()

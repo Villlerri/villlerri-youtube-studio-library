@@ -1,0 +1,18 @@
+from PIL import Image, ImageOps, ImageDraw
+# patent FIG. 2 as transparent ink
+im = Image.open('../probe/src/fl_a4ac9d32104606_US3668658-drawings-page-3.png').convert('L')
+w, h = im.size; print('page', w, h)
+im = im.crop((int(w*0.24), int(h*0.19), int(w*0.79), int(h*0.885)))
+a = ImageOps.invert(im).point(lambda v: min(255, int(v*1.7)))
+o = Image.new('RGBA', im.size, (30, 36, 24, 0)); o.putalpha(a); o.save('src/fig2_ink.png'); print('fig2', o.size)
+# photo crop without labels, then dot halftone
+p = Image.open('src/photo8.jpg').convert('L'); k = 1920/900
+p = p.crop((int(450*k), int(220*k), int(750*k), int(680*k)))
+p = ImageOps.autocontrast(p, cutoff=1); W, H = p.size; c = 9
+out = Image.new('L', (W, H), 255); d = ImageDraw.Draw(out)
+for y in range(0, H, c):
+    for x in range(0, W, c):
+        v = sum(p.crop((x, y, x+c, y+c)).getdata()) / (c*c)
+        v = 110 + v*0.56; r = (1 - v/255) ** 0.9 * c * 0.75
+        if r > 0.4: d.ellipse((x+c/2-r, y+c/2-r, x+c/2+r, y+c/2+r), fill=0)
+o = Image.new('RGBA', (W, H), (30, 36, 24, 0)); o.putalpha(ImageOps.invert(out)); o.save('src/photo_dots.png'); print('photo', o.size)

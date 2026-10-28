@@ -1,0 +1,13 @@
+#!/bin/bash
+# usage: run.sh <letter> "<pin numbers>"
+L=$1; PINS=$2; IMGS=""
+for n in $PINS; do IMGS="$IMGS /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/pin/img/$n.jpg"; done
+cd /srv/projects/youtube-studio-library/worktrees/youtube-5-work && codex exec -m gpt-6-astra -c model_reasoning_effort=medium --dangerously-bypass-approvals-and-sandbox "Read /srv/projects/vmsetup/board/templates/design-option.md in full and follow it.
+Brief: /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/styles/$L.md (read /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/styles/common.md too, it is part of the brief).
+Output path: /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/styles/out/$L.html
+Reference pictures (the owner's Pinterest board pins named in the brief):$IMGS
+Contact sheets of the whole board, pins numbered: /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/pin/sheet1.jpg /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/pin/sheet2.jpg /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/pin/sheet3.jpg /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/pin/sheet4.jpg
+Reference website: https://ru.pinterest.com/villlerriv/ютуб-идеи/ — the owner's Pinterest board 'Ютуб идеи'. The owner said the channel style is 'old magazines, big typography, texture, and so on' and this board is the reference for it. A login modal may cover the pins.
+Assets with ready data URIs: /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/styles/assets/ (each picture has a .datauri.txt next to it).
+Never write outside /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/styles/out/. Never commit anything. Never generate images or call any paid API. Never use rm with a bare variable path." > /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/styles/out/$L.log 2>&1
+echo "exit $?" >> /srv/projects/youtube-studio-library/worktrees/youtube-5-work/tmp/styles/out/$L.log
