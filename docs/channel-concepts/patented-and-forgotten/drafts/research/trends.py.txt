@@ -1,0 +1,25 @@
+"""Google Trends, YouTube Search, US, weekly, 5 years. Anchor 'documentary' in every batch.
+Writes tmp/research/raw/trends.json. Run: tmp/venv/bin/python -I tmp/scripts/trends.py"""
+import json, time, os, datetime
+from pytrends.request import TrendReq
+HERE=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.join(HERE,'..','research','raw','trends.json')
+B=[['documentary','brand history','marketing psychology','history of inventions','food history'],
+   ['documentary','etymology','graphic design history','cognitive biases','retro tech'],
+   # second pass without the large anchor: growth ratios comparable, levels only inside the batch
+   ['brand history','marketing psychology','history of inventions','food history','etymology'],
+   ['graphic design history','cognitive biases','retro tech','vintage ads','logo history']]
+R=json.load(open(OUT)) if os.path.exists(OUT) else {}
+p=TrendReq(hl='en-US',tz=0,timeout=(10,30))
+for b in B:
+  k='|'.join(b)
+  if k in R: continue
+  for a in range(4):
+    try:
+      p.build_payload(b,timeframe='today 5-y',geo='US',gprop='youtube')
+      df=p.interest_over_time()
+      R[k]={'measured':datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'),
+            'weeks':[d.strftime('%Y-%m-%d') for d in df.index],'anchor':b[0],'series':{t:[int(x) for x in df[t]] for t in b}}
+      print('ok',k,flush=True); break
+    except Exception as ex:
+      print('err',k,ex,flush=True); time.sleep(30*(a+1))
+  json.dump(R,open(OUT,'w')); time.sleep(8)

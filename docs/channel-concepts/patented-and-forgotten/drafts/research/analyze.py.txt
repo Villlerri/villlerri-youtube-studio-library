@@ -1,0 +1,140 @@
+"""Build tables from tmp/research/raw/{search,channels,trends}.json into tmp/research/out/.
+Run: tmp/venv/bin/python -I tmp/scripts/analyze.py
+Channel age comes from the channel's About page ("Joined <date>"), so it is known for every
+channel that returned that page, not only for channels with fewer than 30 videos."""
+import json, os, re, csv, statistics as st, datetime as dt
+from collections import defaultdict
+HERE = os.path.dirname(os.path.abspath(__file__)); RAW = os.path.join(HERE, '..', 'research', 'raw'); OUT = os.path.join(HERE, '..', 'research', 'out')
+os.makedirs(OUT, exist_ok=True)
+SEG = {s['id']: s for s in json.load(open(os.path.join(HERE, 'segments.json')))}
+S = json.load(open(os.path.join(RAW, 'search.json'))); C = json.load(open(os.path.join(RAW, 'channels.json')))
+
+
+def med(a):
+    a = [x for x in a if x is not None and x != '']
+    return round(st.median(a)) if a else ''
+
+
+def num(s):
+    if not s: return None
+    m = re.match(r'([\d.,]+)\s*([KMB]?)', s)
+    if not m: return None
+    return int(float(m.group(1).replace(',', '')) * {'': 1, 'K': 1e3, 'M': 1e6, 'B': 1e9}[m.group(2)])
+
+
+def joined(s):
+    try: return dt.datetime.strptime(s, '%b %d, %Y').date()
+    except Exception: return None
+
+
+CH = {}
+for cid, c in C.items():
+    a = c.get('about') or {}
+    m = dt.datetime.fromisoformat(c['measured'])
+    vids = [v for v in c.get('videos') or [] if v.get('id')]
+    old = [v.get('view_count') for v in vids if v.get('timestamp') and (m.timestamp() - v['timestamp']) / 86400 >= 30]
+    ages = [(m.timestamp() - v['timestamp']) / 86400 for v in vids if v.get('timestamp')]
+    j = joined(a.get('joined'))
+    subs = c.get('subs') if c.get('subs') is not None else num(a.get('subs_text'))
+    n90 = sum(1 for x in ages if x <= 90); span = max(ages) if ages else 0
+    per_month = round(n90 / 3, 1) if span > 90 else (round(len(ages) / max(span, 7) * 30.44, 1) if ages else '')
+    CH[cid] = {'channel_id': cid, 'channel_url': f'https://www.youtube.com/channel/{cid}', 'channel': c.get('channel') or '',
+               'handle': a.get('handle') or '', 'country': a.get('country') or '', 'subs': subs if subs is not None else '',
+               'total_views': num(a.get('total_views')) or '', 'video_count_all': num(a.get('video_count')) or '',
+               'joined': j.isoformat() if j else '', 'age_months': round((m.date() - j).days / 30.44, 1) if j else '',
+               'listed_long_videos': len(vids), 'median_views_age_ge30d': med(old), 'n_age_ge30d': len(old),
+               'long_uploads_per_month': per_month, 'measured_utc': c['measured'],
+               'error': (c.get('error') or '') + ('; about: ' + a['error'] if a.get('error') else '')}
+
+
+def group(ch):
+    """new: joined < 12 months before measurement (About page). small_old: < 10k subs, joined >= 12 months.
+    mid: 10k-100k, big: >= 100k (any age). unknown: no About date or no subscriber count."""
+    if not ch or ch['age_months'] == '': return 'unknown'
+    if ch['age_months'] < 12: return 'new'
+    if ch['subs'] == '': return 'unknown'
+    return 'small_old' if ch['subs'] < 10000 else ('mid' if ch['subs'] < 100000 else 'big')
+
+
+V = []
+for key, v in S.items():
+    if not isinstance(v['results'], list): continue
+    m = dt.datetime.fromisoformat(v['measured'])
+    for rank, e in enumerate(v['results'], 1):
+        ch = CH.get(e.get('channel_id'), {})
+        age = round((m.timestamp() - e['timestamp']) / 86400) if e.get('timestamp') else ''
+        V.append({'segment': v['segment'], 'query': v['query'], 'pass': v['pass'], 'rank': rank, 'measured_utc': v['measured'],
+                  'video_id': e['id'], 'url': f"https://www.youtube.com/watch?v={e['id']}", 'title': e.get('title') or '',
+                  'channel': e.get('channel') or ch.get('channel', ''), 'channel_id': e.get('channel_id') or '',
+                  'views': e.get('view_count') if e.get('view_count') is not None else '', 'duration_s': e.get('duration') or '',
+                  'approx_upload_date': dt.datetime.fromtimestamp(e['timestamp'], dt.timezone.utc).date().isoformat() if e.get('timestamp') else '',
+                  'approx_age_days': age, 'channel_subs': ch.get('subs', ''), 'channel_joined': ch.get('joined', ''),
+                  'channel_age_months': ch.get('age_months', ''), 'channel_group': group(ch),
+                  'channel_median_views_age_ge30d': ch.get('median_views_age_ge30d', '')})
+
+
+def w(name, rows):
+    with open(os.path.join(OUT, name), 'w', newline='') as f:
+        wr = csv.DictWriter(f, fieldnames=list(rows[0])); wr.writeheader(); wr.writerows(rows)
+
+
+w('videos.csv', V)
+segs_of = defaultdict(set)
+for r in V: segs_of[r['channel_id']].add(r['segment'])
+w('channels.csv', [dict(ch, group=group(ch), segments=';'.join(sorted(segs_of.get(cid, [])))) for cid, ch in CH.items()])
+
+
+def dedup(rows):
+    d = {}
+    for r in rows: d.setdefault(r['video_id'], r)
+    return list(d.values())
+
+
+M, E = [], []
+for sid, s in SEG.items():
+    mv = dedup([r for r in V if r['segment'] == sid and r['pass'] == 'month'])
+    av = dedup([r for r in V if r['segment'] == sid and r['pass'] == 'all'])
+    ml = [r for r in mv if r['duration_s'] != '' and r['duration_s'] > 180 and r['approx_age_days'] != '' and 7 <= r['approx_age_days'] <= 30 and r['views'] != '']
+    ms = [r for r in mv if r['duration_s'] != '' and r['duration_s'] <= 180 and r['approx_age_days'] != '' and 7 <= r['approx_age_days'] <= 30 and r['views'] != '']
+    g = lambda rows, gr: [r['views'] for r in rows if r['channel_group'] == gr]
+    chans = {r['channel_id'] for r in mv + av if r['channel_id']}
+    newc = [CH[c] for c in chans if c in CH and group(CH[c]) == 'new']
+    newc_typ = [c['median_views_age_ge30d'] for c in newc if c['median_views_age_ge30d'] != '']
+    smallc = [CH[c] for c in chans if c in CH and group(CH[c]) == 'small_old']
+    smallc_typ = [c['median_views_age_ge30d'] for c in smallc if c['median_views_age_ge30d'] != '']
+    al = [r for r in av if r['approx_age_days'] != '' and r['views'] != '']
+    row = {'segment': sid, 'name_ru': s['name'], 'queries': ' | '.join(s['q']), 'measured_utc': max(r['measured_utc'] for r in mv + av),
+           'long_7_30d_n': len(ml), 'long_7_30d_median': med([r['views'] for r in ml])}
+    for gr in ('new', 'small_old', 'mid', 'big', 'unknown'):
+        row[f'long_7_30d_{gr}_n'] = len(g(ml, gr)); row[f'long_7_30d_{gr}_median'] = med(g(ml, gr))
+    row.update({'long_7_30d_new_or_small_ge1k': sum(1 for r in ml if r['channel_group'] in ('new', 'small_old') and r['views'] >= 1000),
+                'long_7_30d_new_or_small_n': sum(1 for r in ml if r['channel_group'] in ('new', 'small_old')),
+                'short_7_30d_n': len(ms), 'short_7_30d_median': med([r['views'] for r in ms]),
+                'all_n': len(al), 'all_median_age_days': med([r['approx_age_days'] for r in al]), 'all_median_views': med([r['views'] for r in al]),
+                'all_share_new_or_small': round(sum(1 for r in al if r['channel_group'] in ('new', 'small_old')) / len(al), 2) if al else '',
+                'distinct_channels': len(chans), 'new_channels_n': len(newc), 'new_channels_typical_n': len(newc_typ),
+                'new_channels_typical_median': med(newc_typ),
+                'new_channels_typical_lt100': sum(1 for x in newc_typ if x < 100), 'new_channels_typical_ge1k': sum(1 for x in newc_typ if x >= 1000),
+                'small_old_channels_n': len(smallc), 'small_old_typical_n': len(smallc_typ), 'small_old_typical_median': med(smallc_typ),
+                'small_old_typical_lt100': sum(1 for x in smallc_typ if x < 100), 'small_old_typical_ge1k': sum(1 for x in smallc_typ if x >= 1000)})
+    M.append(row)
+    rows = dedup([r for r in V if r['segment'] == sid and r['views'] != ''])
+
+    def ex(role, r, note):
+        ch = CH.get(r['channel_id'], {})
+        E.append({'segment': sid, 'role': role, 'url': r['url'], 'title': r['title'], 'views': r['views'], 'duration_s': r['duration_s'],
+                  'approx_upload_date': r['approx_upload_date'], 'approx_age_days': r['approx_age_days'], 'channel': r['channel'],
+                  'channel_url': ch.get('channel_url', ''), 'channel_subs': r['channel_subs'], 'channel_joined': r['channel_joined'],
+                  'channel_group': r['channel_group'], 'channel_median_views_age_ge30d': r['channel_median_views_age_ge30d'],
+                  'long_uploads_per_month': ch.get('long_uploads_per_month', ''), 'measured_utc': r['measured_utc'], 'note': note})
+    ex('leader', max(rows, key=lambda r: r['views']), 'most viewed video in the segment sample, both passes')
+    mls = sorted(ml, key=lambda r: r['views'])
+    if mls: ex('ordinary', mls[len(mls) // 2], 'median long video aged 7-30 days')
+    for gr, lab in (('new', 'new channel (joined < 12 months)'), ('small_old', 'small old channel (< 10k, joined >= 12 months)')):
+        cand = [r for r in rows if r['channel_group'] == gr and r['duration_s'] != '' and r['duration_s'] > 180]
+        if cand:
+            ex(f'best_{gr}', max(cand, key=lambda r: r['views']), f'best long video of a {lab}')
+            weak = [r for r in cand if r['approx_age_days'] != '' and r['approx_age_days'] >= 7]
+            if weak: ex(f'weak_{gr}', min(weak, key=lambda r: r['views']), f'weakest long video aged >= 7 days of a {lab}')
+w('segment-metrics.csv', M)
+w('examples.csv', E)

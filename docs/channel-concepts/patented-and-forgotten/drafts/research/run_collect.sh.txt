@@ -1,0 +1,10 @@
+#!/bin/bash
+# Search once, then channels in batches of 200 until none left (memory guard).
+cd "$(dirname "$0")/../.."
+for i in $(seq 1 12); do
+  out=$(tmp/venv/bin/python -I tmp/scripts/collect.py 200 2>&1 | tee -a tmp/research/collect.log | grep 'channels to fetch')
+  echo "$out"
+  n=$(echo "$out" | awk '{print $4}')
+  [ "$n" = "0" ] && break
+done
+echo ALLDONE >> tmp/research/collect.log

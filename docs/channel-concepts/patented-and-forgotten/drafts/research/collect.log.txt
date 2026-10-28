@@ -1,0 +1,72 @@
+search brand_history how this brand became famous month 40
+search brand_history brand history documentary all 40
+search brand_history brand history documentary month 40
+search brand_history how this brand became famous all 40
+search ad_marketing famous ad campaigns explained month 40
+search ad_marketing famous ad campaigns explained all 40
+search ad_marketing marketing psychology explained all 40
+search ad_marketing marketing psychology explained month 40
+search patents history of inventions month 40
+search patents patent history explained month 40
+search patents history of inventions all 40
+search patents patent history explained all 40
+search everyday_objects history of everyday objects month 40
+search everyday_objects history of everyday objects all 40
+search everyday_objects origin of everyday things all 40
+search everyday_objects origin of everyday things month 40
+search food_history food history documentary month 40
+search food_history food history documentary all 40
+search food_history history of snacks month 40
+search food_history history of snacks all 40
+search retro_tech history of video game consoles month 40
+search retro_tech history of video game consoles all 40
+search retro_tech retro tech history month 40
+search retro_tech retro tech history all 40
+search etymology etymology explained month 40
+search etymology etymology explained all 40
+search etymology word origins month 40
+search etymology word origins all 40
+search design_history graphic design history month 40
+search design_history graphic design history all 40
+search design_history logo history explained month 40
+search psychology cognitive biases explained month 40
+search design_history logo history explained all 40
+search psychology cognitive biases explained all 40
+search psychology psychology of persuasion month 40
+search psychology psychology of persuasion all 40
+channels to fetch 200
+channels 0
+channels 50
+channels 100
+channels 150
+done 200
+channels to fetch 200
+channels 0
+channels 50
+channels 100
+channels 150
+done 400
+channels to fetch 200
+channels 0
+channels 50
+channels 100
+channels 150
+done 600
+channels to fetch 200
+channels 0
+channels 50
+channels 100
+channels 150
+done 800
+channels to fetch 200
+channels 0
+channels 50
+channels 100
+channels 150
+done 999
+channels to fetch 6
+channels 0
+done 1005
+channels to fetch 0
+done 1005
+ALLDONE

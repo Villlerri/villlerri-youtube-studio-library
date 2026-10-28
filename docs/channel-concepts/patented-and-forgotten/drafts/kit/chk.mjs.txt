@@ -1,0 +1,6 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch({ executablePath: '/home/boardagent/.cache/ms-playwright/chromium-1248/chrome-linux64/chrome' });
+const p = await b.newPage({ viewport: { width: 2560, height: 1440 } });
+await p.goto('file://' + process.cwd() + '/kit.html#banner', { waitUntil: 'load' }); await p.evaluate(() => document.fonts.ready);
+console.log(await p.evaluate(() => [...document.querySelectorAll('#banner .H, #banner .M')].map(e => { const r = document.createRange(); r.selectNodeContents(e); const q = r.getBoundingClientRect(); return [e.textContent, Math.round(q.left), Math.round(q.right)]; })));
+await b.close();
