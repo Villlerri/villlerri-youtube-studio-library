@@ -1,0 +1,151 @@
+1
+00:00:00,199 --> 00:00:02,635
+A hundred and thirty-two thousandths.
+
+2
+00:00:02,635 --> 00:00:05,000
+That is the fight for the podium.
+
+3
+00:00:05,400 --> 00:00:07,039
+Welcome to Sandbox Trials.
+
+4
+00:00:07,039 --> 00:00:09,529
+Twelve shapes, one season, eight events.
+
+5
+00:00:09,529 --> 00:00:12,723
+The shapes never change. Only the arena does.
+
+6
+00:00:13,599 --> 00:00:15,989
+Event one, the Switchback Sprint.
+
+7
+00:00:15,989 --> 00:00:19,152
+All twelve drop into one pile behind a gate.
+
+8
+00:00:19,152 --> 00:00:21,682
+That pile is the only random thing.
+
+9
+00:00:21,682 --> 00:00:24,142
+First centre across the line wins.
+
+10
+00:00:24,142 --> 00:00:27,846
+Twelve points for first, down to one for last.
+
+11
+00:00:28,699 --> 00:00:30,549
+We froze the course first.
+
+12
+00:00:30,549 --> 00:00:33,836
+Then the seed came from a public random beacon.
+
+13
+00:00:33,836 --> 00:00:37,878
+Nobody knew it in advance, including us. One official run.
+
+14
+00:00:37,878 --> 00:00:39,099
+No retakes.
+
+15
+00:00:39,999 --> 00:00:45,511
+In a thousand test runs, the ice ball, GLIDE, won the most: twenty-nine percent.
+
+16
+00:00:45,511 --> 00:00:49,246
+BOUNCE was next, at fifteen. Most is not always.
+
+17
+00:00:50,099 --> 00:00:53,192
+Pick yours. Pause if you need to.
+
+18
+00:00:59,099 --> 00:01:02,192
+WOBBLE is out first. COMET takes over.
+
+19
+00:01:06,899 --> 00:01:11,146
+Now HEX takes the lead. Watch how little it turns.
+
+20
+00:01:14,000 --> 00:01:15,938
+Halfway. HEX, COMET, ANVIL.
+
+21
+00:01:20,199 --> 00:01:25,215
+ANVIL came out of the pile eighth. The steel ball is third.
+
+22
+00:01:30,099 --> 00:01:32,807
+HEX wins. Almost two seconds clear.
+
+23
+00:01:34,500 --> 00:01:39,900
+Third place goes to ANVIL, by a hundred and thirty-two thousandths over GLIDE.
+
+24
+00:01:40,799 --> 00:01:42,588
+The full result. COMET second.
+
+25
+00:01:42,588 --> 00:01:45,815
+And BOUNCE, our second favourite, finishes last.
+
+26
+00:01:50,700 --> 00:01:52,139
+So, luck or skill?
+
+27
+00:01:52,139 --> 00:01:56,154
+In our thousand test runs, HEX won about one in ten.
+
+28
+00:01:56,154 --> 00:01:58,200
+But look at the other end.
+
+29
+00:01:58,200 --> 00:02:03,275
+HEX also finished eleventh or twelfth in almost a quarter of them.
+
+30
+00:02:03,275 --> 00:02:06,100
+Boom or bust. Tonight was boom.
+
+31
+00:02:06,200 --> 00:02:09,433
+And remember, this is game physics, not a lab.
+
+32
+00:02:09,433 --> 00:02:12,666
+It tells you about this hill, in this sandbox.
+
+33
+00:02:12,666 --> 00:02:15,061
+Nothing about real hexagons.
+
+34
+00:02:16,000 --> 00:02:17,900
+First points of the season.
+
+35
+00:02:17,900 --> 00:02:21,015
+HEX on twelve, COMET eleven, ANVIL ten.
+
+36
+00:02:21,900 --> 00:02:25,387
+Next event: the Funnel. Twelve shapes, one narrow neck.
+
+37
+00:02:25,387 --> 00:02:28,838
+Same shapes, new arena. Pick your favourite now.
+
+38
+00:02:29,700 --> 00:02:32,407
+Rules first. Seed locked. No retakes.

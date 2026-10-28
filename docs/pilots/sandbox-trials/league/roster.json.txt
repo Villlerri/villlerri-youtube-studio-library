@@ -1,0 +1,18 @@
+{
+  "season": 1,
+  "note": "Permanent League shapes. Sizes in metres, density in kg/m2 (2D). Colours and names from the approved League mockup.",
+  "racers": [
+    { "name": "ANVIL",  "color": "#6B7280", "tag": "heavy steel ball",        "kind": "circle", "r": 0.5,  "density": 7.8,  "friction": 0.4,  "restitution": 0.05, "rolling": 0 },
+    { "name": "PIP",    "color": "#F28C28", "tag": "smallest and lightest",   "kind": "circle", "r": 0.3,  "density": 1.0,  "friction": 0.5,  "restitution": 0.3,  "rolling": 0 },
+    { "name": "BOUNCE", "color": "#E5484D", "tag": "rubber, springy",         "kind": "circle", "r": 0.45, "density": 1.1,  "friction": 0.7,  "restitution": 0.85, "rolling": 0 },
+    { "name": "GLIDE",  "color": "#3DD6F5", "tag": "ice, almost no friction", "kind": "circle", "r": 0.45, "density": 0.92, "friction": 0.02, "restitution": 0.1,  "rolling": 0 },
+    { "name": "GRIT",   "color": "#A0703C", "tag": "rough, grippy",           "kind": "circle", "r": 0.45, "density": 2.0,  "friction": 1.2,  "restitution": 0.05, "rolling": 0.02 },
+    { "name": "WOBBLE", "color": "#F07EB8", "tag": "egg",                     "kind": "egg",    "a": 0.36, "b": 0.5,  "density": 1.0, "friction": 0.2, "restitution": 0.2, "rolling": 0 },
+    { "name": "HEX",    "color": "#3FB950", "tag": "hexagon",                 "kind": "ngon",   "n": 6, "r": 0.48,    "density": 1.0, "friction": 0.15, "restitution": 0.2, "rolling": 0 },
+    { "name": "BRICK",  "color": "#8B5CF6", "tag": "square",                  "kind": "ngon",   "n": 4, "r": 0.56,    "density": 2.0, "friction": 0.15, "restitution": 0.1, "rolling": 0 },
+    { "name": "TWIN",   "color": "#14B8A6", "tag": "dumbbell of two balls",   "kind": "twin",   "r": 0.28, "d": 0.38, "density": 1.0, "friction": 0.2, "restitution": 0.2, "rolling": 0 },
+    { "name": "COMET",  "color": "#3B82F6", "tag": "capsule",                 "kind": "capsule","half": 0.35, "r": 0.27, "density": 1.0, "friction": 0.15, "restitution": 0.2, "rolling": 0 },
+    { "name": "SPIN",   "color": "#D946EF", "tag": "off-centre weight",       "kind": "circle", "r": 0.45, "density": 1.0,  "friction": 0.5,  "restitution": 0.3,  "rolling": 0, "com": [0.08, 0] },
+    { "name": "ECHO",   "color": "#E5E7EB", "tag": "reference ball",          "kind": "circle", "r": 0.45, "density": 1.0,  "friction": 0.5,  "restitution": 0.3,  "rolling": 0 }
+  ]
+}

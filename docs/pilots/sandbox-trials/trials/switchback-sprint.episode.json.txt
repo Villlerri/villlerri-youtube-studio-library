@@ -1,0 +1,279 @@
+{
+  "title": "Event 1 · Switchback Sprint",
+  "seed": 612826258,
+  "wordsPerSecond": 2.6,
+  "segments": [
+    {
+      "id": "cold-open",
+      "race": [
+        34.6,
+        39.6
+      ],
+      "blur": true,
+      "overlay": "cards/00-later.png",
+      "picture": "Размытый бой за третье место у финиша, плашка LATER IN THIS RUN с отрывом 0,132 с.",
+      "learns": "Сегодня будет близкий финиш.",
+      "voice": [
+        {
+          "at": 34.8,
+          "text": "A hundred and thirty-two thousandths. That is the fight for the podium.",
+          "ru": "Сто тридцать две тысячных. Таков бой за пьедестал."
+        }
+      ]
+    },
+    {
+      "id": "roster",
+      "card": "cards/01-roster.png",
+      "min": 6,
+      "picture": "12 карточек участников: форма, имя, масса, упругость, сцепление.",
+      "learns": "Кто участвует и чем фигуры отличаются.",
+      "voice": [
+        {
+          "text": "Welcome to Sandbox Trials. Twelve shapes, one season, eight events. The shapes never change. Only the arena does.",
+          "ru": "Добро пожаловать в Sandbox Trials. Двенадцать фигур, один сезон, восемь событий. Фигуры не меняются никогда. Меняется только арена."
+        }
+      ]
+    },
+    {
+      "id": "rules",
+      "card": "cards/02-rules.png",
+      "min": 6,
+      "picture": "Карточка правил: вопрос, старт, что случайно, условие победы, очки.",
+      "learns": "Правила и ставки до старта.",
+      "voice": [
+        {
+          "text": "Event one, the Switchback Sprint. All twelve drop into one pile behind a gate. That pile is the only random thing. First centre across the line wins. Twelve points for first, down to one for last.",
+          "ru": "Событие первое, Switchback Sprint. Все двенадцать падают в одну кучу за воротами. Куча — единственное случайное. Побеждает первый центр за линией. Двенадцать очков за первое место, дальше вниз до одного за последнее."
+        }
+      ]
+    },
+    {
+      "id": "seed",
+      "card": "cards/03-seed.png",
+      "min": 5,
+      "picture": "Замок, три строки о заморозке и зерне, номер зерна.",
+      "learns": "Исход не подстроен: трасса заморожена до зерна, зерно из публичного источника.",
+      "voice": [
+        {
+          "text": "We froze the course first. Then the seed came from a public random beacon. Nobody knew it in advance, including us. One official run. No retakes.",
+          "ru": "Сначала мы заморозили трассу. Потом зерно пришло из публичного источника случайных чисел. Заранее его не знал никто, включая нас. Один официальный прогон. Без пересъёмок."
+        }
+      ]
+    },
+    {
+      "id": "odds",
+      "card": "cards/04-odds.png",
+      "min": 5,
+      "picture": "Полосы долей побед по 1 000 тестовым прогонам.",
+      "learns": "Кто фаворит и насколько.",
+      "voice": [
+        {
+          "text": "In a thousand test runs, the ice ball, GLIDE, won the most: twenty-nine percent. BOUNCE was next, at fifteen. Most is not always.",
+          "ru": "В тысяче тестовых прогонов чаще всех выигрывал ледяной шар GLIDE: двадцать девять процентов. Следом BOUNCE, пятнадцать. Чаще — не значит всегда."
+        }
+      ]
+    },
+    {
+      "id": "pick-3",
+      "card": "cards/05-pick-3.png",
+      "min": 1.6,
+      "picture": "PICK ONE, отсчёт 3.",
+      "learns": "Пауза на выбор любимца.",
+      "voice": [
+        {
+          "text": "Pick yours. Pause if you need to.",
+          "ru": "Выберите своего. Поставьте на паузу, если нужно."
+        }
+      ]
+    },
+    {
+      "id": "pick-2",
+      "card": "cards/05-pick-2.png",
+      "min": 1,
+      "picture": "Отсчёт 2.",
+      "learns": "",
+      "voice": []
+    },
+    {
+      "id": "pick-1",
+      "card": "cards/05-pick-1.png",
+      "min": 1,
+      "picture": "Отсчёт 1.",
+      "learns": "",
+      "voice": []
+    },
+    {
+      "id": "race",
+      "race": [
+        0,
+        38.4
+      ],
+      "picture": "Официальный прогон целиком: куча, ворота, 12 уровней, финиш HEX, COMET, бой ANVIL и GLIDE за третье.",
+      "learns": "Как шёл заезд, кто вёл и где сменился лидер.",
+      "voice": [
+        {
+          "at": 3.4,
+          "text": "WOBBLE is out first. COMET takes over.",
+          "ru": "WOBBLE выходит первым. Лидерство забирает COMET."
+        },
+        {
+          "at": 11.2,
+          "text": "Now HEX takes the lead. Watch how little it turns.",
+          "ru": "Теперь впереди HEX. Посмотрите, как мало он вращается."
+        },
+        {
+          "at": 18.3,
+          "text": "Halfway. HEX, COMET, ANVIL.",
+          "ru": "Половина пути. HEX, COMET, ANVIL."
+        },
+        {
+          "at": 24.5,
+          "text": "ANVIL came out of the pile eighth. The steel ball is third.",
+          "ru": "ANVIL вышел из кучи восьмым. Стальной шар уже третий."
+        },
+        {
+          "at": 34.4,
+          "text": "HEX wins. Almost two seconds clear.",
+          "ru": "HEX побеждает. Почти две секунды отрыва."
+        }
+      ]
+    },
+    {
+      "id": "photo",
+      "card": "cards/06a-photo.png",
+      "min": 4,
+      "picture": "Стоп-кадр: ANVIL на линии финиша, рядом GLIDE, отрыв 0,132 с.",
+      "learns": "Кто взял третье и насколько близко.",
+      "voice": [
+        {
+          "text": "Third place goes to ANVIL, by a hundred and thirty-two thousandths over GLIDE.",
+          "ru": "Третье место у ANVIL: на сто тридцать две тысячных быстрее GLIDE."
+        }
+      ]
+    },
+    {
+      "id": "result",
+      "card": "cards/06-result.png",
+      "min": 5,
+      "picture": "Итог: 12 мест, время, отставание, очки.",
+      "learns": "Полный итог и сюрприз в конце таблицы.",
+      "voice": [
+        {
+          "text": "The full result. COMET second. And BOUNCE, our second favourite, finishes last.",
+          "ru": "Полный итог. COMET второй. А BOUNCE, второй фаворит, — последний."
+        }
+      ]
+    },
+    {
+      "id": "replay",
+      "race": [
+        9.6,
+        13.6
+      ],
+      "picture": "Повтор: момент, когда HEX выходит вперёд.",
+      "learns": "Где решился заезд.",
+      "voice": []
+    },
+    {
+      "id": "luck",
+      "card": "cards/07-luck-or-skill.png",
+      "min": 8,
+      "picture": "Стол статистики: доля побед HEX и места HEX в 1 000 тестовых прогонах.",
+      "learns": "Удача это или сила, и где кончается модель.",
+      "voice": [
+        {
+          "text": "So, luck or skill? In our thousand test runs, HEX won about one in ten. But look at the other end. HEX also finished eleventh or twelfth in almost a quarter of them. Boom or bust. Tonight was boom.",
+          "ru": "Так удача или сила? В нашей тысяче тестовых прогонов HEX выиграл примерно один из десяти. Но посмотрите на другой край. Почти в четверти из них HEX финишировал одиннадцатым или двенадцатым. Всё или ничего. Сегодня — всё."
+        },
+        {
+          "text": "And remember, this is game physics, not a lab. It tells you about this hill, in this sandbox. Nothing about real hexagons.",
+          "ru": "И помните: это игровая физика, а не лаборатория. Вывод — про этот склон в этой песочнице. О настоящих шестиугольниках — ничего."
+        }
+      ]
+    },
+    {
+      "id": "table",
+      "card": "cards/08-table.png",
+      "min": 5,
+      "picture": "Таблица сезона после события 1.",
+      "learns": "Первые очки сезона.",
+      "voice": [
+        {
+          "text": "First points of the season. HEX on twelve, COMET eleven, ANVIL ten.",
+          "ru": "Первые очки сезона. У HEX двенадцать, у COMET одиннадцать, у ANVIL десять."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "card": "cards/09-next.png",
+      "min": 5,
+      "picture": "Анонс события 2: The Funnel.",
+      "learns": "Что будет дальше и зачем возвращаться.",
+      "voice": [
+        {
+          "text": "Next event: the Funnel. Twelve shapes, one narrow neck. Same shapes, new arena. Pick your favourite now.",
+          "ru": "Следующее событие — Funnel. Двенадцать фигур, одно узкое горло. Те же фигуры, новая арена. Выберите любимца уже сейчас."
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "card": "cards/10-end.png",
+      "min": 20,
+      "picture": "Конечная заставка: девиз, место под элементы конечной заставки YouTube.",
+      "learns": "Девиз канала.",
+      "voice": [
+        {
+          "text": "Rules first. Seed locked. No retakes.",
+          "ru": "Сначала правила. Зерно зафиксировано. Без пересъёмок."
+        }
+      ]
+    }
+  ],
+  "covers": [
+    {
+      "id": "A",
+      "at": 17.7,
+      "focus": [
+        "HEX"
+      ],
+      "zoom": 1.7,
+      "text": [
+        "8 TURNS.",
+        "WON BY 1.9 s"
+      ],
+      "title": "12 Shapes, One Hill. The Hexagon Barely Turned and Won.",
+      "ru": "12 фигур, один склон. Шестиугольник почти не вращался и победил."
+    },
+    {
+      "id": "B",
+      "at": 37.571,
+      "focus": [
+        "ANVIL",
+        "GLIDE"
+      ],
+      "zoom": 1.6,
+      "text": [
+        "0.132 s",
+        "FOR THE PODIUM"
+      ],
+      "title": "0.132 Seconds for the Podium | 12 Shapes, One Locked Seed",
+      "ru": "0,132 секунды за пьедестал | 12 фигур, одно зафиксированное зерно"
+    },
+    {
+      "id": "C",
+      "at": 31.8,
+      "focus": [
+        "GLIDE"
+      ],
+      "zoom": 1.7,
+      "text": [
+        "29% FAVOURITE",
+        "FINISHED 4TH"
+      ],
+      "title": "The Favourite Won 29% of Test Runs. Tonight It Came 4th.",
+      "ru": "Фаворит выиграл 29% тестовых прогонов. Сегодня он четвёртый."
+    }
+  ]
+}
