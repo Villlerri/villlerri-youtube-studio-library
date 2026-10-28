@@ -1,0 +1,21 @@
+receipt,vendor,date,total,trap
+01,Green Basket Market,2026-10-03,12.45,none (warm-up)
+02,The Copper Spoon,2026-10-04,44.00,handwritten tip; printed Amount 37.00 is not the total
+03,QuickFill Fuel,2026-10-05,38.79,two-digit year 10/05/26
+04,Maple Street Pharmacy,2026-10-05,15.35,return-by date and You saved line
+05,Bolt & Beam Hardware,2026-10-06,33.33,coupon and Total savings line
+06,North Pine Outfitters,2026-10-07,69.01,email receipt; vendor only in the sender address
+07,Driftwood Coffee,2026-10-08,4.85,cash tendered 10.00 and change 5.15
+08,Harbor Home Goods,2026-10-08,-23.31,refund must be negative
+09,Sunnyside Books,2026-10-09,27.15,gift card part; Balance due 0.00
+10,Lakeview Inn,2026-10-11,300.96,arrival date; Balance 0.00
+11,City Center Parking,2026-10-12,18.00,entry and exit times
+12,Fresh Row Farmers Market,2026-10-12,12.50,scan noise: letter O instead of zero
+13,CityHop,2026-10-13,26.15,date written as a weekday and month name
+14,Page & Pine Booksellers,2026-10-13,30.67,member discount and points
+15,Sparkle Auto Wash,2026-10-14,17.00,next-visit date
+16,Riverbend Animal Clinic,2026-10-15,90.00,previous balance; payment 135.00 covers two visits
+17,Brightline Electronics,2026-10-15,64.78,Total before tax line
+18,Main St Dry Cleaners,2026-10-10,23.50,paid at drop-off; pickup date is later
+19,Oak Hollow Hardware,2026-10-16,41.27,split payment Visa 40.00 and cash 1.27
+20,Golden Wok,2026-10-17,30.78,none (control)

@@ -1,0 +1,228 @@
+20 practice receipts. All stores, people and numbers are made up for this test.
+Paste one batch (5 receipts) at a time.
+
+########## BATCH 1 ##########
+
+=== Receipt 01 ===
+GREEN BASKET MARKET
+1450 Elm St, Dayton OH
+10/03/2026  5:42 PM
+Bananas 2.3 lb        1.38
+Whole milk 1 gal      3.79
+Bread, wheat          2.99
+Eggs, dozen           4.29
+SUBTOTAL             12.45
+TAX 0.00%             0.00
+TOTAL                12.45
+VISA ****4417        12.45
+Thank you for shopping!
+
+=== Receipt 02 ===
+THE COPPER SPOON
+Table 12   Server: Dana
+Oct 4, 2026   7:15 PM
+2 x Pasta special    31.00
+1 x Iced tea          3.50
+Subtotal             34.50
+Sales tax 7.25%       2.50
+Amount               37.00
+Tip:                  7.00   (written by hand)
+Total:               44.00   (written by hand)
+Signature ______________
+
+=== Receipt 03 ===
+QUICKFILL FUEL #208
+DATE 10/05/26 TIME 08:03
+PUMP 4   REGULAR
+GALLONS   11.214
+PRICE/GAL $3.459
+FUEL SALE   $38.79
+CAR WASH    $ 0.00
+SALE TOTAL  $38.79
+DEBIT  APPROVED
+
+=== Receipt 04 ===
+MAPLE STREET PHARMACY
+2026-10-05 14:22
+Allergy tablets 30ct     11.99
+  Member price          -2.00
+Bandages 40ct             4.49
+Subtotal                 14.48
+Tax                       0.87
+TOTAL                    15.35
+YOU SAVED TODAY $2.00
+Return by 11/04/2026 with receipt
+
+=== Receipt 05 ===
+BOLT & BEAM HARDWARE
+Sat Oct 6 2026  10:11 AM
+Wood screws #8 (100)      7.98
+Paint roller kit         14.99
+Painter's tape x2        11.96
+Subtotal                 34.93
+Coupon 10% off           -3.49
+Sales tax 6%              1.89
+TOTAL                    33.33
+Total savings             3.49
+
+########## BATCH 2 ##########
+
+=== Receipt 06 ===
+From: orders@northpineoutfitters.example
+Subject: Your order has shipped (Order #NP-55102)
+Order date: October 7, 2026
+Items subtotal:        $58.00
+Shipping & handling:    $6.95
+Estimated tax:          $4.06
+Order total:           $69.01
+Charged to Mastercard ending 0932: $69.01
+
+=== Receipt 07 ===
+DRIFTWOOD COFFEE
+10/08/2026 07:48
+Lg Latte                  4.85
+Total                     4.85
+Cash                     10.00
+Change                    5.15
+
+=== Receipt 08 ===
+HARBOR HOME GOODS
+RETURN RECEIPT
+10/08/2026  3:30 PM
+Returned: Bath towel set    -21.99
+Tax refund                   -1.32
+REFUND TOTAL                -23.31
+Refunded to VISA ****4417
+
+=== Receipt 09 ===
+SUNNYSIDE BOOKS
+Date: 10/09/2026
+Gift card balance before: 25.00
+"The Quiet Garden" (paperback)   16.99
+Notebook                          8.50
+Subtotal                         25.49
+Tax                               1.66
+Total                            27.15
+Paid: Gift card                 -25.00
+Paid: Cash                        2.15
+Balance due                       0.00
+
+=== Receipt 10 ===
+LAKEVIEW INN
+Folio for guest: R. Alvarez
+Arrival 10/09/2026   Departure 10/11/2026
+10/09 Room charge         129.00
+10/09 Room tax             15.48
+10/10 Room charge         129.00
+10/10 Room tax             15.48
+10/10 Parking              12.00
+Total charges             300.96
+Payments                 -300.96
+Balance                     0.00
+Paid at checkout 10/11/2026 11:02 AM
+
+########## BATCH 3 ##########
+
+=== Receipt 11 ===
+CITY CENTER PARKING - GARAGE B
+Entry 10/12/2026 09:02
+Exit  10/12/2026 13:47
+Duration 4h 45m
+Rate: up to 5 hrs
+Amount paid  $18.00
+
+=== Receipt 12 ===
+FRESH ROW FARMERS MARKET
+(stall 14 - Henley Farm)
+1O/12/2O26
+tomatoes      4.OO
+squash        3.5O
+honey jar     5.OO
+T0TAL        12.5O
+thank y0u
+
+=== Receipt 13 ===
+RIDE RECEIPT - CITYHOP
+Trip on Monday, October 13, 2026
+Pickup 6:10 PM, Dropoff 6:34 PM
+Trip fare               $19.40
+Booking fee              $2.75
+Tip                      $4.00
+Total                   $26.15
+Paid with Visa ****4417
+
+=== Receipt 14 ===
+PAGE & PINE BOOKSELLERS
+10/13/2026
+Members save 10%
+Cookbook                 32.00
+Member discount          -3.20
+Subtotal                 28.80
+Tax                       1.87
+Total                    30.67
+Points earned: 30
+
+=== Receipt 15 ===
+SPARKLE AUTO WASH
+2026-10-14 16:05
+Deluxe wash              14.00
+Tire shine                3.00
+Total                    17.00
+Next visit: 10/28/2026 for $2 off
+
+########## BATCH 4 ##########
+
+=== Receipt 16 ===
+RIVERBEND ANIMAL CLINIC
+Invoice 88214     Date 10/15/2026
+Patient: Biscuit (dog)
+Exam                      62.00
+Rabies vaccine            28.00
+Total for this visit      90.00
+Previous balance          45.00
+Payment received today  -135.00
+Balance due                0.00
+
+=== Receipt 17 ===
+BRIGHTLINE ELECTRONICS
+10/15/2026 18:20
+Wireless earbuds          49.99
+2-yr protection plan       9.99
+Total before tax          59.98
+Sales tax 8%               4.80
+TOTAL                     64.78
+Payment: Visa             64.78
+
+=== Receipt 18 ===
+MAIN ST DRY CLEANERS
+Ticket 4471
+Dropped off 10/10/2026
+Picked up   10/16/2026
+3 shirts                   9.00
+1 suit                    14.50
+Total                     23.50
+PAID AT DROP-OFF          23.50
+Amount due at pickup       0.00
+
+=== Receipt 19 ===
+OAK HOLLOW HARDWARE
+10/16/2026
+Garden hose 50ft          29.99
+Hose nozzle                8.49
+SUBTOTAL                  38.48
+TAX                        2.79
+TOTAL                     41.27
+VISA                      40.00
+CASH                       1.27
+
+=== Receipt 20 ===
+GOLDEN WOK
+Order #212  Pickup
+Oct 17 2026  12:05
+Kung pao chicken          13.95
+Veg fried rice            10.50
+Egg rolls (2)              4.25
+Subtotal                  28.70
+Tax                        2.08
+Total                     30.78
+Credit card               30.78

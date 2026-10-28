@@ -1,0 +1,188 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>AI Since 1948 probe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Libre+Caslon+Text:wght@400;700&family=Atkinson+Hyperlegible:wght@700&display=block" rel="stylesheet">
+<style>
+:root{--paper:#EFE6D2;--card:#F8F2E3;--ink:#2B241B;--fade:#7A6B55;--stamp:#9E2B25;--rule:#C9B99A}
+*{box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--paper);color:var(--ink)}
+#grain{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 30% 20%,rgba(255,255,255,.35),transparent 60%),
+  radial-gradient(ellipse at 80% 90%,rgba(120,90,40,.12),transparent 55%)}
+.tw{position:absolute;font:400 44px/1.35 'Courier Prime';white-space:pre-wrap;color:var(--ink)}
+.serif{position:absolute;font:400 40px/1.3 'Libre Caslon Text';color:var(--ink);white-space:pre}
+.card{position:absolute;background:var(--card);border:1px solid var(--rule);box-shadow:0 14px 34px rgba(70,50,20,.18);
+  background-image:linear-gradient(transparent 79px,#E4B9B3 79px,#E4B9B3 81px,transparent 81px),repeating-linear-gradient(transparent 0 59px,#CFDCE6 59px 61px);
+  background-position:0 0,0 21px}
+.stamp{position:absolute;padding:4px 20px;border:5px solid var(--stamp);border-radius:8px;color:var(--stamp);
+  font:700 46px/1.15 'Courier Prime';letter-spacing:.1em;opacity:.88;white-space:pre}
+.caret{display:inline-block;width:.55em;height:.9em;background:var(--ink);vertical-align:-.1em;margin-left:2px}
+#year{position:absolute;font:700 220px/1 'Libre Caslon Text';color:var(--ink)}
+svg{position:absolute;left:0;top:0;overflow:visible}
+#sub{position:absolute;left:0;width:1920px;bottom:44px;text-align:center}
+#subIn{display:inline-block;padding:12px 34px 14px;border-radius:8px;background:rgba(43,36,27,.93);
+  font:700 46px/60px 'Atkinson Hyperlegible';color:#FFF8EA;max-width:1500px}
+</style></head>
+<body>
+<div id="grain"></div>
+
+<div id="b1">
+  <div id="year" style="left:150px;top:120px">1948</div>
+  <div class="serif" id="cite1" style="left:160px;top:380px;font-size:38px;color:var(--fade)">C. E. Shannon, “A Mathematical Theory of Communication”
+Bell System Technical Journal · section 3</div>
+  <div class="tw" id="m1" style="left:160px;top:540px"></div>
+  <div class="tw" id="m2" style="left:160px;top:610px"></div>
+  <div class="tw" id="m3" style="left:160px;top:680px"></div>
+</div>
+
+<div id="b2">
+  <div class="serif" id="b2lbl" style="left:160px;top:110px;font-size:34px;color:var(--fade)">Shannon 1948, “second-order word approximation” — his result, as printed</div>
+  <div class="tw" id="shan" style="left:160px;top:190px;width:1600px;font-size:50px;line-height:1.45"></div>
+  <div class="stamp" id="stamp1" style="left:1260px;top:640px">NONSENSE</div>
+  <div class="serif" id="b2note" style="left:160px;top:700px;font-size:38px">each word pair came from a real book</div>
+</div>
+
+<div id="b3">
+  <div class="card" id="card" style="left:200px;top:90px;width:1520px;height:760px">
+    <div class="tw" style="left:60px;top:22px;font:700 36px/1 'Courier Prime';color:var(--fade)">OUR TOY · three true sentences</div>
+    <div class="tw" id="s0" style="left:60px;top:104px"></div>
+    <div class="tw" id="s1" style="left:60px;top:164px"></div>
+    <div class="tw" id="s2" style="left:60px;top:224px"></div>
+    <div class="tw" id="cnt" style="left:60px;top:344px"></div>
+    <div class="tw" id="gen" style="left:60px;top:524px;font-weight:700"></div>
+    <div class="stamp" id="stamp2" style="left:1040px;top:600px">FALSE</div>
+  </div>
+  <svg width="1920" height="1080"><g id="ofs"></g></svg>
+</div>
+
+<div id="b4">
+  <div class="card" id="card2" style="left:200px;top:90px;width:1520px;height:760px">
+    <div class="tw" style="left:60px;top:22px;font:700 36px/1 'Courier Prime';color:var(--fade)">WHAT THE TOY LEAVES OUT</div>
+    <div class="tw" id="l1" style="left:60px;top:104px">A word-pair table is not a neural network.</div>
+    <div class="tw" id="l2" style="left:60px;top:224px">Today’s models read the whole question.</div>
+    <div class="tw" id="l3" style="left:60px;top:344px;width:1400px">But 2025: “if 20% of birthday facts appear exactly
+once in the pretraining data, then one expects base
+models to hallucinate on at least 20% of birthday facts.”</div>
+    <div class="serif" id="l4" style="left:60px;top:590px;font-size:32px;color:var(--fade)">Kalai, Nachum, Vempala, Zhang, “Why Language Models Hallucinate”, arXiv:2509.04664</div>
+  </div>
+</div>
+
+<div id="endc" style="position:absolute;inset:0;background:var(--paper)">
+  <div class="serif" id="endT" style="top:390px;font-size:132px;font-weight:700">AI Since 1948</div>
+  <div class="serif" id="endS" style="top:580px;font-size:48px;color:var(--fade)">how AI works, from the papers that built it</div>
+</div>
+<div id="sub"><div id="subIn"></div></div>
+
+<script>
+const W = 1920, H = 1080;
+window.FPS = 30;
+window.TOTAL_FRAMES = 1350; // 45.0 s
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const eio = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const eout = x => 1 - Math.pow(1 - x, 3);
+const eback = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const P = (t, a, b, e = eio) => e(clamp((t - a) / (b - a)));
+const lerp = (a, b, p) => a + (b - a) * p;
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+function measure(s, font) { const c = document.createElement('canvas').getContext('2d'); c.font = font; return c.measureText(s).width; }
+
+// Shannon 1948, section 3, item 6, as printed.
+const SHANNON = 'THE HEAD AND IN FRONTAL ATTACK ON AN ENGLISH WRITER THAT THE CHARACTER OF THIS POINT IS THEREFORE ANOTHER METHOD FOR THE LETTERS THAT THE TIME OF WHO EVER TOLD THE PROBLEM FOR AN UNEXPECTED.';
+const TEXTS = {
+  m1: '1. open a book at random', m2: '2. find the current word', m3: '3. write down the word after it',
+  s0: 'Paris is the capital of France.', s1: 'Rome is the capital of Italy.', s2: 'Lima is the capital of Peru.',
+  cnt: 'after "of":  France 1   Italy 1   Peru 1',
+  gen: 'Paris is the capital of Italy.'
+};
+// typewriter: p in 0..1 shows a prefix of the text with a caret
+function type(id, p, caret = true) {
+  const s = TEXTS[id] ?? SHANNON, n = Math.round(s.length * clamp(p));
+  const el = $(id);
+  const key = n + (caret && p > 0 && p < 1 ? 'c' : '');
+  if (el.dataset.k === key) return; el.dataset.k = key;
+  el.textContent = s.slice(0, n);
+  if (caret && p > 0 && p < 1) { const c = document.createElement('span'); c.className = 'caret'; el.appendChild(c); }
+}
+function show(id, on) { $(id).style.display = on ? '' : 'none'; }
+
+const ready = (async () => {
+  for (const s of ['400 44px "Courier Prime"', '700 44px "Courier Prime"', '400 40px "Libre Caslon Text"', '700 40px "Libre Caslon Text"', '700 46px "Atkinson Hyperlegible"']) { const r = await document.fonts.load(s, 'Ab0'); if (!r.length) throw new Error('font not loaded: ' + s); }
+  await document.fonts.ready;
+  for (const id of ['endT', 'endS']) { const e = $(id); e.style.left = Math.round((W - e.getBoundingClientRect().width) / 2) + 'px'; }
+})();
+
+const CUES = [
+  [0.3, 4.4, '1948. Claude Shannon made English<br>out of chance.'],
+  [4.5, 8.9, 'He opened a book, found a word,<br>and wrote down the word after it.'],
+  [9.0, 13.9, 'Word by word, he got this.'],
+  [14.0, 17.9, 'Each word pair came from a real book.<br>The whole is nonsense.'],
+  [18.0, 21.9, 'Now try it on three true sentences.'],
+  [22.0, 25.9, 'After “of”: France, Italy, Peru —<br>once each.'],
+  [26.0, 29.9, 'Every pair was seen in true text.<br>The sentence is false.'],
+  [30.0, 33.4, 'A word-pair table is not a neural network.'],
+  [33.5, 36.9, 'Today’s models read the whole question.'],
+  [37.0, 41.4, 'But a 2025 paper finds: facts seen once<br>in training are often guessed.']];
+let lastCue = -1;
+function drawSub(t) {
+  const i = CUES.findIndex(c => t >= c[0] && t < c[1]), s = $('sub');
+  if (i < 0) { s.style.display = 'none'; return; }
+  s.style.display = '';
+  if (i !== lastCue) { $('subIn').innerHTML = CUES[i][2]; lastCue = i; }
+  s.style.opacity = Math.min(clamp((t - CUES[i][0]) / .18), clamp((CUES[i][1] - t) / .18));
+}
+function stampIn(id, t0, t) {
+  const e = $(id), p = P(t, t0, t0 + .35, eback);
+  e.style.opacity = t < t0 ? 0 : .88;
+  e.style.transform = `rotate(-7deg) scale(${lerp(1.9, 1, p)})`;
+}
+function beat(id, a, b, t, dy = 30) {
+  const on = t > a - .1 && t < b + .1; show(id, on); if (!on) return false;
+  const e = $(id), i = P(t, a, a + .7, eout), o = P(t, b - .6, b);
+  e.style.opacity = i * (1 - o);
+  e.style.transform = `translateY(${lerp(dy, 0, i) - dy * o}px)`;
+  return true;
+}
+function drawB1(t) {
+  if (!beat('b1', 0, 8.9, t)) return;
+  $('year').style.transform = `scale(${lerp(1, 1.04, clamp(t / 9))})`; $('year').style.transformOrigin = '0 0';
+  $('cite1').style.opacity = P(t, 1.0, 1.7);
+  type('m1', P(t, 4.6, 5.6, x => x)); type('m2', P(t, 5.8, 6.8, x => x)); type('m3', P(t, 7.0, 8.2, x => x));
+}
+function drawB2(t) {
+  if (!beat('b2', 8.9, 17.9, t)) return;
+  $('b2lbl').style.opacity = P(t, 9.1, 9.7);
+  type('shan', P(t, 9.4, 13.8, x => x));
+  stampIn('stamp1', 15.4, t);
+  $('b2note').style.opacity = P(t, 14.2, 14.8);
+}
+function drawB3(t) {
+  if (!beat('b3', 17.9, 29.9, t)) return;
+  type('s0', P(t, 18.4, 19.4, x => x)); type('s1', P(t, 19.5, 20.5, x => x)); type('s2', P(t, 20.6, 21.6, x => x));
+  type('cnt', P(t, 22.2, 24.4, x => x));
+  type('gen', P(t, 26.1, 27.7, x => x));
+  stampIn('stamp2', 28.4, t);
+  $('card').style.transform = `rotate(${lerp(-1.2, -.4, clamp((t - 18) / 12))}deg)`;
+}
+function drawB4(t) {
+  if (!beat('b4', 29.9, 41.4, t)) return;
+  $('card2').style.transform = `rotate(${lerp(.9, .3, clamp((t - 30) / 11))}deg)`;
+  $('l1').style.opacity = P(t, 30.2, 30.8);
+  $('l2').style.opacity = P(t, 33.6, 34.2);
+  $('l3').style.opacity = P(t, 37.1, 37.8);
+  $('l4').style.opacity = P(t, 38.2, 38.8);
+}
+function drawEnd(t) {
+  const e = $('endc'), a = P(t, 41.4, 42.2);
+  e.style.display = a > 0 ? '' : 'none'; e.style.opacity = a;
+  $('endS').style.opacity = P(t, 42.5, 43.1);
+}
+window.renderFrame = async (frame) => {
+  await ready;
+  const t = frame / window.FPS;
+  drawB1(t); drawB2(t); drawB3(t); drawB4(t); drawEnd(t); drawSub(t);
+};
+</script>
+</body></html>

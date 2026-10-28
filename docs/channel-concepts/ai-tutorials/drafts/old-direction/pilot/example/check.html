@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Receipt Test Checker</title>
+<style>
+  :root { --bg:#fbfaf7; --ink:#1d1d1b; --muted:#6b6a65; --line:#dedbd2; --ok:#1f7a3a; --okbg:#e3f3e7; --bad:#b3261e; --badbg:#fbe4e2; --warn:#8a5a00; --warnbg:#fdf1d8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.45 "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+  main { max-width:1100px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:28px; margin:0 0 4px; }
+  p.lead { margin:0 0 18px; color:var(--muted); }
+  textarea { width:100%; min-height:190px; font:15px/1.4 Consolas, "Courier New", monospace; padding:12px; border:1px solid var(--line); border-radius:6px; background:#fff; }
+  button { font:inherit; font-weight:600; padding:10px 20px; border:0; border-radius:6px; background:var(--ink); color:#fff; cursor:pointer; margin:10px 8px 0 0; }
+  button.ghost { background:transparent; color:var(--ink); border:1px solid var(--line); }
+  .score { display:flex; gap:12px; flex-wrap:wrap; margin:22px 0 12px; }
+  .score div { border:1px solid var(--line); border-radius:6px; padding:10px 14px; background:#fff; min-width:200px; }
+  .score b { display:block; font-size:30px; }
+  table { width:100%; border-collapse:collapse; background:#fff; font-size:15px; }
+  th, td { border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
+  th { background:#f1efe8; font-weight:600; }
+  td.ok { background:var(--okbg); color:var(--ok); }
+  td.bad { background:var(--badbg); color:var(--bad); }
+  td.warn { background:var(--warnbg); color:var(--warn); }
+  td small { display:block; color:var(--muted); }
+  .note { color:var(--muted); font-size:15px; margin-top:14px; }
+  .wrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Receipt Test Checker</h1>
+  <p class="lead">Paste the lines your AI wrote for the 20 practice receipts. Nothing leaves this page: it works with the internet switched off.</p>
+  <textarea id="input" spellcheck="false" placeholder="01,Green Basket Market,2026-10-03,12.45,TOTAL 12.45&#10;02,..."></textarea>
+  <div><button id="run">Check</button><button class="ghost" id="clear">Clear</button></div>
+  <div class="score" id="score"></div>
+  <div class="wrap"><table id="out"></table></div>
+  <p class="note">Line 1 is checked against receipt 01, line 2 against receipt 02, and so on, so paste the lines in order. <b>Total in the total column</b>: what a spreadsheet reads in column 4. <b>Total anywhere in the line</b>: what a careful person would find by reading. <b>Requested format</b>: 5 columns, the right receipt number, the date as YYYY-MM-DD and a plain number for the total.</p>
+</main>
+<script>
+const KEY = [
+ ["01","Green Basket Market","2026-10-03","12.45"],["02","The Copper Spoon","2026-10-04","44.00"],
+ ["03","QuickFill Fuel","2026-10-05","38.79"],["04","Maple Street Pharmacy","2026-10-05","15.35"],
+ ["05","Bolt & Beam Hardware","2026-10-06","33.33"],["06","North Pine Outfitters","2026-10-07","69.01"],
+ ["07","Driftwood Coffee","2026-10-08","4.85"],["08","Harbor Home Goods","2026-10-08","-23.31"],
+ ["09","Sunnyside Books","2026-10-09","27.15"],["10","Lakeview Inn","2026-10-11","300.96"],
+ ["11","City Center Parking","2026-10-12","18.00"],["12","Fresh Row Farmers Market","2026-10-12","12.50"],
+ ["13","CityHop","2026-10-13","26.15"],["14","Page & Pine Booksellers","2026-10-13","30.67"],
+ ["15","Sparkle Auto Wash","2026-10-14","17.00"],["16","Riverbend Animal Clinic","2026-10-15","90.00"],
+ ["17","Brightline Electronics","2026-10-15","64.78"],["18","Main St Dry Cleaners","2026-10-10","23.50"],
+ ["19","Oak Hollow Hardware","2026-10-16","41.27"],["20","Golden Wok","2026-10-17","30.78"]];
+const MONTHS = ["january","february","march","april","may","june","july","august","september","october","november","december"];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function splitCsv(line) {
+  const out = []; let cur = "", q = false;
+  for (const ch of line) {
+    if (ch === '"') q = !q;
+    else if (ch === "," && !q) { out.push(cur.trim()); cur = ""; }
+    else cur += ch;
+  }
+  out.push(cur.trim()); return out;
+}
+const words = s => s.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(w => w && w !== "the" && w !== "and");
+function vendorOk(got, want) { const g = words(got); return words(want).every(w => g.some(x => x.includes(w))); }
+function datesIn(text) {
+  const t = text.toLowerCase(), found = new Set();
+  for (const m of t.matchAll(/(\d{4})-(\d{1,2})-(\d{1,2})/g)) found.add(`${m[1]}-${m[2].padStart(2,"0")}-${m[3].padStart(2,"0")}`);
+  for (const m of t.matchAll(/(\d{1,2})\/(\d{1,2})\/(\d{2,4})/g)) { const y = m[3].length === 2 ? "20" + m[3] : m[3]; found.add(`${y}-${m[1].padStart(2,"0")}-${m[2].padStart(2,"0")}`); }
+  for (const m of t.matchAll(/([a-z]{3,9})\.?\s+(\d{1,2}),?\s+(\d{4})/g)) { const i = MONTHS.findIndex(x => x.startsWith(m[1].slice(0,3))); if (i >= 0) found.add(`${m[3]}-${String(i+1).padStart(2,"0")}-${m[2].padStart(2,"0")}`); }
+  return found;
+}
+const money = s => { const m = String(s).replace(/[$,\s]/g, "").match(/^-?\d+(\.\d+)?$/); return m ? Number(m[0]).toFixed(2) : null; };
+function amountsIn(text) { return new Set([...text.replace(/,(?=\d{3}\b)/g, "").matchAll(/-?\$?\s?\d+\.\d{2}/g)].map(m => Number(m[0].replace(/[$\s]/g, "")).toFixed(2))); }
+function check() {
+  const lines = document.getElementById("input").value.split(/\r?\n/).map(l => l.trim()).filter(l => l && /\d/.test(l));
+  let fmt = 0, tCol = 0, tAny = 0, dAny = 0, vAny = 0;
+  let html = "<tr><th>Receipt</th><th>Total in the total column</th><th>Total anywhere</th><th>Date anywhere</th><th>Vendor</th><th>Requested format?</th><th>AI line</th></tr>";
+  KEY.forEach(([n, vendor, date, total], i) => {
+    const l = lines[i];
+    if (!l) { html += `<tr><td>${n}</td><td class="bad" colspan="6">No line for this receipt</td></tr>`; return; }
+    const c = splitCsv(l), want = Number(total).toFixed(2);
+    const numOk = /^\d{1,2}$/.test(c[0] || "") && Number(c[0]) === Number(n);
+    const fOk = c.length === 5 && numOk && /^\d{4}-\d{2}-\d{2}$/.test(c[2] || "") && money(c[3] || "") !== null;
+    const colOk = money(c[3] || "") === want, anyOk = amountsIn(l).has(want), dOk = datesIn(l).has(date), vOk = vendorOk(l, vendor);
+    fmt += fOk; tCol += colOk; tAny += anyOk; dAny += dOk; vAny += vOk;
+    const why = fOk ? "Yes" : [c.length !== 5 ? c.length + " columns" : "", numOk ? "" : "wrong receipt number", /^\d{4}-\d{2}-\d{2}$/.test(c[2] || "") ? "" : "date not YYYY-MM-DD"].filter(Boolean).join(", ");
+    html += `<tr><td>${n}</td>`
+      + `<td class="${colOk ? "ok" : "bad"}">${colOk ? "✓" : "✗"} ${want}<small>column 4: ${esc(c[3] || "")}</small></td>`
+      + `<td class="${anyOk ? "ok" : "bad"}">${anyOk ? "✓" : "✗"}</td>`
+      + `<td class="${dOk ? "ok" : "bad"}">${dOk ? "✓" : "✗"} ${date}</td>`
+      + `<td class="${vOk ? "ok" : "bad"}">${vOk ? "✓" : "✗"} ${esc(vendor)}</td>`
+      + `<td class="${fOk ? "ok" : "warn"}">${esc(why)}</td>`
+      + `<td><code>${esc(l)}</code></td></tr>`;
+  });
+  document.getElementById("out").innerHTML = html;
+  document.getElementById("score").innerHTML =
+    `<div>Total in the total column<b>${tCol} / 20</b></div><div>Total anywhere in the line<b>${tAny} / 20</b></div>`
+    + `<div>Date anywhere in the line<b>${dAny} / 20</b></div><div>Lines in the requested format<b>${fmt} / 20</b></div>`;
+}
+document.getElementById("run").onclick = check;
+document.getElementById("clear").onclick = () => { document.getElementById("input").value = ""; document.getElementById("out").innerHTML = ""; document.getElementById("score").innerHTML = ""; };
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+receipt,answer_line,format_ok,total_col_ok,total_any_ok,date_any_ok,vendor_ok,right_total,right_date,trap
+01,"07,Green Basket Market,2026-10-03,12.45,12.45,12.45",0,1,1,1,1,12.45,2026-10-03,none (warm-up)
+02,"02,The Copper Spoon,2026-10-04,37.00,37.00,37.00",0,0,0,1,1,44.00,2026-10-04,handwritten tip; printed Amount 37.00 is not the total
+03,"03,QuickFill Fuel,2026-10-05,38.79,38.79,38.79",0,1,1,1,1,38.79,2026-10-05,two-digit year 10/05/26
+04,"04,Maple Street Pharmacy,2026-10-05,15.35,15.35,15.35",0,1,1,1,1,15.35,2026-10-05,return-by date and You saved line
+05,"05,Bolt & Beam Hardware,2026-10-06,33.33,33.33,33.33",0,1,1,1,1,33.33,2026-10-06,coupon and Total savings line
+06,"06,Orders North Pine Outfitters,2026-10-07,69.01,69.01,69.01",0,1,1,1,1,69.01,2026-10-07,email receipt; vendor only in the sender address
+07,"07,DRIFTWOOD COFFEE,2026-10-08,4.85,4.85,4.85",0,1,1,1,1,4.85,2026-10-08,cash tendered 10.00 and change 5.15
+08,"08,HARBOR HOME GOODS,2026-10-08,23.31,-23.31,-23.31",0,0,1,1,1,-23.31,2026-10-08,refund must be negative
+09,"09,SUNNYSIDE BOOKS,2026-10-09,27.15,27.15,27.15",0,1,1,1,1,27.15,2026-10-09,gift card part; Balance due 0.00
+10,"10,LAKEVIEW INN,2026-10-11,0.00,0.00,0.00",0,0,0,1,1,300.96,2026-10-11,arrival date; Balance 0.00
+11,"receipt,11,CITY CENTER PARKING - GARAGE B,2026-10-12,18.00,18.00",0,0,1,1,1,18.00,2026-10-12,entry and exit times
+12,"receipt,12,FRESH ROW FARMERS MARKET,2026-10-12,12.50,12.50",0,0,1,1,1,12.50,2026-10-12,scan noise: letter O instead of zero
+13,"receipt,13,RIDE RECEIPT - CITYHOP,2026-10-13,26.15,26.15",0,0,1,1,1,26.15,2026-10-13,date written as a weekday and month name
+14,"receipt,14,PAGE & PINE BOOKSELLERS,2026-10-13,30.67,30.67",0,0,1,1,1,30.67,2026-10-13,member discount and points
+15,"receipt,15,SPARKLE AUTO WASH,2026-10-14,17.00,17.00",0,0,1,1,1,17.00,2026-10-14,next-visit date
+16,"07,RIVERBEND ANIMAL CLINIC,2026-10-15,90.00,Previous balance 45.00",0,1,1,1,1,90.00,2026-10-15,previous balance; payment 135.00 covers two visits
+17,"07,BRIGHTLINE ELECTRONICS,2026-10-15,64.78,Total before tax 59.98",0,1,1,1,1,64.78,2026-10-15,Total before tax line
+18,"07,MAIN ST DRY CLEANERS,2026-10-16,23.50,Amount due at pickup 0.00",0,1,1,0,1,23.50,2026-10-10,paid at drop-off; pickup date is later
+19,"07,OAK HOLLOW HARDWARE,2026-10-16,41.27,VISA 40.00",0,1,1,1,1,41.27,2026-10-16,split payment Visa 40.00 and cash 1.27
+20,"07,GOLDEN WOK,2026-10-17,30.78,Credit card 30.78",0,1,1,1,1,30.78,2026-10-17,none (control)

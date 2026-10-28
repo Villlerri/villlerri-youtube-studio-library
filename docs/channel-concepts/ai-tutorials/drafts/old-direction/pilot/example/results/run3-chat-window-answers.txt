@@ -1,0 +1,27 @@
+### Batch 1: chat window, answer 168 tokens in 7.2s at 23.36 t/s
+receipt,01,10/03/2026,12.45,12.45,12.45
+receipt,02,10/04/2026,37.00,37.00,37.00
+receipt,03,10/05/26,38.79,38.79,38.79
+receipt,04,10/05/2026,15.35,15.35,15.35
+receipt,05,10/06/2026,33.33,33.33,33.33
+
+### Batch 2: chat window, answer 177 tokens in 8.3s at 21.39 t/s
+receipt,06,orders@northpineoutfitters.example,October 7, 2026,69.01,69.01
+receipt,07,DRIFTWOOD COFFEE,10/08/2026,4.85,4.85
+receipt,08,HARBOR HOME GOODS,10/08/2026,3:30 PM,-23.31,-23.31
+receipt,09,SUNNYSIDE BOOKS,10/09/2026,27.15,27.15
+receipt,10,LAKEVIEW INN,10/11/2026,300.96,300.96
+
+### Batch 3: chat window, answer 179 tokens in 14s at 12.31 t/s
+receipt,11,CITY CENTER PARKING - GARAGE B,2026-10-12,18.00,18.00
+receipt,12,FRESH ROW FARMERS MARKET,2026-10-12,12.50,12.50
+receipt,13,RIDE RECEIPT - CITYHOP,2026-10-13,26.15,26.15
+receipt,14,PAGE & PINE BOOKSELLERS,2026-10-13,30.67,30.67
+receipt,15,SPARKLE AUTO WASH,2026-10-14,17.00,17.00
+
+### Batch 4: chat window, answer 173 tokens in 22s at 7.78 t/s
+receipt,16,RIVERBEND ANIMAL CLINIC,10/15/2026,90.00,90.00
+receipt,17,BRIGHTLINE ELECTRONICS,10/15/2026,64.78,64.78
+receipt,18,MAIN ST DRY CLEANERS,10/10/2026,23.50,23.50
+receipt,19,OAK HOLLOW HARDWARE,10/16/2026,41.27,41.27
+receipt,20,GOLDEN WOK,10/17/2026,30.78,30.78

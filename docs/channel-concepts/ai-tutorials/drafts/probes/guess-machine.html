@@ -1,0 +1,244 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Guess Machine probe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=block" rel="stylesheet">
+<style>
+:root{--bg:#12233B;--panel:#1C3354;--line:#36507A;--tile:#F4F1E8;--amber:#FFB547;--red:#FF6B5B;--green:#59D18C;--chalk:#E9EEF5}
+*{box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--chalk)}
+#bgdots{position:absolute;inset:0;background-image:radial-gradient(rgba(233,238,245,.07) 2px,transparent 2px);background-size:40px 40px}
+.tile{position:absolute;left:0;top:0;height:64px;padding:0 18px;border-radius:12px;background:var(--tile);color:var(--bg);
+  font:700 34px/64px 'JetBrains Mono';white-space:pre;box-shadow:0 6px 0 rgba(0,0,0,.25)}
+.lbl{position:absolute;font:500 28px/1 'Space Grotesk';color:rgba(233,238,245,.7);letter-spacing:.06em;text-transform:uppercase;white-space:pre}
+.big{position:absolute;font:700 66px/1 'Space Grotesk';white-space:pre;color:var(--chalk)}
+svg{position:absolute;left:0;top:0;overflow:visible}
+#stamp{position:absolute;padding:6px 26px;border:6px solid var(--red);border-radius:12px;color:var(--red);
+  font:700 64px/1.1 'Space Grotesk';letter-spacing:.08em;transform-origin:50% 50%}
+.counter{position:absolute;width:110px;height:72px;border-radius:10px;background:#0B1626;border:3px solid var(--line);
+  font:700 46px/66px 'JetBrains Mono';text-align:center;color:var(--amber)}
+#plate{position:absolute;left:250px;top:120px;width:1420px;height:700px;border-radius:24px;background:var(--panel);border:3px solid var(--line)}
+.prow{position:absolute;left:90px;font:500 44px/1.25 'Space Grotesk';white-space:pre;color:var(--chalk)}
+.chip{position:absolute;padding:8px 18px;border-radius:999px;border:2px solid rgba(233,238,245,.5);font:500 26px/1 'Space Grotesk';color:rgba(233,238,245,.85);white-space:pre}
+#endc{position:absolute;inset:0;background:var(--bg)}
+#sub{position:absolute;left:0;width:1920px;bottom:44px;text-align:center}
+#subIn{display:inline-block;padding:12px 34px 14px;border-radius:10px;background:rgba(5,10,18,.9);
+  font:700 46px/60px 'Space Grotesk';color:#FFFFFF;max-width:1500px}
+</style></head>
+<body>
+<div id="bgdots"></div>
+<div id="open">
+  <div class="lbl" id="oLbl" style="left:0;width:1920px;text-align:center;top:330px">machine output</div>
+  <div class="big" id="oLine" style="top:420px;font-size:92px">Paris is the capital of Italy.</div>
+  <div id="stamp">FALSE</div>
+</div>
+<div id="scene">
+  <div class="lbl" id="lTrain" style="left:150px;top:96px">training text · all true</div>
+  <svg id="s" width="1920" height="1080">
+    <g id="bins"></g>
+    <rect id="win" fill="none" stroke="#FFB547" stroke-width="6" rx="16"/>
+    <g id="wheel"><g id="wrot"></g><circle r="34" fill="#0B1626" stroke="#36507A" stroke-width="4"/></g>
+    <path id="pointer" fill="#E9EEF5"/>
+    <g id="links"></g>
+  </svg>
+  <div id="tiles"></div>
+  <div class="lbl" id="lBins" style="left:300px;top:448px">counts after “of”</div>
+  <div id="ctrs"></div>
+  <div class="lbl" id="lWin">reads only this</div>
+  <div class="lbl" id="lWheel">slice size = count</div>
+</div>
+<div id="plate">
+  <div class="lbl" style="left:90px;top:70px;color:var(--amber)">toy model · simplified</div>
+  <div class="prow" id="p1" style="top:140px">This machine is a count table,
+not a neural network.</div>
+  <div class="prow" id="p2" style="top:310px">Real models read the whole question.</div>
+  <div class="prow" id="p3a" style="top:420px">Fact seen many times in training</div>
+  <div class="prow" id="p3b" style="top:500px">Fact seen once</div>
+  <div class="chip" id="r3a" style="left:1000px;top:422px;color:var(--green);border-color:var(--green)">usually right</div>
+  <div class="chip" id="r3b" style="left:1000px;top:502px;color:var(--amber);border-color:var(--amber)">often guessed</div>
+  <div class="chip" id="src" style="left:90px;top:610px">Kalai et al., 2025 · arXiv:2509.04664</div>
+</div>
+<div id="endc">
+  <div class="big" id="endT" style="top:400px;font-size:132px">The Guess Machine</div>
+  <div class="big" id="endS" style="top:590px;font-size:50px;font-weight:500;color:rgba(233,238,245,.8)">how AI works, one part at a time</div>
+</div>
+<div id="sub"><div id="subIn"></div></div>
+
+<script>
+const W = 1920, H = 1080;
+window.FPS = 30;
+window.TOTAL_FRAMES = 1350; // 45.0 s
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const eio = x => x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const eout = x => 1 - Math.pow(1 - x, 3);
+const eback = x => { const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const P = (t, a, b, e = eio) => e(clamp((t - a) / (b - a)));
+const lerp = (a, b, p) => a + (b - a) * p;
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const svgEl = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+function measure(s, font) { const c = document.createElement('canvas').getContext('2d'); c.font = font; return c.measureText(s).width; }
+
+// The toy: three true sentences; after "of" each country appears once.
+const SENTS = [['Paris', 'is', 'the', 'capital', 'of', 'France.'], ['Rome', 'is', 'the', 'capital', 'of', 'Italy.'], ['Lima', 'is', 'the', 'capital', 'of', 'Peru.']];
+const COUNTRY = ['France', 'Italy', 'Peru'];
+const SLICE = ['#4CC9F0', '#FFB547', '#B392F0'];
+const RY = [150, 240, 330], GAP = 14, TX0 = 150;
+const BIN_X = [300, 560, 820], BIN_Y = 600, BIN_W = 220, BIN_H = 170;
+const WC = { x: 1400, y: 600, r: 230 };
+let rows = [], ctrEls = [];
+function tileW(w) { return measure(w, '700 34px "JetBrains Mono"') + 36; }
+
+function build() {
+  // tiles for the three sentences
+  SENTS.forEach((ws, i) => {
+    let x = TX0; const r = [];
+    ws.forEach(w => { const d = document.createElement('div'); d.className = 'tile'; d.textContent = w; $('tiles').appendChild(d); const tw = tileW(w); r.push({ el: d, x, y: RY[i], w: tw }); x += tw + GAP; });
+    rows.push(r);
+  });
+  // bins with counters
+  COUNTRY.forEach((c, k) => {
+    const x = BIN_X[k], y = BIN_Y;
+    svgEl('path', { d: `M${x},${y} L${x + 18},${y + BIN_H} L${x + BIN_W - 18},${y + BIN_H} L${x + BIN_W},${y}`, fill: '#0B1626', stroke: '#36507A', 'stroke-width': 4, 'stroke-linejoin': 'round' }, $('bins'));
+    const t = svgEl('text', { x: x + BIN_W / 2, y: y + BIN_H + 48, 'text-anchor': 'middle', fill: SLICE[k], style: 'font:700 32px "JetBrains Mono"' }, $('bins')); t.textContent = c;
+    const ct = document.createElement('div'); ct.className = 'counter'; ct.style.left = (x + BIN_W / 2 - 55) + 'px'; ct.style.top = (y - 96) + 'px'; $('ctrs').appendChild(ct); ctrEls.push(ct);
+  });
+  // wheel: three equal slices from counts 1,1,1
+  COUNTRY.forEach((c, k) => {
+    const a0 = (k * 120 - 90) * Math.PI / 180, a1 = ((k + 1) * 120 - 90) * Math.PI / 180, r = WC.r;
+    svgEl('path', { d: `M0,0 L${r * Math.cos(a0)},${r * Math.sin(a0)} A${r},${r} 0 0 1 ${r * Math.cos(a1)},${r * Math.sin(a1)} Z`, fill: SLICE[k], stroke: '#12233B', 'stroke-width': 6 }, $('wrot'));
+    const am = (a0 + a1) / 2;
+    const t = svgEl('text', { x: r * .6 * Math.cos(am), y: r * .6 * Math.sin(am) + 12, 'text-anchor': 'middle', fill: '#12233B', style: 'font:700 36px "JetBrains Mono"', transform: `rotate(${am * 180 / Math.PI + 90} ${r * .6 * Math.cos(am)} ${r * .6 * Math.sin(am)})` }, $('wrot')); t.textContent = c;
+    const m = svgEl('text', { x: r * .85 * Math.cos(am), y: r * .85 * Math.sin(am) + 14, 'text-anchor': 'middle', fill: '#12233B', style: 'font:700 40px "Space Grotesk"', class: 'mark' }, $('wrot')); m.textContent = k === 0 ? '✓' : '✗';
+  });
+  $('wheel').setAttribute('transform', `translate(${WC.x},${WC.y})`);
+  $('pointer').setAttribute('d', `M${WC.x - 30},${WC.y - WC.r - 52} L${WC.x + 30},${WC.y - WC.r - 52} L${WC.x},${WC.y - WC.r + 14} Z`);
+  $('lWheel').style.left = (WC.x - measure('SLICE SIZE = COUNT', '500 28px "Space Grotesk"') / 2) + 'px'; $('lWheel').style.top = (WC.y + WC.r + 34) + 'px';
+  // link lines bin -> wheel
+  COUNTRY.forEach((c, k) => svgEl('path', { d: `M${BIN_X[k] + BIN_W / 2},${BIN_Y - 100} C${BIN_X[k] + BIN_W / 2},${BIN_Y - 200} ${WC.x - WC.r - 160},${WC.y - 160} ${WC.x - WC.r - 20},${WC.y - 40 + k * 40}`, fill: 'none', stroke: SLICE[k], 'stroke-width': 3, 'stroke-dasharray': '8 10' }, $('links')));
+  const ow = measure('Paris is the capital of Italy.', '700 92px "Space Grotesk"');
+  $('oLine').style.left = Math.round((W - ow) / 2) + 'px';
+  $('stamp').style.left = Math.round((W + ow) / 2 - 300) + 'px'; $('stamp').style.top = '560px';
+  for (const id of ['endT', 'endS']) { const e = $(id); e.style.left = Math.round((W - e.getBoundingClientRect().width) / 2) + 'px'; }
+}
+function place(t, x, y, s = 1, o = 1) { t.el.style.transform = `translate(${x}px,${y}px) scale(${s})`; t.el.style.opacity = o; }
+function draw(el, p) { const L = el.getTotalLength(); el.setAttribute('stroke-dasharray', `${L} ${L + 1}`); el.setAttribute('stroke-dashoffset', L * (1 - p)); el.style.opacity = p > 0 ? 1 : 0; }
+
+const ready = (async () => {
+  for (const s of ['700 34px "JetBrains Mono"', '500 28px "Space Grotesk"', '700 46px "Space Grotesk"']) { const r = await document.fonts.load(s, 'Ab0'); if (!r.length) throw new Error('font not loaded: ' + s); }
+  await document.fonts.ready;
+  build();
+})();
+
+const CUES = [
+  [0.3, 3.9, 'Our tiny machine just wrote this.'],
+  [4.0, 7.9, 'Every sentence it learned from was true.'],
+  [8.0, 11.9, 'It counts which word comes after which.'],
+  [12.0, 15.9, 'After “of”: three bins, one word each.'],
+  [16.0, 19.9, 'To write, it reads only the last word.'],
+  [20.0, 23.9, 'Then it spins.<br>Each bin gets a slice the size of its count.'],
+  [24.0, 27.9, 'Italy. Two of the three slices are false.'],
+  [28.0, 31.4, 'This machine is a count table,<br>not a neural network.'],
+  [31.5, 34.9, 'Real models read the whole question.'],
+  [35.0, 40.9, 'But a fact seen only once in training<br>is often a guess.']];
+let lastCue = -1;
+function drawSub(t) {
+  const i = CUES.findIndex(c => t >= c[0] && t < c[1]), s = $('sub');
+  if (i < 0) { s.style.display = 'none'; return; }
+  s.style.display = '';
+  if (i !== lastCue) { $('subIn').innerHTML = CUES[i][2]; lastCue = i; }
+  s.style.opacity = Math.min(clamp((t - CUES[i][0]) / .18), clamp((CUES[i][1] - t) / .18));
+}
+
+function drawOpen(t) {
+  const o = $('open'), out = P(t, 3.6, 4.3);
+  o.style.display = out < 1 ? '' : 'none';
+  o.style.opacity = P(t, 0, .6) * (1 - out);
+  $('oLine').style.transform = `scale(${lerp(.96, 1.02, clamp(t / 4))})`;
+  const st = P(t, 1.2, 1.6, eback);
+  $('stamp').style.opacity = clamp((t - 1.2) / .1);
+  $('stamp').style.transform = `rotate(-8deg) scale(${lerp(1.8, 1, st)})`;
+}
+function drawScene(t) {
+  const sc = $('scene');
+  const on = t > 3.8 && t < 28.6;
+  sc.style.display = on ? '' : 'none';
+  if (!on) return;
+  sc.style.opacity = P(t, 3.8, 4.4) * (1 - P(t, 27.9, 28.5));
+  $('lTrain').style.opacity = P(t, 4.2, 4.8) * (1 - P(t, 15.6, 16.1));
+  const genP = P(t, 15.8, 16.8); // morph to the generation row
+  rows.forEach((r, i) => r.forEach((tl, j) => {
+    const enter = P(t, 4.2 + i * 1.1 + j * .12, 4.9 + i * 1.1 + j * .12, eout);
+    let x = tl.x, y = tl.y + lerp(36, 0, enter), s = 1, o = enter;
+    const isOf = j === 4, isNext = j === 5;
+    // counting: "of" glows, next word drops into its bin
+    if (isOf) tl.el.style.background = P(t, 8.3 + i * 1.3, 8.6 + i * 1.3) > .5 && t < 15.8 ? '#FFB547' : '#F4F1E8';
+    if (isNext) {
+      const drop = P(t, 8.7 + i * 1.3, 9.6 + i * 1.3);
+      const bx = BIN_X[i] + BIN_W / 2 - tl.w / 2, by = BIN_Y + 70;
+      x = lerp(x, bx, drop); y = lerp(y, by, drop) - Math.sin(drop * Math.PI) * 120;
+    }
+    // generation: keep only row 0 words 0-4
+    if (i > 0 && !isNext) o *= 1 - genP;
+    if (i === 0 && !isNext) {
+      y = lerp(y, 190, genP);
+      if (t > 19.6) x = x; // stays
+      const dim = j < 4 ? P(t, 17.0, 17.6) : 0;
+      o *= 1 - .7 * dim;
+    }
+    place(tl, x, y, s, o);
+  }));
+  // counters 0 -> 1
+  ctrEls.forEach((c, k) => { c.textContent = t > 9.5 + k * 1.3 ? '1' : '0'; c.style.opacity = P(t, 8.0, 8.6); });
+  $('lBins').style.opacity = P(t, 8.0, 8.6);
+  [...$('bins').children].forEach(b => b.style.opacity = P(t, 7.8, 8.4));
+  // reading window around "of"
+  const of = rows[0][4];
+  const win = $('win');
+  const wp = P(t, 16.9, 17.5, eout);
+  win.setAttribute('x', of.x - 14); win.setAttribute('y', 190 - 14); win.setAttribute('width', of.w + 28); win.setAttribute('height', 92);
+  win.style.opacity = wp; win.setAttribute('transform', `translate(${(of.x + of.w / 2) * (1 - lerp(1.3, 1, wp))},${236 * (1 - lerp(1.3, 1, wp))}) scale(${lerp(1.3, 1, wp)})`);
+  const lw = $('lWin'); lw.style.left = (of.x - 20) + 'px'; lw.style.top = '310px'; lw.style.opacity = P(t, 17.4, 17.9);
+  // wheel
+  const wIn = P(t, 19.6, 20.4, eout);
+  $('wheel').style.opacity = wIn; $('pointer').style.opacity = wIn; $('lWheel').style.opacity = wIn;
+  [...$('links').children].forEach((l, k) => draw(l, P(t, 20.2 + k * .25, 21.0 + k * .25)));
+  // spin: lands with the pointer in the middle of the Italy slice (center at 180 deg from top)
+  const sp = P(t, 20.8, 24.0, x => 1 - Math.pow(1 - x, 4));
+  const finalRot = -180 + 360 * 3 + 14; // ends with Italy under the pointer, a little off-centre
+  $('wrot').setAttribute('transform', `rotate(${lerp(0, finalRot, sp)})`);
+  [...$('wrot').querySelectorAll('.mark')].forEach(m => m.style.opacity = P(t, 25.0, 25.5));
+  // Italy tile flies from its bin to the end of the row
+  const it = rows[1][5];
+  const fly = P(t, 24.1, 24.9);
+  const endX = of.x + of.w + GAP;
+  if (t > 24.1) { place(it, lerp(BIN_X[1] + BIN_W / 2 - it.w / 2, endX, fly), lerp(BIN_Y + 70, 190, fly) - Math.sin(fly * Math.PI) * 140, 1, 1); it.el.style.background = fly > .9 ? '#FFB547' : '#F4F1E8'; }
+  else it.el.style.background = '#F4F1E8';
+  [rows[0][5], rows[2][5]].forEach(tl => { if (t > 24.1) tl.el.style.opacity = 1 - .6 * P(t, 24.1, 24.6); });
+}
+function drawPlate(t) {
+  const p = $('plate'), a = P(t, 28.2, 28.9, eout), out = P(t, 40.9, 41.5);
+  p.style.display = a > 0 && out < 1 ? '' : 'none';
+  p.style.opacity = a * (1 - out);
+  p.style.transform = `translateY(${lerp(40, 0, a)}px)`;
+  $('p1').style.opacity = P(t, 28.6, 29.2);
+  $('p2').style.opacity = P(t, 31.6, 32.2);
+  $('p3a').style.opacity = P(t, 35.1, 35.7); $('r3a').style.opacity = P(t, 35.9, 36.4);
+  $('p3b').style.opacity = P(t, 36.9, 37.5); $('r3b').style.opacity = P(t, 37.7, 38.2);
+  $('src').style.opacity = P(t, 38.4, 39.0);
+}
+function drawEnd(t) {
+  const e = $('endc'), a = P(t, 41.3, 42.0);
+  e.style.display = a > 0 ? '' : 'none';
+  e.style.opacity = a;
+  $('endT').style.transform = `translateY(${lerp(20, 0, P(t, 41.5, 42.4, eout))}px)`;
+  $('endS').style.opacity = P(t, 42.4, 43.0);
+}
+window.renderFrame = async (frame) => {
+  await ready;
+  const t = frame / window.FPS;
+  drawOpen(t); drawScene(t); drawPlate(t); drawEnd(t); drawSub(t);
+};
+</script>
+</body></html>
