@@ -77,7 +77,7 @@ Amaya V, Paterson MBA, Phillips CJC (2020). Effects of olfactory and auditory en
 
 Теги: `музыка для собак, спокойная музыка для собак, фортепиано для собак, арфа для собак, тихая музыка для собак, собака дома одна, 10 часов`
 
-Обложка: [ru-cover-v1.png](ru-cover-v1.png), 1280×720.
+Обложка: [ru-cover-v1.png](ru-cover-v1.png), 1920×1080.
 
 ## Ролик 2: флейта и кларнет
 
@@ -116,7 +116,7 @@ Amaya V, Paterson MBA, Phillips CJC (2020). Effects of olfactory and auditory en
 
 Теги: `музыка для собак, спокойная музыка для собак, флейта для собак, кларнет для собак, тихая музыка для собак, собака дома одна, 10 часов`
 
-Обложка: [ru-cover-v2.png](ru-cover-v2.png), 1280×720.
+Обложка: [ru-cover-v2.png](ru-cover-v2.png), 1920×1080.
 
 ## Требования площадок
 
