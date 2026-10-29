@@ -6,7 +6,7 @@
 
 Варианты. Занятость адреса (@handle) проверена 2026-10-29 по странице youtube.com/@адрес: «свободен» — страницы нет.
 
-1. **Slow Notes for Dogs** — @SlowNotesForDogs, свободен. Рекомендую: про музыку и медленный темп, без обещаний эффекта.
+1. **Slow Notes for Dogs** — @SlowNotesForDogs, свободен. Выбрано Villlerri 2026-10-29: про музыку и медленный темп, без обещаний эффекта.
 2. Gentle Hours for Dogs — @GentleHoursForDogs, свободен. Про длинный формат.
 3. Soft Hours for Dogs — @SoftHoursForDogs, свободен.
 4. Dusk & Paws — @DuskAndPaws, свободен. Образ, но без слова «музыка».
@@ -46,8 +46,6 @@ music for dogs, dog music, calm music for dogs, quiet music for dogs, music for 
 - Шапка: [youtube-banner-2560x1440.png](youtube-banner-2560x1440.png), 2560×1440, 1,65 МБ. Сцена ролика 2, название и строка «Slow, quiet music for dogs at home · 10-hour videos». Текст — в безопасной зоне 1546×423 в центре, она видна на всех устройствах.
 - Требования YouTube ([справка](https://support.google.com/youtube/answer/10456525)): аватар показывается 98×98, файл до 15 МБ; шапка от 2048×1152, рекомендовано 2560×1440, до 6 МБ.
 - Обложка ролика: 16:9, ширина от 640, JPG или PNG, до 50 МБ с компьютера ([справка](https://support.google.com/youtube/answer/72431)). Наши обложки 1280×720 подходят.
-
-Если выберете другое название, перерисую шапку за несколько минут.
 
 ## Ролик 1: фортепиано и арфа
 
