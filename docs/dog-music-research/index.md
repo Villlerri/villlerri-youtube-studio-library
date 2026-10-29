@@ -14,6 +14,7 @@
 - [method-code.md](method-code.md): код замера и расчётов.
 - [trial/music.md](trial/music.md): проба музыки, 10 минут, сочинённых кодом на сэмплах CC0; измерения и права. Код — [trial/code.md](trial/code.md).
 - [pilot/passport.md](pilot/passport.md): пилотный ролик на 10 часов — название, описание, настройки загрузки, измерения, права. Код — [pilot/code.md](pilot/code.md). Список пьес — [pilot/pieces.csv](pilot/pieces.csv).
+- [v2/passport.md](v2/passport.md): ролик 2 теста, задача 127 — флейта и кларнет, горы в сумерках, 10 часов, 1,45 ГБ; название, описание, измерения, права. Код — [v2/code.md](v2/code.md). Список пьес — [v2/pieces.csv](v2/pieces.csv).
 - [drafts/](drafts/): черновики — заметки исследований, сырые выгрузки, черновые кадры, код вне документов кода, журналы.
 
 ## Решения Villlerri
